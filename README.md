@@ -13,7 +13,7 @@ During the development, we dealt with one of the main limitations that the natur
 
 ##Architecture
 
-Under this diagram, you can see the Calista Bot arquitecture at a glance
+In this diagram, you can see the Calista Bot arquitecture at a glance
 
 ![Calista Bot architecture](http://img849.imageshack.us/img849/9230/w8nl.png)
 
