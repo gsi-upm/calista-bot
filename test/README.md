@@ -10,13 +10,16 @@
 
 These corpus files should be copied to the /ChatScript/RAWDATA/ folder. They can be compiled and loaded by running [ChatScript](http://sourceforge.net/projects/chatscript/) locally:
 To launch ChatScript locally on Windows, the following command should be run inside the ChatScript folder:
+
 	chatscript local
 
 
 On Linux, the following command should be run inside the ChatScript folder:
+
 	./LinuxChatScript32 local
 
 Once ChatScript is locally launched, we can use the following command to build and load the corpus:
+
 	:build 1 
 	
 
