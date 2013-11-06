@@ -1,0 +1,44 @@
+
+concept: ~saludo [Hola Buenas Hi Que_tal]
+concept: ~despedida [Adios Nos_vemos Luego]
+concept: ~teaching [Aprender Ayudar]
+
+
+topic: ~saludando (~saludo)
+
+
+u: (%input>1 ~saludo) 
+	noerase() ^repeat()
+	Hola de nuevo. \[sendmaia assert returning \]
+
+u: (~saludo) 
+    ^noerase() ^repeat()
+	[Hola.] [Buenas.]
+	
+
+	
+	
+topic: ~elearning (~teaching profesor)
+
+u: (eres el profesor) 
+    ^noerase() ^repeat()
+	No; soy un bot asistente para ayudarte a encontrar respuestas.
+	
+u: ($bot=duke ~teaching)
+    ^noerase() ^repeat()
+	Puedo ayudarte con tus preguntas sobre Java.
+
+	
+topic: ~despidiendo (~despedida)
+
+u: (~despedida) 
+    ^noerase() ^repeat()
+	[Hasta otra.] [Nos vemos.] 
+
+
+
+
+
+
+
+

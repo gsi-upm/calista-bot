@@ -1,0 +1,10 @@
+ 5050 ( NOUN ADJECTIVE ADJECTIVE_CARDINAL NOUN_CARDINAL ) 
+ 5-hydroxy-3-methylglutaryl-coenzyme_A_reductase ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
+  14612444n~n a liver enzyme that is responsible for producing cholesterol
+ 5-hitter ( meanings=1 NOUN NOUN_SINGULAR ) 
+  00475661n~n a game in which a pitcher allows the opposing team 5 hits
+ 5-membered ( meanings=1 ADJECTIVE ADJECTIVE_BASIC ) 
+  01503052j~a of a chemical compound having a ring with five members
+ 5-hydroxytryptamine ( meanings=1 NOUN NOUN_SINGULAR ) 
+  14808273n~n a neurotransmitter involved in e.g. sleep and depression and memory
+ 5-star ( ADJECTIVE ADJECTIVE_BASIC ) 

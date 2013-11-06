@@ -1,0 +1,1224 @@
+concept: ~acidlist (acid~2 )
+concept: ~acting (acting Broadway Broadway_production burlesque burlesque~2 curtain_raiser~2 drama dramatic_play~1 galanty_show galanty_show~1 off-Broadway play puppet_play~1 puppet_show stage stage_production variety_show variety_show~1 )
+concept: ~actor (actor )
+concept: ~actress (actress )
+concept: ~addition (added_to addition combined increased_by more_than sum together total_of )
+concept: ~advanceddegree (D.O. DDM DMD DO Doctor_of_Philosophy Doctorate Ed.D J.D JD M.D MD or Ph.D PhD Psy.D Th.D V.S VS )
+concept: ~aerial_sports (ballooning base_jump glider hang_glide hang_glider hang_gliding hangglider hanggliding paragliding sky_dive skydive skydiving )
+concept: ~age_words (age day millenium month old week year young )
+concept: ~agenoun (adult age baby boy centenarian child eightysomething fiftysomething fortysomething fossil girl infant kid month ninetysomething old pentagenarian quatragenarian senior_citizen 
+                   septuagenarian seventysomething sextagenarian sixtysomething teen teen-ager teenager thirtysomething twentysomething week year )
+concept: ~aids_words (AIDS deficiency illness immune )
+concept: ~air (air atmosphere oxygen )
+concept: ~alarm (alarm burglar_alarm car_horn fire_alarm horn klaxxon siren whistle )
+concept: ~alcoholic_beverage (~COCKTAIL ~SPIRITS ~WINE_RED ~WINE_WHITE alcoholic_beverage~1 beer)
+concept: ~alcohollist (alcoholic_beverage~1 )
+concept: ~americanindian (Native_American~1 )
+concept: ~amplifiers (amplifier ballast binoculars blinder candle contacts crutch desk_lamp dictionary dildo enclopedia flashlight flippers fluorescent_light glasses gyroscope headphone hearing-aid hearing_aid 
+                      helibackpack jetpack ladder lamp lantern lens light light_bulb magnifying_glass medicine microscope mirror night_vision_goggle overhead_projector parachute penlight periscope photograph pole_lamp projector 
+                      slide_projector snorkel snorkeler step_ladder stethoscope sunlamp surfboard table_lamp telescope thesaurus vibrator wings )
+concept: ~anger_emotion (anger dislike frustration hate impatience jealousy loathing rancor temper )
+concept: ~angryevent (anger angry deception disgusting embezzlement hurtful injustice outrage outrageous revolting scandalous spiteful stealing stolen stupid uncalled_for violence violent wasteful )
+concept: ~animal_kingdoms (~ANIMALS ~MICROLIFE ~PLANTS )
+concept: ~animal_product (animal_product animal_product~1 )
+concept: ~animals (~BIRDS ~FISH ~INSECTS ~MAMMALS ~MYTHICAL_CREATURES ~REPTILES animal beast carnivore chukar creature herbivore liger omnivore thylacine xenop xenopsaris xiphactinus )
+concept: ~appearance (blotched bright clear dark dingy dismal dotted drab dull flashy flowery fluid freckled glassy glazed glossy glowing grimy iridescent 
+                      mottled muddy old opaque patterned rotted shabby sheer shimmering shiny sparkling spotted striped translucent transparent untidy used worn wrinkled young )
+concept: ~appliance_store (appliance dryer freezer refrigerator tv washer )
+concept: ~appliances (~ELECTRONIC_ITEMS air_conditioner barbeque beater blender blow_dryer burner can_opener coffee_maker colander compactor cooktop Cuisinart dishwasher dredger dryer electric_mixer fan food_processor 
+                      freezer garbage_disposal gas_grill grill heater homogenizer humidifier iron lamp microwave mixer oven refrigerator sifter stove toaster trash_compactor waffle_iron washer washing_machine 
+                      whisk )
+concept: ~architect (architect )
+concept: ~architecture_styles (Art_Deco Art_Nouveau Baroque Byzantine Georgian Gothic Greek Roman Victorian )
+concept: ~areafield (the_area_of the_concept_of the_field_of the_study_of )
+concept: ~art_kinds (paint sculpt sculpture installation calligraphy assemblage collage decollage draw drawings paintings)
+concept: ~art_museum ("Metropolitan Museum of Art"  Metropolitan_Museum "Tate Museum" "Tate Modern" "Vatican Museum" "Prado Museum" 
+					MoMa "Museum of Modern Art" Ufizzi Louvre Guggenheim The_Hermitage)
+concept: ~art_gallery (art picture picture_frame sculpture )
+concept: ~art_stuff (~GRAPHIC_ARTS ~PAPERCANVASCRAFT ~PERFORMING_ARTS ~TEXTILE_CRAFTS ~WOODMETALCLAYGLASSCRAFT drawing exhibit illustration mural statue statuette photo photograph )
+concept: ~arts (act paint sculpt sing )
+concept: ~assassin (assassin gunman hit_man hitman kill killer mercenary murder murderer )
+concept: ~astrology_signs (Aquarius Aries Cancer Capricorn Gemini Leo Libra Pisces Sagittarius Scorpio Taurus Virgo )
+concept: ~astronautics (astronautics launchpad NASA space_probe space_shuttle space_station spacesuit )
+concept: ~athlete ( )
+concept: ~attaches (~FASTENERS )
+concept: ~attendant (attendant chauffeur cleaner cook decorator dry_cleaner electrician hairdresser maid mechanic plumber stylist )
+concept: ~author ( )
+concept: ~auto_dealer (~VEHICLE automobile car car_dealer SUV truck)
+concept: ~awards (~DEGREES award bonus crown fame honor legend medal prize recognition reward scholarship trophy )
+concept: ~bad_weather (frost gale hail hailstorm ice_storm icicle mist precipitation rain rainfall rainstorm rainy sleet snow snowy )
+concept: ~baked_goods (baked_goods baked_goods~1 )
+concept: ~bakery (~BAKED_GOODS bakery pastry_shop )
+concept: ~bank (ATM bank cash change checking_account credit_card currency_conversion deposit deposit_slip loan loan_application money money_order monthly_statement overdraw personal_check safety_deposit_box saving savings_account 
+                traveller_'s_check withdrawl_slip )
+concept: ~barber_shop (~HAIRCUT barbershop haircut shave )
+concept: ~baseball_teams (Angels Braves Brewers Cleveland_Indians Cubs Detroit_Tigers Dogers Mariners Mets Oakland_A_'s Oakland_Athletics Orioles Redsox Royals White_Sox Yankees )
+concept: ~baseorgans (gut heart heartbeat intestine kidney liver lung pancreas )
+concept: ~basic_degrees (Associate B.A. B.S. BA Bachelor BASc BS BSc Diploma R.N. RN )
+concept: ~bathroom_items (aspirin band_aid bath bathtub conditioner deodorant medicine medicine_cabinet shampoo shaving_cream shower shower_curtain soap soap_dish tile toilet toilet_paper toilet_seat toothbrush 
+                          toothpaste towel )
+concept: ~beach (beach )
+concept: ~beauty_salon (beauty_salon eyebrow_waxing facial_wrap makeover manicure pedicure )
+concept: ~bedroom_items (bed bedspread blanket box_spring brush chest closet curtains drawer dresser mattress mirror pillowcase rug shade sheet )
+concept: ~being_conduit (border door entrance entranceway exit opening passage path )
+concept: ~beings (~ANIMALS ~FAIRYTALE_CHARACTERS ~GROUPS ~INTELLIGENT_BEING )
+concept: ~beverage (~ALCOHOLIC_BEVERAGE ~CAFFINATED_DRINKS ~JUICE_DRINKS ~MILK_DRINKS ~SOFTDRINKS ~WATER_DRINKS drinkable~1 )
+concept: ~biome (biome biome~1 )
+concept: ~birds (bird bird_family~1 bird~1 duck game_bird~1 goose ostrich peacock penguin roadrunner rooster stork turkey vulture young_bird~1 )
+concept: ~birth_defect (abnormality abnormality~4 birth_defect congenital_abnormality~1 defect_of_speech~1 glandular_disease glandular_disorder~1 metabolic_disorder metabolic_disorder~1 nervous_disorder neurological_disorder~1 speech_disorder )
+concept: ~birthlocationnoun (be_from born_in born_near come_from )
+concept: ~black (black ebony jet blackish licorice melanic morel nigrine piceous )
+concept: ~bladed_weapon (axe backsword bayonet bayonnet blade bodkin broadsword butterfly_knife cavalry_sword chainsaw cleaver crease creese cutlas cutlass dagger dirk epee Excalibur 
+                         excalibur falchion fencing_sword foil halberd hatchet katana khukuri kirpan knife knife~2 kris kunai machete matchet panga poniard rapier saber sabre 
+                         scimitar scythe shiv sickle steel~2 sticker stiletto sword tomahawk tomahawk~1 trench_knife yataghan )
+concept: ~blemishmark (dimple freckle mole wart )
+concept: ~blue_other (sky steel sapphire periwinkle peacock cobalt aquamarine) 
+concept: ~blue (~blue_other aqua  azuline azure blue celeste cerulean  blueish cyaneous indigo mazarine navy pavonated   perse porceline royal  
+                 smalt  teal turquoise ultramarine watchet )
+concept: ~board_games (backgammon board_game~1 checkers chess clue D_and_D dice dominoes Dungeons_and_Dragons go~n mahjong mahjong Monopoly pente Risk Scrabble shogi Stratego Sudoku tic-tac-toe 
+                       tic_tac_toe tiddlywinks )
+concept: ~bodily_states (asleep awake chastity conscious dead dehydration doziness hunger lassitude obesity relaxation relaxed starvation tense tension thirst unconscious )
+concept: ~body_states (angry chilly cold depressed happy horny hot hungry lonely mad sleepy smelly starving stink stinky sweating sweaty thirsty tired )
+concept: ~bodyparts (~BASEORGANS ~BLEMISHMARK ~EXTREMITIES ~HEADPART ~SPIRITPART ~TORSO )
+concept: ~bone (bone carpus coccyx cranium femur fibula humerus illum metatarsus patella phalanges pubis radius rib sacrum sternum tarsus tibia ulna 
+                vertegrae )
+concept: ~book ()
+concept: ~book_genre (art autobiographical autobiography biography chicklit chicklit cyberpunk fantasy fiction horror mystery poetry romance sci-fi science_fantasy science_fiction SF sf speculative speculative_fiction spirituality suspense thriller 
+                      thriller romance horror non_fiction non-fiction 
+					  verse whodunit )
+concept: ~bookmagazine (autobiography biography book chapter hardback library literature novel paperback poem prose publication publication~4 story textbook )
+concept: ~bookstore (Barnes_and_Noble bookstore Borders )
+concept: ~book_store (~BOOKMAGAZINE map newspaper )
+concept: ~bored_emotion (boredom boring diffidence )
+concept: ~bottom_clothes (apron bathing_suit belt bikini briefs dress frock handkerchief jeans kilt mini-skirt pantie panties pants shorts skirt slacks swimming_trunks swimsuit 
+                          trousers trunks tutu underpants underwear )
+concept: ~boutique (~CLOTHES boutique handbag )
+concept: ~bowling_alley (bowling bowling_alley bowling_ball lane pin )
+concept: ~breakfast_items (apple_juice bacon butter cantaloupe cereal cocoa cream cream_cheese_danish egg french_toast fried_egg ham hard-boiled_egg home_fries jam jelly margarine melon milk 
+                           muffin oatmeal orange_juice pancake poached_egg sausage scrambled_egg syrup toast waffle )
+concept: ~bridal_store (bridal_salon bridal_store wedding_dress )
+concept: ~brother (bro brother male_sibling~1 )
+concept: ~brown_other(almond chocolate cinnamon coffee copper ginger hazel honey khaki nutmeg rainbow walnut) 
+concept: ~brown (~brown_other  amber badious bronze brown brownish brunette brunneous buff burnet catory     ferruginous filemont fuscous  
+                   infuscate  mahogany melichrous   rubious russet rust sandy sepia sienna sinopia sorrel spadiceous tan taupe terracotta 
+                 titian umbra  )
+concept: ~browsers (Chrome Firefox IE Internet_Explorer Mozilla Netscape Safari )
+concept: ~building (~BUILDING_PARTS ~RELIGIOUS_BUILDINGS ~SHELTER airport apartment armory asylum auditorium bakery bar barn boat_house bookstore building building~3 cabin cafe cafeteria castle 
+                    cemetery chateau cinema clinic club_house coffee_shop college condo consulate court crypt embassy factory fire_station fortress gallery gameshop gym gymnasium headquarters 
+                    home house igloo industrial_plant~1 institution jail lab laboratory library living_accommodations~1 masoleum mausoleum mill museum palace pavilion preschool prison restaurant ruin 
+                    sawmill school shed shelter~1 skyscraper sports_stadium~1 station theatre tomb tower tower~1 tree_house university White_House windmill zoo )
+concept: ~building_parts (annex arch attic backyard balcony basement bath bathroom bedroom ceiling chamber chimney classroom colonnade column corridor crawl_space deck dining_room 
+                          door doorbell doorway downstairs entryway escalator fence fireplace floor flooring foyer garage garden gutter hall hallway kitchen living_room lunchroom parlor 
+                          patio porch restroom roof room shutter sidewall stair stairwell studio study subbasement tower upstairs veranda vestibule wall window yard )
+concept: ~building_substances (asphalt brick caulk cement clay concrete cork linoleum lumber mud shingle steel tar tile tinfoil wood )
+concept: ~burnable (~ANIMALS ~FURNITURE cardboard paper wood )
+concept: ~business_supply (business_supply photocopy )
+concept: ~butchery (~MEAT butchery )
+concept: ~cafe (breakfast cafe dinner food lunch )
+concept: ~caffinated_drinks (cappuccino chai coffee espresso iced_coffee iced_tea latte tea )
+concept: ~candy (candy confect~1 )
+concept: ~car_brands (Audi BMW Chevrolet Chevy Chrysler Fiat Ford General_Motors GM Honda Hyundai Kia Mercedes Mitsubishi Nissan Porsche Saab Suzuki Toyota 
+                      Vauxhall Volkswagon )
+
+concept: ~cardgame (ace card_game card_game~1 cardgame club diamond flush full_house heart hearts jack king queen spade spades straight straight_flush )
+concept: ~carryable (~NUTRIENT )
+concept: ~cartoon_character (cartoon_character )
+concept: ~cashable_item (cash coin money treasure )
+concept: ~category (brand breed breed_of category class class_of division flavor_of genre grouping kind kind_of kinds_of make_of model sort_of species style_of subdivision 
+                    type type_of )
+concept: ~celestial_body (asteroid black_dwarf black_hole celestial_body celestial_body~1 comet galaxy meteor meteorite moon neutron_star planet pulsar quark quasar shooting_star solar_system star sun 
+                          supergiant supernova white_dwarf world )
+concept: ~celestial_observation (constellation eclipse observatory Perseid planetarium stargazing telescope )
+concept: ~ceo (CEO )
+concept: ~chatbotlist (A.L.I.C.E. AI AIML Alicebot artificial artificial_intelligence automaton bot  chat-program chat_bot chat_box chatbot chatbox chatterbot chatterbox Cleverbot  Eliza 
+                       Ultra_Hal nonhuman NPC  robot robotar Smarterchild  talk_bot unhuman Verbot )
+concept: ~cheeses (blue_cheese Brie Camembert cheddar colby cream_cheese fromage gouda havarti Limburger Monterey_Jack muenster swiss Tilsit )
+concept: ~chemicals (chemical chemical_compound~1 compound organic_compound~1 )
+concept: ~cinema (cinema film movie theater theatre )
+concept: ~cityblock (airplane building )
+concept: ~classactions (argue come_in cry draw erase frown go_out laugh listen look read shake_hands sit sleep smile speak stand study talk 
+                        think walk wave worry write yawn )
+concept: ~classroom (board book ceiling chair chault classroom clock desk door eraser floor map notebook paper pen pencil student table teacher 
+                     wall window )
+concept: ~cleaners (bathtub bidet broom brush dental_floss dishtowel facecloth floss handtowel mop napkin paper_towel rag rake scrubbrush shower sink toothbrush towel 
+                    tub washcloth )
+concept: ~cleaning_substances (~SOAPPOLISH conditioner detergent shampoo soap toothpaste )
+concept: ~closeable (~CONTAINERS door )
+concept: ~clothes (~BOTTOM_CLOTHES ~CLOTHES_FOR_COLD ~CLOTHES_FOR_HOT ~CLOTHES_FOR_RAIN ~CLOTHES_IN_PAIRS ~CLOTHING ~EXTREMITIES_CLOTHES ~JEWELRY_ITEMS ~SHOE ~TOP_CLOTHES abarka abaya apparel attire clothes clothing garment garment~1 )
+concept: ~clothes_for_cold (long_underwear ski_jacket ski_pants stocking_cap vest )
+concept: ~clothes_for_hot (bathing_suit bikini cutoffs halter swim_trunks T-shirt tank_top )
+concept: ~clothes_for_rain (poncho raincoat rubbers slicker )
+concept: ~clothes_in_pairs (boot boxer_shorts glove jeans jockey_shorts mitten pajama pants panty panty_hose sandal shoe shorts slacks slipper sneaker sock stocking sunglasses )
+concept: ~clothing (anorak apron bathing_suit beanie belt bikini blouse bobbysocks boot briefs Burberry cap cape cloak clothes coat collar contacts cover 
+                    dress earmuff earring flippers foot frock galoshes glasses glove goggles gown halter_top hat high-heels hijab hood jacket jeans kilt kimono 
+                    mackintosh mask mini-skirt mitt mitten moccasin negligee overcoat pajamas pantie panties pants poncho pullover\ raincoat ring robe sandal scarf shawl 
+                    shirt shoe shorts ski_mask skirt slacks smock socks sock~n sunglasses sweater sweat-shirt swimming_trunks swimsuit T-shirt tank_top toga topcoat toupee trousers 
+                    trunks tunic turtleneck tutu tuxedo underpants underwear uniform vest weater wig )
+concept: ~cloud (altocumulus altostratus cirrocumulus cirrostratus cirrus cloud cumulonimbus cumulous nimbus stratus )
+concept: ~cocktail (Alabama_Slammer Anejo_Highball Bay_Breeze Bellini Black_Russian Bloody_Caesar Bloody_Maria Bloody_Mary Blue_Lagoon Bocce_Ball Boilermaker Bourbon_and_Water Brandy Brandy_Alexander Brown_Cow Buck_'s_Fizz Cactus_Banger Campari_and_Soda Cape_Codder 
+                    Champagne_Cocktail Cherry_Hooker Cosmopolitan Cuba_Libre Daiquiri Freddie_Fuddpucker Fuzzy_Navel Gimlet Gin_and_Tonic Gin_Buck Gin_Rickey Hairy_Navel Harvey_Wallbanger Highball Horny_Bull Irish_coffee Kir Kir_Royale Lime_Rickey Long_Island_Ice_Tea 
+                    Madras Mai_Tai Manhattan Margarita Martini Mimosa Mint_Julep Mojito Moscow_Mule Old_Fashioned Orange_Blossom Pina_Colada Red_Beer Rum_and_Coke Rum_and_Pepsi Salty_Dog Sangria Scotch_and_soda Screwdriver Seven_and_Seven 
+                    Singapore_Sling Sloe_Screw Smith_and_Kearns Spritzer Stinger Tequila_Sunrise Tequila_Sunset Vodka_Martini Vodka_Tonic Whiskey_Sour White_Russian Wine_cooler Wine_Spritzer Zombie )
+concept: ~coffee_shop (bun coffee coffee_shop hot_chocolate tea )
+concept: ~coin_shop (coin coin_shop paper_money )
+concept: ~college (~UNIVERSITY bachelors college degree freshman graduate junior masters PhD postgraduate senior sophomore undergrad undergraduate university )
+concept: ~color_words (color hue shade )
+concept: ~colors (~BLACK ~BLUE ~BROWN ~GRAY ~GREEN ~METALLIC ~ORANGE ~PURPLE ~RED ~WHITE ~YELLOW transparent )
+concept: ~combat_sports (boxing fencing jujitsu kendo martial_art martial_art~1 sumo wrestling karate kung_fu capoeira shinjutsu karate jujutsu aikido judo  )
+concept: ~comic (comic )
+concept: ~communication_artifacts (cellphone chalk computer Google mic microphone mike pen pencil phone telegraph telephone )
+concept: ~communications (message signal )
+concept: ~communicators (~COMMUNICATION_ARTIFACTS ~GESTURELIST ~SOUNDS )
+concept: ~company (company )
+concept: ~company_groups (association company corporation guild partnership )
+concept: ~comparisons (best better compare difference different further higher least less like lower more most opposite same similar similarity than unlike 
+                       various worse worst )
+concept: ~compass_directions (east north northeast northwest south southeast southwest west )
+concept: ~compassdirection (CNTR E N NE NW S SE SW W )
+concept: ~computer_scientist (computer_scientist )
+concept: ~conduits (~MOVEMENT_CONDUIT ~VEHICLE_CONDUIT aqueduct blacktop boundary chute cord drain driveway electrical_plug extension_cord hatch junction loophole outlet pipe railroad_track railway sewer 
+                    socket speedway straw track tube tv-antenna wall_outlet wall_socket )
+concept: ~confectioner (~CANDY chocolate confectioner sweets )
+concept: ~confiners (aquarium bird_cage birdcage cage cell doghouse kennel prison_cell terrarium trap )
+concept: ~confused_emotion (confusion )
+concept: ~container_furniture (armoir bookcase cabinet chest credenza cupboard dresser hutch shelf sideboard )
+concept: ~containers (~CONTAINER_ITEMS ~FORCE_CONTAINERS ~LIQUID_CONTAINERS ~SOLID_CONTAINERS )
+concept: ~contains (~CONTAINERS )
+concept: ~controllers (braces brake bridge brush clamp comb compass cover footbridge hair_brush handbrake handcuff key level lid mouse ruler straight_edge suspender 
+                       switch )
+concept: ~convenience_store (~FOOD convenience_store )
+concept: ~cookheating (bake barbeque boil broil fry roast simmer stir_fry )
+concept: ~chinese_cooking_styles (Cantonese Chinese Hunan Mongolian Sichuan Szechuan )
+concept: ~cookware (angel_food_cake_pan baking_pan bread_pan cake_pan casserole casserole_dish cookie_sheet dutch_oven frying_pan frypan griddle loaf_pan omelet_pan pan pie_pan pot roasting_pan sauce_pot saute_pan 
+                    sieve skillet soup_pot stockpot wok )
+concept: ~cool (cold cool )
+concept: ~cosmetics (cosmetics cosmetic~1 )
+concept: ~cost (cheap cost expense expensive price )
+concept: ~counting_quantity (armload boundless boundlessly bunch bundle centesimal cluster dab dozen duo endless finitely gross half handful haul heap immeasurably infinite 
+                             infinitely invariant iota limitless pair pile quad quantitative quantitatively quartet solo stack trio triple unbounded )
+concept: ~country_music_singers (Billy_Ray_Cyrus Dixie_Chicks Dwight_Yoakam Faith_Hill Garth_Brooks George_Strait Kenny_Rogers LeAnn_Rimes Martina_McBride Mary_Chapin_Carpenter Reba_McEntire Ricky_Skaggs Shania_Twain SheDaisy Sugarland Terri_Clark Tim_McGraw Trisha_Yearwood )
+concept: ~country_rock_groups (Charlie_Daniels_Band Commander_Cody_and_His_Lost_Planet_Airmen Creedence_Clearwater_Revival Grateful_Dead Juice_Newton Linda_Ronstadt Lynyrd_Skynyrd New_Riders_of_the_Purple_Sage Nitty_Gritty_Dirt_Band Ozark_Mountain_Daredevils Pure_Prairie_League The_Allman_Brothers_Band The_Byrds The_Eagles )
+concept: ~covers (armor bandage bandaid bedspread blanket dressing duvet helmet pillowcase sheet shield )
+concept: ~craft (craft embroidery knitting lace pottery sewing weaving )
+concept: ~craft_store (beads clay craft craft_paint craft_store craft_supplies crochet crochet_hook decoupage easel fabric_paint fasteners knitting leathercraft macrame marker needle notions paint-by-number 
+                       paper-mache paper_mache pins quilting ribbon ruler scrapbook_album scrapbooking sewing stamping stencil thimble thread yarn zipper )
+concept: ~creators (copier photocopier replicator )
+concept: ~crimes (~CRIMES_COMMON ~CRIMES_OF_MOBSTERS ~CRIMES_OF_POLITICS ~CRIMES_OF_PROFESSIONALS ~CRIMES_OF_PROPERTY ~CRIMES_OF_PUBLIC_ORDER ~CRIMES_OF_VIOLENCE felony infraction misdemeanor white_collar_crime )
+concept: ~crimes_common (armed_robbery burglary burgle larceny rob robbery )
+concept: ~crimes_of_mobsters (drug_trafficing racketeering vice )
+concept: ~crimes_of_politics (espionage sabotage sedition spy treason war_collaboration )
+concept: ~crimes_of_professionals (confidence_game forgery )
+concept: ~crimes_of_property (arson auto_theft bad_check shoplift vandalism vandalize )
+concept: ~crimes_of_public_order (drug_addition drunkenness gambling prostitution vagrancy )
+concept: ~crimes_of_violence (assualt child_molestation forcible_rape murder rape )
+concept: ~crustaceans (crustacean crustacean~1 shellfish shellfish~1 starfish )
+concept: ~dairy (~MILK cheese dairy eggs )
+concept: ~dairygroup (butter milk )
+concept: ~dance_stuff (~DANCES ~DANCING )
+concept: ~dances (ballet belly_dance can-can cha-cha-cha cha_cha_cha clogging contra folk foxtrot hip_hop hokey_pokey hully_gully jig jitterbug lambada limbo line macarena mambo 
+                  minuet modern_dance morris polka salsa samba shimmy swing swingsquare tango tap twist two_step waltz )
+concept: ~dancing (ballet choreography dance modern_dance stage_dancing~1 )
+concept: ~dangerous_job (bomb-disposal circus miner oil-rig racecar_driver Special_Forces stuntperson suicide_bomber terrorist test_pilot )
+concept: ~datatype (bool boolean character character_string double float int long_int short_integer string unsigned_int )
+concept: ~day_care_center (babysitting child_care day_care_center )
+concept: ~dayname (Friday Monday Saturday Sunday Thursday Tuesday Wednesday )
+concept: ~decorations (~COSMETICS ~JEWELRY ~JEWELRY_ITEMS bracelet Christmas_tree_ball Christmas_tree_light cologne crayon decoration dye earring eyeliner eyeshadow fragrance glitter gloss lacquer lipstick mascara 
+                       nail_polish nose_ring ornament paint perfume plaster popcorn_string ring scent stain tinsel varnish wallpaper )
+concept: ~defender (angel defender guardian parent protector )
+concept: ~degrees (~ADVANCEDDEGREE ~BASIC_DEGREES ~MEDIUMDEGREE )
+concept: ~deli (~SANDWICH cheese deli meat soup )
+concept: ~dentist_items (abscess braces caries cavity clean denture filling floss tooth tooth_decay toothbrush )
+concept: ~department_store (~CLOTHES department_store )
+concept: ~desert (desert )
+concept: ~designer (designer )
+concept: ~dessert (dessert~1 )
+concept: ~diet (Atkins diet Jenny_Craig low_carb Weight_Watchers )
+concept: ~different (contrast contrasting differ difference different disparate dissimilar divergent incomparable opposed unalike unrelated unsimilar )
+concept: ~dining_room_items (bowl fork glass knife napkin pepper_shaker pitcher plate salt_shaker silverware spoon table tablecloth tablespoon teaspoon )
+concept: ~dinosaurs (apatosaurus brontosaurus dinosaur~1 parasaurolophus  pterodactyl pterosaur stegosaurus tRex Tyrannosaurus_rex velociraptor )
+concept: ~directions (across ahead aim aside away back backward course direction down downstairs east forward from into left north out right 
+                      south through to toward up upstairs way west )
+concept: ~director (director )
+concept: ~disease (disease flu H1N1 hang-nail hang_nail hangnail infestation infestation~2 influenza pathological_state~1 psoriasis sickness )
+concept: ~distance_quantity (centimeter foot inch kilometer light-year lightyear meter mile millimeter )
+concept: ~division (division out_of per percent quotient_of ratio_of )
+concept: ~doctor (vet veterinarian  chiropractor optometrist coroner podiatrist audiologist oncologist doctor  Dr veterinary_surgeon pathologist  physician surgeon pathologist acupuncturist chiropractor doctor kinesiologist masseur personal_trainer physician psychiatrist psychologist surgeon therapist )
+concept: ~dog_breeds (basset beagle bulldog collie colly dachshund dalmation doberman hound poodle spaniel terrier )
+concept: ~draper (clothes draper nightclothes )
+concept: ~drinkstuff (drinker drinker~2  )
+concept: ~drinkable (~BOOZE)
+concept: ~druglist (~DRUGS_DEPRESSIVE ~DRUGS_HALLUCINOGEN ~DRUGS_ILLEGAL ~DRUGS_LEGAL ~DRUGS_NARCOTIC ~DRUGS_STIMULANT )
+concept: ~drugs_depressive (alcohol analgesic anti-diabetics aspirin barbituate downer Excedrin ludes Nembutal pain_pill Seconal sedative )
+concept: ~drugs_hallucinogen (acid cannabis LSD magic_mushroom marijuana mesc mescaline PCP peyote phencyclidine pot psilocybin )
+concept: ~drugs_illegal (acid blow cannabis cocaine coke crack crystal ecstasy gamja ganja hemp heroin LSD magic_mushrooms marijuana mdma mescaline meth methamphetamine 
+                         mushroom peyote pot reefer shroom smack weed )
+concept: ~drugs_legal (acetominephin alcohol aspirin caffeine codeine downers iodine nicotine Prozac Tylenol uppers )
+concept: ~drugs_narcotic (codeine heroin opiate )
+concept: ~drugs_stimulant (~TOBACCO amphetamines Benzedrine caffeine chocolate cocaine coffee coke crack crank Dexedrine diet_pill ecstacy freebase nicotine pep_pill speed tobacco )
+concept: ~drugstore (~COSMETICS ~HAIR_PRODUCTS ~VITAMIN antacid blade chapstick cold_medicine cold_remedy comb cosmetics cough_syrup diapers drugstore film lipstick lotion medicine mouthwash nail_polish 
+                     ointment razor sunglasses sunscreen tissues toothpaste vitamins )
+concept: ~dry_cleaner (dry_cleaner dry_cleaning )
+concept: ~eatable (~ANIMALS ~NUTRIENT )
+concept: ~economic_troubles (bubble crash crisis decline deteriorate disaster downturn drop fall recession slide slump woes )
+concept: ~economist ( )
+concept: ~electronic_furniture (CD_player computer gramophone keyboard monitor phonograph piano player_piano radio stereo television tv wireless_set )
+concept: ~electronic_items (adding_machine boombox calculator camcorder computer digital_camera dryer electronics fax_machine freezer fridge headphones home_theater keyboard lamp light light_bulb modem phone 
+                            printer radio sound_system stereo telephone television tumble-dryer tv washer )
+concept: ~element (chemical_element~1 element )
+concept: ~emopainter (~PAINTER painter )
+concept: ~emosadevent (be_sad broke_up catastrophe death depressed despondent died disaster famine feel_bad fire flood hurt ill illness injure injury loss_of_my lost_my 
+                  broke_up divorced     mourn sick tragedy raped killed murdered)
+concept: ~emosurpriseevent (amazing engagement fantastic incredible magnanimous magnificent marriage_proposal reunion surprise )
+concept: ~emotions (~ANGER_EMOTION ~BORED_EMOTION ~CONFUSED_EMOTION ~DISGUST_EMOTION ~FEAR_EMOTION ~HAPPY_EMOTION ~SAD_EMOTION ~SURPRISE_EMOTION ~SYMPATHY_EMOTION arrogance disrespect emotion feeling )
+concept: ~energy_force (electricity energy gravity magnetism radiation )
+concept: ~enterable (~BUILDING ~VEHICLE )
+concept: ~entertainment_stuff (~ART_STUFF ~DANCE_STUFF ~FILM_STUFF ~HOBBY ~MUSIC_STUFF ~READING_STUFF ~SEX_STUFF ~SPORT ~TOY carnival celebration circus festival fiesta pageant parade rodeo )
+concept: ~equals (are equals gives is sold_for was were will_be yields )
+concept: ~equestrian_sports (dressage harness_racing horse_racing polo riding show-jumping )
+concept: ~example (an_instance case citation example exemplar for_example for_instance go_on instance like_what more name_one sample specimen such_as )
+concept: ~exerciselist (aerobics box gym hike jog judo karate roller_skate run skate swim workout )
+concept: ~explosive (C4 explosive explosive~1 )
+concept: ~explosive_weapon (antipersonnel_mine bazooka bomb bouncing_betty bursting_explosive claymore disrupting_explosive dynamite fire_ship fragmentation_grenade Greek_fire grenade grenade_launcher hand_grenade high_explosive landmine mortar nuke RPG 
+                            TNT tnt )
+concept: ~extremities (ankle arm claw elbow feet finger fist foot hand heel hip knee kneecap leg limb palm tail thigh thumb 
+                       toe wing wrist )
+concept: ~extremities_clothes (barrette beanie bobbysocks boot cap contacts earmuff earring flippers galoshes glasses glove goggles hat high-heels hijab hood mask mitt 
+                               mitten moccasin ring sandal scarf shoe ski_mask socks sunglasses tie )
+concept: ~fabric (cotton fabric material~1 nylon rayon silk wool yarn )
+concept: ~fabric_store (~FABRIC fabric_store )
+concept: ~fairytale_characters (dragon frog king knight prince princess queen wizard )
+concept: ~fake_religious_sect (Christian_Science Christian_Scientist Freemason Freemasonry Moonie Satanism Satanist Scientology Scientologist Unification_Church Wicca Wiccan Witchcraft Witch )
+concept: ~family_adult (~FAMILY_ADULT_FEMALE ~FAMILY_ADULT_GENERIC ~FAMILY_ADULT_MALE )
+concept: ~family_adult_female (~MOTHER aunt daughter-in-law ex-wife fiancee girlfriend godmother grandma grandmom grandmother granny matriarch mistress step-mother stepmother widow wife )
+concept: ~family_adult_generic (ancestor cousin descendant parent stepparent )
+concept: ~family_adult_male (~BROTHER ~FATHER boyfriend brother-in-law ex-husband father-in-law fiance grandfather grandpa grandpop hubby husband patriarch son-in-law stepfather uncle widower )
+concept: ~family_children (~FAMILY_CHILDREN_FEMALE ~FAMILY_CHILDREN_GENERIC ~FAMILY_CHILDREN_MALE )
+concept: ~family_children_female (~SISTER daughter granddaughter grandniece niece sister sister-in-law step-daughter step-sister stepdaughter stepsister )
+concept: ~family_children_generic (baby child children grandchild grandchildren grandkid infant kid sibling step-child stepchild teen teenager toddler tot )
+concept: ~family_children_male (brother grandnephew grandson nephew son step-brother step-son stepson )
+concept: ~family_members (~FAMILY_ADULT ~FAMILY_CHILDREN twin )
+concept: ~farm_animals (boar bull calf chick cow duck duckling ewe foal goose gosling hen mare pig piglet ram rooster stallion )
+concept: ~farm_items (~FARM_ANIMALS barn barnyardcorn corral crop hay silo sow wheat )
+concept: ~fashionlist (~CLOTHES )
+concept: ~fast (bolt bounce brisk briskly careen chase dart dash dive drive drop fast flick fly gallop hurl hurry plummet propel 
+                quick quickly race ram rapid rapidly rip run rush sail scamper scramble shove skip smash speed spin spring sprint streak 
+                stride swat swerve swing swoop trot whisk zip )
+concept: ~fasteners (adhesive bolt brad buckle button cable chain clamp clothespin doornail embroidery_stitch fastener fastening fixing glue harness hitch holdfast lacing 
+                     nail paperclip paste peg pin ribbon riveter rivot rope safety_pin scotch_tape screw shoe_lace shoelace shoestring spike stake staple stitch strap 
+                     string tape tent_peg thread thumbtack twine welder zipper )
+concept: ~fastfood_place (breakfast burger dinner food french_fries fried_chicken fries hamburger lunch milk_shake )
+concept: ~father (dad dada daddy father old_man pa papa pappy pop step-father )
+concept: ~favorite (best fave favorite greatest like_most like_the_most love_the_most most_like most_liked most_love most_loved most_beloved)
+concept: ~fear_emotion (dread fright horror panic )
+concept: ~feeling_adequate (adequate capable competent composed confident encouraged excited in_control organized proud responsible satisfied )
+concept: ~feeling_alone (alienated alone cut_off detached excluded forsaken isolated left_out lonely lonesome misunderstood rejected shut_out )
+concept: ~feeling_angry (acrimonious angry annoyed appalled bitter boiling cross devastated disgusted enraged frustrated fuming furious hostile in_a_huff in_a_stew incensed indignant inflamed 
+                         infuriated irate irritated jealous livid mad offended outraged piqued provoked rageful resentful sullen up_in_arms virulent worked_up wrathful wrought_up )
+concept: ~feeling_apathetic (apathetic complacent full_of_ennui immobilized lazy lethargic numb passive quiescent unconcerned unmotivated )
+concept: ~feeling_attached (affectionate attached belonging captivated cherished compassionate connected empathetic included liked loved loving understood )
+concept: ~feeling_attracted (absorbed affected agog anxious attracted avid challenged concerned confident craving curious dedicated desirous eager earnest enchanted engrossed enthusiastic excited 
+                             fascinated fervent fervid full_of_anticipation hopeful inquisitive inspiring intent interested intrigued keen motivated needed nosey snoopy zealous )
+concept: ~feeling_belittle (belittled chagrined degraded diminished discounted discredited disgraced disrespected insignificant underestimated unsupported )
+concept: ~feeling_bored (~EMOBORED ambivalent apathetic bore_me bored boring complacent full_of_ennui indifferent lackadaisical unmotivated )
+concept: ~feeling_burden (burdened obligated pressured put_upon thwarted )
+concept: ~feeling_cheated (abused accused betrayed cheated coerced conned deceived disparaged duped exploited framed lied_to manipulated tricked victimized violated )
+concept: ~feeling_codependent (addicted codependent insecure needy )
+concept: ~feeling_demoralized (demoralized disappointed discouraged disheartened disillusioned disinclined repulsed stifled thwarted )
+concept: ~feeling_derailed (derailed disjointed disoriented torn )
+concept: ~feeling_embarass (ashamed awkward disparaged embarrassed guilty )
+concept: ~feeling_entitled (entitled exempt favored immune privileged )
+concept: ~feeling_esteem (admired appreciated esteemed respected revered significant supported valued worshiped )
+concept: ~feeling_fearful (afraid aghast alarmed anxious appalled apprehensive attacked awed cautious concerned cowardly defenseless diffident dismayed distrustful doubtful dubious exposed fainthearted 
+                           fearful fidgety frightened full_of_misgiving hesitant horrified hysterical in_fear indecisive insecure irresolute menaced misgiving nervous panicked paranoid pensive perplexed petrified phobic 
+                           quaking questioning restful scared shaky shocked skeptical suspicious tense terrified terrorized threatened timid timorous trembling tremulous unbelieving uncertain uncomfortable upset 
+                           wavering worried )
+concept: ~feeling_fearless (audacious bold brave certain confident courageous daring dauntless determined encouraged enterprising gallant hardy hearted heroic reassured resolute secure self-reliant 
+                            spirited stout )
+concept: ~feeling_focused (committed complacent determined focused in_the_zone )
+concept: ~feeling_free (autonomous free independent released unshackled )
+concept: ~feeling_happy (airy amused animated beatific blissful blithe bright brisk buoyant cheerful cheery comfortable contented convivial debonair delighted ecstatic elated enthused 
+                         enthusiastic excited exhilarated exultant fabulous fain~a fantastic festive free_and_easy frisky genial glad gleeful great happy high-spirited hilarious humorous important inspired 
+                         jaunty jocular jolly jovial joyful joyous jubilant laughting lighthearted lively lucky merry mirthful overjoyed peaceful playful pleased proud rapturous satisfied 
+                         saucy self-satisfied serene sparkling spirited sprightly sunny terrific thankful tranquil transported vivacious wonderful )
+concept: ~feeling_hated (abandoned chastised criticized deserted discarded forsaken hated humiliated ignored left_out let_down overlooked punished rejected replaced unapproved_of unlovable unloved )
+concept: ~feeling_independent (arrogant autonomous cocky independent macho strong )
+concept: ~feeling_irristable (aggressive exhuberent immortal indestructible invincible invulnerable irresistible powerful unstoppable )
+concept: ~feeling_justified (absolved acquitted appeased justified redeemed satisfied vindicated )
+concept: ~feeling_lost (baffled bewildered confused lost unfocussed )
+concept: ~feeling_loved (accepted adorable adored approved_of desirable entrusted loved validated valued welcomed )
+concept: ~feeling_lustful (addicted ardent aroused horny hot_and_bothered infatuated lustful needy passionate turned_on yearning )
+concept: ~feeling_obsessed (compelled consumed obsessed )
+concept: ~feeling_outofcontrol (careless impotent obligated obliterated out_of_control powerless reckless vulnerable weak )
+concept: ~feeling_powerless (bashful beaten_down blocked defeated discouraged disorganized exhausted frustrated hopeless irresponsible overwhelmed powerless stifled thwarted worn_down worn_out )
+concept: ~feeling_sad (aching afflicted agonized anguished bereaved cheerless clouded crestfallen crushed dark dejected depress depressed depressing despairing despondent disappointed disappointing disconcolate 
+                       disconsolate discontented discouraged disheartened dismal displeased distressed dolorous down downcast downhearted dreadful dreary dull embarrassed feel_blue flat frowning funereal gloomy 
+                       glum grief-stricken grieved guilt hapless heartbroken heavyhearted humiliated hurt in_despair in_pain in_the_dumps injured joyless listless listlessness lonely low lugubrious melancholy 
+                       miserable moody moping mournful offended oppressed out_of_sorts pathetic piteous regretful remorse rueful sad shamed shocked somber sorrowful spirited spiritless suffering 
+                       sulky sullen tortured tragic unhappy victimized withdrawn woebegone woeful worried )
+concept: ~feeling_safe (at_ease calm comfortable composed peaceful relieved secure )
+concept: ~feeling_singledout (affronted categorized cross-examined guilty interrogated judged labeled rated singled_out stereotyped wronged )
+concept: ~feeling_surprise (astonished bewildered confused shocked startled surprised )
+concept: ~feeling_trapped (cornered deceived imprisoned optionless outmaneuvered set_up stifled trapped tricked )
+concept: ~feeling_words (~EMODISGUST ~EMOPAIN ~EMOSURPRISE ~FEELING_ADEQUATE ~FEELING_ALONE ~FEELING_ANGRY ~FEELING_APATHETIC ~FEELING_ATTACHED ~FEELING_ATTRACTED ~FEELING_BELITTLE ~FEELING_BORED ~FEELING_BURDEN ~FEELING_CHEATED ~FEELING_CODEPENDENT ~FEELING_DEMORALIZED ~FEELING_DERAILED ~FEELING_EMBARASS ~FEELING_ENTITLED ~FEELING_ESTEEM 
+                         ~FEELING_FEARFUL ~FEELING_FEARLESS ~FEELING_FOCUSED ~FEELING_FREE ~FEELING_HAPPY ~FEELING_HATED ~FEELING_INDEPENDENT ~FEELING_IRRISTABLE ~FEELING_JUSTIFIED ~FEELING_LOST ~FEELING_LOVED ~FEELING_LUSTFUL ~FEELING_OBSESSED ~FEELING_OUTOFCONTROL ~FEELING_POWERLESS ~FEELING_SAD ~FEELING_SAFE ~FEELING_SINGLEDOUT ~FEELING_SURPRISE ~FEELING_TRAPPED )
+concept: ~feelings (~FEELING_WORDS afraid alarm amaze amazement amuse anger angrily angry annoy appreciate ashamed attitude aware bore bother calm care certain 
+                    charm concentrate concern confuse confusion content curious desire desperate disappoint disbelief disgust disturb doubt ease embarrass emotion enjoy excite excitement 
+                    fear feel frighten frustrate frustration fun glad guilty happily happy hate hope horror impress innocent interest irritate jealous joy love 
+                    mad miss mood nerve nervous nightmare panic pity please pleasure pressure pride proud puzzle rage regret relax relief relieve respect 
+                    sad satisfy scare scary shock sorry spirit startle stress stun suffer sure surprise surprisingly tense terrify trouble upset wonder worry )
+concept: ~female (babe bachelorette spinster whore prostitute chick chix dame damsel 
+	cocotte harlot doxy
+	dudette female femme gal girl girlfriend hoyden lady lass lassie lesbian lesbo woman )
+concept: ~fertilizer (fertilizer plant_food~1 )
+concept: ~film_stuff (~ACTING cinema film movie theatre )
+concept: ~fine_arts (drawing fine_arts painting wood_carving )
+concept: ~fire_department (fire fire_brigade fire_department fire_truck )
+concept: ~fire_force (blaze fire flame spark )
+concept: ~fish (abalone aquatic_vertebrate~1 Koi koi ebi electric_eel fish fish_family~1 fish~1 fish~2 octopus squid swordfish toro tuna young_fish~1 )
+concept: ~fishmonger (fish fishmonger )
+concept: ~flame_weapon (firebomb flame_cartridge_weapon flamethrower gasoline incendiary_grenade incendiary_rocket match molotov_cocktail napalm napalm_missle thermite torch )
+concept: ~flammible_property (~CLOTHES ~FABRIC ~FURNISHING biodiesel book canola_oil diesel Dimethyl_ether dynamite ethanol flame_thrower fuel furniture gas gasoline grass house hydrogen kerosene 
+                              magazine match methanol newspaper oil paper paraffin propane tree~1 wood )
+concept: ~flavorer (flavorer flavoring flavouring~1 )
+concept: ~florist (~FLOWERS bouquet floral_arrangement florist )
+concept: ~flowers (roses camelia flower~2 forget-me-not gardenia hibiscus hydrangea iris lilac peony poppy rose sunflower violet )
+concept: ~fnfactotum (color metrology number person quality time_period )
+concept: ~focus (about among any background base center clue concentrate concern detail distract feature focus from general issue local main major 
+                 matter mental natural nature of purpose random social subject that these this those to topic within )
+concept: ~food (~BAKED_GOODS ~BREAKFAST_ITEMS ~CANDY ~CHEESES ~DELI ~DESSERT ~FOODGROUP ~FRUIT ~LUNCH_ITEMS ~MEAT ~SNACKGROUP ~VEGETABLE abiaba acai_berry acerola achar achee achocha achokcha 
+                ackee acorn_jelly acorn_squash aduki agar agemochi aguacate aguay aguaymanto agutak ahi ahipa ail_des_noi aillade aioli air_natu_campur airan ais_kacang ajipa ajjoli 
+                ajvar akee akutaq albumen alegar alfajor alholi aligot alimentation~2 allioli allspice almond almond_oil altarage alu-Tikki alu_Chop amala amanatto amandine amazon_grape 
+                amazon_tree_grape ambari ambrosia ananas andagi anman antipasti antipasto apom_Balik appalum appetizer apple apple_chips apple_gourd apple_pie applesauce appoll apricot araza areca_nut 
+                arepa argan_oil arhar arhat arjoli aronia artichoke ash_gourd asiago asparagus asparagus_bean asparagus_lettuce atemoya attieke au_jus aubergine avocado ayran ayrani azuki 
+                azuki_bean azym azyme bagel beef beet burger butter candy casserole cheese cheese~1 chicken chili clover cocoa coconut corn croissant crouton 
+                custard dill donut eggs fish flour~1 food_grain~1 food_product~1 french_fries fries frozen_yogurt fudge fungus garlic gravy green_bean green_beans grits haggis hamburger 
+                honey hotdog ice_cream jelly larb lasagna lettuce liver maize mango mansef meal~1 mushroom nasi_lemak omelette oregano pea peppermint pie pie_ala_mode 
+                moo_goo_guy_pan
+				pizza pork potato rice roast roast-beef roughage~1 sandwich sesame sirloin solid_food~1 spinach spotted_duck starches~1 steak stroganoff sushi T-bone tapioca tarte_flambe 
+                tater tinned_goods~1 waffle xiaolong xingal xiu_cai yogurt )
+concept: ~foodbeverage (~BEVERAGE ~FOOD ~FOODGROUP )
+concept: ~foodgroup (bread carb carbohydrate dessert fast_food fruit meat vegetable )
+concept: ~football_teams (~AFC-EAST_FOOTBALL_TEAM ~AFC-NORTH_FOOTBALL_TEAM ~AFC-SOUTH_FOOTBALL_TEAM ~AFC-WEST_FOOTBALL_TEAM ~NFC-EAST_FOOTBALL_TEAM ~NFC-NORTH_FOOTBALL_TEAM ~NFC-SOUTH_FOOTBALL_TEAM ~NFC-WEST_FOOTBALL_TEAM 49ers Bears Colts Patriots Ravens Saints Steelers Vikings )
+concept: ~force_containers (battery leyden_jar )
+concept: ~forces (~ENERGY_FORCE ~FIRE_FORCE ~LAND_FORCE ~MAGIC_FORCE ~WATER_FORCE ~WIND_FORCE force )
+concept: ~frenchwords (ami amour bon bonjour bonsoir ca ca_va comment-allez comment_allez comment_tallez-vous comment_tallez_vous Comment_tu_t'appelle comment_vas-tu Comment_vous_appelez-vous jamais je_taime mais mon oui 
+                       parles parles-tu parlez parlez-vous parlez_vous quelle sa_va soir taime tu tu_parle tu_parles va votre votre_nom voud voulez vous_parlez )
+concept: ~usually( usually typically commonly)
+concept: ~frequency (always constantly ever habit happen never occur often once rarely sometimes steady tend time turn twice ~usually )
+concept: ~friend (beau swain boyfriend buddy close_friend friend girlfriend kith lover pal sidekick )
+concept: ~fruit (edible_fruit~1 fruit )
+concept: ~functions (~BURNABLE ~CARRYABLE ~CLOSEABLE ~CONTAINS ~EATABLE ~ENTERABLE ~IMMOVABLE ~LOCKABLE ~RIDEABLE ~SHOOTABLE ~SUPPORTS ~SWITCHABLE ~THROWABLE ~TOYABLE ~UNREACHABLE ~WEARABLE )
+concept: ~fungi (fungus_family~1 fungus~1 )
+concept: ~furnishings (picture rug sculpture wallhanging )
+concept: ~furniture (~CONTAINER_FURNITURE ~ELECTRONIC_FURNITURE ~SURFACE_FURNITURE furnishing~2 )
+concept: ~furniture_store (~FURNITURE furniture_store )
+concept: ~game_names (~BOARD_GAMES ~CARDGAME ~GAMES_KID ~WORD_GAMES D_and_D Dungeons_and_Dragons game~1 guessing_game~1 jigsaw_puzzle parlour_game )
+concept: ~games (~GAME_NAMES ~GAMES_KID ~WORD_GAMES game )
+concept: ~games_kid (7-up blind_man_'s_bluff capture_the_flag cat_'s_cradle child_'s_game~1 dogde_ball duck_duck_goose follow_the_leader hopscotch I_spy jump_rope jumprope keep_away kickball leapfrog mother_may_I musical_chairs red_light_,_green_light red_rover 
+                     rock_paper_scissors Simon_says spud tag thumb_war tug-o-war )
+concept: ~gas_station (auto_repair diesel full_service gas gas_pump gas_station gasoline high_test octane oil unleaded )
+concept: ~gas_weapon (blistering_agent bug_spray chemical_bomb Chemical_Mace chemical_weapon chloroacetophenone chlorobenzylidenemalononitrile CN_gas CS_gas dichloroethyl_sulfide gas_bomb lachrymator lacrimator mace Mace mustard_agent mustard_gas nerve_agent nerve_gas 
+                      nitrochloromethane organophosphate_nerve_agent pepper_spray poison_gas sarin soman sulfur_mustard tabun tear_gas teargas VX_gas )
+concept: ~gases (~AIR gas steam vapor )
+concept: ~gender_odd (androgenous androgeny hermaphrodite neuter transgender transvestite )
+concept: ~genderfemale (dudette female gal girl lady lass lassie lesbian lesbo woman spinster)
+concept: ~gendermale (bloke boy dude fellow  gentleman guy lad laddie male man )
+concept: ~gendernoun (~FEMALE ~MALE gender )
+concept: ~genericbody (~BONE blood flesh muscle nail nerve skin )
+concept: ~geo_shape (plane_figure polyhedron polyhedron~1 two-dimensional_figure~1 )
+concept: ~geographical_areas (~ALLIANCE ~CITY ~CONTINENT ~COUNTRY ~GALAXY ~ISLAND ~LAKE ~OCEAN ~PLANET ~RIVER ~SEA ~STAR_SYSTEM )
+concept: ~germanwords (bisschen du geht kleine sie sprechen warum wie )
+concept: ~gesturelist (blink clap cuddle fluster frown gag glance grimace gulp hug jab leer limp nip nod peck push quiver rub 
+                       scowl shake shiver slap smile sneer spanking squirm startle stomp stroke tremble twiddle twinge twirl twitch wiggle wink )
+concept: ~gift_shop (card gift gift_shop )
+concept: ~godnames (Allah G_d God Yahweh )
+concept: ~goodweather (cold hot humid muggy rain showers sunny sunshine warm windy )
+concept: ~grains (flax hay straw )
+concept: ~graphic_arts (bookbinding graphic_arts intaglio lithography printing )
+concept: ~gray (ashen cesious cinerious columbine dove grayish greyish  gray greige grey gridelin griseous hoary liard lovate plumbeous steel taupe )
+concept: ~greek_gods (Aphrodite Apollo Ares Artemis Athena Demeter Dionysus Eros Hades Helios Hepharestrus Hera Hermes Hespera Hestia Nemesis Pallas_Athena Pan Persephone 
+                      Poseidon Selene Zeus )
+concept: ~green_other (celery emerald lime mint olive sage apple)
+concept: ~green (  ~green_other caesious celadon greenish chartreuse chlorochrous corbeau eau-de-nil  glaucous green kelly   olivaceous  pistachio porraceous prasinous 
+                  smaragdine tilleul virescent virid viridian zinnober )
+concept: ~groups (~COMPANY_GROUPS ~POLITICAL_GROUPS ~RELIGIOUS_GROUPS ~SCHOOL_GROUPS ~STAFF_GROUPS )
+concept: ~hair_colors (bald blond brunette redhead )
+concept: ~hair_products (conditioner hair_coloring hair_dye shampoo )
+concept: ~hair_salon (hair_cut hair_salon hair_styling haircut highlight perm tint )
+concept: ~haircut (bowl curtains haircut hedgehog mohican mullet perm skinhead )
+concept: ~happy_emotion (affection delight eager happiness harmony hope joy love malice optimism pleasure triumph trust )
+concept: ~happyevent (a_raise anniversary birthday praise praising promotion recognition smile triumph victory you_succeeed you_won )
+concept: ~hardware_store (~TOOL bolt chisel crowbar drill electrical electrical_tape extension_cord fixture glue glue_gun handsaw hardware_store hatchet hook key level lock nail 
+                          nuts paint paint_can paintbrush pan pliers plumbing pot sandpaper saw screw sink socket stepladder tape_measure tool tool_box turpentine vise washer 
+                          wire wrench )
+concept: ~harmful_substance (~ACIDLIST ~POISON exhaust pollution )
+concept: ~hate (~DISLIKE least_favorite least_like like_least)
+concept: ~hattributes (agility cool dexterity imagination intelligence luck muscle strength )
+concept: ~hawaii_landmarks (Arizona_Memorial Atlantis_Submarines Bishop_Museum Diamond_Head_Crater Dole_Plantation Hanauma_Bay Hawaiian_Waters_Adventure_Park Honolulu_Zoo International_Market Iolani_Palace Kailua_Beach_Park Pali_Lookout Pearl_Harbor Polynesian_Cultural_Center Punchbowl_Cemetary University_of_Hawaii Waikiki_Aquarium Waikiki_Beach Waimea_Bay )
+concept: ~hawaiian_gods (Kanaloa kane Kukailimoku Lono Pele )
+concept: ~he (~FAMILY_ADULT_MALE ~FAMILY_CHILDREN_MALE ~FATHER ~MALE ~MALENAME ~OCCUPATION_MALE ~RELIGIOUS_LEADERS ~ROYALTY_MALE ~RULER beau squire suitor swain )
+concept: ~headpart (beak beard brain brow cheek chin ear earlobe eye eyeball eyebrow face fang forehead hair head jaw larynx lip 
+                    mane molar mouth mustache neck nose skull throat tongue tooth tusk voice )
+concept: ~health_food_shop (health_food_shop low_fat_food mineral soy sugar_free_food vitamin wholemeal )
+concept: ~height_words (foot inch m meter shorts tall )
+concept: ~heightnoun (centimeter feet height inch meter )
+concept: ~herbspice (ajwain akudjura alkanet allspice anardana anise aniseed_myrtle annatto apple_mint asafoetida asarabacca avocado_leaf barberry basil bay_leaf bergamot black_cardamom black_mustard blue_fenugreek 
+                     blue_melilot boldo borage brow_mustard calendula camphor_laurel candle_nut capers caraway cardamom carob cassia catnip cayenne cayenne_pepper celery_seed charoli chervil chicory chili_pepper 
+                     chipotle chives cicely cilantro cinnamon clove coriander coriander_seed costmary cudweed cumin curry_leaf dill dill_seed elderflower elephant_garlic fennel fenugreek fingerroot garlic 
+                     ginger herb~1 hops horseradish jasmine juniper_berry kaffir_lime lavender lemo_verbena lemon_balm lemon_ironbark lemon_myrtle lemongrass licorice liquorice lovage mace marjoram mesquite mint 
+                     mustard nasturtium nutmeg oregano orris_root paprika paracress parsley pepper peppermint poppy_seed pot_marigold rosemary safflower saffron sage salt sassafras sesame_seed sorrel 
+                     spearmint spikenard star_anise stinging_nettle sweet_cicely tarragon thyme turmeric vanilla wasabi watercress wattleseed wintergreen woodruff wormwood yerba_buena )
+concept: ~hitting_weapon (bat bludgeon brass_knuckles crowbar knuckle_duster knuckles knucks mace mallet nun_chuck quarterstaff ram sledge_hammer sledgehammer staff war_hammer warhammer whip )
+concept: ~hobbies_animals (hunting shark_fishing  fish fishing dog_training saltwater_aquariums  horse_riding pets pet_adoption  animal_breeding aquarium beekeeping bird_watching dog_breeding dog_training elephant_training falconry fishkeeping herpetoculture horse_riding horses human_agility hunting vivariums )
+concept: ~hobbies_arts_and_crafts (beadwork_and_beading candlemaking crochet embroidery enamels engraving glass_blowing gunsmithing jewelry_making leather_crafting origami painting_and_drawing paper_making pottery quilling scrapbooking sculpture soapmaking tole_painting 
+sewing altar_art beading blacksmithing book_making calligraphy candles collaging cooking cosplay crochet cross-stitch doll_making dollhouses drawing embroidery enamels engraving figure_painting film_making 
+ acrylic_paintings painting beading beadwork  floral_arrangements  cake_decorating graffiti_art handcrafted_jewelry handicrafts handmade_jewelry jewelry_making 
+painting  textiles  tie_dyeing  taxidermy quilting airbrushing
+tattooing tattoos  wood_carving woodworking  knitting   face_painting                    glassblowing go_karts graffiti henna home_brewing house_making jewellery_making jigsaw_puzzles knitting leather_crafting lifecasting making_dioramas making_dollhouses making_musical_instruments making_telescopes origami painting papercraft pottery quilting 
+ pottery soap_making string_figures matchstick_modeling  knotting  leather_craft Italian_art  crafts crochet crocheting 
+ blacksmithing  watercolor_painting   macrame  embroidery                        radio_controlled_cars radio_controlled_planes restoring_antiques scrapbooking sculpture sewing shadow_boxes soapmaking 
+  arts  body_art  body_piercing calligraphy  candle_making drawing scrapbooking sewing cross-stitch sand_craft sand_sculpting sculpting stained_glass  origami paper_crafts papermache papermaking
+	needlepoint oil_painting 					  splatter_painting stained_glass stamping tole_painting walking_sticks warm_glass watercolor weaving wood_carving woodworking 
+          ~hobbies_paper_crafts                         weaving wire_jewelry_making wood_carving )
+concept: ~hobbies_collectables (antiques arcade_games arrow_heads artwork autographs aviation_archaeology banknotes baseball_cards beetles books bottle_caps bottles bottles_and_cans business_cards butterflies butterflies/insects calendars cameras candlesticks 
+  coin_collecting collectibles collecting collecting_antiques collecting_artwork diecast_collectibles button_collecting 
+ dolls rock_collecting  tool_collecting toy_collecting train_collecting                               cans cards cassettes cds christmas_accessories classic_video_games classic_videogames clocks coasters coins comic_books conifer_cones crystals crystals_and_rocks currency dice die-cast_toys dumpster_diving enamels fashion_design 
+  antique_cars antiques antiquing   numismatics numismatic   philately   philatist  feathers fossils found_objects fountain_pens guns handbags hats hummels insects jewelry keychains knives license_plates lunchboxes manga matchboxes matchcovers memorabilia microchips militaria 
+       art_collecting stamp_collecting   minerals miniature_figures model_trains moths movies newspapers patches phillumenism photographs pinball_machines plates postcards posters quotations recordings records rocks rocks_ salt_and_pepper_shakers scale_models 
+                                shopping_lists snow_globes souvenirs spoons sports_cards stamps stickers swords teddy_bears terry_bears thimbles toys trading_cards treasure_hunting watches wine yardsticks )
+
+concept: ~hobbies_electronic (  amateur_radio  amateur_and_ham_radio ham_radio amateur_radio building_circuits cb_radio circuit_bending designing_and_building_electronic_circuits diy_audio fm_dxing hardware_hacking home_automation home_theater home_theatre r/c_boats r/c_cars r/c_helicopters r/c_planes robotics tv_dxing )
+concept: ~hobbies_food ( tea_tasting eating_out cooking "to cook" wine_making   brewing_beer home_brewing baking barbecue beer_making brewing_beer brewing_mead brewing_wine cake_decorating cake_making grilling home_canning home_jarring homebrewing opencola wine_tasting )
+concept: ~hobbies_games_and_toys (video_games playing_cards  billiards pinochle online_games chess building_scale_models bridge boardgames  dominoes legos  r/c_boats r/c_cars r/c_helicopters r/c_planes  backgammon badminton  games poker backgammon board_games bridge card_games carrom checkers chess chinese_checkers clue collectible_card_games cribbage cue_sports dominoes euchre fantasy_sports gin_rummy go hearts monopoly 
+  casino_gambling Warhammer scale_modeling Tetris  World_of_Warcraft videogames   model_rockets modeling modeling_ships models                    pente poker risk role-playing_games rook rummikub spades stratego sudoku tiddlywinks tournament_scrabble trading_card_games video_games wargaming )
+concept: ~hobbies_gardening_and_plants (bonsai bonsai_tree gardening  bonsai floral_arranging flower_gardening food_gardening gardening grafting hothouse_gardening hydroponics orchid_raising terrariums )
+concept: ~hobbies_music (listening_to_music playing_music online_music  listening_to_music piano guitar compose_music  musical_instruments singing_in_choir singing_lessons playing_music composing_music karaoke learn_an_instrument )
+concept: ~hobbies_observation (home_theater tv_watching train_spotting renting_movies going_to_movies movies watching_tv  watching_sports people_watching cloud_watching bird_watching birding  aircraft_spotting amateur_astronomy   astronomy butterfly_watching  aircraft_spotting amateur_astronomy bird_watching bus_spotting crowd_watching geyser_gazing gongoozler horoscopes people_watching train_spotting transport_spotting )
+concept: ~hobbies_paper_crafts (decoupage making_paper origami paper_dioramas paper_models quilling tatebanko )
+concept: ~hobbies_performing ( theater  dancing graphology card_reading astrology palmistry puppetry fortune_telling storytelling   tarot_card_reading dancing illusion juggling magic   latin_dances line_dancing salsa_dancing hip_hop_dancing  Irish_dancing belly_dancing acting  ballet_dancing ballroom_dancing breakdancing flamenco tango_dance  amateur_theater amateur_theatre bhangra_dancing dancing juggling magic magic_tricks mime pantomime poetry_reading puppet_theatre singing sleight_of_hand storytelling )
+concept: ~hobbies_photography ( photo_rating photography photograph portraiture_photos nature_photography  darkroom astrophotography  digital_photography  aerial_photography astrophotography darkroom_work kite_photography photography )
+concept: ~hobbies_scale_model_building (backyard_railroads dioramas gunpla live_steam_models matchstick_models military_models model_aircraft model_cars model_commercial_vehicles model_engineering model_figures model_houses model_military_vehicles model_nations model_railroads model_railways model_rockets model_ships model_yachting 
+                                        model_yachts wargame_terrain_making )
+concept: ~hobbies_science (microscopy star_astronomy lasers pyrotechnics kitchen_chemistry electronics rockets  robotics  amateur_astronomy amateur_microscopy astronomy electronics fireworks genealogy kitchen_chemistry lasers mass-observation microscopy model_airplanes model_rocketry robots rock_collecting  telescope_making )
+concept: ~hobbies_sports_and_outdoors (airsoft backpacking ballet_dancing baseball belly_dancing bird_watching birdfeeding birding birdwatching bouldering buildering bungee_jumping butterfly_collecting butterfly_watching camping canoeing caving fencing fishing 
+motorcycling swimming skiing walking tennis golf hiking horseback_riding exercise kayaking    bicycling bmx     boating    body_building                           fly_fishing footbag four_wheeling gardening geocaching ghost_hunting ghosthunting gold_panning golfing hacky_sack spelunking caving hang_gliding hiking historical_trekking horse_riding hot_air_ballooning hunting ice_skating kayaking kite_flying laser_skirmish 
+running rock_climbing playing_team_sports martial_arts  basketball fly_fishing fly_tying football
+diving hang_gliding hiking  skateboarding skeet_shooting sumo_wrestling surf_fishing surfing swimming  snorkeling snow_skiing snowboarding soccer running sailing sky_diving skydiving 
+go_kart_racing exercise race team_sports boating bowling camping  bicycling paintball bowling  aerobics aikido baseball camping canoeing fencing fishing hunting  ice_skating kite_boarding kiteboarding kites kitesurfing  hot_air_ballooning hula_hooping 
+darts speed_skating spelunkering tennis scuba_diving 
+ cave_diving  cheerleading  weightlifting whitewater_rafting windsurfing   aerobics archery aviation badminton baseball basketball bowling boxing cheerleading cricket cross_country cycling dance diving fencing fly_fishing football free_running freshwater_fishing 
+  trekking    motorcycles mountain_biking mountain_climbing                             gliding golf gymnastics hanggliding historical_fencing horseshoes hunting ice_skating jogging kitesurfing lacrosse marbles martial_arts netball paintball parkour racquetball ringette rounders rowing 
+kung_fu judo car_racing yoga    golf frisbee_golf    four_wheeling                               running sailing saltwater_fishing skateboarding skating skiing slacklining snowboarding soccer softball squash surfing swimming table_tennis tae_kwon_do tennis track trampolining ultimate unicycling 
+parachuting paragliding    rafting  river_rafting       kickboxing                         volleyball walking weight_lifting yachting yoga                                  letterboxing martial_arts mountain_climbing nature_walking nudism organic_gardening paintball paintballing pinball plinking rafting rock_climbing rockhounding sailing scuba_diving sight_seeing skateboarding skiing skydiving snorkeling 
+     physical_exercise                                  snorkelling snowboarding softball spelunking stone_skipping surfing survival_camping table_tennis tombstone_rubbing treasure_hunting urban_climbing urban_exploration walking )
+concept: ~hobbies_puzzles ( jigsaw_puzzles crossword_puzzles sudoku_puzzles sudoku riddles)
+concept: ~hobbies_travel(travel traveling cruising vacation family_vacations)
+concept: ~hobbies_social(entertaining church_activities volunteer_work volunteer socialize forums texting radios online_chatting online_dating  social_networking socializing )
+concept: ~hobbies_writing ( writing blogging journaling keep_a_journal)
+concept: ~hobbies_non (housework sleeping relaxing reading eating_out family_time home_repair)
+concept: ~hobbies_finding (shop geocaching metal_detecting garage_saleing geo_caching dumpster_diving)
+concept: ~hobby (~hobbies_non  ~hobbies_finding ~hobbies_travel ~hobbies_social ~hobbies_writing ~hobbies_collectables  ~HOBBIES_PUZZLES ~HOBBIES_ANIMALS ~HOBBIES_ARTS_AND_CRAFTS ~HOBBIES_ELECTRONIC ~HOBBIES_FOOD ~HOBBIES_GAMES_AND_TOYS ~HOBBIES_GARDENING_AND_PLANTS ~HOBBIES_MUSIC ~HOBBIES_OBSERVATION ~HOBBIES_PAPER_CRAFTS ~HOBBIES_PERFORMING ~HOBBIES_PHOTOGRAPHY ~HOBBIES_SCALE_MODEL_BUILDING ~HOBBIES_SCIENCE ~HOBBIES_SPORTS_AND_OUTDOORS
+ each    computer crafts         working_on_cars
+ yoyo
+ sketching freshwater_aquariums  aeromodeling     piercings        beatboxing bell_ringing  
+                      cigar_smoking       coloring_pages computer_activities computer_games  craft_books      
+                    do_it_yourself      educational_courses      family_fun  fast_cars           genealogy geneaology   ghost_hunting 
+                 glowsticking     grip_strength groups   handwriting_analysis                 internet jet_engines kids_'_art kids_'_crafts  
+                  learning_a_foreign_language learning_an_instrument learning_to_pilot_a_plane   making_model_cars making_walking_sticks 
+                 map_making meditation            optical_illusions    smoking_pipes space_exploration   tesla_coils 
+                 tombstone_rubbing  treasure_hunting trekkie  tutoring_children  urban_exploration      watching_sporting_events  
+                  working_on_cars   )
+concept: ~hockey_teams (Blackhawks Bruins Flyers Maple_Leafs Oilers Rangers Detroit_Red_Wings Red_Wings RedWings Sabres Sharks Thrashers )
+concept: ~holdable (abacus axe bat bazooka bow brass_knuckles broadsword brush bug_spray chainsaw cheese crowbar dabakan donut excalibur fedora fishing_pole flamethrower flugelhorn 
+                    football fudge garlic grappling_hook grenade guitar gun gyrojet gyroscope haggis insect_spray lasso mace magazine necronomicon night_vision_goggles ocarina pamphlet paper_clip pistol 
+                    pitchfork ray_gun salad saw scalpel scissors shiv shotgun shuriken sickle stethoscope trash trumpet umbrella volleyball wand whip zweihandler )
+concept: ~hospital (ambulance disease emergency hospital illness medicine surgery )
+concept: ~hotel (bed food hotel restaurant sleep )
+concept: ~house_problems (drip flooded_basement frozen_pipe leak leaking_roof no_heat roof_leak stopped_up_toilet )
+concept: ~household_tasks (change_the_light_bulb clean clean_the_refrigerator cook defrost_the_freezer dry_the_dishes dust_the_furniture feed_the_dog fold_the_clothes iron_the_clothes mow_the_lawn vacuum_the_carpet vacuum_the_rug wash_the_windows )
+concept: ~human_data (~PHYSICALITY ~POSSESSIONS ~PSYCHALITY ~SOCIETAL_DATA )
+concept: ~human_surface (armchair bean_bag beanbag bed bench chair chaise_lounge cot couch cushion hammock love_seat mattress ottoman recliner rocking_chair seat settee sleeping_bag 
+                         sofa stool tuffet )
+concept: ~ice_cream_store (ice_cream ice_cream_store icecream )
+concept: ~identity (name role status/wealth )
+concept: ~if (assume hypothetically if imagine pretend suppose )
+concept: ~image_websites (420Chan 4chan 711Chan Flikr Hulu Krautchan Truveo YouTube )
+concept: ~immovable (~BUILDING ~SCENERY )
+concept: ~industrial_substances (brass bronze ceramic coal iron petroleum rubber steel )
+concept: ~information_center (information information_center tourist_attraction )
+concept: ~insects (arachnoid~1 bee bug~n caterpillar cockroach cocoon firefly insect insect~1 ladybug larvae larva~1 lice louse spider termite )
+concept: ~instrumenting (marching_band orchestra symphony symphony_orchestra )
+concept: ~insurance (auto_insurance automobile_insurance car_insurance disability_insurance fire_insurance home_insurance homeowner_'s_insurance house_insurance insurance life_insurance property_insurance renter_'s_insurance term_life )
+concept: ~insurance_agent (~INSURANCE insurance_agent )
+concept: ~intelligent_being (~AMERICANINDIAN ~MYTHICAL_INTELLIGENT_BEING human human_being man woman )
+concept: ~interjections (~EMOAPOLOGY ~EMOBEG ~EMOBORED ~EMOCURSE ~EMODISGUST ~EMOGOODBYE ~EMOHAPPY ~EMOHELLO ~EMOHOWZIT ~EMOIGNORANCE ~EMOLAUGH ~EMOMISUNDERSTAND ~EMOPAIN ~EMOPROTEST ~EMOSAD ~EMOSKEPTIC ~EMOSURPRISE ~EMOTHANKS ~NO 
+                         ~YES )
+concept: ~internet_cafe (game Internet Internet_cafe search )
+concept: ~invertebrate (invertebrate~1 woodworm worm_family~1 )
+concept: ~it (~BAND ~COMPANY )
+concept: ~japanese_universities (Chuo_University Doshisha_University Hiroshima_University Hokkaido_University Keio_University Kobe_University Kyoto_University Kyushu_University Nagoya_University Nihon_University Osaka_University The_University_of_Tokyo Tohoku_University Tokai_University University_of_Tsukuba Waseda_University )
+concept: ~jeweller (~JEWELRY_ITEMS jeweller )
+concept: ~jewelry_items (bauble jewel jewellery~1 jewelry medallion precious_stone~1 trinket )
+concept: ~job (earn a_career a_job career dream_job employment employ ideal_job job livelihood make_a_buck occupation perfect_job profession work living)
+concept: ~job_fields (~JOB_FIELDS_MEDICINE ~LIFE_SCIENCE ~PHYSICS_FIELD ~WNAPPLIED_SCIENCE ~WNBIOLOGY ~WNDOCTRINES ~WNEARTH ~WNENGINEERING ~WNMEDICINE ~WNPURE_SCIENCE ~WNSOCIAL_SCIENCE accounting acting advertising agriculture alchemy archeology architecture arts 
+                      aviation babysitting banking biochemistry bricklaying chemistry communications computers computing construction cooking drama engineering farming finance heating journalism law line_of_work~1 management 
+                      marketing mathematics medicine meteorology ministry pedagogy physics plumbing politics publishing research sales science sexuality sociology software teachering telecommunication theatre tourism 
+                      transport transportation trucking )
+concept: ~job_fields_medicine (anesthesiology cardiology dentistry dermatology endocrinology epidemiology gastroenterology geriatrics gerontology gynecology hematology histology immunology nephrology neurology obstetrics oncology ophthalmology orthopedics 
+                               osteology osteopathy paleopathology parasitology pathology pediatrics pharmacology physiotherapy plastic_surgery proctology psychiatry psychology pulmonology radiology rheumatology surgery toxicology urology )
+concept: ~juice_drinks (apple_juice cider juice juice~2 lemonade orange_juice pineapple_juice )
+concept: ~junk_food (bubble_gum candy_bar chocolate_bar cracker donut gum junk_food popcorn potato_chip pretzel snack soda tortilla_chip )
+concept: ~kitchen_items (burner cabinet can_opener coffee_pot cupboard dishpan dishwasher dryer electric_mixer faucet freezer fridge frying_pan microwave microwave_oven oven pot refrigerator sink 
+                         stove tea_kettle toaster washing_machine )
+concept: ~land_force (erosion )
+concept: ~landscape_materials (boulder gravel limestone pebble rock stone )
+concept: ~laundromat (bleach change_machine cold_water dark_wash detergent dry_cleaner hanger hot_water laundromat load rinse_cycle spin_cycle starch warm_water wash_cycle washing_machine white_wash )
+concept: ~lawstuff (bad_person bad_person~1 due_process due_process_of_law~1 penalisation~1 punishment )
+concept: ~leather_goods_shop (belt gloves handbag leather_goods_shop luggage purse wallet )
+concept: ~length_words (foot inch length long m meter short wide width )
+concept: ~lettercount (1-letter 2-letter 3-letter 4-letter 5-letter 6-letter 7-letter 8-letter 9-letter )
+concept: ~letters (a b c d e f g h i j k l m n o p q r s  t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+concept: ~letters_extra (~letters be see ok you are why)
+concept: ~library (~BOOK library )
+concept: ~life_science (agriculture biochemistry biology botany cytology entomology forensic forestry genetics microbiology oceanography ornithology zoology )
+concept: ~life_taxonomy (taxonomic_category~1 )
+concept: ~lingerie_shop (lingerie lingerie_shop nightie underwear )
+concept: ~liquid_containers (barrel beaker bottle bucket carton cup flask glass glue_gun jar jug keg Kleenex sink syringe testtube tissue wash_basin watering_can 
+                             wineglass )
+concept: ~liquid_quantity (cup gallon liter litre milliliter pint quart )
+concept: ~living_room_items (armchair bookcase carpet cd_player coffee_table couch drapes floor_lamp lamp lampshade picture plant radio sofa speakers stereo table_lamp television throw_pillow 
+                            tv vcr )
+concept: ~liquor_store (~ALCOHOLLIST alcohol )
+concept: ~location (above absence absent address ahead among area around at back background beach beginning behind below beneath beside between beyond 
+                    bottom bush by camp campus center city close corner corridor country dump earth edge end entranceexit everywhere far field float 
+                    forest front garden ground here high hill hole home in inside lake land level local lot low middle moon mountain 
+                    near nearby nowhere outside over park path place point presence present ring river road scene sea seat side sky state 
+                    stream street surface surround there top town trail under underneath valley where within world yard )
+concept: ~lockable (~CONTAINS door )
+concept: ~looks (a_looker attractive attractive_looking beautiful great_looking ugly )
+concept: ~lost_and_found (lost_item )
+concept: ~loud (bang bark bedlam blare boom brawl bray chime clamor clap crash deafening discord disorderly earsplitting explode grate jangle loud 
+                noise pandemonium piercing racket rowdy rumble slam smash speechless squawk stamp stomp thud thump thunder tumult yell )
+concept: ~luggage_shop (briefcase luggage luggage_shop suitcase )
+concept: ~lumberyard (baseball_bat~1 lumber lumberyard nail plank screw wood )
+concept: ~lunch_items (bologna cheese cold_cuts ham hero ketchup mustard peanut_butter potato_chips sandwich soup )
+concept: ~magazines (~MAGAZINE ~MAGAZINES_FOR_MEN ~MAGAZINES_FOR_WOMEN Consumers_Reports Ebony Ladies_Home_Journal Newsweek PC_Magazine PC_Today Penthouse Playboy PlayGirl Popular_Mechanics Scientific_American Vogue )
+concept: ~magazines_for_men (FHM Juggs Maxim Penthouse Playboy )
+concept: ~magazines_for_women (17 Cosmopolitan Elle Family_Circle Glamour Good_Housekeeping Harper_'s_Bazaar House_Beautiful In_Style Instyle Lucky Marie_Claire Martha_Stewart Parenting Parenting_Magazine Real_Simple Redbook Vogue )
+concept: ~magic_force (abracadabra bewitching bewitchment charm curse enchantment glamour hex hexing incantation jinx magic mana mojo sorcery spell trance witchery )
+concept: ~magic_weapon (magic_orb magic_wand spell_book spellbook wand )
+concept: ~magicians (Circe Criss_Angel David_Blaine David_Copperfield Doug_Henning Faust Harry_Blackstone Harry_Houdini Hecate Houdini Lance_Burton Mark_Wilson Medea Merlin Nostradamus Penn_and_Teller Siegfried_and_Roy )
+concept: ~male (bachelor bloke boy swain dandy~n beau~n boyfriend chap dude fellow gay gent gentleman guy lad laddie male man mister Mr. swain )
+concept: ~mammals (~DOG_BREEDS aardvark aardwolf antelope bat beagle beaver boar bull calico_cat chihuahua  cow coyote crocodile dalmatian doberman 
+                   dolphin domesticated_animal~1 elephant frog great_dane hippo hog hyena kangaroo keyboard_cat killer_whale lamb lion long_cat mammal_family~1 mammal~1 mastodon merlion moose mouse persian 
+                   platypus poodle porcupine puppy reindeer scottish_fold sheep sheep_dog siamese tiffany_cat walrus war_horse warthog whale young_mammal~1 )
+concept: ~marital_state (marital_state marital_status marital_status~1 )
+concept: ~markers (~REGION beacon buoy chalk_line landmark lighthouse marker memorial monument tombstone )
+concept: ~masonry_supply_store (artificial_stone brick brick~1 building_block building_block~1 cement concrete concrete~1 granite masonry_supply_store paver paving_stone paving_stone~1 rock stone )
+concept: ~material (~WOOD alcohol bone breath bronze coral dirt dust fat glass gold ice iron ivory jade leather makeup matter metal 
+                    paint paper pearl plastic sand silver snow sweat waste water )
+concept: ~clothing_material (rubber latex rayon velveteen voile viscose seersucker terry_cloth twill ultrasuede velour  tulle tweed  spandex suede surah faux_fur vinyl vegan_leather nylon oilskin poplin organza tencel moleskin madras merino mohair lycra fur felt leatherette lace lame kapok khaki  gabardine gingham fleece flax damask denim chintz corduroy cashmere velvet calico bengaline burlap  bamboo acetat acrylic alpaca angora satin silk rayon leather taffeta linen cotton hemp polyester)
+concept: ~math_angle (angle angle~2 )
+concept: ~math_field (algebra arithmetic calculus chaos combinatorics differential_equation econometrics fractal geometry group_theory logic number_theory set_theory simulation statistics topology )
+concept: ~mathematica (additive arithmetic asymptope asymptotic asymptotically average bilinear bivariate correlate correlational correlative covalent decreasing_monotonic increasing_monotonic inverse linear median modal monotone 
+                       monotonic multinomial nonlinear nonmonotonic optimization parabola parabolic polynomial progression satisfying series )
+concept: ~mathematician (mathematician )
+concept: ~meal (breakfast brunch dinner lunch meal snack )
+concept: ~measurers (caliper clock egg_timer gauge level plumb_bob rule ruler scientific_instrument~1 spectroscope square straight_edge tape_measure thermometer timer watch )
+concept: ~meat (meat meat~2 )
+concept: ~mechanic (auto_repair garage mechanic )
+concept: ~medical_substances (~DRUGLIST antidote antiseptic cure drug medicine pill prescription remedy shot tablet vaccine )
+concept: ~mediumdegree (M.A. M.S M.Sc MA Master Masters Ms MSc )
+concept: ~mental_illnesses (anxiety anxiety~1 delusion head_game~1 mental_disease~1 mental_disorder mental_illness psychological_disorder~1 )
+concept: ~metallic (aeneous argent aurulent brass bronze chrysochlorous copper gold metallic platinum silver )
+concept: ~microlife (~MONERA ~PROTISTA )
+concept: ~military_groups (army batallion brigade corps defense_force militia patrol phalanx platoon posse regiment squad squadron troop )
+concept: ~military_man (military_man )
+concept: ~milk (milk milk~1 milk~2 )
+concept: ~milk_drinks (~MILK cream~2 half-and-half~1 milk_shake milk~2 yoghourt~1 )
+concept: ~minerals (mineral mineral~1 )
+concept: ~minor_outdoor_activities (~WATER_SPORTS archery backpack badminton birdfeeding birding birdwatching camping caving climbing fencing glide golf hang_glider hangglider hanggliding hike horseback horseshoes 
+                                    hunt paintball skate skateboard ski snowboard spelunk tennis track trampolining walk )
+concept: ~moisture (dry wet )
+concept: ~monera (bacteria bacteria_family~1 Filoviridae~1 germ microbe probiotic_microflora~1 true_bacteria~1 virus )
+concept: ~month_names (Apr April Aug August Dec December Feb February Jan January Jul July Jun June Mar March May Nov November 
+                       Oct October Sep Sept September )
+concept: ~more (again another continue do_it_again further go_on more repeat resume what_else )
+concept: ~mother (mamma mommy mother~n mother-in-law mum mummy~2 step-mother )
+concept: ~mountain (mountain )
+concept: ~mountain_sports (climbing mountain_climbing )
+concept: ~movers (box_wrench chopstick crescent_wrench crowbar dustpan elevator fan flat-nosed_pliers fork hammer ladle lever mallet monkey_wrench needle-nosed_pliers open-end_wrench parachute pipe_wrench pliers 
+                  plunger pry pry_bar pulley pump screwdriver sifter skewer socket_wrench spatula spoon suction_pump tong wrecking_bar )
+concept: ~movie ()
+concept: ~movie_genres (action adventure animated animation anime biography biopic comedy documentary drama historical horror indie musical noir period romance romantic science_fiction sci_fi sci-fi
+          art foreign    drama serious crime  gangster heist con police criminal        mystery cinema-verite  thriller war "love story" sports combat soldier)
+concept: ~movie_store (dvd movie movie_store )
+concept: ~moviestuff (motion-picture_show~1 screen ticket )
+concept: ~moving_groups (caravan cavalcade parade procession )
+concept: ~multiplication (decreased_by_a_factor_of increased_by_a_factor_of multiplied_by mutiplication of product_of times )
+concept: ~music_groups (band chorale musical_organisation~1 orchestra rock_group )
+concept: ~music_store (album audio_CD CD music_store record single )
+concept: ~music_stuff (alto band baritone bass duet lyric song soprano tenor )
+concept: ~musical_instruments (~MUSICAL_INSTRUMENTS_BRASS ~MUSICAL_INSTRUMENTS_PERCUSSION ~MUSICAL_INSTRUMENTS_STRING ~MUSICAL_INSTRUMENTS_WOODWIND harmonica kazoo melodeon moog organ synthesizer )
+concept: ~musical_instruments_brass (bugle french_horn trombone trumpet tuba )
+concept: ~musical_instruments_percussion (bass_drum castanet chime cymbal drum glockenspiel gong gopiyantra kettle_drum snare_drum tambourine timpand tom-tom xylophone )
+concept: ~musical_instruments_string (banjo bass cello guitar harp harpsichord klavichord lute lyre mandolin piano sitr viola violin )
+concept: ~musical_instruments_woodwind (bassoon clarinet contrabassoon English_horn fife flute oboe piccolo recorder saxaphone woodwind woodwind_instrument~1 )
+concept: ~musical_genres (musical avant-garde blues Celtic country country-and-western easy_listening electronic emo folk_music gangsta garage Hawaiian hip_hop industrial jazz new_age opera pop_music punk rap 
+                      indie classical  bluegrass  reggae rhythm-and-blues rock rock_and_roll ska techno trace urban )
+concept: ~musiciantype (bassist clarinet_player guitarist pianist piano_player piper timpanist trombonist )
+concept: ~mythical_creatures (basilisk Behemoth Big_Foot Blob Cecealia centaur chimera Chupecabra cockatrice Cthulhu cyclops dragon Easter_bunny ettin Flatwoods_Monster Frost_Giant Frost_Monster gargoyle ghoul 
+                              gnome goblin golem gremlin grendel griffin harpy hippogriff hobgoblin hydra imaginary_creature~1 jackalope kraken leviathan Lich Lizard_Man loch_ness_monster mandrake Medusa medusa 
+                              minotaur monster mythical_creature~1 Nessie Pegasus pegasus phoenix robot sand_worm Sasquatch sea_serpent shambler shoggoth Siren snowman unicorn wurm wyvern xenomorph yeti 
+                              zombie )
+concept: ~mythical_intelligent_being (alien angel Anubis banshee Cupid Death dwarf elf fairy_godmother Frost_Giant ghost ghost_hunter ghoul giant gnome God hag imp kobold 
+                                      leprechaun Martian mermaid merman necromancer necromancersuperhero ogre robot Santa Santa_Claus Satan Siren succubus superhero superman Tooth_Fairy troll vampire vampire_hunter villain 
+                                      warlock werewolf witch wizard wraith zombie )
+concept: ~nanowords (MEMS nanotech nanotechnology quantum )
+concept: ~natural_disasters (avalanche blizzard catastrophe~1 earthquake eruption fire flood hurricane landslide mudslide tidal_wave tornado tremor tsunami )
+concept: ~negation (never not )
+concept: ~negativeemotions (angry hostile impolite insulting mean nasty negative unpleasant )
+concept: ~negativevalue (bad dislike hate )
+concept: ~networkgame (MMORPG networked online virtual_world )
+concept: ~newsagent (magazine newsagent newspaper )
+concept: ~noanswer (~NO barely n never none not rarely )
+concept: ~noise (noise noise~5 )
+concept: ~nonadult (baby boy child childish girl grandchild immature infant kid newborn playmate puppy runaway teenage teenager young youngster youth youthful )
+concept: ~nonverbal_signs (~NONVERBAL_COMMUNICATION_VERBS alarm art~n expression~n image~n map~n movie~n music~n picture~n tone )
+concept: ~norse_gods (Heimdall Loki Odin Thor Valkyrie )
+concept: ~nounroot (entity~1 )
+concept: ~nursery (~PLANTLIST fertilizer grass_seed lawn_supplies nursery plant )
+concept: ~nutrient (~BEVERAGE ~FOOD ~HERBSPICE ~VITAMIN nutrient )
+concept: ~object_surface (bookshelf chalkboard coffee_table desk end_table folding_table nightstand table tv_stand )
+concept: ~occupation (~ASSASSIN ~ATTENDANT ~MUSICIANTYPE ~OCCUPATION_FEMALE ~OCCUPATION_GENERIC ~OCCUPATION_MALE roadie ~occupation_drinks )
+concept: ~occupation_drinks (bartender mixologist vintner brewmaster)
+concept: ~occupation_animals (cowboy  zookeeper animal_scientist animal_trainer hunter vet veterinarian)
+concept: ~occupation_aviation (aeronautical_engineer aerospace_engineer air_crew air_force_pilot air_host air_hostess air_traffic_controller airline_steward airline_stewardess astronaut aviator flight_engineer pilot spaceman )
+concept: ~occupation_banking (accountant agricultural_economist branch_manager banker broker chartered_accountant chartered_management_accountant economist economist_technician excise_officer speculator teller treasurer )
+concept: ~occupation_bureaucrat (administrator agent  bureaucrat clerk coordinator human_resource_manager organizer post_office_clerk technocrat )
+concept: ~occupation_business (area_manager assistant auditor banking_career bookkeeper boss business_analyst business_economist business_theorist CEO CFO chartered_secretary comptroller consultant credit_controller CTO customer_service_agent employee employer 
+                               executive financial_manager founder inventory_manager investment_manager investor management_consultant manager partner personnel_consultant private_secretary receptionist recruiter secretary stenographer touch-typist typist venture_capitalist worker )
+concept: ~occupation_cleaning (cleaner custodian janitor )
+concept: ~occupation_clothing (clothing_designer clothing_manager cobbler diamond_cutting furrier goldsmith jeweler jeweller knitter leather_worker shoe_designer tailor textile_designer weaver )
+concept: ~occupation_communications (mail_handler mailman messenger telegrapher )
+concept: ~occupation_computers ( "system administrator" programmer computer_industry computer_scientist database_administrator "information technology" )
+concept: ~occupation_construction (architect architectural_technologist assistant_draughtsman blockmason bricklayer brickmason carpenter cartographer civil_engineer construction construction_manager crane_operator drafter draughtsman earth_moving_equipment_mechanic electrician installer joiner laborer 
+                                   labourer landscape_architect phytogrammetrist plasterer plumber roofer spot-welder stonemason surveyor urban_planner welder woodworker )
+concept: ~occupation_creator (blacksmith instrument_maker tinsmith toolmaker woodmachinist )
+concept: ~occupation_dancer (stripper ecdysiast ballerina ballet_dancer dancer )
+concept: ~occupation_educator (teacher tutor instructor professor  advisor educator lecturer philosopher tutor principal professor  scholar scholastic_philosopher  teacher )
+concept: ~occupation_engineer (game_developer game_dev ceramics_technologist clinical_engineering coal_technologist concrete_technician electrical_engineer electrical_engineering_technician electronic_engineer engineer engineering_technician explosive_technologist extractive_metallurgist industrial_engineer industrial_engineering_technologist industrial_technician leather_chemist materials_engineer mechanical_engineer mining_engineer paint_technician 
+                               paper_technologist petroleum_technologist rubber_technologist technician wood_technologist )
+concept: ~occupation_entertainment (~OCCUPATION_DANCER ~OCCUPATION_MUSIC ~OCCUPATION_PERFORMER ~OCCUPATION_TELEVISION animator artisan artist caricaturist cartoonist comic_creator critic game_designer illustrator model model_builder painter philatelist photographer producer 
+                                    projectionist recreation_manager sculptor superstar tourism_manager )
+concept: ~occupation_esthetics (decor_designer decorator designer interior_designer spray_painter )
+concept: ~occupation_explorer (diver explorer spelaeologist speleologist )
+concept: ~occupation_factory (armature_winder assembly_line_worker boilermaker die-sinker foreman industrial_designer inspector machine_operator machine_worker machinist power_plant_operator production_manager quality_control_inspector quantity_surveyor sheetmetal_worker steelman steelworker )
+concept: ~occupation_female (actress air_hostess airline_stewardess cowgirl ancestress authoress aviatress aviatrix barmaid Chairwoman chairwoman comedienne dominatrix enchantress executrix fornicatress foundress goddess headmistress heiress 
+                             heroine hostess huntress inheritrix maid matron milkmaid millionairess negotiatress Negress nurse prioress proprietress saleswoman schoolgirl schoolmistress sculptress seamstress seductress sorceress 
+                             stewardess taskmistress testatrix tigress traitress villainess waitress widow witch )
+concept: ~occupation_film (actor actress director film_and_production film_critic playwright theater_director theatre_director theatre_technology thespian )
+concept: ~occupation_food (slaughterer  dietician nutritionist chef  baker beer_brewing butcher chef cook farm_foreman farm_worker farmer food_scientist food_technologist grain_grader meat_cutting_technician milkman peasant sommelier swineherd taste-tester viticulturist )
+concept: ~occupation_forest (forest_ranger forester_service game_ranger lumberjack nature_conservator ranger timberman )
+concept: ~occupation_generic (~DANGEROUS_JOB ~OCCUPATION_ANIMALS ~OCCUPATION_AVIATION ~OCCUPATION_BANKING ~OCCUPATION_BUREAUCRAT ~OCCUPATION_BUSINESS ~OCCUPATION_CLEANING ~OCCUPATION_CLOTHING ~OCCUPATION_COMMUNICATIONS ~OCCUPATION_COMPUTERS ~OCCUPATION_CONSTRUCTION ~OCCUPATION_CREATOR ~OCCUPATION_EDUCATOR ~OCCUPATION_ENGINEER ~OCCUPATION_ENTERTAINMENT ~OCCUPATION_ESTHETICS ~OCCUPATION_EXPLORER ~OCCUPATION_FACTORY ~OCCUPATION_FILM 
+                              ~OCCUPATION_FOOD ~OCCUPATION_FOREST ~OCCUPATION_INSURANCE ~OCCUPATION_INVENTOR ~OCCUPATION_JOBLESS ~OCCUPATION_LAW ~OCCUPATION_MAGIC ~OCCUPATION_MANAGER ~OCCUPATION_MEDICAL ~OCCUPATION_MILITARY ~OCCUPATION_PERSONAL_SERVICE ~OCCUPATION_PLANTS ~OCCUPATION_POLITICS ~OCCUPATION_PUBLIC_SAFETY ~OCCUPATION_REAL_ESTATE ~OCCUPATION_RELIGION ~OCCUPATION_SALES ~OCCUPATION_SCIENCE ~OCCUPATION_SOFTWARE ~OCCUPATION_SPORTS 
+                              ~OCCUPATION_SPY ~OCCUPATION_TRANSPORT ~OCCUPATION_WRITER abatement_worker archivist armament_fitter assayer_sampler associate cabinet_head domestic_appliance_mechanician engraver explosive_expert exterminator graphic_designer gravure_machine_minder historian home_economist keeper lexicographer lift_mechanic 
+                       recruiter headhunter       meter-reader miner optical_dispenser pirate planner rigger saw_operator scale_fitter specialist syndicator taxonomer teamster telemeter terminologist tollgatherer tollkeeper tollman usher )
+concept: ~occupation_insurance (actuary insurance_broker statistician )
+concept: ~occupation_inventor (inventor tinkerer )
+concept: ~occupation_jobless (jobless unemployed )
+concept: ~occupation_law (advocate arbitrator attorney bail_agent beat_cop civil_investigator cop correctional_services detective guard investigator judge jurist law lawyer magistrate patent_attorney patrolman police 
+                          police_officer policeman policewoman security_officer sheriff traffic_officer )
+concept: ~occupation_magic (astrologer psychic soothsayer thaumaturgist warlock witch wizard )
+concept: ~occupation_male (air_host airline_steward bachelor barman businessman cowboy chairman Chairman clergyman coachman comedian congressman conquistadore doorman gunman headmaster heir hero horseman host 
+                           hunter milkman millionaire proprietor salesman schoolboy sorcerer steward taskmaster testator traitor villain waiter warlock workman )
+concept: ~occupation_manager (boss chief manager president project_manager supervisor )
+concept: ~occupation_medical (~DOCTOR ambulance_emergency_care_worker ambulange_driver anesthesiologist anesthetist biokineticist biomedical_engineer biomedical_technologist chiropractor clinical_psychologist clinical_technologist counselor dental_assistant dental_hygienist dental_technician dental_therapist dentist dietician DJ 
+                              EMT nurse dentist   eeg_technician emergency_medical_technician EMT funeral_director gerontologist healer homoeopath hospital_porter language_therapist medical_doctor medical_orthotist_prosthetist neuroscientist nurse nutritionist occupational_therapist optical_technician optometrist oral_hygienist 
+                              pharmacist pharmacist_assistant physician physiologist physiotherapist plastic_surgeon podiatrist psychiatrist psychologist psychometrist radiographer shaman social_psychologist social_worker speech_therapist stretcher-bearer surgeon veterinarian veterinary_nurse 
+                             )
+concept: ~occupation_military (archer captain colonel conquistadore soldier corporal general guerrilla knight lieutenant mercenary military_commander ninja officer partisan sergeant soldier spearman swordsman )
+concept: ~occupation_music (accordionist composer conductor disc-jockey musician pianist piano_tuner singer singer-songwriter songstress songwriter soprano soundman soundtrack_composer )
+concept: ~occupation_performer (clown comedian costume_designer entertainer juggler lion_tamer magician make-up_artist porn_star stagehand stand-up_comedian storyteller stripper taleteller ventriloquist )
+concept: ~occupation_personal_services (babysitter babysitting_career barber butler domestic_personnel domestic_worker hairdresser interpreter linguist locksmith nanny personal_trainer shoemaker stableboy stableman steward tattoo_artist trainer translator 
+                                        travel_agent waitress watchmaker beautician cosmetologist yoga_teacher )
+concept: ~occupation_plants (florist gardener horticulturalist )
+concept: ~occupation_politics (~ROYALTY ~RULER activist ambassador city_treasurer civil_rights_leader commissioner committee_clerk delegate dictator diplomat governor lawmaker lobbyist mayor political_scientist political_theorist politician potentate 
+                               representative senator speechmaker )
+concept: ~occupation_public_safety (environmental_health_officer fire-fighter firefighter fire_fighter fireman radiation_protectionist )
+concept: ~occupation_real_estate (cartographer estate_agent land_surveyor mine_surveyor Realtor urban_planner )
+concept: ~occupation_religion (bishop chaplain clergyman cleric missionary preacher priest rabbi religion_scholar televangelist theologians theologiser theologist theologizer vicar )
+concept: ~occupation_sales (advertising appraiser attendant auctioneer cashier dealer fashion_buyer marketing_manager merchandise_planner merchant public_relations_practitioner purchasing_manager sales_representative salesperson shop_assistant shopfitter stock-taker stockjobber stockman 
+                            stocktaker store_manager storekeeper supermarketeer supermarketer tobacconist valuer )
+concept: ~occupation_science (agricultural_engineer agricultural_extension_officer agricultural_inspector agricultural_technician agriculture agriculturist agronomist anthropologist apiarist aquatic_scientist archaeologist astronomer astrophysicist biochemist biologist botanist chemical_engineer chemist coleopterist 
+                              ecologist entomologist geneticist geographer geologist geometer geophysicist geotechnologist herpetologist horticulturist hydrologist ichthyologist logician mad_scientist marine_biologist mathematical_probabilist mathematician medical_physicist meteorological_technician meteorologist 
+                              microbiologist mineralogist myrmecologist nuclear_scientist oceanographer ornithologist physicist researcher scientist sociologist soil_scientist taxonomist technologist theoretician theorist weather_observer weatherman weatherperson wood_scientist xenoarchaeologist 
+                              zoologist )
+concept: ~occupation_software (data_capturer operations_researcher programmer systems_analyst )
+concept: ~occupation_sports (acrobat athlete baseball_player basketball_player boxer bullfighter cheerleader chess_player climber figure_skater football_player footballer golfer jockey kickboxercoach life-guard linesman matador professional_wrestler 
+                             soccer_player sport_manager sports_announcer sportscaster sportsman swimmer swimming_pool_superintendent taxidermist tennis_player )
+concept: ~occupation_spy (secret_agent spy spymaster )
+concept: ~occupation_television (telecaster television_mechanician television_presenter television_reporter )
+concept: ~occupation_transport (automotive_body_repairer automotive_electrician automotive_mechinist automotive_trimmer bus_driver busdriver cabin_attendant diesel_fitter diesel_locomotive_driver diesel_mechanic driver driver_and_stacker light_delivery_van_driver mechanic motor_mechanic navigating_officer navigator railroad_executive road_construction_plant_operator 
+                                sailor sea_captain sea_transport_worker skipper stationmaster steersman stoker switchman taxidrive taximan trucker vehicle_driver yard_official )
+concept: ~occupation_writer (art_editor author biographer bookbinder copy_writer copywriter editor journalist librarian military_writer novelist photojournalist poet publisher reporter science_fiction_writer screenwriter speechwriter sports_writer 
+                             technical_illustrator technical_writer writer )
+concept: ~opinion (attitude_toward belief_about believe~v conviction feel_about impression_of notion_of opinion opinion~v position_on sentiment slant_on stance_on stand_on standpoint take_on think_about think_of think~v 
+                   view viewpoint )
+concept: ~opinionset (~OPINION approve~v attitude favor~v stand view view_on )
+concept: ~optician (contact_lens contacts eyeglasses glasses optician )
+concept: ~orange (auburn jacinthe orange orangish )
+concept: ~papercanvascraft (bookbinding calligraphy collage decoupage draw origami paint paper-mache papercraft scrapbook stamping tole watercolor )
+concept: ~party_store (balloon confetti favors party_store streamers )
+concept: ~penetrators (adze auger awl ax axe back_saw baller band_saw bandsaw blade bolt_cutter brace broadsword can_opener chain_saw chisel chopper churchkey circular_saw 
+                       cleaver cookie_cutter coping_saw corer corkscrew crosscut_saw cutter digger drawknife drill driver edge electric_razor gimlet glass_cutter gouge grater hack_saw hacksaw hatchet 
+                       hoe jackknife jig knife loper machete mandoline mattock mincer needle opener paperknife peeler penknife pickax pickaxe pipe_cutter pneumatic_drill pocketknife point 
+                       press prunerr punch rawknife razor reamer router saber_saw saw scissors scythe shaver shear shovel shreader shredded shredder sickle slicer snip 
+                       spade switchblade sword table_saw tile_cutter tin_snip tree_saw trimmer wire_stripper )
+concept: ~performing_arts (~ACTING ~DANCING ~INSTRUMENTING ~PERFORMLIST ~SINGING a_play acrobatics busking circus magic musical_theater~1 performance performance~3 performing_arts public_presentation~1 the_play theater to_juggle )
+concept: ~performlist (act dance juggle sing to_act to_sing )
+concept: ~personal_article (contact_lenses eyeglasses handbag luggage personal_article razor toothbrush umbrella )
+concept: ~pet_animals (~BIRDS angelfish animal bird cat chameleon chicken colt dog donkey ferret fish frog gerbil goldfish hamster hedgehog horse iguana 
+                  rabbit  lizard mice monkey mouse mule pig raccoon rattlesnake salamander snake turtle )
+concept: ~pet_store (~PET_ANIMALS aquarium bird_seed birdcage birdseed cage cat_food catfood dog_bowl dog_food dogfood fish_flakes leash pet pet_food pet_store pet_supplies )
+concept: ~philosopher (philosopher )
+concept: ~philosophy_kind (ceteris_paribus deconstructionist deist deistic dualistic existential existentialist feminism feminist gymnosophical humanist humanistic idealistic Manichaean monistic Platonic Platonistic Stoic Taoist )
+concept: ~photo (image likeness movie photo photograph pic picture visual visualization webcam )
+concept: ~photographer (graduation_photo photographer picture portrait wedding_photo )
+concept: ~photoshop (camera digital_camera film lens photoshop )
+concept: ~physical_property (physical_property physical_property~1 )
+concept: ~physicality (~BODY-DATA clothing )
+concept: ~physics_field (acoustics astrophysics classical_mechanics cryogenics crystallography fluidics nanotechnology optics quantum_mechanics superconductivity thermodynamics )
+concept: ~physics_particle (anti-matter antimatter particle subatomic_particle~1 )
+concept: ~placesetting (dessert_fork dinner_fork dinner_knife dinner_plate dish fork glass knife napkin plate salad_fork salad_plate soup_spoon spoon teaspoon water_giblet wine_glass )
+concept: ~planet (Earth Jupiter Mars Mercury Neptune planet Pluto Saturn Uranus Venus )
+concept: ~plantlist (~PLANTS annual perennial sequoia )
+concept: ~plants (~FLOWERS ~FUNGI cryptogam~1 epiphytic_plant~1 fern_family~1 flora flowering_maple~1 gametophyte~1 houseplant~1 perennial~1 phytoplankton~1 plant plant_family~1 rock_plant~1 sporophyte~1 vascular_plant~1 wild_flower~1 )
+concept: ~plot (plot plotline precis summary )
+concept: ~poet (poet )
+concept: ~pointed_weapon (assegai battering_ram gaff_hook harpoon javelin lance partizan pike pike~3 pitchfork sai shaft shaft~7 spear trident vouge )
+concept: ~poison (arsenic curare fumigant~1 hemlock insecticide lye pesticide pesticide~1 poison venom weed_killer~1 )
+concept: ~police_station (crime criminal jail police police_station )
+concept: ~political_groups (bureaucracy cabal coalition colony committee delegation jury league political_party retinue trade_union tribe welcoming_committee )
+concept: ~political_parties (Conservative conservative Democrat Democratic Democratic_Party Green_Party Independent Liberal liberal Libertarian_Party political_party Republican Republican_Party )
+concept: ~political_system (anarchism anarchy capitalist capitalistic communism communist communistic dictatorship Fabian fascism fascist fascistic feudalism form_of_government~1 isolationist isolationistic monarchism monarchy Nazi 
+                            political_system shah socialism Zionist )
+concept: ~politicalstuff (discrimination discrimination~1 nationalist nationalist~1 protest protestation~2 revolutionary~1 revolutionist ruler swayer~1 )
+concept: ~politician (~DICTATOR ~PRESIDENT Al_Gore Anwar_Sadat Arafat Ataturk Biden Bill_Bradley Bill_Clinton bin_Laden Bush Castro Charles_de_Gaulle Che_Guevara Chelsea_Clinton Cheney Chirac Churchill Cleopatra 
+                      Clinton Dan_Quayle de_Gaulle Elizabeth_II FDR Fidel_Castro Francisco_Franco Franklin_Delano_Roosevelt Franklin_Roosevelt Gandhi George_Bush George_Washington Gerhard_Schroeder Gorbochev Helmut_Kohl Hilary_Clinton Hillary Hillary_Clinton Hitler J.F.K 
+                      Jack_Ruby Janet_Reno Jefferson_Davis Jesse_Ventura JFK Jiang_Zemin Jimmy_Carter Joe_Biden John_F_Kennedy John_Kennedy John_Major John_McCain Lincoln Maggie_Thatcher Mandela Mao Mao_Tsetung Martin_Luther_King McCain Millard_Fillmore 
+                      Mussolini Nader Napoleon Nelson_Mandela Nero Obama Osama_bin_Laden Palin Paula_Jones politician President_Bush Prince_William Princess_Diana Putin Ralph_Nader Reagan Richard_Nixon Ron_Paul Sarah_Palin Stalin 
+                      Tony_Blair Vladimir_Putin )
+concept: ~popstar (popstar )
+concept: ~positivevalue (appreciate enjoy good like nice )
+concept: ~post_office (air_mail envelope first_class letter mail package parcel parcel_post phone-card post_card post_office postcard scale stamp )
+concept: ~precision_sports (archery billiards bowling golf lawn_bowling marksmanship petanque pistol_shooting pool rifle_shooting shotgun_shooting )
+concept: ~president (president )
+concept: ~processes (~TIME_INSTANT ~TIME_UNIT ~WEATHERPROCESS )
+concept: ~projectile_weapon (.22 ack-ack ack-ack_gun air_gun air_rifle airgun antiaircraft antiaircraft_gun arquebus arrow assault_gun assault_rifle automatic automatic_firearm automatic_gun automatic_pistol automatic_rifle automatic_weapon ballista 
+                             BAR BB_gun blowgun blunderbuss Bofors_gun bow breechloader Bren Bren_gun Browning_automatic_rifle Browning_machine_gun burp_gun cannon carbine catapult Colt culverin dartgun derringer Dragunov 
+                             exploding_barrel_gun firearm firelock flack flak flintlock forty-five fowling_piece fusil Garand Garand_rifle gas_gun gat Gatling_gun gatling_gun gun gun~5 hackbut hagbut hand_cannon 
+                             handgun harquebus horse-pistol horse_pistol howitzer Kalashnikov light_machine_gun Luger M-1 M-1_rifle machine_gun machine_pistol machine_rifle magnum matchlock Mauser Maxim_gun minigun minute_gun musket 
+                             muzzle_loader paintball_gun peacekeeper Peacemaker pistol pom-pom precision_rifle projectile~1 Quaker_gun railgun repeater repeating_firearm revolver rifle riot_gun rod Saturday_night_special sawed-off_shotgun scattergun semiautomatic 
+                             semiautomatic_firearm semiautomatic_pistol set_gun shooting_iron shotgun side_arm siege_engine six-gun six-shooter sling sling_shot sling~2 small-arm smoothbore sniper_rifle Spandau spring_gun squirt_gun Sten_gun submachine_gun 
+                             super_gun Thompson_submachine_gun Tommy_gun tranquilizer_gun turret twenty-two twenty-two_pistol twenty-two_rifle Uzi Verey_pistol Very_pistol whaling_gun Winchester zip_gun )
+concept: ~protista (algae protoctist_family~1 protoctist~1 protozoa )
+concept: ~therapist (therapist psychiatrist psychologist psychotherapist  shrink~n)
+concept: ~psychality (~DISLIKES ~HATTRIBUTES ~LIKES )
+concept: ~pub (breakfast dinner food lunch pub )
+concept: ~purple_other(violet plum mulberry lilac lavender claret aubergine)
+concept: ~purple (~purple_other amaranthine   heliotrope purplish hyacinthine ianthine   magenta mauve  orchid  porphyrous puce purple purpure purpureal rhodopsin  )
+concept: ~quantity (~COUNTING_QUANTITY ~DISTANCE_QUANTITY ~LIQUID_QUANTITY ~TEMPERATURE_QUANTITY ~WEIGHTNOUN )
+concept: ~quite (bleat buzz chime clink crackle faint gurgle harmony hiss hum hush inaudible melody murmur musical mute mutter patter peep 
+                 quite resonance rustle sigh snap swish tinkle twitter whisper zing )
+concept: ~race (African Asian Black brown Caucasian Caucasoid Colored Ferengi Indian Klingon Negro Negroid Oriental Romulan Vulcan White yellow )
+concept: ~racial (~RACE desegregation discrimination ethnic Jew negro nigger prejudice race racial segregation )
+concept: ~reading_stuff (~BOOKMAGAZINE author newsstand )
+concept: ~real_estate (home house real_estate )
+concept: ~reallybadweather (blizzard cyclone firestorm hurricane northeaster storm thunder_snowstorm thunderhead thundersnow thunderstorm tornado twister waterspout windstorm )
+concept: ~recorders (answering_machine camcorder camera CD_burner diary dictaphone digital_camera DVD_burner ECG EEG EKG electrocardiograph electroencephalograph journal movie_camera notebook seismograph SLR tape_recorder 
+                     tv_camera typewriter )
+concept: ~red_other (brick burgundy cherry coral ruby salmon rose raspberry wine strawberry)
+concept: ~red (~red_other cardinal cerise  cinnabar coccineous reddish coquelicot  cramoisy crimson cyan erythraean flammeous fuchsia garnet haematic incarnadine kermes 
+               lateritious madder magenta maroon miniaceous minium modena nacarat phoeniceous pink pinkish ponceau puccoon puniceous  rectory red   rufous  
+               sanguineous solferino stammel  testaceous umber vermeil vermilion vermillion vinaceous  )
+concept: ~region (airfield area camp city colony continental cosmic country county district downtown east environment environmental fiefdom foreign ghetto imperial international 
+                  interstate kingdom local locale metropolis metropolitan municipal municipality nation neighborhood nowhere orchard outback outdoor parish park pastoral patch place precinct 
+                  province quarter region regional residential rural sanctuary slum solar spot state steppes suburb suburban surroundings territorial territory town township universal 
+                  uptown vicinity village world world-wide zone )
+concept: ~religion_kind (~FAKE_RELIGIOUS_SECT ~RELIGIOUS_SECT )
+concept: ~religious_buildings (abbey cathedral church minaret mosque synogague tabernacle temple vicarage )
+concept: ~religious_groups (congregation fellowship )
+concept: ~religious_leaders (~RELIGIOUS_LEADER bishop Brother Buddha chaplain Christ clergy cleric Dalai_Lama god Holy_Order Jesus_Christ Krishna Mohammed Monseigneur mullah nun Pope priest 
+                             rabbi Rev Revd Reverend Reverend_Father Satan vicar Vishnu )
+concept: ~religious_sect (adherent~1 agnostic Anglican Anglicanism atheism atheist Baha'i Baptist Buddhism Buddhist Calvinism Catholic Catholicism Christian Christianity Church_of_Christ Episcopal Hindu Hinduism 
+                          Islam Jehovah_'s_Witness Jehovah_Witness Jew Jewish Judaism Lutheran Mormon Mormonism organized_religion~1 pagan Paganism Pentecostal Protestant Reformed_Church religious_belief~1 Russian_Orthodox Seventh-Day_Adventist Shinto Shism 
+                          Sunnism Swedenborgian Swedenborgism Tao Taoism Taoist Unitarian United_Church_of_Christ )
+concept: ~reptiles (~DINOSAURS anaconda boa iguana rattlesnake reptile_family~1 reptilian~1 snake amphibian~1 amphibian_family~1 )
+concept: ~restaurant (~FOOD breakfast dinner lunch restaurant )
+concept: ~rideable (~ANIMALS ~VEHICLE )
+concept: ~rock_shop (crystal fossil geode mineral mineral~1 rock rock_shop )
+concept: ~role (~OCCUPATION ~ROLE_ALLY ~ROLE_CRIMINAL ~ROLE_ECONOMIC ~ROLE_ENEMY ~ROLE_FAMILY ~ROLE_HEROIC ~ROLE_KNOWLEDGE ~ROLE_MEDICAL ~ROLE_MISC ~ROLE_POLITICS ~ROLE_ROMANTIC ~ROLE_WORSHIP ~ROLE_ACCOMODATION )
+concept: ~role_ally (~FRIEND acquaintance aide ally colleague confederate friend guest helper neighbor subordinate teammate visitor )
+concept: ~role_criminal (~ROLE_LEGALBADGUY ~ROLE_LEGALGOODGUY )
+concept: ~role_ACCOMODATION (roommate housemate flatmate suitemate )
+concept: ~role_economic (beggar buyer client consumer creator creditor customer maker owner slave trader tycoon )
+concept: ~role_enemy (enemy foe opponent rival )
+concept: ~role_family (~FAMILY_MEMBERS adolescent baby child grown-up parent relative )
+concept: ~role_heroic (~DEFENDER champion coward hero heroine underdog )
+concept: ~role_knowledge (adept amateur beginner expert freshman genius graduate idiot journeyman junior layman master professional savant senior sensei sophomore specialist student 
+                          teacher virtuoso )
+concept: ~role_legalbadguy (accomplice arsonist assassin bad_guy bastard bully criminal crook culprit delinquent fiend fugitive jerk killer malefactor menace militant murderer pilferer 
+                            predator prey prisoner pyromaniac rebel sociopath suspect swindler thief threat traitor trickster troublemaker villain )
+concept: ~role_legalgoodguy (barrister defendant hostage juror plaintiff victim witness )
+concept: ~role_medical (patient )
+concept: ~role_religious_member (Catholic Protestant Bhuddist Jew Muslim Lutheran Presbyterian Unitarian Hindu Wiccan Scientologist Moonie Satanist Freemason Christian_Scientist)
+concept: ~role_political_member (Democrat Republican Tory Whig Libertarian)
+concept: ~role_nationality_member (Martian Venusian Earthling extraterrestrial alien 
+American   Asian European  North_American South_American
+African Australian Middle_Easterner New_Zealander
+Canadian Norwegian  Icelander AndorrianUkranian
+Moldovian Serbian Macedonian Georgian Russian  Irishman  
+Estonian Lithuanian  Latvian  Bosnian Slovakian 
+ Czech Slovenian  Brit German   Indian
+Frenchman Italian Spaniard Portuguese  Dutchman  Pole 
+Dane Swede  Greek Finn Austrian Hungarian 
+Romanian  Bulgarian Laotian  Chinese Cambodian  Indonesian 
+Japanese Korean  Thai  Vietnamese   Malasian  Mongolian
+Tibetan  Turk Lebanese  Jordanian Israeli  Syrian 
+Armenian  Iranian  Arab Palestinian Brazilian Mexican 
+Peruvian Columbian Bolivian  Tongan Chilean Argentinian 
+Bolivian Liberian Somalian Algerian  Honduran  Cuban
+Welshman Scot  Scotsman Guatemalan  Salvadorian   Costa_Rican 
+Spartan Athenian New_Yorker Parisian
+)
+concept: ~role_member (~role_religious_member ~role_political_member ~role_nationality_member citizen civilian foreigner immigrant local member native passenger pilgrim refugee resident settler stranger tourist traveler )
+concept: ~role_misc (adult altar_boy audience bum character disciplinarian fellow fool hippie hobo human individual mutant peer player predecessor scavenger scout servant 
+                     spokespersonstick-in-the-mud spokeswoman sponsor stakeholder stooge stoolie stoolpigeon straggler supplicant surfboarder survivalist survivor swinger sympathiser sympathizer tattletale taxpayer techie technophile technophobe 
+                     teetotalist teetotaller telepathist tempter temptress third-rater thrill-seeker throwback thrower toastmaster tomboy weirdo )
+concept: ~role_politics (aristocrat candidate leader )
+concept: ~role_romantic (~SEXUAL_PREFERENCE_NOUNS bachelor bride bridegroom companion concubine gigolo girlfriend heartthrob husband lover mate Mr Mrs partner prostitute trollop wife )
+concept: ~role_worship (deity fan follower groupie idol spectator )
+concept: ~roman_gods (Apollo Ceres Cupid Diana god_Mars Janus Jove Juno Jupiter Mercury Minerva Neptune Pluto Venus Vesta Vulcan )
+concept: ~royalty (~ROYALTY_FEMALE ~ROYALTY_MALE )
+concept: ~royalty_female (archduchess baronne Comtesse countess Dame duchess duchesse empress Jewess Ladyship marquise princess queen Reverend_Mother )
+concept: ~royalty_male (archduke Baron Comte duc duke Earl Esquire king Knight lord Lordship Marquis prince )
+concept: ~ruler (emir emperor king pharoh prince Shah sultan tsar )
+concept: ~sad_emotion (despair distress grief hopelessness pessimism remorse sadness sorrow )
+concept: ~salary (bread crust dinero dollar earnings living money salary wage )
+concept: ~sandwich (sandwich sandwich~1 )
+concept: ~scenary_water_bodies (arroyo basin bay bayou beck bight bog bounding_main briny_deep brook canal channel~n cistern creek dam drave estuary fjord gulf 
+                                harbor harbour inlet lagoon lake lily_pond loch marsh moat ocean peat_bog pond pool pool~n puddle quag quagmire rapid rapids reservoir 
+                                rill rindle river rivulet runnel run~n salt_marsh sea slough sound strait streamlet stream~n subglacial_pond swale swamp swimming_hole tidal_basin tide_pool tributary 
+                                vernal_pool wading_pool wash~n water_hole watercourse waterhole watering_hole wetland )
+concept: ~scenery (~BIOME ~SCENERY_AIR ~SCENERY_LAND ~SCENERY_OF_HUMANS ~SCENERY_OUTER_SPACE ~SCENERY_WATER nature scenery )
+concept: ~scenery_air (aurora_australis aurora_borealis aurorae blizzard cloud cyclone dancing_devil dust_devil dust_storm dust_whirl electrical_storm gustnado hurricane lightning lightning_storm mirage moonbow north_polar_lights northern_lights 
+                       northern_polar_lights polar_lights rain rain_cloud rainbow raindrop sand_auger shelf_cloud sky snow snow_storm south_polar_lights southern_lights spray_bow storm_cloud sunbeam sunset supercell tempest thunder 
+                       thunder_cloud whirlwind winter_storm )
+concept: ~scenery_bridges (bascule bascule_bridge beam_bridge bridge cable-stayed_bridge cantilever drawbridge footbridge lift_bridge pontoon_bridge suspension_bridge )
+concept: ~scenery_crust_openings (canyon crater dale dell dingle ditch fault fisure glen gorge gully hollow pumarole ravine trench valley vent volcano )
+concept: ~scenery_land (~SCENERY_CRUST_OPENINGS abyss ait archipelago arid_region backwoods beach chasm cliff coastline continent coppice countryside crag crater depression desert dirt dune 
+                        escarpment eyot field foothill forest fosse geological_formation~1 grassland hedge hill hole incline inclined_plane island isle islet jungle key land landmass 
+                        lava lava_flow lava_spout llano maar magma mesa molten_rock mount mountain outback pampas pasture peak peninsula pit plain plateau portrero prairie 
+                        precipice quarry quicksand ramp range rise sabbulonarium sand_dune scarp silt sink_hole skerry slipway slope soil steel_rock steppe sward swarth tableland 
+                        tectonic_plate territory thujas timberland top_soil topiary tundra vacuity valley veldt vineyard void weald wilderness wildwood winery woodland woodlot woods )
+concept: ~scenery_of_humans (~SCENERY_BRIDGES ~SCENERY_OF_TRANSPORT park playground telephone_pole )
+concept: ~scenery_of_transport (alley boardwalk byway car_park catwalk crawlway dock dragway driveway expressway freeway highway landing_strip lane overpass parking_lot parkway pier platform 
+                                railroad_track road road_hump roadway route rumble_strip runway sidewalk sleeping_policeman speed_bump speed_cushion speed_hump speed_ramp speed_table street superhighway throughway thruway tollroad tunnel 
+                                underpass wharf )
+concept: ~scenery_outer_space (~CELESTIAL_BODY anti-matter antimatter asteroid_belt blue_giant brown_dwarf comet constellation crescent_moon dark_matter dwarf_star eclipse exoplanet extrasolar_planet full_moon hypergiant magnetar meteroid moonbeam 
+                               nebula protostar pulsar quark red_giant shooting_star space star sun supergiant supernova universe white_dwarf worm_hole )
+concept: ~scenery_water (~BEACH ~SCENARY_WATER_BODIES beach breaker briny dike everglade fen firth fish_ladder fish_steps fishway flood geyser glacier glade haven holm hot_spring 
+                         ice_berg ice_shelf iceberg levee marshland milldam mineral_spring muskeg natural_spring polar_cap polder port rapids river_bed shoreline swampland tarn tidal_bore tidal_wave tsunami 
+                         warm_spring water_spout waterfall wave weir )
+concept: ~school_groups (class panel )
+concept: ~scientist (scientist )
+concept: ~search_engines (Alexa Alexa.com Ask.com Baidu Baidu.com Cuil Google Google.com QQ.com Yahoo )
+concept: ~seasons (autumn fall spring springtime summer summertime winter wintertime )
+concept: ~sensations (~FEELING_WORDS ache beautiful beauty blind bloated bored chill chilly cold comfort comfortable confused cool cough deaf depress dozy famished 
+                      fever feverish happy heat heavy horny hot hunger hungry hurt irritate itch itchy lonely nervous pain painful parched pleasure quiet 
+                      randy~a satiated sensation sex-deprived sex-starved sexy shock sleepiness sleepy smell sniff stifling stuffed stun suffer sweaty sweet taste thirst thirsty 
+                      tired warm warmth )
+concept: ~sense_hear (loud noisy quiet silent soft )
+concept: ~sense_smell (acidy acrid aromatic balmy briny burnt damp dank earthy fishy fragrant fresh gaseous heady mildewed moldy musty odorous perfumed 
+                       piney pungent putrid rancid reeking rotten savory scented sharp sickly sour spicy spoiled stagnant sweet )
+concept: ~sense_taste (alkaline bitter bittersweet bland burnt buttery cheesy crisp fishy fruity gingery hearty juicy luscious medicinal mellow oily overripe peppery 
+                       raw ripe rotten salty sour spicy spoiled sugary sweet tangy taste tasty unripe vinegary )
+concept: ~sense_touch (bumpy cold cool~a crisp~a damp dry~a dull elastic fleshy fragile furry fuzzy gritty hairy hard icy leathery lukewarm mushy 
+                       oily prickly rubbery sandy satiny sharp~a silky slippery smooth soft spongy steamy sticky tender~a tepid thick~a thin~a tough~a velvety warm~a 
+                       waxy wet woolly )
+concept: ~serial_killers (Albert_Fish Behram Charles_Manson Countess_Bathory Dahmer Dalmer Dexter Harold_Shipman Jack_Kevorkian John_Gacy Manson Pedro_Lopez Robert_Pickton Ted_Bundy Zodiac_Killer )
+concept: ~service_station (auto_repair gas gasoline service_station )
+concept: ~sex_shop (condom dildo porno_magazine sex_shop sybian vibrator )
+concept: ~sex_stuff (~SEX_TOY ~SEXUAL_ACT ~SEXUAL_FETISH ~SEXUAL_PART ~SEXUAL_POSITION ~SEXUAL_TITILLATION )
+concept: ~sex_toy (anal_bead butt_plug cock_ring dildo sex_toy strap-on sybian vibrator )
+concept: ~sexual_act (~MAKE_LOVE a_bj anal analingus autoeroticism blowjob buggery consumate cunnilingus cybersex deflower fellatio fornication~n go_to_bed handjob masturbation masturbatory menage_a_trois nookie~n 
+                      onanism oral_sex rim_job rimming to_cyber touching_yourself tug_job tugjob wet_dream )
+concept: ~sexual_fetish (autoerotic bdsm bestiality bondage bukake chains dominatrix femdom fetish gang_bang glory_hole golden_shower incest infantilism latex leather lick_my nocrophilia pedophilia 
+                         pervert rape roped s_and_m sadomasochism sadomasochistic scat sodomy vorarephilia vore whip )
+concept: ~sexual_part (boner boob bosum breast cleavage clit clitoris cock cunt dick glans hymen jugs love_muscle maidenhead nipple penis pubes pubic pubis 
+                       pussy scrotum tit vagina vulva your_balls your_nuts )
+concept: ~sexual_position (69 anal_penetration cowboy_position cowgirl_position deep_throat doggy_position doggy_style leapfrog_position missionary_position rear_entry spoons_position woman_on_top )
+concept: ~sexual_preference_nouns (dyke dyke~n fag faggot femme gay~n homo homosexual homosexual~n lesbian lesbian~n lesbo queer queer~n straight transvestite )
+concept: ~sexual_titillation (arousal bodice come-on coming-on coming_on erogenous erotic erotica exhibitionism foreplay get_hard getting_hard hard_on hentai horny hot_body latex lingerie lust 
+                              make-out my_panties naked naughty nude nudity obscene obscenity panties peignoir phone_sex porno pornography randy~a sexting strip strip-tease strip_tease striptease take_off 
+                              talk_dirty talk_naughty topless turn_you_on turned-on unbutton undress voyeur voyeurism wet_T-shirt )
+concept: ~shapers (cookie_cutter file grinder rasp rolling_pin sander sanding_block sandpaper sharpener )
+concept: ~shapes (circular cuboid cylinder cylindrical hexagonal oval ovaloid ovoid pyramid pyramidal rectangle rectangular round sphere spherical square triangle triangular flat)
+concept: ~she (~FAMILY_ADULT_FEMALE ~FAMILY_CHILDREN_FEMALE ~FEMALE ~FEMALENAME ~MOTHER ~OCCUPATION_FEMALE ~ROYALTY_FEMALE Madame Mademoiselle Miss Mrs. Ms. )
+concept: ~shelter (abode apartment billet castle condo condominium cottage dorm dormitory dwelling estate flat habitat habitation home hotel house houseboat housing 
+                   hut locate location lodge lodging mansion mobile_home motel place prison quarters residence RV rv shack shanty shelter shelter~n spot tent )
+concept: ~shoe (baby_shoes flats footwear footwear~2 heel loafers moccasins rubber_boots shoe walking_shoes western_boots work_boots )
+concept: ~shoe_store (~SHOE shoe_horn shoe_polish shoe_store shoe_tree sock )
+concept: ~shootable (~PROJECTILE_WEAPON )
+concept: ~all_shields(~bodyArmor   ~fireArmor ~gasArmor spacesuit bomb_suit helmet)
+concept: ~gasArmor(gasmask ~bioprotect ) 
+concept:  ~bioArmor(hazmat_suit biohazard_suit spacesuit)
+concept: ~bodyArmor (helmet battledress cuirass linothorax armour jousting_mail breastplate bullet_proof_vest kevlar_vest kevlar_jacket kevlar shield chain_mail armor)
+concept: ~fireArmor (fire_fighter_suit fire_suit asbestos_suit)
+concept: ~sicknesses (~BIRTH_DEFECT ~DISEASE ~MENTAL_ILLNESSES ~SYMPTOM ailment allergy amnesia blind deaf deafness death epidemic Fibromyalgia illness infection malfunction mute parasite plague 
+                      sick symptom toothache )
+concept: ~similar (akin alike analogous comparable compare congruent congruous identical like much_the_same relate resemble same similar the_same )
+concept: ~singing (choral_group kibuki musical musical_theater~1 opera )
+concept: ~sister (sis sister )
+concept: ~skate_sports (in-line_skating roller-skate roller_skate roller_skating skateboarding )
+concept: ~slow (amble bend canter crawl creep drag drift droop edge heave lazily lift loiter lope lumber plod saunter slink slouch 
+                slow slowly sneak soar stagger stalk stray sway tiptoe waddle )
+concept: ~smoke_shop (~TOBACCO smoke_shop )
+concept: ~snackgroup (~DESSERT brownie cake candy caramel chip cookie donut ice_cream popsickle taffy )
+concept: ~soappolish (cleansing_agent cleansing_agent~1 polish polish~3 )
+concept: ~soberevent (cogitate concentrate contemplate meditate ponder remember serious sober think_hard thoughtful )
+concept: ~social_issues (abortion affirmative_action AIDS alcohol animal_rights assisted_suicide capital_punishment censorship child_labor children_'s_rights civil_rights creation_science creationism drinking drug_abuse drugs drunk_driving ecology environment 
+                         environmental_protection euthanasia evolution famine flag_burning gangs gender_issues genetic_engineering global_warming gun_control homelessness homosexuality human_rights immigration marijuana nuclear_proliferation nuclear_weapons organ_donation organ_donor overpopulation 
+                         poverty prayer_in_school racial_profiling religion same_sex_marriage school_prayer smoking sweatshop terrorism tobacco violence welfare world_population )
+concept: ~social_network_sites (Classmates Classmates.com Dena eGenki Facebook Flickr Gree Habbo LinkedIn Meetup.com Mixi MySpace Orkut Plaxo Ryze Twitter Tweet )
+concept: ~societal_data (~IDENTITY family friends memberships )
+concept: ~softdrinks (Coca_Cola cola ice_cream_soda Mountain_Dew Pepsi pop root_beer rootbeer soda soda_pop soft_drink softdrink Sprite )
+concept: ~solid_containers (~CONTAINER_FURNITURE bag baking_pan baske basket bin bobbin box briefcase can~n carton casserole_dish closet container diaper drawer envelope feeder garbage_can 
+                            humidor lunch_box mailbox money_bag money_belt moneybelt package pan parcel pocket pot pouch purse sack sand_box saucepan seat-belt seat_belt shaker shoulder_bag 
+                            slot spool staple_gun stapler suitcase toilet trash_can trunk vase wallet waste_basket wastebasket )
+concept: ~sound_emitters (~ALARM ~MUSICAL_INSTRUMENTS_BRASS ~MUSICAL_INSTRUMENTS_PERCUSSION ~MUSICAL_INSTRUMENTS_STRING ~MUSICAL_INSTRUMENTS_WOODWIND )
+concept: ~sounds (achoo arf baa bang bark beep bleat boo chatter cheer chirp clamor clash click croak cry ding dong echo 
+                  gasp gee giggle growl hiss honk hooray hoot hush jeer jingle keen laugh meow moo murmur mutter noise oink outburst 
+                  peep plop quack roar rumble scold scolding scream shout shriek sigh silence snarl sniff snore sob splash squawk squeak taunt 
+                  tinkle titter tone wheeze whew whisper whoop yap yell yip )
+concept: ~specialactivities (~COOKWARE ~PLACESETTING ~TREATMENTS )
+concept: ~spiritpart (aura soul )
+concept: ~spirits (~SPIRITS_GIN ~SPIRITS_VODKA ~SPIRITS_WHISKY cordial liqueur Mexcal ouzo port rum scotch Soju spirits tequila Tom_Cobb whiskey )
+concept: ~spirits_gin (genever gin jenever )
+concept: ~spirits_vodka (akvavit aquavit korn schnapps vodka )
+concept: ~spirits_whisky (bourbon Irish_whiskey Scotch Scotch_whisky whiskey whisky )
+concept: ~spiritual_force (evil goodness )
+concept: ~sport (~COMBAT_SPORTS ~EQUESTRIAN_SPORTS ~MINOR_OUTDOOR_ACTIVITIES ~MOUNTAIN_SPORTS ~SPORTS_BALL ~SPORTS_RAQUET ~TRACK_FIELD_SPORT ~WATER_SPORTS ~WINTER_SPORTS ~WNSPORT marathon race team yoga ~PRECISION_SPORTS ~SKATE_SPORTS  ~SPORTS_BALL ~SPORTS_RAQUET ~TRACK_FIELD_SPORT sumo aerobics athletic_game~1 sport working_out ~aerial_sports)
+concept: ~sporting_goods_store (~SPORTS ball baseball baseball_bat baseball_glove basket_ball bowling_ball cleats fishing_reel fishing_rod football golf_ball golf_club golf_tee helmet hockey_puck hockey_stick racquet skates 
+                                ski_boots ski_poles skis soccer_ball soccer_shoes sporting_goods_store sweatsuit )
+concept: ~sports_ball (badminton ball baseball basketball billiards bocce bocce_ball boules bowl bowling cricket croquet field_hockey football golf handball hardball hockey hurling 
+                       juggling lacrosse netball paddleball paintball pingpong polo pool racquetball rugby soccer softball squash stickball tennis tetherball volleyball )
+concept: ~sports_raquet (badminton ping-pong ping_pong racquetball squash squash~n table_tennis tennis wallyball )
+concept: ~staff_groups (crew personnel staff team )
+concept: ~stamp_shop (stamp stamp_shop )
+concept: ~star (star )
+concept: ~startreklist (7_of_9 Bajor Bones Brent_Spiner Captain_Janeway Captain_Kirk Data Deep_Space_9 Doohan DS9 Ensign_Ohura Enterprise Federation Ferengi Janeway Jonathan_Frakes Kate_Mulgrew Kirk Klingon 
+                        Koenig McCoy Michael_Dorn Nichols Nimoy Patrick_Stewart Picard Riker Roddenberry Romulan Scotty Shatner Sisko Spock Star_Trek Sulu Takei trekkie tribble United_Federation_of_Planets 
+                        Voyager Worf )
+concept: ~state (Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware Florida Georgia Hawaii Idaho Illinois Iowa Kansas Kentucky Louisiana Maine Maryland 
+                 Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New_Hampshire New_Jersey New_Mexico New_York North_Carolina North_Dakota Ohio Oklahoma Oregon Pennsylvania Rhode_Island South_Carolina 
+                 South_Dakota state Tennessee Texas Utah Vermont Virginia Washington West_Virginia Wisconsin Wyoming )
+concept: ~states_of_matter (gas~n liquid~n plasma~n solid~n )
+concept: ~stationary (binder paper pen stapler  calendar correction_fluid envelope file_cabinet manila_folder masking_tape packing_tape paper paper_clip pen rubber_band rubber_cement scotch_tape stapler staples stationary typewriter_ribbon typing_paper )
+concept: ~stationary_store (~STATIONARY   )
+
+concept: ~stock_broker (bonds mutual_fund stock_broker stocks )
+concept: ~stop (bore complete done end enough exit finish go_away help leave no_more not_want over quit stop this_any_more )
+
+concept: ~auto_parts_store (tire bumper fender car_battery windshield windshield_wiper)
+concept: ~stupidguy (simpleton simpleton~1 )
+concept: ~styles (~HAIRCUT ~musical_genres ~PHILOSOPHY_KIND ~POLITICAL_SYSTEM ~RELIGION_KIND ~ROLE ~SOCIAL_ISSUES ~WORKLIST )
+concept: ~substances (~BUILDING_SUBSTANCES ~CHEMICALS ~CLEANING_SUBSTANCES ~ELEMENT ~EXPLOSIVE ~FABRIC ~FERTILIZER ~GASES ~GRAINS ~HARMFUL_SUBSTANCE ~INDUSTRIAL_SUBSTANCES ~LANDSCAPE_MATERIALS ~MATERIAL ~MEDICAL_SUBSTANCES ~MINERALS ~PHYSICS_PARTICLE cardboard fluid liquid 
+                      substance vacuum )
+concept: ~subtraction (decreased_by difference_between difference_of less minus subtraction )
+concept: ~supermarket (~CANDY ~FOODBEVERAGE ~MILK ~SOAPPOLISH canned_food supermarket )
+concept: ~supports (~FURNITURE )
+concept: ~surface_furniture (~HUMAN_SURFACE ~OBJECT_SURFACE )
+concept: ~surfaces (blackboard book chalkboard paper parking_space photo_album pillow plate saucer surface toilet_paper tray umbrella video videotape whiteboard )
+concept: ~surprise_emotion (shock surprise )
+concept: ~switchable (~ELECTRONIC_ITEMS )
+concept: ~sympathy_emotion (compassion kindness pity sympathy )
+concept: ~symptom (crummy awful rotten a_rash a_temperature ache achy anxiety bellyache cold cough fatigue  fever flu headache hives laryngitis nausea pain phlegm queasy runny_nose 
+					ache awful cold dizzy faint feel_sick fever flu headache ill illness insomnia nausea nauseous numb numbness queasy sick sickness stomach_ache tingle 
+                   sneeze sniffle sore sore_throat stomachache stomach_ache tired tummyache upset_stomach vomit diarrhea)
+concept: ~taxi (ride taxi transport travel )
+concept: ~team_sports (baseball basketball cricket football lacrosse rugby soccer volleyball )
+concept: ~temperature_quantity (degree )
+concept: ~textile_crafts (crochet cross-stitch embroidery knit macrame millinery needlepoint quilt sew spinning tatting weave )
+concept: ~theatrical_groups (cast troupe )
+concept: ~there (~SHELTER ~SPACENAME )
+concept: ~they (~BAND ~COMPANY ~COUNTRY agency brigade committee people humans beings company council crew Democratic_Party Democrats gang group House_of_Commons House_of_Lords House_of_Representatives organization Parliament patrol 
+                platoon Republican_Party Republicans Roman_Catholic_Church school_board Senate Supreme_Court tribunal )
+concept: ~thrift_shop (book cd clothes dvd lamp movie record thrift_shop tv vcr )
+concept: ~throwable (~NUTRIENT rock )
+concept: ~throwing_weapon (assagai boomerang kiley knife kylie shuriken sling slingshot spear throw_stick throwing_stick )
+concept: ~time_activity (do_homework do_laundry do_my_homework do_the_laundry feed_the_baby go_shopping go_to_school go_to_work make_dinner punch_in read_to_my_children shop sweep take_a_break wash_the_dishes work )
+concept: ~time_circadian_reference (dawn day fall morning night noon spring summer twilight winter )
+concept: ~time_instant (a.d. a.m. ad afternoon age AM annual April August autumn b.c. bc biannual bicennial bicentennial biennial biennium bimonthy biweekly 
+                        breakfast brunch century dawn day daybreak decade December decennial dinner diurnal dusk early eon evening fall Feburary femtosecond fortnight Friday 
+                        generation hour January July June late lunch lunch_time lustrum Mar March May microsecond mid-afternoon mid-evening mid-morning midnight millenium millisecond minute 
+                        Monday month monthly morning nanosecond night nightfall noon noon_time November o'clock October olympiad p.m. pentad perennial phase picosecond PM quadrennnimum 
+                        quadricentennial quarter quarterly quincentennial round Saturday season second semester semiannual semidiurnal semimonthly September session sexcentenary sexennial spring springtime summer summertime 
+                        Sunday sunset supper term Thursday triennial triennium trimester trimonthly triweekly Tuesday twilight twinight Wednesday week weekend winter wintertime year year_end )
+concept: ~time_item (a.m. afternoon alarm_clock AM clock_radio clock_time~1 day_after_tomorrow day_before_yesterday digital_clock early eat_breakfast eat_dinner eat_lunch evening future get_up go_to_bed go_to_class late 
+                     leap_year midnight morning night noon on_time p.m. PM sleep time~1 today wake_up watch week-end week_day weekend wrist_watch yesterday )
+concept: ~time_reference (Friday last_month last_week last_year Monday next_month next_week next_year Saturday Sunday this_month this_week this_year Thursday today tomorrow Tuesday Wednesday yesterday )
+concept: ~time_unit (century~n day~n decade~n hour~n millennium~n minute~n month~n quarter season~n second~n semester term week~n year~n )
+concept: ~timeearlier (ago anon back back_when before beforehand earlier previous previously prior last )
+concept: ~timelater (after afterward ere from hence follow later post since subsequent subsequently next subsequently )
+concept: ~timenopreposition (all any every last next this )
+concept: ~tobacco (tobacco tobacco~1 )
+concept: ~tool (tool tool~2 )
+concept: ~top_clothes (anorak blouse Burberry cape cloak coat halter_top jacket kimono mackintosh negligee overcoat pajamas pullover raincoat shirt sweater sweat-shirt T-shirt 
+                       tank_top topcoat turtleneck tuxedo vest weater )
+concept: ~torso (abdomen back belly body bottom breast buttock chest genitals heart lap penis scrotum shoulder skeleton spine stomach testicle tush 
+                 vagina waist )
+concept: ~tow_service (road_service tow tow_service )
+concept: ~toy (~BOARD_GAMES ~GAMES magnet playdough plaything plaything~1 puzzle stuffed_animal swingset toy trampoline )
+concept: ~toy_store (~GAME_NAMES ~TOY bicycle board_game boardgame computer_game doll electric_train model_airplane model_train paint_set rubber_ball balloon stuffed_animal teddy_bear toy_store tricycle )
+concept: ~toyable (~TOY )
+concept: ~track_field_sport (broad_jump dash discus high_jump javalin_throwing javelin pole_vault shot_put sprint steeplechase )
+concept: ~tradegoods (cash coin currency~1 dollar fortune gold money plunder silver stamp trade_goods treasure diamond ruby sapphire emerald pearl)
+concept: ~transmuters (diesel_fuel electrolysis electromagnet fire_extinguisher gas gasoline generator lighter match )
+concept: ~transport_vehicles (public_transport~1 tramline tramway vehicle~1 wheeled_vehicle~1 )
+concept: ~travel_agency (ticket travel_agency vacation )
+concept: ~travel_websites (Expedia Expedia.com Hotwire Metacafe Orbitz Priceline Priceline.com Travelocity )
+concept: ~treatments (catharsis diagnosis healing operation physiotherapy recuperation therapy transplant treatment )
+concept: ~tv-network (ABC BBC BBC-America CBS CNN Comedy_Central CSPAN CW ESPN FOX-TV HBO HGTV MTV NBC network PBS Sci-Fi_Channel ShowTime TBS 
+                      tv-network )
+concept: ~tv_genre ("current affairs" action adult_movie attorney cartoon comedy cop court crime detective doctor documentary drama fashion  hospital judge law lawyer legal 
+        attorney court  quiz_show game_show   medical medicine news police quiz reality sci-fi science_fiction  serial shopping sitcom soap )
+concept: ~tv_show (tv_show )
+concept: ~tvstuff (broadcast broadcast~1 program variety_show )
+concept: ~unfocused_groups (bevy crowd drove flock folk gang herd huddle mob pack pool swarm throng )
+concept: ~university (university )
+concept: ~unreachable (~SCENERY_AIR ~SCENERY_SPACE )
+concept: ~usefulfactverb (~ACTIVITIES_VERBS ~BODILY_ACTIVITIES_VERBS ~BODILY_FUNCTION_VERBS ~EXERCISE be~v )
+concept: ~vegetable (arugula beet bok_choy broccoli brussel_sprout cabbage carrot cauliflower celery corn endive green_beans kale lettuce lima_bean onion peas potato purslane 
+                     radish spinach turnip vegetable watercress yarrow artichoke tomato)
+concept: ~vehicle (~TRANSPORT_VEHICLES ~VEHICLES_AIR ~VEHICLES_LAND ~VEHICLES_SEA ~VEHICLES_SPACE convoy )
+concept: ~vehicle_conduit (avenue boulevard drawbridge expressway highway road roadway street turnpike )
+concept: ~vehicle_weapons (aircraft_carrier bomber fighter_jet halftrack submarine tank )
+concept: ~vehicles_air (aeroplane airbus aircraft airline airliner airplane airship amphibious_aircraft attack_aircraft autogiro autogyro B-52 ballistic_capsule balloon barrage_balloon biplane blimp Boeing_747 bogey 
+           747 "Boeing 747"   bogie bogy bomber cargo_helicopter chopper coleopter cruise_missile delta_wing dirigible dive_bomber double-prop double-propeller_plane drone eggbeater fan-jet fanjet fighter fighter_aircraft fighter_jet floatplane 
+                        flying_boat flying_broom flying_car glider Graf_Zeppelin ground-effect_machine gyroplane hang_glider hangar_queen hangglider heavier-than-air_craft helicopter hot-air_balloon hovercraft hydroplane interceptor jet jet-propelled_plane jet_plane jetliner 
+                        jumbo_jet jumbojet kamikaze kite kite_balloon landing_craft lighter-than-air_craft lunar_rover magic_carpet Messerschmitt meteorological_balloon military_aircraft military_plane monoplane multiengine_airplane multiengine_plane narrow-body narrow-body_aircraft narrowbody_aircraft ornithopter 
+                        orthopter paraglider pilot_balloon pilotless_aircraft plane pontoon_plane propeller_plane propjet radio-controlled_aircraft reconnaissance_plane roflcopter sailplane sausage sausage_balloon seaplane shuttle_helicopter single-propeller_plane single-rotor_helicopter single_prop ski-plane 
+                        skyhook stealth_aircraft stealth_bomber stealth_fighter tanker_plane trial_balloon triplane turbo-propeller_plane turbofan turbojet turboprop twin-aisle_airplane twin-prop twin-propeller-plane twinjet warplane whirlybird wide-body wide-body_aircraft widebody_aircraft 
+                        zeppelin )
+concept: ~vehicles_land (4WD aerial_ladder_truck all-terrain_bike ambulance amphibian amphibious_vehicle angledozer apc APC applecart armored_car armored_combat_vehicle armored_personnel_carrier armored_vehicle armoured_car armoured_combat_vehicle armoured_personnel_carrier armoured_vehicle army_tank 
+                         articulated_lorry assault_gun ATV auto autobus automobile automotive_vehicle automotive_vehicle~1 baby_buggy baby_carriage baggage_car bandwagon barouche barrow bassinet beach_buggy beach_wagon bicycle bicycle-built-for-two bike 
+                         Black_Maria bloodmobile boat_train bob bobsled bobsleigh bookmobile boxcar brougham buckboard buffet_car buggy bulldozer bullet_train bumper_car burro bus cab cabin_car caboose 
+                         cabriolet cadillac camel camion camper camper_trailer camping_bus car car_train car_transporter caravan caroche carriage carrier cart cattle_car cement_truck chair_car chaise charabanc 
+                         chariot cherry_picker choo-choo chopper chuck_wagon clarence clown_car club_car coach coach-and-four coal_car coaster_wagon commuter_train compact compact_car Conestoga Conestoga_wagon convertible coupe covered_wagon 
+                         crane cruiser cycle cycle_rickshaw delivery_truck delivery_van diesel-electric diesel-electric_locomotive diesel-hydraulic diesel-hydraulic_locomotive diesel_locomotive diner dining_car dining_compartment dinkey dinky dirt_bike dog_sled dog_sleigh dogcart 
+                         dogsled donkey donkey_cart donkey_engine doodlebug double-decker double_decker_bus dozer drawing-room_car dray droshky drosky dump_truck dumpcart dumper dune_buggy dustcart electric electric_automobile electric_car 
+                         electric_locomotive engine equipage estate_car excavator fire_engine fire_truck flatbed flatcar flying_car forklift four-in-hand four-wheel_drive four-wheeler freight_car freight_liner freight_train funny_wagon garbage_truck garden_cart 
+                         gas_guzzler gharry gig go-cart go-kart go_cart gocart gokart golf_car golf_cart golfcart gondola_car gypsy_cab hack hackney hackney_carriage hackney_coach half_track hand_truck handcar 
+                         handcart hansom hansom_cab hardtop harvester hatchback heap hearse horse horse-cart horse-drawn_vehicle horse_cart horsecar horseless_carriage hospital_train hot-rod hot_rod house_trailer hovercraft Humvee 
+                         ice-wagon ice_cream_truck ice_wagon iron_horse jalopy jaunting_car jaunty_car jeep jinrikisha jitney kart ladder_truck landau landrover laundry_cart laundry_truck lawn_cart limo limousine liner_train 
+                         locomotive locomotive_engine lorry lounge_car luge luggage_van lunar_rover machine mail_car mail_train manufactured_home marsh_buggy mech milk_float milk_wagon milkwagon mini_bike minibike minibus minicab 
+                         minicar minivan mobile_home mobility_scooter Model_T monocycle monorail monster_truck moped motor_bike motor_home motor_scooter motor_vehicle motorbike motorbus motorcar motorcoach motorcross_bike motorcycle motortruck 
+                         mountain_bike moving_truck moving_van mower mule nonsmoking_car off-roader omnibus oxcart pace_car paddy_wagon palace_car panel_truck pantechnicon panzer parlor_car parlour_car passenger_car passenger_train passenger_van 
+                         passenger_vehicle pastry_cart patrol_car patrol_wagon pedicab perambulator personnel_carrier phaeton pickup pickup_truck pilot_engine police_car police_cruiser police_van police_wagon pony_cart ponycart post_chaise prairie_schooner prairie_wagon 
+                         pram prowl_car public_transport Pullman Pullman_car pung push-bike pushcart pushchair quadcycle R.V. race_bike race_car racer racing_car railcar railroad railroad_car railroad_train railway_car 
+                         railway_locomotive rally_car reconnaissance_vehicle recreational_vehicle refrigerator_car remise research_rocket ricksha rickshaw rig road_roller roadster roller_skates rolling_stock runabout rv RV S.U.V. safety_bike school_bus 
+                         scooter scout_car scrambler scraper secondhand_car sedan self-propelled_vehicle semi serving_cart shay shooting_brake shopping_cart shuttle shuttle_bus skateboard ski skibob skidder sled sledge 
+                         sleeping_car sleigh slip_carriage slip_coach smoking_car smoking_carriage smoking_compartment Sno-cat snow_melter snow_plow snowmobile snowplough snowplow snowshoe sound_truck sport_car sport_utility sport_utility_vehicle sports_bike sports_car 
+                         sportscar sprayer sprint_car squad_car stage stagecoach stanhope Stanley_Steamer station_wagon steam_locomotive steam_shovel steamroller stock_car stockcar streamliner street_cleaner streetcar stroller subcompact subcompact_car 
+                         subway subway_train sulky surrey SUV swamp_buggy switch_engine tandem tandem_bicycle tandem_trailer tank tank_car tank_destroyer tank_engine tank_locomotive tank_truck taxi taxicab tea_cart tea_trolley 
+                         tea_wagon teacart technical test_instrument_vehicle test_rocket tip_truck tipper_lorry tipper_truck tobaggan toboggan tourer touring_car tow_car tow_truck tracked_vehicle trackless_trolley traction_engine tractor tractor_trailer trail_bike 
+                         trailer trailer_truck train train_car tram tramcar transport transporter trencher tricycle trike trolley trolley_car trolley_coach trolleybus truck trucking_rig tub-cart tumbrel tumbril 
+                         two-seater unicycle used-car van vehicle velocipede wagon wain water_cart water_waggon water_wagon watering_cart weapons_carrier welcome_wagon wheel wheelbarrow wheelchair wheeled_vehicle wood_chipper wrecker )
+concept: ~vehicles_sea (abandoned_ship aircraft_carrier amphibian ark attack_aircraft_carrier attack_submarine auxiliary_research_submarine banana_boat bareboat barge bark barque battle_cruiser battleship battlewagon birch_bark birchbark birchbark_canoe blockade-runner 
+                        boat Bounty brig brigantine bumboat cabin_cruiser cabin_liner caisson canal_boat canoe capital_ship car-ferry carack cargo_liner cargo_ship cargo_vessel carrack catamaran catboat cattle_boat 
+                        cattleship Chinese_junk clipper clipper_ship cockleshell cogship combat_ship Constitution container_ship container_vessel containership coracle corsair corvette cruise_liner cruise_ship cutter dandy derelict destroyer 
+                        destroyer_escort dhow dinghy dory dragger dreadnaught dreadnought dredger drifter dugout dugout_canoe express_luxury_liner factory_ship felucca ferry ferryboat fireboat fishing_boat fishing_smack fishing_vessel 
+                        flagship flatboat flattop fleet fleet_ballistic_missile_submarine fore-and-after freighter frigate galeass galleon galley gas-turbine_ship ghost_ship gig gondola guard_boat guard_ship guided_missile_cruiser guided_missile_destroyer guided_missile_frigate 
+                        gunboat H.M.S_._Bounty hermaphrodite_brig hospital_ship houseboat hovercraft hoy hulk Hum-Vee hydrofoil ice_yacht iceboat icebreaker Indiaman inflatable ironclad jolly_boat junk kayak keelboat 
+                        ketch knockabout launch Liberty_ship life_raft lifeboat lighter lightship liner longboat longship lugger luxury_liner mackinaw Mackinaw_boat mail_boat mailboat man-of-war Mayflower merchant_ship 
+                        merchantman Merrimac military_vehicle minelayer minesweeper Monitor mosquito_boat mosquito_craft motor_torpedo_boat motorboat narrow_boat narrowboat nautilus Norfolk_wherry nuclear-powered_ship nuclear-powered_submarine nuclear_submarine ocean_liner oil_tanker oiler 
+                        Old_Ironsides outboard outboard_motorboat outrigger outrigger_canoe packet packet_boat paddle-wheeler paddle_steamer paddleboat passenger_liner passenger_ship patrol_boat patrol_ship picket picket_boat picket_ship pigboat pilot_boat pinnace 
+                        pirate pirate_ship pirogue pleasure_boat pleasure_craft pocket_battleship police_boat pontoon powerboat privateer PT_boat punt raceabout racing_boat racing_gig racing_shell racing_skiff racing_yacht rigger river_boat 
+                        riverboat rowboat rowing_boat sailboat sailing_boat sailing_ship sailing_vessel sailing_warship sampan school_ship schooner scow scull sea_boat sea_scooter sharpie sharpshooter shell ship ship_'s_boat 
+                        ship_of_the_line shipwreck showboat shrimper side-wheeler single_shell sister_ship skiff slave_ship sloop sloop_of_war smack small_boat small_ship speed_boat speedboat square-rigger steamboat steamer steamship 
+                        sternwheeler sub submarine submersible submersible_warship supertanker supply_ship surface_ship surfboat tank_ship tanker three-decker tin_can torpedo-boat_destroyer torpedo_boat towboat tower training_ship tramp tramp_steamer 
+                        transport_ship trawler treasure_ship triemme trimaran trireme troop_carrier troop_transport troopship tug tugboat U-boat underseaboat USS_Cole vessel war_vessel warship water_scooter watercraft weather_ship 
+                        whaleback whaleboat whaler whaling_ship wherry windjammer wreck yacht yawl )
+concept: ~vehicles_space (capsule lander LEM lunar_excursion_module lunar_module rocket rocket_ship space_capsule space_shuttle space_vehicle spacecraft spaceship starship UFO )
+concept: ~videogame (Bejeweled Bomberman Command_and_Conquer Crash_Bandicoot Dance_Dance_Revolution DDR Diablo Donkey_Kong Dragon_Quest Elder_Scrolls Everquest Farmville Final_Fantasy Frogger Gran_Turismo Grand_Theft_Auto Guitar_Hero Half-Life Halo 
+                     Legend_Of_Zelda Mario Medal_of_Honor Metal_Gear Metroid Moral_Kombat Myst OddWorld Pokemon Quake Ratchet_and_Clank Resident_Evil SimCity Sims Sonic_The_Hedgehog Starcraft Street_Fighter Team-Fortress_2 Team_Fortress_2 Tekken 
+                     Tetris Tomb_Raider Warcraft )
+concept: ~videogame_genre (action action-adventure adventure casual city dance educational fantasy fight first-person_shooter god management maze music pinball platform puzzle real-time_strategy role-playing 
+                           RPG RTS shooter side_scroller simulation simulator sports strategy )
+concept: ~videogame_hardware_companies (Microsoft Nintendo Sony Coleco)
+concept: ~videogame_machines (arcade_machine DreamCast DS Gamecube N64 Nintendo_DS Playstation Playstation_2 Playstation_3 PS2 PS3 PSP SNES Wii Xbox Xbox_360 )
+concept: ~videogame_software_companies (3DO Activision Atari Blizzard_Entertainment Bandai Blizzard Eidos Electronic_Arts Radical Sega Vivendi Telltale_Games LucasArts Nintendo Crystal_Dynamics 2K_Games
+Accolade Acclaim_Entertainment Broderbund Bungie Capcom Coleco
+ Disney_Interactive Enix GT_Interactive Hudson_Soft)
+concept: ~vitamin (vitamin vitamin~1 )
+concept: ~warm (hot warm )
+concept: ~warstuff (blockade electronic_warfare~1 encirclement~1 military_action military_action~1 war warefare warfare~1 )
+concept: ~water_drinks (glass_of_water tonic water~n )
+concept: ~water_force (tide whirlpool )
+concept: ~water_sports (canoe canoeing dive diving fishing flatwater_racing kayak kayaking rowing sail sailboard sailing scuba scuba_diving sculling snorkel surfing swim swimming 
+                        to_row water-ski water-skiing water_polo water_skiing water_sport water_sport~1 yachting )
+concept: ~weapon (~BLADED_WEAPON ~EXPLOSIVE_WEAPON ~FLAME_WEAPON ~HITTING_WEAPON ~MAGIC_WEAPON ~POINTED_WEAPON ~PROJECTILE_WEAPON ~THROWING_WEAPON ~VEHICLE_WEAPONS ~WEAPON_AMMO ~WEAPON_FUTURE ~WEAPON_MAGICAL ~WEAPON_MEDIEVAL ~WEAPON_MODERN weapon weapon_system~1 )
+concept: ~weapon_ammo (ammo ammunition arrow ball banderilla BB BB_shot bird_shot broad_arrow buckshot bullet butt_shaft cannon_ball cannonball dart duck_shot dumdum dumdum_bullet full_metal_jacket 
+                       grapeshot musket_ball pellet projectile quarrel rifle_ball round_shot rubber_bullet shot slug spitball )
+concept: ~weapon_biological (aflatoxin anthrax_bacillus Bacillus_anthracis bioarm biological_weapon bioweapon botulin botulinus_toxin botulismotoxin clostridium_perfringens staphylococcal_enterotoxin_B )
+concept: ~weapon_future (blaster disruptor freeze_ray laser_sword phaser ray_gun raygun shrink_ray )
+concept: ~weapon_magical (Medusa_'s_head wand wizard_staff )
+concept: ~weapon_massdestruction (~WEAPON_BIOLOGICAL ~WEAPON_NUCLEAR W.M.D. weapon_of_mass_destruction weapon_of_mass_destruction~1 WMD )
+concept: ~weapon_medieval (arrow axe ballista battering_ram blade blowgun bludgeon bokken boomerang bow bow_and_arrow broadsword catapult club crossbow cudgel Cupid_'s_bow cupid_bow dagger 
+                           Excalibur flameberge flintlock grappling_hook halberd handbow harpoon javelin katana katar knife lance longbow longsword mace medieval_weapon medieval_weaponry morning_star nun_chuck pike 
+                           quarterstaff ram rapier sai scimitar shuriken sickle siege_engine siege_tower sling sling_shot spear staff sword trebuchet trident war_hammer whip zweihandler )
+concept: ~weapon_missile (ABM air-to-air_missile air-to-ground_missile air-to-surface_missile antiballistic_missile ballistic_missile brilliant_pebble buzz_bomb cruise_missile doodlebug Exocet flying_bomb guided_missile heat-seeking_missile ICBM intercontinental_ballistic_missile MANPAD Minuteman missile 
+                          multistage_rocket projectile robot_bomb rocket rocket_launcher Sam sidewinder sounding_rocket space_probe step_rocket Stinger surface-to-air_missile V-1 )
+concept: ~weapon_modern (~GAS_WEAPON ~WEAPON_MASSDESTRUCTION ~WEAPON_MISSILE ~WEAPON_STUN EMP modern_weapon modern_weaponry )
+concept: ~weapon_nuclear (A-bomb atom_bomb atomic_bomb atomic_weapon clean_bomb dirty_bomb fission_bomb fusion_bomb H-bomb hydrogen_bomb megaton_bomb neutron_bomb nuclear_weapon nuke plutonium_bomb thermonuclear_bomb )
+concept: ~weapon_stun (stun_baton stun_gun taser )
+concept: ~wearable (~CLOTHES ~ALL_SHIELDS )
+concept: ~weather (~BAD_WEATHER ~GOODWEATHER ~REALLYBADWEATHER climate dew weather )
+concept: ~weatherprocess (~NATURAL_DISASTERS ~SEASONS ~WEATHER )
+concept: ~web_filesharing_sites (Bittorrent RapidShare )
+concept: ~webmail_services (AOL Eudora Gmail Gmail.com Hotmail Hotmail.com MSN )
+concept: ~webnews_sites (BoingBoing del.icio.us Digg digg.com Diggdot.us Drudge_Report Fark Slashdot )
+concept: ~websites (~IMAGE_WEBSITES ~SEARCH_ENGINES ~SOCIAL_NETWORK_SITES ~TRAVEL_WEBSITES ~WEB_FILESHARING_SITES ~WEBMAIL_SERVICES ~WEBNEWS_SITES Amazon.com EBay Encyclopedia_Dramatica Google_Maps hi5 hi5.com IRC MapQuest match.com Netflix Something_Awful Thesaurus.com 
+                    Ticketmaster Weather.com Wikipedia Yahoo )
+concept: ~weight_words (heavy light mass pound weigh weight )
+concept: ~weightnoun (centigram gram kilo kilogram pound stone ton weight )
+concept: ~what (what which )
+concept: ~white (albicant albugineous blond chalk cream whitish cretaceous eburnean ivory leucochroic niveous whey white )
+concept: ~why (how_come how_so what_for why )
+concept: ~wind_force (breeze draft dust_devil gust wind )
+concept: ~wine_red (cabernet_sauvignon chianti gamay lambrusco merlot montepulciano nebbiolo pinot_noir red_wine sangiovese shiraz syrah tempranillo zinfandel )
+concept: ~wine_white (chardonnay chenin_blanc gewurztrauminer pinot_blanc pinot_grigio riesling sauvignon_blanc scheuerbe viognier white_wine )
+concept: ~winter_sports (alpine_skiing biathlon bobsled cross-country_skiing curling figure_skating freestyle_skiing ice_hocket luge  ski ski_jumping ski_resort skiing snowboarding snowshoe speed_skating speed_skiing )
+concept: ~wnapplied_science (agriculture alimentation architecture computer_science engineering medicine veterinary )
+concept: ~wnbiology (anatomy biochemistry botany ecology genetics physiology zoology )
+concept: ~wndoctrines (archaeology art astrology history linguistics literature philosophy psychology religion )
+concept: ~wnearth (aeronomy astrogeology climatology geobotany geochemistry geocosmology geography geology glaciology hydrology limnology meteorology mineralology oceanography paleontology seismology volcanoogy )
+concept: ~wnengineering (astronautics electrotechnics hydraulics mechanics )
+concept: ~wnfree_time (play sport )
+concept: ~wnmedicine (dentistry pharmacy psychiatry radiology surgery )
+concept: ~wnpure_science (astronomy biology chemistry earth mathematics physics )
+concept: ~wnsocial_science (administration anthropology artisanship body_care commerce economy fashion industry law military pedagogy politics publishing sexuality sociology telecommunication tourism transport )
+concept: ~wnsport (archery athletics badminton baseball basketball bowling boxing cricket cycling diving fencing fishing football golf hockey hunting motocross mountaineering racing 
+                   rowing rugby skating skiing soccer swimming table_tennis tennis volleyball wrestling )
+concept: ~wood (wood wood~4 )
+concept: ~woodmetalclayglasscraft (beading carve glassblowing jewelry metalwork pottery sculpture stained woodwork )
+concept: ~word_games (word_game~1 )
+concept: ~wordnetpropogate (is member refine )
+concept: ~worklist (business career employment job occupation office profession vocation work )
+concept: ~yellow_other (apricot gold canary butter butterscotch buttercup chrome goldenrod lemon mustard orange peach persimmon primrose saffron sulphur tangerine suede)
+concept: ~yellow (~yellow_other  beige buff      citreous citrine croceate fulvous gamboge   icterine icteritious isabelline jessamy 
+                  lavescent  lurid luteous lutescent meline  nankeen ochre ochroleucous   yellowish     sulphureous  tawny 
+                   vitellary xanthic yellow )
+concept: ~yesanswer (~YES y )

@@ -1,0 +1,10 @@
+
+RAWDATA/simplecontrol.top
+			# conversational control
+# RAWDATA/tutorial.top		# things we can chat about
+
+
+
+
+
+

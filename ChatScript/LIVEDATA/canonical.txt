@@ -1,0 +1,80 @@
+am be
+are be # avoids problems with noun form
+is be
+was be
+were be
+
+has have
+had have
+have have
+
+'s  's
+'	's
+
+a a
+an a
+the a
+some a
+these a
+those a
+this a
+that a 
+
+who who
+whom who
+whose who
+whomever who
+whoever who
+
+someone someone
+somebody someone
+anybody someone
+anyone someone
+
+I I
+me I
+mine I
+myself I
+my I
+
+
+you you
+your you
+yourself you
+yours you
+
+he he
+him he
+his he
+himself he
+
+she she
+her she
+hers she
+herself she
+
+it it
+its it
+itself it
+
+we we
+our we
+ours we
+ourselves we 
+us we
+
+they they
+them they
+themselves they
+theirs they
+their they
+
+whichever which
+whatever what
+wherever where
+whenever when
+
+better better
+
+found find  # found is also a present tense verb, confusing find
+

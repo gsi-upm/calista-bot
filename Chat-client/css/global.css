@@ -1,0 +1,199 @@
+/*~~~~~~~~ @start background fake image ~~~~~~~~~*/
+body {
+  background: #ffffff url('../images/bg_vademecum.png') no-repeat;
+}
+
+
+#bot_chat_window {
+  position:    fixed;
+  bottom:      0;
+  left:        5%;
+  font-family: Verdana;
+  font-size:   13px;
+  width:       260px;
+  z-index:     20;
+  box-shadow:  1px 6px 10px 1px #333
+}
+
+/*~~~~~~~~~~ @start upperbar styling ~~~~~~~~~~~~*/
+#bot_chat_window #upper_bar {
+  /*width:    230px;*/ /*inherit*/
+  background: #043046/*#E6420C*/;
+  background: #043046 url("../images/head_bg.png") repeat;
+  padding:    10px;
+  height:     14px;
+  /* round corners */
+  -moz-border-radius:    5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -khtml-border-radius:  5px 5px 0 0;
+  border-radius:         5px 5px 0 0;
+}
+#bot_chat_window #upper_bar h3{
+  font-size:   14px;
+  font-weight: normal;
+  margin:      0;
+  color:       white;
+}
+#bot_chat_window #upper_bar a#bot_name {
+  color: white;
+  text-decoration: none;
+}
+#bot_chat_window #upper_bar a#max_icon {
+  background: url('../images/buttons-light.png') no-repeat -80px 0px;
+  width:  16px;
+  height: 16px;
+  float:  right;
+  /* round corners */
+  -moz-border-radius:    2px;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius:  2px;
+  border-radius:         2px;
+}
+#bot_chat_window.visible #upper_bar a#max_icon {
+  background-position: -64px -1px;
+}
+#bot_chat_window #upper_bar a#max_icon:hover {
+  background-color: #032333 /*#333333*/;
+}
+/*~~~~~~~~~~ @end upperbar styling ~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~ @start Avatar styling ~~~~~~~~~~~~*/
+#bot_chat_window img#bot_avatar {
+  width:    100px;
+  /*height:   70px;*/
+  position: relative;
+  top:      -102px;
+}
+/*~~~~~~~~~~ @end Avatar styling ~~~~~~~~~~~~*/
+#bot_chat_window #screen_wrapper {
+  display:        none; /* hide at start */
+}
+#bot_chat_window.visible #screen_wrapper {
+  display:        block;
+}
+#bot_chat_window #screen_wrapper {
+  background:     whitesmoke; /* bg_color */
+  padding-bottom: 35px; /*  */
+}
+
+#bot_chat_window #screen_wrapper #screen {
+  padding:    6px 10px 0 10px;
+  max-height: 200px;
+  min-height: 100px;
+  overflow-y: auto;
+  /*width:      230px;*/ /*inherit*/
+}
+#bot_chat_window #screen_wrapper #screen .dia_entry {
+  padding-left: 12px;
+}
+#bot_chat_window #screen_wrapper #screen .dia_entry .nick {
+  font-weight: bold;
+  float:       left;
+  margin-left: -12px;
+}
+#bot_chat_window #screen_wrapper #screen .dia_entry .text {
+  margin-left: 5px;
+}
+#bot_chat_window #screen_wrapper #meta_msgs {
+  margin-left: 10px;
+  font-size:   11px;
+  color:       #444;
+  padding:     3px 0 1px 0;
+}
+
+
+/*~~~~~~~~~~ @begin bottom userbar form  styling ~~~~~~~~~~~~*/
+#bot_chat_window #screen_wrapper #userbar {
+
+}
+#bot_chat_window #screen_wrapper #userbar form {
+  margin:    0px 0px 0px 10px;
+  position:  fixed;
+  bottom:    0;
+  background-color: whitesmoke; /* bg_color */
+}
+#bot_chat_window #userbar form input[type="text"] {
+  border:    1px solid #999999;
+  padding:   4px;
+  margin:    0 3px 5px 0;
+  width:     170px;
+  font-size: 0.9em;
+  /* round corners */
+  -moz-border-radius:    3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius:  3px;
+  border-radius:         3px;
+}
+#bot_chat_window #userbar form input[type="text"]:focus {
+  border-color:  #666666;
+  outline-color: #bbbbbb;
+}
+/*~~~~~~~~~~ @end bottom userbar form styling ~~~~~~~~~~~~*/
+
+
+#bot_chat_window #msg_dialog{
+  position:    fixed; 
+  bottom:      40px;
+  left:        5px;
+  left:        5%; /* same as chat window position */
+  margin-left: 5px;
+  width:       215px;
+  display:     none;
+  background:  #444444;
+  color:       white;
+  padding:     4px 12px;
+  border-radius: 5px;
+  opacity:     0.9;
+}
+/** ~~~~ @begin Feedback form styling ~~~~~~ **/
+#bot_chat_window .feedback_form {
+  margin:     0;
+  text-align: center;
+}
+#bot_chat_window div.feedback_req {
+  /*margin-left: 15px;
+  margin-top: 2px;
+  margin-bottom: 5px;*/
+  font-size:     11px;
+  border:        1px solid #BBBBBB;
+  border-radius: 3px;
+  padding:       4px 8px 2px;
+  display:       inline-block;
+  margin:        4px auto 6px;
+  text-align:    center;
+  background:    -webkit-linear-gradient(bottom, #DEDEDE, #EDEDED);
+}
+#bot_chat_window div.feedback_req:hover {
+  border-color:  #999999
+}
+#bot_chat_window div.feedback_req span{
+  vertical-align: top; /* text pos correction */
+  text-shadow:   0px 1px 0px white;
+}
+#bot_chat_window .feedback_req button {
+  background-color: #CCCCCC;
+  border:  none;
+  margin:  0;
+  width:   14px;
+  height:  14px;
+  padding: 0;
+  cursor:  pointer;
+}
+#bot_chat_window .feedback_req span:first-child {
+  margin-right: 2px;
+}
+#bot_chat_window .feedback_req button.ok {
+  background-image: url('../images/ok.png');
+  background-position: -14px 0px;
+}
+#bot_chat_window .feedback_req button.ok:hover {
+  background-position-y: -14px;
+}
+#bot_chat_window .feedback_req button.nok{
+  background-image: url('../images/nok.png');
+  background-position: -14px 0px;
+}
+#bot_chat_window .feedback_req button.nok:hover {
+  background-position-y: -14px;
+}
+/** ~~~~ @end Feedback form styling ~~~~~~ **/

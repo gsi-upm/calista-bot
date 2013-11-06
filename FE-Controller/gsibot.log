@@ -1,0 +1,103 @@
+﻿2013-10-03 22:33:25,614 INFO Unitex input: Hola
+2013-10-03 22:33:25,674 INFO Unitex output: hola
+2013-10-03 22:33:25,676 INFO ChatScript input: hola
+2013-10-03 22:33:25,687 INFO ChatScript output: Hola.
+2013-10-03 22:33:36,828 INFO Unitex input: ¿Eres el profesor?
+2013-10-03 22:33:36,888 INFO Unitex output: eres el profesor
+2013-10-03 22:33:36,888 INFO ChatScript input: eres el profesor
+2013-10-03 22:33:36,900 INFO ChatScript output: No; soy un bot asistente para ayudarte a encontrar respuestas.
+2013-10-03 22:33:58,503 INFO Unitex input: ¿Con qué me puedes ayudar?
+2013-10-03 22:33:58,572 INFO Unitex output: con que me puedes ayudar
+2013-10-03 22:33:58,573 INFO ChatScript input: con que me puedes ayudar
+2013-10-03 22:33:58,585 INFO ChatScript output: Puedo ayudarte con tus preguntas sobre Java.
+2013-10-03 22:34:24,823 INFO Unitex input: Vale. Precisamente, mi problema es que no entiendo qué significa for
+2013-10-03 22:34:24,890 INFO Unitex output: vale. precisamente, mi problema es que [sendcs (java question for)]
+2013-10-03 22:34:24,891 INFO ChatScript input: [sendcs (java question for)]
+2013-10-03 22:34:24,904 INFO ChatScript output: For es un palabra reservada. Los bucles for se ejecutan un numero determinado de veces.. Puedes preguntarme tambien sobre bucles, while, dowhile.  @fullresponse [sendmaia assert explained (concept for ) ]
+2013-10-03 22:34:24,904 INFO Sending message to the Maia network: [assert explained (concept for ) ]
+2013-10-03 22:34:27,908 INFO Sending to Maia {"name":"message","data": {"name" : "[assert explained (concept for ) ] [user anonymous]"}}
+2013-10-03 22:34:28,914 INFO Received and accepted from Maia: [sendcs (java offer example)] 
+2013-10-03 22:34:28,914 INFO ChatScript input: [sendcs (java offer example)] 
+2013-10-03 22:34:28,926 INFO ChatScript output: Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:34:36,792 INFO Positive feedback using bot 'Duke' in question 'Vale. Precisamente, mi problema es que no entiendo qué significa for' with answer given 'For es un palabra reservada. Los bucles for se ejecutan un numero determinado de veces.. Puedes preguntarme tambien sobre bucles, while, dowhile.   Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:34:49,009 INFO Unitex input: ¿Puedes ponerme un ejemplo de for?
+2013-10-03 22:34:49,063 INFO Unitex output: [sendcs (java sample for)]
+2013-10-03 22:34:49,065 INFO ChatScript input: [sendcs (java sample for)]
+2013-10-03 22:34:49,075 INFO ChatScript output: "for (inicializacion; condicion; actualizacion) accion; for (inicializacion; condicion; actualizacion) { accion 1; accion 2; ... accion ...; }"  @fullresponse
+2013-10-03 22:34:54,871 INFO Positive feedback using bot 'Duke' in question '¿Puedes ponerme un ejemplo de for?' with answer given '
+2013-10-03 22:35:07,732 INFO Unitex input: Gracias, ¡hasta luego!
+2013-10-03 22:35:07,799 INFO Unitex output: gracias, hasta luego
+2013-10-03 22:35:07,799 INFO ChatScript input: gracias, hasta luego
+2013-10-03 22:35:07,811 INFO ChatScript output: Nos vemos.
+2013-10-03 22:42:36,066 INFO Unitex input: Buenas tardes
+2013-10-03 22:42:36,111 INFO Unitex output: buenas tardes
+2013-10-03 22:42:36,111 INFO ChatScript input: buenas tardes
+2013-10-03 22:42:36,124 INFO ChatScript output: Hola de nuevo. [sendmaia assert returning ]
+2013-10-03 22:42:36,125 INFO Sending message to the Maia network: [assert returning ]
+2013-10-03 22:42:39,128 INFO Sending to Maia {"name":"message","data": {"name" : "[assert returning ] [user anonymous]"}}
+2013-10-03 22:42:40,134 INFO Received and accepted from Maia: [sendcs (java recommend random)] 
+2013-10-03 22:42:40,134 INFO ChatScript input: [sendcs (java recommend random)] 
+2013-10-03 22:42:40,147 INFO ChatScript output: Hoy te propongo repasar for.
+2013-10-03 22:42:55,049 INFO Unitex input: Vale, porque no me acuerdo de qué es for.
+2013-10-03 22:42:55,128 INFO Unitex output: vale, porque no me acuerdo de [sendcs (java question for)].
+2013-10-03 22:42:55,130 INFO ChatScript input: [sendcs (java question for)]
+2013-10-03 22:42:55,141 INFO ChatScript output: For es un palabra reservada. Los bucles for se ejecutan un numero determinado de veces.. Puedes preguntarme tambien sobre bucles, dowhile, while.  @fullresponse [sendmaia assert explained (concept for ) ]
+2013-10-03 22:42:55,142 INFO Sending message to the Maia network: [assert explained (concept for ) ]
+2013-10-03 22:42:58,145 INFO Sending to Maia {"name":"message","data": {"name" : "[assert explained (concept for ) ] [user anonymous]"}}
+2013-10-03 22:42:59,151 INFO Received and accepted from Maia: [sendcs (java offer example)] 
+2013-10-03 22:42:59,151 INFO ChatScript input: [sendcs (java offer example)] 
+2013-10-03 22:42:59,168 INFO ChatScript output: Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:43:04,256 INFO Positive feedback using bot 'Duke' in question 'Vale, porque no me acuerdo de qué es for.' with answer given 'For es un palabra reservada. Los bucles for se ejecutan un numero determinado de veces.. Puedes preguntarme tambien sobre bucles, dowhile, while.   Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:43:25,769 INFO Unitex input: No gracias. Lo que sí me interesa saber es qué es while
+2013-10-03 22:43:25,825 INFO Unitex output: no gracias. lo que si me interesa saber es [sendcs (java question while)]
+2013-10-03 22:43:25,826 INFO ChatScript input: [sendcs (java question while)]
+2013-10-03 22:43:25,838 INFO ChatScript output: [sendmaia retrieve while ]
+2013-10-03 22:43:25,838 INFO Sending message to the Maia network: [retrieve while ]
+2013-10-03 22:43:28,842 INFO Sending to Maia {"name":"message","data": {"name" : "[retrieve while ] [user anonymous]"}}
+2013-10-03 22:43:29,848 INFO Received and accepted from Maia: [updatekb]{"label":"while","topic":"palabra reservada","resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/302.html","content":"Se usa para construir bucles que se ejecutan cero o mas veces.","example":"while (n > 0) { fact+=n; n--; }","links_to":[{"label":"do-while"},{"label":"for"},{"label":"bucles"}]}
+2013-10-03 22:43:29,848 INFO Updating ChatScript knowledge base kb-java
+2013-10-03 22:43:29,854 INFO ChatScript input: [sendcs (import carpetafacts/kb-java while)]
+2013-10-03 22:43:29,871 INFO ChatScript output: [sendcs (java question while ) ]
+2013-10-03 22:43:29,871 INFO ChatScript input: [sendcs (java question while ) ]
+2013-10-03 22:43:29,884 INFO ChatScript output: While es un palabra reservada. Se usa para construir bucles que se ejecutan cero o mas veces.. Puedes preguntarme tambien sobre dowhile, bucles, for.  @fullresponse [sendmaia assert explained (concept while ) ]
+2013-10-03 22:43:29,884 INFO Sending message to the Maia network: [assert explained (concept while ) ]
+2013-10-03 22:43:32,888 INFO Sending to Maia {"name":"message","data": {"name" : "[assert explained (concept while ) ] [user anonymous]"}}
+2013-10-03 22:43:33,895 INFO Received and accepted from Maia: [sendcs (java offer example)] 
+2013-10-03 22:43:33,897 INFO ChatScript input: [sendcs (java offer example)] 
+2013-10-03 22:43:33,907 INFO ChatScript output: Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:43:41,371 INFO Positive feedback using bot 'Duke' in question 'No gracias. Lo que sí me interesa saber es qué es while' with answer given 'While es un palabra reservada. Se usa para construir bucles que se ejecutan cero o mas veces.. Puedes preguntarme tambien sobre dowhile, bucles, for.   Si quieres un ejemplo, puedes pedirlo.
+2013-10-03 22:43:53,203 INFO Unitex input: Vale, ponme un ejemplo de while
+2013-10-03 22:43:53,279 INFO Unitex output: vale, [sendcs (java sample while)]
+2013-10-03 22:43:53,279 INFO ChatScript input: [sendcs (java sample while)]
+2013-10-03 22:43:53,292 INFO ChatScript output: "while (n > 0) { fact+=n; n--; }"  @fullresponse
+2013-10-03 22:44:24,697 INFO Positive feedback using bot 'Duke' in question 'Vale, ponme un ejemplo de while' with answer given '
+2013-10-03 22:44:42,618 INFO Unitex input: ¿Y qué son los bucles do-while entonces?
+2013-10-03 22:44:42,671 INFO Unitex output: y [sendcs (java question do-while)] entonces
+2013-10-03 22:44:42,671 INFO ChatScript input: [sendcs (java question do-while)]
+2013-10-03 22:44:42,683 INFO ChatScript output: [sendmaia retrieve do-while ]
+2013-10-03 22:44:42,683 INFO Sending message to the Maia network: [retrieve do-while ]
+2013-10-03 22:44:45,687 INFO Sending to Maia {"name":"message","data": {"name" : "[retrieve do-while ] [user anonymous]"}}
+2013-10-03 22:44:46,691 INFO Received and accepted from Maia: [updatekb]{"label":"do-while","topic":"palabra reservada","resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/83.html","content":"Bucles que se ejecutan una o mas veces. La condicion de terminacion se chequea al final.","example":"do { sentencia; } while (condicion); do { sentencia 1; sentencia 2; ... sentencia ...; } while (condicion);","links_to":[{"label":"Bucles"},{"label":"while"},{"label":"for"}]}
+2013-10-03 22:44:46,693 INFO Updating ChatScript knowledge base kb-java
+2013-10-03 22:44:46,697 INFO ChatScript input: [sendcs (import carpetafacts/kb-java dowhile)]
+2013-10-03 22:44:46,709 INFO ChatScript output: [sendcs (java question dowhile ) ]
+2013-10-03 22:44:46,710 INFO ChatScript input: [sendcs (java question dowhile ) ]
+2013-10-03 22:44:46,726 INFO ChatScript output: Dowhile es un palabra reservada. Bucles que se ejecutan una o mas veces . La condicion de terminacion se chequea al final.. Puedes preguntarme tambien sobre bucles, for, while.  @fullresponse [sendmaia assert explained (concept dowhile ) ]
+2013-10-03 22:44:46,726 INFO Sending message to the Maia network: [assert explained (concept dowhile ) ]
+2013-10-03 22:44:49,730 INFO Sending to Maia {"name":"message","data": {"name" : "[assert explained (concept dowhile ) ] [user anonymous]"}}
+2013-10-03 22:44:50,736 INFO Received and accepted from Maia: [sendcs (java test for)] 
+2013-10-03 22:44:50,736 INFO ChatScript input: [sendcs (java test for)] 
+2013-10-03 22:44:50,747 INFO ChatScript output: Para repasar, seguro que puedes decirme el concepto al que se refiere este ejemplo: "for (inicializacion; condicion; actualizacion) accion; for (inicializacion; condicion; actualizacion) { accion 1; accion 2; ... accion ...; }"
+2013-10-03 22:45:28,793 INFO Unitex input: Vale. Me acuerdo, se trata de la estructura for, ¿no?
+2013-10-03 22:45:28,845 INFO Unitex output: vale. me acuerdo, [sendcs (java affirm for)], no
+2013-10-03 22:45:28,845 INFO ChatScript input: [sendcs (java affirm for)]
+2013-10-03 22:45:28,858 INFO ChatScript output: [sendmaia assert affirm (concept for ) ]
+2013-10-03 22:45:28,858 INFO Sending message to the Maia network: [assert affirm (concept for ) ]
+2013-10-03 22:45:31,862 INFO Sending to Maia {"name":"message","data": {"name" : "[assert affirm (concept for ) ] [user anonymous]"}}
+2013-10-03 22:45:32,867 INFO Received and accepted from Maia: [sendcs (java testok for)] 
+2013-10-03 22:45:32,867 INFO ChatScript input: [sendcs (java testok for)] 
+2013-10-03 22:45:32,878 INFO ChatScript output: Exacto. Se trata de for.
+2013-10-03 22:46:00,861 INFO Unitex input: Genial, pues ya tengo mis dudas solucionadas. ¡Nos vemos!
+2013-10-03 22:46:00,905 INFO Unitex output: genial, pues ya tengo mis dudas solucionadas. nos vemos
+2013-10-03 22:46:00,907 INFO ChatScript input: genial, pues ya tengo mis dudas solucionadas. nos vemos
+2013-10-03 22:46:00,923 INFO ChatScript output: Hasta otra.

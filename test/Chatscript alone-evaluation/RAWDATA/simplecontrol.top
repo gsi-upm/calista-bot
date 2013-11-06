@@ -1,0 +1,227 @@
+outputmacro: testbot() 
+
+^addtopic(~TESTTOPIC)
+$control_pre = ~control
+$control_main = ~control
+$control_post = ~control
+$userprompt = ^"$login: >"
+$botprompt = ^"testbot: "
+
+# this function is executed once for every new user chatting with duke
+outputmacro: duke()  # you get duke by default
+$token = #DO_INTERJECTION_SPLITTING  | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE | #DO_POSTAG  | #DO_PARSE
+^addtopic(~introductions)
+^import("facts/kb-java" @0 keep permanent)
+^createfact (kb loaded facts/kb-java)
+$control_pre = ~control
+$control_main = ~control
+$control_post = ~control
+$userprompt = ^"$login: >"
+$botprompt = ^"DUKE: "
+
+# this function is executed once for every new user chatting with georgia
+outputmacro: georgia()	# you can request georgia by giving  name:georgia   as your login
+$token = #DO_INTERJECTION_SPLITTING | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE | #DO_POSTAG  | #DO_PARSE
+^addtopic(~introductions)
+$control_pre = ~control
+$control_main = ~control
+$control_post = ~control
+$botprompt = ^"GEORGIA: "
+
+table: defaultbot (^name)
+^createfact(^name defaultbot defaultbot)
+DATA:
+duke
+
+topic: ~control system ()
+t: ($code=pre)  #nothing to do for preprocessing
+	end(TOPIC)
+	
+t: ($code=post) # nothing to do for postprocessing
+  	end(TOPIC)
+
+
+### Out-of-band tags ###
+
+#Import knowledge base from file
+#! [import facts/kb-java iteracion]
+u: ( \[ import _*1 _~javaconcept \] ) ^noerase() ^repeat() ^import('_0 @0 keep permanent) ^createfact (kb loaded '_0) \[sendcs \( java question '_1 \) \]
+
+
+
+#List the kbs loaded
+#! [listkb]
+u: ( \[ listkb \] ) ^noerase() ^repeat() ^query(direct_sv kb loaded ?) \[ kbs loaded: 	
+    loop()
+     {
+     ^pick(@0object)
+     }
+	\]
+
+
+
+#Look up concept in knowledge base, if result found
+#! que significa iteracion
+u: ($bot=duke que significa _~javaconcept )
+   ^noerase() ^repeat()
+   ^query(direct_sv _0 topic ?)
+   _0 es un @0object
+   ^query(direct_sv _0 content ?)
+   . @0object.
+   ^query(direct_sv _0 links_to ?)
+   . Puedes preguntarme tambien sobre     
+   loop()
+     {
+     ^pick(@0object),
+     }
+    . Si quieres un ejemplo, puedes pedirlo. _@fullresponse
+	
+
+#Look up concept in knowledge base, if no result found
+#! que significa iteracion
+u: ($bot=duke que significa _~javaconcept )
+    ^noerase() ^repeat()
+	\[sendmaia retrieve _0\]
+   
+
+
+	
+#Look up example for a concept in knowledge base, if result found
+#! dame un ejemplo de iteracion
+u: ($bot=duke dame un ejemplo de _~javaconcept )
+   ^noerase() ^repeat()
+   ^query(direct_sv _0 example ?)
+   @0object _@fullresponse
+
+	
+#Look up example for a concept in knowledge base, if no result found
+#! dame un ejemplo de iteracion
+u: ($bot=duke dame un ejemplo de _~javaconcept )
+    ^noerase() ^repeat()
+	No tengo ejemplos para este concepto.
+	
+
+u: ( \[ echo _* \] )
+    ^noerase() ^repeat()
+    Echo _0 .
+
+
+u: ($code=main %input<%userfirstline) gambit(~introductions)
+
+u: ($code=main) # main per-sentence processing
+
+	$currenttopic = %topic		# get the current topic at start of volley
+
+	nofail(TOPIC ^rejoinder())	# try for rejoinders. might generate an answer directly from what we are looking for.
+
+	if (%length == 0 AND %response == 0 )
+	{
+		nofail(TOPIC ^gambit($currenttopic))  # gambit current topic since no input (usually start of conversation)
+	}
+
+	if (%response == 0) { nofail(TOPIC ^respond($currenttopic)) } # current topic tries to respond to his input
+
+	if (%response == 0) # see if some other topic has keywords matching his input (given we have no response yet)
+	{
+		@8 = ^keywordtopics()	# get topics referred in input
+		loop()
+		{
+			$$topic = first(@8subject)
+			nofail(TOPIC ^respond($$topic))
+			if (%response != 0) # stop when we find something to say
+			{
+				^end(RULE)	# we are done, this terminates the loop (not the rule)
+			}
+		}
+	}	
+
+	if (%response == 0 AND ^hasKeyword($currenttopic)) { nofail(TOPIC ^gambit($currenttopic)) } # gambit current topic since keywords match current topic
+
+	if (%response == 0) # gambit from ANY matching topic
+	{
+		@8 = ^keywordtopics()	# get topics referred in input
+		loop()
+		{
+			$$topic = first(@8subject)
+			nofail(TOPIC ^Gambit($$topic))	# gambit in best matching topic
+			if (%response != 0) # stop when we find something
+			{
+				^end(RULE)
+			}
+		}
+	}
+	if (%response == 0){ nofail(TOPIC ^gambit($currenttopic)) } # gambit from current topic even though no keywords matched
+	
+	if (%response == 0) 
+	{ 
+		@8 = ^GambitTopics()		# all topics with gambits (excluding system topics)
+		loop()
+		{
+			$$topic = pick(@8)
+			nofail(TOPIC ^Gambit($$topic))	# try a topic at random
+			if (%response != 0)
+			{
+				^end(RULE)
+			}
+		}
+	}
+	
+	if (%response == 0) 
+	{
+		 ^repeat() 
+		 No tengo respuesta para eso.
+	}
+
+
+# BELOW is logically equivalent to the above topic
+
+topic: ~alternate_control system ()
+t: ($code=pre)  #nothing to do for preprocessing
+	end(TOPIC)
+	
+t: ($code=post) # nothing to do for postprocessing
+	end(TOPIC)
+
+u: () $currenttopic = %topic		# get the current topic at start of volley
+u: () ^rejoinder()	# try for rejoinders. might generate an answer directly from what we are looking for.
+u: ( %response=0 %length=0) ^gambit($currenttopic)  # gambit current topic since no input (usually start of conversation)
+u: (%response=0) ^respond($currenttopic) # current topic tries to respond to his input
+u: (%response=0) 
+		@8 = ^keywordtopics()	# get topics referred in input
+		loop()
+		{
+			$$topic = first(@8subject)
+			nofail(TOPIC Respond($$topic))
+			if (%response != 0) # stop when we find something to say
+			{
+				^end(TOPIC)	# we are done, this terminates the loop (not the rule)
+			}
+		}
+u: (%response=0  ^hasKeyword($currenttopic))  ^gambit($currenttopic)  # gambit current topic since keywords match current topic
+u: (%response=0 )
+		@8 = ^keywordtopics()	# get topics referred in input
+		loop()
+		{
+			$$topic = first(@8subject)
+			nofail(TOPIC ^Gambit($$topic))	# gambit in best matching topic
+			if (%response != 0) # stop when we find something
+			{
+				^end(TOPIC)
+			}
+		}
+	}
+u: (%response=0) ^gambit($currenttopic)  # gambit from current topic even though no keywords matched
+u: (%response=0)	
+		@8 = ^GambitTopics()		# all topics with gambits (excluding system topics)
+		loop()
+		{
+			$$topic = pick(@8)
+			NOFAIL(TOPIC ^Gambit($$topic))	# try a topic at random
+			if (%response != 0)
+			{
+				^end(TOPIC)
+			}
+		}
+u: (%response=0)		
+	^repeat() 
+	I don't know what to say. 

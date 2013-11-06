@@ -1,0 +1,8 @@
+~control ( )
+~alternate_control ( )
+~saludo ( Que_tal HI Buenas Hola )
+~despedida ( Luego Nos_vemos Adios )
+~teaching ( Ayudar Aprender )
+~saludando ( ~saludo )
+~elearning ( profesor ~teaching )
+~despidiendo ( ~despedida )

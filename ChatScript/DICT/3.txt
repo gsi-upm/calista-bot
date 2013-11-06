@@ -1,0 +1,27 @@
+ 3G_coverage ( NOUN NOUN_SINGULAR ) 
+ 3-dimensional ( meanings=1 ADJECTIVE ADJECTIVE_BASIC ) 
+  00660809j~a involving or relating to three dimensions or aspects
+ 3TC ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
+  03636062n~n a nucleoside reverse transcriptase inhibitor that is very effective in combination with zidovudine in treating AIDS and HIV
+ 38 ( NOUN ADJECTIVE ADJECTIVE_CARDINAL NOUN_CARDINAL ) 
+ 3-hitter ( meanings=1 NOUN NOUN_SINGULAR ) 
+  00475403n~n a game in which a pitcher allows the opposing team only 3 hits
+ 3-D ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
+  05939948n~n having a three-dimensional form or appearance
+  06618937n~n a movie with images having three dimensional form or appearance
+ 366_days ( ) 
+ 3d_radar ( meanings=1 NOUN NOUN_SINGULAR ) 
+  04427559n~n radar that will report altitude as well as azimuth and distance of a target
+ 3D ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
+  05939948n~n having a three-dimensional form or appearance
+  06618937n~n a movie with images having three dimensional form or appearance
+ 3rd_October_Organization ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
+  08016385n~n a militant Marxist-Leninist terrorist organization formed in 1975 to force Turkey to acknowledge killing more than a million Armenians and forcibly removing them from border areas in 1915
+ 365_days ( ) 
+ 30_minutes ( ) 
+ 30 ( NOUN_ORDINAL NOUN ADJECTIVE ADJECTIVE_CARDINAL ADJECTIVE_ORDINAL NOUN_CARDINAL KINDERGARTEN ) 
+ 3G ( NOUN NOUN_SINGULAR ) 
+ 3-membered ( meanings=1 ADJECTIVE ADJECTIVE_BASIC ) 
+  01502796j~a of a chemical compound having a ring with three members
+ 3-star ( ADJECTIVE ADJECTIVE_BASIC ) 
+ 3_Doors_Down ( NOUN_HUMAN NOUN_THEY ) 

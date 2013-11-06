@@ -1,0 +1,313 @@
+src/csocket.cpp: In function ‘void Load()’:
+src/csocket.cpp:240:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp:271:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp: In function ‘void RegressLoad()’:
+src/csocket.cpp:359:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/csocket.cpp: In function ‘void* HandleTCPClient(void*)’:
+src/csocket.cpp:880:16: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void InitDictionary()’:
+src/dictionarySystem.cpp:271:41: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:283:31: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘WORDENTRY* StoreWord(char*, uint64)’:
+src/dictionarySystem.cpp:464:29: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void WriteBinaryDictionary()’:
+src/dictionarySystem.cpp:798:23: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void WriteDictionary(WORDP, void*)’:
+src/dictionarySystem.cpp:1038:57: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:1039:52: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:1040:58: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:1042:58: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘char* WriteMeaning(MEANING, bool)’:
+src/dictionarySystem.cpp:2609:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void SpellOne(WORDP, void*)’:
+src/dictionarySystem.cpp:2664:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:2666:29: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/dictionarySystem.cpp: In function ‘void SortTopic0(WORDP, void*)’:
+src/dictionarySystem.cpp:2793:73: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void SortConcept0(WORDP, void*)’:
+src/dictionarySystem.cpp:2807:73: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void ReadAsciiDictionary()’:
+src/dictionarySystem.cpp:3013:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp: In function ‘void ExtendDictionary()’:
+src/dictionarySystem.cpp:3038:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3039:27: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3040:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3041:29: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3042:37: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3043:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3044:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3046:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3047:3: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3048:5: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3049:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3050:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3051:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3052:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3053:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3054:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3055:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3056:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3057:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3058:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3059:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3060:2: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3064:47: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3065:44: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3066:40: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/dictionarySystem.cpp:3067:66: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp: In function ‘bool ImportFacts(char*, char*, char*, char*)’:
+src/factSystem.cpp:399:30: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/factSystem.cpp: In function ‘char* DecodeField(MEANING, uint64, char*)’:
+src/factSystem.cpp:427:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp: In function ‘char* WriteFact(FACT*, bool, char*)’:
+src/factSystem.cpp:471:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp:487:30: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp:491:29: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp:495:30: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp: In function ‘void InitFactWords()’:
+src/factSystem.cpp:664:30: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/factSystem.cpp:667:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp: In function ‘unsigned int UnpackFactRefCode(char*)’:
+src/functionExecute.cpp:274:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functionExecute.cpp: In function ‘unsigned int ExplodeCode(char*)’:
+src/functionExecute.cpp:450:69: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functionExecute.cpp: In function ‘unsigned int BurstCode(char*)’:
+src/functionExecute.cpp:474:21: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:516:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:527:35: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functionExecute.cpp: In function ‘unsigned int FLRCode(char*, char)’:
+src/functionExecute.cpp:1080:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1081:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1082:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1083:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1105:38: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functionExecute.cpp:1115:37: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functionExecute.cpp: In function ‘unsigned int POSCode(char*)’:
+src/functionExecute.cpp:1469:57: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1470:18: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1474:57: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1475:18: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1479:37: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1480:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1481:18: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1485:37: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp:1486:13: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/functionExecute.cpp: In function ‘void AddInput(char*)’:
+src/functionExecute.cpp:1768:15: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/infer.cpp: In function ‘void QueryFacts(WORDP, unsigned int, unsigned int, char*)’:
+src/infer.cpp:239:29: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/infer.cpp: In function ‘unsigned int QueryTopicsOf(char*, unsigned int, char*)’:
+src/infer.cpp:255:32: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/infer.cpp: In function ‘unsigned int HierarchyIntersect(char*, char*, char*)’:
+src/infer.cpp:310:32: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/infer.cpp:324:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/infer.cpp: In function ‘unsigned int TopicIntersect(char*, char*)’:
+src/infer.cpp:414:29: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/infer.cpp: In function ‘unsigned int Query(char*, char*, char*, char*, unsigned int, char*, char*, char*, char*)’:
+src/infer.cpp:944:32: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/mainSystem.cpp:5:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp: In function ‘void PerformChat(char*, char*, char*, char*, char*)’:
+src/mainSystem.cpp:329:16: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp: In function ‘int Reply()’:
+src/mainSystem.cpp:378:32: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp: In function ‘bool ProcessInput(char*)’:
+src/mainSystem.cpp:412:21: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp:464:60: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp: In function ‘char* DoSentence(char*)’:
+src/mainSystem.cpp:513:42: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp: In function ‘void OnceCode(const char*)’:
+src/mainSystem.cpp:527:32: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/mainSystem.cpp:537:33: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp: In function ‘uint64 GetPosData(char*, WORDENTRY*&, WORDENTRY*&, bool, uint64)’:
+src/markSystem.cpp:773:39: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp: In function ‘void POSTag(bool)’:
+src/markSystem.cpp:895:18: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp: In function ‘void MarkAllImpliedWords()’:
+src/markSystem.cpp:1022:68: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1023:62: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1024:66: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1025:82: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1026:61: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1027:56: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1028:60: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1029:76: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp: In function ‘char* DumpAnalysis(uint64*, const char*, bool)’:
+src/markSystem.cpp:1197:32: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1198:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/markSystem.cpp:1205:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/outputSystem.cpp: In function ‘char* Output(char*, char*, unsigned int&, int)’:
+src/outputSystem.cpp:381:38: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/outputSystem.cpp:415:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/patternSystem.cpp: In function ‘bool Match(char*, unsigned int, int, char, bool, unsigned int&, unsigned int&, unsigned int&, unsigned int&)’:
+src/patternSystem.cpp:239:50: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/patternSystem.cpp:292:52: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/patternSystem.cpp:292:52: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:76:1: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘char* NoteGenerateResponder(char*, char*)’:
+src/scriptCompile.cpp:196:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘void AIGenerate(char*)’:
+src/scriptCompile.cpp:327:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:378:89: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:397:86: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘char* ReadMacro(char*, FILE*, char*, unsigned int)’:
+src/scriptCompile.cpp:1862:101: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘char* ReadTable(char*, FILE*, unsigned int)’:
+src/scriptCompile.cpp:1881:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘char* ReadConcept(char*, FILE*, unsigned int)’:
+src/scriptCompile.cpp:2344:55: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘void ReadTopicFile(char*, unsigned int)’:
+src/scriptCompile.cpp:2417:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:2425:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp: In function ‘bool ReadTopicFiles(char*, unsigned int, FACT*, int)’:
+src/scriptCompile.cpp:2601:63: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:2632:100: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/scriptCompile.cpp:2682:38: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/spellcheck.cpp: In function ‘char* SpellCheck(unsigned int)’:
+src/spellcheck.cpp:199:11: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp: In function ‘char* StemSpell(char*, unsigned int)’:
+src/spellcheck.cpp:521:13: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:528:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:534:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:540:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:546:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:552:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:558:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/spellcheck.cpp:568:13: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* SdayOfWeek(char*)’:
+src/systemVariables.cpp:84:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:88:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:90:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:91:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:92:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:93:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:95:9: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* SmonthNumber(char*)’:
+src/systemVariables.cpp:125:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:130:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:131:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:132:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:133:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:136:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:137:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:138:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:139:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:141:9: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* SmonthName(char*)’:
+src/systemVariables.cpp:149:25: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:154:38: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:155:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:156:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:157:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:160:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:161:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:162:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:163:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:165:9: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* SweekOfMonth(char*)’:
+src/systemVariables.cpp:173:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* Sdate(char*)’:
+src/systemVariables.cpp:187:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* Stense(char*)’:
+src/systemVariables.cpp:301:32: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:302:39: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp:303:14: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* SlastQuestion(char*)’:
+src/systemVariables.cpp:319:29: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘char* GetSystemVariable(char*)’:
+src/systemVariables.cpp:363:17: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/systemVariables.cpp: In function ‘void DefineSystemVariables()’:
+src/systemVariables.cpp:386:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tagger.cpp: In function ‘void TagIt(bool)’:
+src/tagger.cpp:1685:39: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tagger.cpp: In function ‘void ReadPosPatterns(const char*)’:
+src/tagger.cpp:2313:51: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tagger.cpp: In function ‘void TagTest(char*)’:
+src/tagger.cpp:2326:21: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void C_Clean(char*)’:
+src/testing.cpp:188:31: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void DisplayTables()’:
+src/testing.cpp:591:48: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘char* GetComment(WORDP)’:
+src/testing.cpp:1073:9: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void DumpNounPrimary(WORDP, unsigned int, char*)’:
+src/testing.cpp:1232:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp:1246:41: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp:1274:26: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void C_DumpNouns(char*)’:
+src/testing.cpp:1288:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void ValidateTopicVocabulary(char*)’:
+src/testing.cpp:1696:45: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void TestTables()’:
+src/testing.cpp:1727:45: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void C_TestOutput(char*)’:
+src/testing.cpp:1793:48: warning: converting ‘false’ to pointer type for argument 4 of ‘char* ReadOutput(char*, FILE*, char*&, char*)’ [-Wconversion-null]
+src/testing.cpp: In function ‘void C_Trim(char*)’:
+src/testing.cpp:2642:34: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp: In function ‘void C_SortTopic(char*)’:
+src/testing.cpp:2779:41: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp:2781:42: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/testing.cpp: In function ‘void C_SortConcept(char*)’:
+src/testing.cpp:2797:41: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/testing.cpp:2799:44: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/textUtilities.cpp: In function ‘char* GetBurstWord(unsigned int)’:
+src/textUtilities.cpp:624:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/textUtilities.cpp:629:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/textUtilities.cpp: In function ‘char* GetText(char*, int, int, char*, bool)’:
+src/textUtilities.cpp:1645:31: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tokenSystem.cpp: In function ‘char* FindWordEnd(char*, char*, char**, unsigned int&, bool&)’:
+src/tokenSystem.cpp:91:43: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tokenSystem.cpp: In function ‘char* Tokenize(char*, unsigned int&, char**, bool)’:
+src/tokenSystem.cpp:1026:21: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tokenSystem.cpp:1050:44: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/tokenSystem.cpp:1057:46: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/topicSystem.cpp: In function ‘char* GetTopicName(unsigned int, bool)’:
+src/topicSystem.cpp:845:10: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/topicSystem.cpp: In function ‘void InitKeywords(const char*, unsigned int)’:
+src/topicSystem.cpp:1105:36: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/topicSystem.cpp: In function ‘void InitTopicMemory()’:
+src/topicSystem.cpp:1205:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/topicSystem.cpp: In function ‘unsigned int GetTopicsWithGambits(char*)’:
+src/topicSystem.cpp:1369:55: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/topicSystem.cpp:1398:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/userSystem.cpp:7:28: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/userSystem.cpp: In function ‘void StartConversation(char*)’:
+src/userSystem.cpp:31:20: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/userSystem.cpp: In function ‘void ReadUserData()’:
+src/userSystem.cpp:265:37: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/variableSystem.cpp: In function ‘void SetWildCard(char*, const char*, const char*, unsigned int)’:
+src/variableSystem.cpp:92:22: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/variableSystem.cpp: In function ‘char* GetUserVariable(const char*)’:
+src/variableSystem.cpp:127:19: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/variableSystem.cpp:132:24: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/variableSystem.cpp: In function ‘void SetUserVariable(const char*, char*)’:
+src/variableSystem.cpp:191:12: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+src/variableSystem.cpp: In function ‘char* PerformAssignment(char*, char*, unsigned int&)’:
+src/variableSystem.cpp:310:38: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]

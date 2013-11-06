@@ -1,0 +1,15 @@
+concept: ~javaconcept ()
+
+table: ~javaconceptof (^javaconcept ^object)
+^addproperty(^object NOUN)
+^createfact(^object javaconcept ^javaconcept)
+
+ DATA:
+ 
+ for [for bucle_for bucles_for estructura_for] 
+ bucles [bucle bucles] 
+ break [break orden_break] 
+ continue [continue orden_continue] 
+ while [while bucle_while bucles_while] 
+ do-while [dowhile bucles_do-while bucle_do-while] 
+ iteracion [iteracion iteraciones] 

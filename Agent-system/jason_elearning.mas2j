@@ -1,0 +1,10 @@
+MAS jason_elearning {
+
+	infrastructure: Centralised
+
+	agents:
+		teacher;
+
+	aslSourcePath:
+		"src/asl";
+}
