@@ -10,10 +10,12 @@ Chatbot module for Calista-Bot project. It makes use of [ChatScript](http://sour
 ChatScript 2.0 together with the corpus of the chatbot of our project in this folder of the project repository.
 
 To launch the service ChatScript on Windows, the following command should be run inside the ChatScript folder:
+
 	chatscript
 
 
 On Linux, the following command should be run inside the ChatScript folder:
+
 	./LinuxChatScript32
 	
 Once the service is launched, it will start listening to incoming queries.
@@ -24,12 +26,15 @@ Once the service is launched, it will start listening to incoming queries.
 
 The chatbot corpus files are usually found in the /RAWDATA/ folder. They can be compiled and loaded by running [ChatScript](http://sourceforge.net/projects/chatscript/) locally:
 To launch ChatScript locally on Windows, the following command should be run inside the ChatScript folder:
+
 	chatscript local
 
 On Linux, the following command should be run inside the ChatScript folder:
+
 	./LinuxChatScript32 local
 
 Once ChatScript is locally launched, we can use the following command to build and load the corpus:
+
 	:build 1 
 	
 	
