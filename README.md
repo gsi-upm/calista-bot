@@ -1,4 +1,4 @@
-[Calista Bot](https://github.com/gsi-upm/calista-bot)
+## [Calista Bot](https://github.com/gsi-upm/calista-bot)
 
 
 ## Introduction
@@ -25,7 +25,8 @@ For a detailed explanation of each module, you can visit each subproject's repos
 Calista Bot consists in several modules that can be found under the subtrees of this project.
  
 
-### [Chat client](https://github.com/gsi-upm/calista-bot/Chat-client) An user interface that allows the user to communicate with the system, by chatting with the personal assistant in natural language.
+### [Chat client](https://github.com/gsi-upm/calista-bot/Chat-client) 
+An user interface that allows the user to communicate with the system, by chatting with the personal assistant in natural language.
 ![Chat client](http://img14.imageshack.us/img14/8480/x6ex.png)
 
 
