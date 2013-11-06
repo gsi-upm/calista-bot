@@ -2,6 +2,8 @@
 
 
 JavaScript chat client module for Calista-Bot project.  An user interface that allows the user to communicate with the system, by chatting with the personal assistant in natural language.
+
+
 ![Chat client](http://img14.imageshack.us/img14/8480/x6ex.png)
 
 
