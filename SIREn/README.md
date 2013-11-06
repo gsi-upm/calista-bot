@@ -12,10 +12,12 @@ The Linked Open Data Server module makes use of the 1.0 commercial version of [S
 
 
 The first using SIREn, we need to compile the source code. We can do it by running (needs [Maven](http://maven.apache.org) installed):
+
 	mvn clean package assembly:single 
 
 
 Once the project is compiled, we should be able run any of its sample classes:
+
 	java -cp ./target/siren-jar-with-dependencies.jar org.sindice.siren.demo.bnb.BNBDemo
 
 
