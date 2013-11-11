@@ -1,0 +1,104 @@
+{
+	"properties": {
+		"label": {
+			"valueType": "skos:prefLabel"
+		},
+		"topic": {
+			"valueType": "sioc:topic"
+		},
+		"resource": {
+			"valueType": "sioc:uri"
+		},
+		"content": {
+			"valueType": "sioc:content"
+		},
+		"links_to": {
+			"valueType": "sioc:links_to"
+		}
+	},
+	"items": [
+		{
+			"label":"for",
+			"topic":"palabra reservada",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/138.html",
+			"content":"Los bucles for se ejecutan un numero determinado de veces.",
+			"example":"for (inicializacion; condicion; actualizacion) accion; for (inicializacion; condicion; actualizacion) { accion 1; accion 2; ... accion ...; }",
+			"links_to":[
+					 {"label":"while"},
+				     {"label":"do-while"},
+					 {"label":"bucles"} 
+					]
+		},
+		{
+			"label":"Bucles",
+			"topic":"concepto",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/34.html",
+			"content":"Fragmentos de codigo que se ejecutan repetidamente.",
+			"example":"while (condicion) sentencia; while (condicion) { sentencia 1; sentencia 2; ... sentencia ...; }",
+			"links_to":[
+					 {"label":"while"},
+				     {"label":"do-while"},
+					 {"label":"for"} 
+					]
+		},
+		{
+			"label":"break",
+			"topic":"palabra reservada",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/33.html",
+			"content":"Se emplea para forzar la terminacion de un bucle. Es util en bucles cuya condicion de terminacion no se puede chequear comodamente ni al principio (bucles while) ni al final (bucles do-while).",
+			"example":"for (i=0;i=10;i++) { String linea = entrada.readLine(); if (linea == null) break; // se hace algo con la linea leida}",
+			"links_to":[
+					 {"label":"continue"}
+					]
+		},
+		{
+			"label":"continue",
+			"topic":"palabra reservada",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/69.html",
+			"content":"Se emplea para forzar la terminacion de una pasada en un bucle. Es util cuando queremos abortar limpiamente una ejecucion del bucle; pero que este siga ejecutandose.",
+			"example":"for ( ; ; ) { String linea = entrada.readLine(); if (linea.charAt(0) == '#') // se ignoran las lineas que continue; // empiezan por '#' // se hace algo con la linea leida }",
+			"links_to":[
+					 {"label":"break"}
+					]
+		},
+		{
+			"label":"while",
+			"topic":"palabra reservada",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/302.html",
+			"content":"Se usa para construir bucles que se ejecutan cero o mas veces.",
+			"example":"while (n > 0) { fact+=n; n--; }",
+			"links_to":[
+					 {"label":"do-while"},
+				     {"label":"for"},
+					 {"label":"bucles"} 
+					]
+		},
+		{
+			"label":"do-while",
+			"topic":"palabra reservada",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/83.html",
+			"content":"Bucles que se ejecutan una o mas veces. La condicion de terminacion se chequea al final.",
+			"example":"do { sentencia; } while (condicion); do { sentencia 1; sentencia 2; ... sentencia ...; } while (condicion);",
+			"links_to":[
+					 {"label":"Bucles"},
+					 {"label":"while"},
+					 {"label":"for"}
+					 ]
+		},
+		{
+			"label":"iteracion",
+			"topic":"concepto",
+			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/141.html",
+			"content":"Aplicar una funcion repetidamente.",
+			"example":"for (int i = 0; i < datos.length; i++) { System.out.print(datos(i)); }",
+			"links_to":[
+					 {"label":"bucles"},
+				     {"label":"for"},
+					 {"label":"while"} 
+					]
+		}
+		
+		
+		
+	]
+}
