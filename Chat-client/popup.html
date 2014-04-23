@@ -16,7 +16,8 @@
   </style>
 
   <body>
-      <div class="" id="bot_chat_window">
+      <iframe id="vademecum" src="http://www.dit.upm.es/~pepe/libros/vademecum/index.html"></iframe>
+      <div class="visible" id="bot_chat_window">
           <div id="upper_bar">
             <h3>
               <img id="bot_avatar" src="images/avatars/duke_waiting.png" />
@@ -31,11 +32,12 @@
             </div>
             <div id="meta_msgs"></div>
             <div id="userbar">   
-				<form id="userinput" method="get" action="http://localhost:8090/TalkToBot" >
-                <!-- <form id="userinput" method="get" action="http://lab.gsi.dit.upm.es/gsiBot/TalkToBot" >  -->
+		<!--		<form id="userinput" method="get" action="http://localhost:8090/TalkToBot" >-->
+                <form id="userinput" method="get" action="http://demos.gsi.dit.upm.es/gsibot/bottle/TalkToBot" > 
                   <input type="hidden" name="userAgent" value="web_html_v1" />
                   <input type="hidden" name="bot" value="Duke" />
                   <input type="hidden" name="type" value="json" />
+		  <input type="hidden" name="user" value="a"/>
                   <input type="text" name="q" />
                   <input type="submit" name="submit" value="Enviar" />
                 </form>

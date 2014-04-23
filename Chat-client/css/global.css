@@ -1,8 +1,23 @@
 /*~~~~~~~~ @start background fake image ~~~~~~~~~*/
-body {
-  background: #ffffff url('../images/bg_vademecum.png') no-repeat;
+html {
+  height: 100%;
+
 }
 
+body {
+  /*background: #ffffff url('../images/bg_vademecum.png') no-repeat;*/
+  height: 100%;
+}
+
+
+/* Iframe with the vademecum */
+
+#vademecum {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
 
 #bot_chat_window {
   position:    fixed;

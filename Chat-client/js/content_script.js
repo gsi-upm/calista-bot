@@ -1,5 +1,25 @@
 jQuery(document).ready(function($){
 
+    // Creates (or loads from cookie) a random user id for the bot
+    username = "";
+    if(document.cookie && document.cookie.indexOf("botUser") != -1) {
+       data = document.cookie.split(";");
+       for (var i = 0; i < data.length; i++) {
+           cookie = data[i].trim();
+           //console.log(document.cookie);
+           if (cookie.indexOf("botUser") == 0) {
+               username = cookie.substr("botUser".length, cookie.length -1);
+	   }
+       }
+       // If I couldn't get the user, I set a random one
+       //if (username =="") username = randomString(20);
+    } else {
+       username = randomString(20);
+       document.cookie = "botUser="+username+";";
+    };
+    document.forms["userinput"].elements["user"].value = username;
+
+
     /** Hide/show effect */
     $('#bot_chat_window #upper_bar a').click(function(){
         $('#bot_chat_window').toggleClass('visible');
@@ -19,14 +39,17 @@ jQuery(document).ready(function($){
 
         var data = $form.serializeArray();
         data.push({name: $(this).attr('name'), value: $(this).attr('value')});
+	console.log($input_field.val());
+        $('#screen').append($(constructDialogEntry('me', $input_field.val())));
+	$input_field.val('');
 
-        //jQuery.support.cors = true; // :S
+	//jQuery.support.cors = true; // :S
         // send the data
         $.ajax({'url': $form.attr('action'), 'data':data, 'crossDomain':true})
           .success(function (data_resp) {
  
-              $('#screen').append($(constructDialogEntry('me', data_resp.dialog.q)));
-              $input_field.val('');
+              //$('#screen').append($(constructDialogEntry('me', data_resp.dialog.q)));
+              //$input_field.val('');
               //scrollDisplay();
               $('#meta_msgs').html($(constructTypingMsg (data_resp.dialog.bot) ));
               $('#meta_msgs').html('');
@@ -170,4 +193,14 @@ jQuery(document).ready(function($){
     function replaceAvatar (src) {
         $('img#bot_avatar').attr('src', src);
     }
+
+    // Generates a Random string for the user id
+    function randomString(length) {
+        charSet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var result = '';
+        for (var i = length; i > 0; --i) result += charSet[Math.round(Math.random() * (charSet.length - 1))];
+        return result;
+    }
+
 });
+
