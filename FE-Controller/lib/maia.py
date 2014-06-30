@@ -34,7 +34,6 @@ class Maia:
             
 
         websocket.enableTrace(False)
-        print(self.uri)
         self.ws = websocket.WebSocketApp(self.uri, on_message = self.on_message,
                                                    on_error = self.on_error,
                                                    on_close = self.on_close,
@@ -71,7 +70,6 @@ class Maia:
         Sends a message to the maia network, without waiting for response
         """
 
-        print('Sending to maia: ' + data)
         with self.lock:
             self.user = user
         self.logger.info('Sending to Maia {"name":"message","data": {"name" : "%s"}}' % data)
@@ -96,8 +94,6 @@ class Maia:
         """
         mymsg = json.loads(message)
 
-        print('Received from maia: '+ message)
-
         #Accept only messages with an [actuator]
         if (('[' in mymsg['data']['name']) and 
              ('[assert' not in mymsg['data']['name']) and ('[retrieve' not in mymsg['data']['name']) ):
@@ -107,7 +103,6 @@ class Maia:
              # Also, do a clean-up of the  queues periodically, to prevent mem-leaks.
              user = ''
              msg = mymsg['data']['name']
-             print(msg)
 
              with self.lock:
                 user = self.user
@@ -128,7 +123,6 @@ class Maia:
         
         # i should use a proper logger
         print(error, file=sys.stderr)
-        print(str(dir(error)), file=sys.stderr)
 
     def on_close(self, ws):
         """
@@ -150,7 +144,12 @@ class maiaListener(threading.Thread):
 
     def __init__(self, ws):
         super(maiaListener, self).__init__()
+        
+        # I want the thread to die when CTRL+C is issued, so I make it a "dameon" thread
+        self.daemon = True
+
         self.ws = ws
+
     def run(self):
         """
         Keeps running
