@@ -27,7 +27,7 @@ response.content_type = 'application/json'
 cs_buffer_size = 1024
 cs_tcp_ip = '127.0.0.1'
 cs_tcp_port = 1024
-facts_dir="FACTS/"
+facts_dir="facts/"
 cs_facts_dir = this_dir+"/../ChatScript/"+facts_dir
 
 #Logging system
@@ -237,6 +237,8 @@ def sendChatScript(query, bot, user):
     #Message to server is 3 strings-   username, botname, message     
     socketmsg = user+"\0"+bot+"\0"+query 
 
+    print(socketmsg)
+
     s = socket()
     try:
         s.connect((cs_tcp_ip, cs_tcp_port))
@@ -290,7 +292,7 @@ def updateCsKb(content,bot,usr):
         f.write(newcontent) 
     
 
-    return "[sendcs (import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+")]"
+    return "[sendcs [ import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+" ]]"
     
 #Renders the response in Json
 def renderJson(query, response, bot, user, fresponse):

@@ -11,8 +11,8 @@ $botprompt = ^"testbot: "
 outputmacro: duke()  # you get duke by default
 $token = #DO_INTERJECTION_SPLITTING  | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE | #DO_POSTAG  | #DO_PARSE
 ^addtopic(~introductions)
-^import("FACTS/kb-java" @0 keep permanent)
-^createfact (kb loaded FACTS/kb-java)
+^import("facts/kb-java" @0 keep permanent)
+^createfact (kb loaded facts/kb-java)
 $control_pre = ~control
 $control_main = ~control
 $control_post = ~control
@@ -44,8 +44,8 @@ t: ($code=post) # nothing to do for postprocessing
 ### Out-of-band tags ###
 
 #Import knowledge base from file
-#! [import FACTS/kb-java iteracion]
-u: ( \[ import _*1 _*1 \] ) ^noerase() ^repeat() ^import('_0 @0 keep permanent) ^createfact (kb loaded '_0) \[sendcs \( java question '_1 \) \]
+#! import facts/kb-java iteracion
+u: ( import _*1 _*1 ) ^noerase() ^repeat() ^import('_0 @0 keep permanent) ^createfact (kb loaded '_0) \[sendcs \( java question '_1 \) \]
 
 
 
