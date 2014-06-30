@@ -9,7 +9,7 @@ import inspect
 
 
 # Load library
-unitex_lib = '../Unitex/lib/libunitex.so' if os.name == 'posix' else '../Unitex/lib/unitex.dll'
+unitex_lib = '../../Unitex/lib/libunitex.so' if os.name == 'posix' else '../Unitex/lib/unitex.dll'
 actual_path= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 unitex = ctypes.cdll.LoadLibrary(actual_path+"/"+unitex_lib)
 

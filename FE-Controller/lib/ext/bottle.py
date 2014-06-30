@@ -2340,7 +2340,7 @@ url       = make_default_app_wrapper('get_url')
 
 class ServerAdapter(object):
     quiet = False
-    def __init__(self, host='127.0.0.1', port=8080, **config):
+    def __init__(self, host='127.0.0.1', port=8090, **config):
         self.options = config
         self.host = host
         self.port = int(port)
@@ -2617,7 +2617,7 @@ def load_app(target):
         NORUN = nr_old
 
 _debug = debug
-def run(app=None, server='wsgiref', host='127.0.0.1', port=8080,
+def run(app=None, server='wsgiref', host='127.0.0.1', port=8090,
         interval=1, reloader=False, quiet=False, plugins=None,
         debug=False, **kargs):
     """ Start a server instance. This method blocks until the server terminates.
@@ -2630,7 +2630,7 @@ def run(app=None, server='wsgiref', host='127.0.0.1', port=8080,
         :param host: Server address to bind to. Pass ``0.0.0.0`` to listens on
                all interfaces including the external one. (default: 127.0.0.1)
         :param port: Server port to bind to. Values below 1024 require root
-               privileges. (default: 8080)
+               privileges. (default: 8090)
         :param reloader: Start auto-reloading server? (default: False)
         :param interval: Auto-reloader interval in seconds (default: 1)
         :param quiet: Suppress output to stdout and stderr? (default: False)
@@ -3230,7 +3230,7 @@ if __name__ == '__main__':
     sys.path.insert(0, '.')
     sys.modules.setdefault('bottle', sys.modules['__main__'])
 
-    host, port = (opt.bind or 'localhost'), 8080
+    host, port = (opt.bind or 'localhost'), 8090
     if ':' in host:
         host, port = host.rsplit(':', 1)
 
