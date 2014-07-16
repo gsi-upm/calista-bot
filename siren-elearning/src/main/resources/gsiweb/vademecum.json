@@ -45,7 +45,7 @@
 			"label":"break",
 			"topic":"palabra reservada",
 			"resource":"http://web.dit.upm.es/~pepe/libros/vademecum/topics/33.html",
-			"content":"Se emplea para forzar la terminacion de un bucle. Es util en bucles cuya condicion de terminacion no se puede chequear comodamente ni al principio (bucles while) ni al final (bucles do-while).",
+			"content":"Se emplea para forzar la terminacion de un bucle. Es util en bucles cuya condicion de terminacion no se puede chequear comodamente ni al principio (bucles while) ni al final (bucles do while).",
 			"example":"for (i=0;i=10;i++) { String linea = entrada.readLine(); if (linea == null) break; // se hace algo con la linea leida}",
 			"links_to":[
 					 {"label":"continue"}
