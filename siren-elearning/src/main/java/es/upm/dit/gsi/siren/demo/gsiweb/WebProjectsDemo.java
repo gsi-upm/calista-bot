@@ -26,6 +26,7 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Properties;
 
 import net.sf.json.JSONArray;
@@ -178,6 +179,12 @@ public class WebProjectsDemo {
                     prop.setProperty(option.getLongOpt(), option.getValue());
                 }
                 
+                Iterator optionsIter= prop.keySet().iterator();
+                while(optionsIter.hasNext()) {
+                    String opt = (String)optionsIter.next();
+                    System.out.println(opt + ": " + prop.get(opt));
+                }
+                
                 return prop;
                 
             } else {
@@ -215,8 +222,9 @@ public class WebProjectsDemo {
         
         Properties options = getOptions(cliOptions, args);
         
+        System.out.println(Boolean.valueOf(options.getProperty("deleteIndexDir")));
         final File indexDir = new File(options.getProperty("indexDir"));
-        if (Boolean.getBoolean(options.getProperty("deleteIndexDir"))
+        if (Boolean.valueOf(options.getProperty("deleteIndexDir"))
             && indexDir.exists()){
             FileUtils.deleteDirectory(indexDir);
         }
