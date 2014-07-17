@@ -20,18 +20,22 @@ package es.upm.dit.gsi.siren.demo.gsiweb;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Properties;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.BasicParser;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.queryparser.flexible.core.QueryNodeException;
 import org.apache.lucene.search.Query;
@@ -146,16 +150,79 @@ public class WebProjectsDemo {
         return queries;
     }
     
+    
+    /**
+     * Parse the commandLine options and the config options, 
+     * and return them as a hashMap.
+     * 
+     * @param - The cli avaliable options
+     * @param - String[] with the cli arguments
+     * @return HashMap with the options.
+     */
+    private static Properties getOptions(Options cliOptions, String[] args) {
+        try {
+            // First, get the options from the cli.
+            CommandLineParser parser = new BasicParser();
+            CommandLine cmd = parser.parse(cliOptions, args);
+            
+            if (cmd.hasOption('c')) {
+                
+                // Read config file
+                String configPath = cmd.getOptionValue('c');
+                
+                Properties prop = new Properties();
+                prop.load(new FileInputStream(configPath));
+                
+                // The cli arguments take precedence over the the properties
+                for(Option option: cmd.getOptions()) {
+                    prop.setProperty(option.getLongOpt(), option.getValue());
+                }
+                
+                return prop;
+                
+            } else {
+                //LOOK: Check this is done properly.
+                System.out.println("Specify a config file with -c CONFIGPATH");
+                System.exit(0);
+            }
+            
+        } catch(Exception e) {
+            logger.error("Problem reading the options: " + e.getMessage());
+            e.printStackTrace();
+            System.exit(0);
+        }
+        return null;
+    }
 
     public static void main(final String[] args) throws IOException {
         logger.info("info");
-        final File indexDir = new File("./target/index/");
-        if (indexDir.exists()){
+        
+        
+        // FIXME: add config options:
+        // indexDirectory
+        // delete index on startup?
+        // maia uri
+        // Siren fields
+        // ...?
+        
+        Options cliOptions = new Options();
+        
+        // TODO: Make this static constants.
+        cliOptions.addOption("c", "configFile", true, "Config file - Absolute path");
+        cliOptions.addOption("m", "maiaURI", false, "URI for the maia service");
+        cliOptions.addOption("i", "indexDir", false, "Index directory for the siren files");
+        cliOptions.addOption("d", "deleteIndexDir", false, "Delete the indexDir if present");
+        
+        Properties options = getOptions(cliOptions, args);
+        
+        final File indexDir = new File(options.getProperty("indexDir"));
+        if (Boolean.getBoolean(options.getProperty("deleteIndexDir"))
+            && indexDir.exists()){
             FileUtils.deleteDirectory(indexDir);
         }
         
         final WebProjectsDemo demo = new WebProjectsDemo(indexDir);
-        String maiauri = "http://alpha.gsi.dit.upm.es:1337";
+        String maiauri = options.getProperty("maiaURI");
         MaiaService mservice;        
         
         try {

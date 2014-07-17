@@ -48,21 +48,21 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>es.upm.dit.gsi.siren.demo.gsiweb.WebProjectsDemo</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-			
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>es.upm.dit.gsi.siren.demo.gsiweb.WebProjectsDemo</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
 			<!-- Register the prefabricated descriptor jar-with-dependencies -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -74,7 +74,7 @@
 					<finalName>${project.artifactId}</finalName>
 					<archive>
 						<manifest>
-						    <addClasspath>true</addClasspath>
+							<addClasspath>true</addClasspath>
 							<mainClass>es.upm.dit.gsi.siren.demo.gsiweb.WebProjectsDemo</mainClass>
 						</manifest>
 					</archive>
@@ -237,8 +237,8 @@
 
 	</reporting>
 	<dependencies>
-	
-	   <!--  Siren dependencies need to be installed in the maven local repo -->
+
+		<!-- Siren dependencies need to be installed in the maven local repo -->
 		<dependency>
 			<groupId>org.sindice.siren</groupId>
 			<artifactId>siren-core</artifactId>
@@ -272,7 +272,7 @@
 			<version>4.0.0</version>
 		</dependency>
 
-		<!-- JSON parser para el ejemplo -->
+		<!-- JSON parser for the example -->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
@@ -337,7 +337,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
-			<!-- <scope>test</scope>-->
+			<!-- <scope>test</scope> -->
 		</dependency>
 
 		<dependency>
@@ -375,6 +375,14 @@
 			<version>4.0.0</version>
 		</dependency>
 
+
+		<!-- Apache commons-cli for cli arguments -->
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
