@@ -178,13 +178,7 @@ public class WebProjectsDemo {
                 for(Option option: cmd.getOptions()) {
                     prop.setProperty(option.getLongOpt(), option.getValue());
                 }
-                
-                Iterator optionsIter= prop.keySet().iterator();
-                while(optionsIter.hasNext()) {
-                    String opt = (String)optionsIter.next();
-                    System.out.println(opt + ": " + prop.get(opt));
-                }
-                
+
                 return prop;
                 
             } else {

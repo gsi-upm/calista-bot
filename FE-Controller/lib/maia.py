@@ -92,7 +92,11 @@ class Maia:
         """
         Receives a message from the maia network.
         """
-        mymsg = json.loads(message)
+        userStart = message[message.rfind("[user"):]
+
+        user = userStart[:userStart.find("]")+1]
+        print(user)
+        mymsg = json.loads(message.replace(user, ""))
 
         #Accept only messages with an [actuator]
         if (('[' in mymsg['data']['name']) and 
@@ -101,7 +105,7 @@ class Maia:
              # TODO:
              # The way I should probably do this: Have a dict with queues, one for each user
              # Also, do a clean-up of the  queues periodically, to prevent mem-leaks.
-             user = ''
+             
              msg = mymsg['data']['name']
 
              with self.lock:
@@ -114,7 +118,7 @@ class Maia:
              # if user in msg:
             
              self.rcvd_msgs.put(msg)
-             print(">> Received: %s" % msg)
+             print(">> Received: %s with user %s" % msg, user)
                 
     def on_error(self, ws, error):
         """

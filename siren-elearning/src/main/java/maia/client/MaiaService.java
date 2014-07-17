@@ -108,7 +108,14 @@ public class MaiaService extends MaiaClientAdapter {
         //TODO: '+9'?? Remove magic numbers!!
         kword=content.substring(content.indexOf("retrieve")+9, content.indexOf("]"));
         
+        // get the User
+        String userData = content.substring(content.indexOf("[user"));
+        String userName = userData.substring(0, userData.indexOf("]")+1);
+        // We have something like [user HqeCrvi68Ah7SEyzuJ5m]
+        
+        
         logger.info("Searching keyword '"+ kword+"'");
+        logger.info("User: " + userName);
         
         try {
         	
@@ -122,7 +129,7 @@ public class MaiaService extends MaiaClientAdapter {
         
         logger.info("Answering >> "+ response);
         // TODO: Add the bot user to the reply
-        sendMessage("[updatekb]"+response.replace("\"","\\\""));
+        sendMessage("[updatekb]"+response.replace("\"","\\\"")+ " " + userName);
 
     }
     
