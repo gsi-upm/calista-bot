@@ -317,4 +317,4 @@ def sendMaia(msg,bot,usr):
     return response
     
 if __name__ == '__main__':
-    run(host='alpha.gsi.dit.upm.es', port=8090, debug=True)
+    run(host='localhost', port=8090, debug=True)
