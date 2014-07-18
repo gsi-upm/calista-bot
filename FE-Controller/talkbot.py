@@ -10,11 +10,7 @@ from re import sub
 import maia
 
 import inspect, unicodedata
-import urllib,urllib2,json
-import websocket
-import thread
-import time
-import argparse
+import json
 import re
 import logging
 import pyunitex_emb
@@ -173,8 +169,8 @@ def sendUnitex(user, query, bot, lang):
     bufferDir =this_dir+"/../Unitex/unitex_buffer"
     commonDir= this_dir +"/../Unitex/common_resources"
     botDir = this_dir + "/../Unitex/bot_resources/" + bot
-    delaDir=commonDir+"/lang_dictionary/es/delaf.bin" 
-    dicoDir=commonDir+"/lang_dictionary"
+    #delaDir=commonDir+"/lang_dictionary/es/delaf.bin" 
+    #dicoDir=commonDir+"/lang_dictionary"
     botDir_dics = botDir+"/dictionary"
 
     txt_name=user

@@ -16,18 +16,10 @@
  */
 package maia.client;
 
-import java.io.BufferedReader;
-
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
-
-import maia.start;
-import maia.client.MaiaClientAdapter;
-import maia.client.annotation.OnMessage;
-import maia.utils.JSONUtils;
-import java.util.logging.*;
+import java.util.logging.Logger;
 
 /**
  * <b>Project:</b> maia-client<br />

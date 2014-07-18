@@ -1,4 +1,5 @@
 log/
+bin/
 maia_server/
 ChatScript/LOGS/
 *.pyc

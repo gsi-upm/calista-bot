@@ -5,7 +5,7 @@ import websocket
 import time
 import json
 
-import os, threading, Queue
+import threading, Queue
 
 class Maia:
 
@@ -102,23 +102,24 @@ class Maia:
         if (('[' in mymsg['data']['name']) and 
              ('[assert' not in mymsg['data']['name']) and ('[retrieve' not in mymsg['data']['name']) ):
             
-             # TODO:
-             # The way I should probably do this: Have a dict with queues, one for each user
-             # Also, do a clean-up of the  queues periodically, to prevent mem-leaks.
+            
+            # TODO:
+            # The way I should probably do this: Have a dict with queues, one for each user
+            # Also, do a clean-up of the  queues periodically, to prevent mem-leaks.
              
-             msg = mymsg['data']['name']
+            msg = mymsg['data']['name']
 
-             with self.lock:
+            with self.lock:
                 user = self.user
 
-             # Ok, for some reason, here I used to check for an user in the message. However, the message from
-             # maia doesn't return an user the way I expect (i.e., the bot client user), so I have remove the
-             # check temporarily. I'll come back to this.
+            # Ok, for some reason, here I used to check for an user in the message. However, the message from
+            # maia doesn't return an user the way I expect (i.e., the bot client user), so I have remove the
+            # check temporarily. I'll come back to this.
                 
-             # if user in msg:
+            # if user in msg:
             
-             self.rcvd_msgs.put(msg)
-             print(">> Received: %s with user %s" % msg, user)
+            self.rcvd_msgs.put(msg)
+            print(">> Received: %s with user %s" % msg, user)
                 
     def on_error(self, ws, error):
         """

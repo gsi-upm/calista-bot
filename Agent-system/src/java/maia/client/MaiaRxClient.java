@@ -17,22 +17,16 @@
 package maia.client;
 
 import jason.RevisionFailedException;
+import jason.asSemantics.TransitionSystem;
 import jason.asSyntax.Literal;
 
-import java.io.BufferedReader;
-
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.logging.Logger;
 
-import maia.start;
-import maia.client.MaiaClientAdapter;
 import maia.client.annotation.OnMessage;
 import maia.utils.JSONUtils;
-import java.util.logging.*;
-
-import jason.asSemantics.*;
 
 /**
  * <b>Project:</b> maia-client<br />
@@ -46,7 +40,6 @@ import jason.asSemantics.*;
  *
  */
 public class MaiaRxClient extends MaiaClientAdapter {
-	
 	
     private Logger logger = Logger.getLogger("gui."+maia.start.class.getName());
     private String username;
@@ -131,7 +124,7 @@ public class MaiaRxClient extends MaiaClientAdapter {
     		ts.getAg().delBel(Literal.parseLiteral(nfact));
 			ts.getAg().addBel(Literal.parseLiteral(nfact));
 		} catch (RevisionFailedException e) {
-			ts.getLogger().info("Error añadiendo belief "+nfact);
+			ts.getLogger().info("Error aï¿½adiendo belief "+nfact);
 		}
     	
     	
