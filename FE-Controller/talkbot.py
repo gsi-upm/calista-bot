@@ -308,9 +308,9 @@ def sendMaia(msg,bot,usr):
     
     maia.send(msg + " [user "+usr+"]", usr)
 
-    response = maia.wait_for_message(10, usr)
+    response = maia.wait_for_message(1, usr)
     
     return response
     
 if __name__ == '__main__':
-    run(host='localhost', port=8090, debug=True)
+    run(host='alpha.gsi.dit.upm.es', port=8090, debug=True)

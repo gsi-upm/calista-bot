@@ -42,6 +42,7 @@ jQuery(document).ready(function($){
 	console.log($input_field.val());
         $('#screen').append($(constructDialogEntry('me', $input_field.val())));
 	$input_field.val('');
+        scrollDisplay();
 
 	//jQuery.support.cors = true; // :S
         // send the data

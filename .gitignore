@@ -2,6 +2,7 @@ log/
 bin/
 maia_server/
 ChatScript/LOGS/
+*.log
 *.pyc
 *~
 TMP/

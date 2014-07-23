@@ -18,8 +18,8 @@ class Maia:
         self.logger = logger
 
         # Creates the queues for the messages
-
-        self.rcvd_msgs = Queue.Queue()
+        self.rcvd_msgs = {}
+        self.rcvd_msgs['anonymous'] = Queue.Queue()
         self.lock = threading.Lock()
 
 
@@ -60,18 +60,21 @@ class Maia:
         # I get a message from the queue, with timeout.
         # If the timeout triggers, I return an empty string
         try:
-            msg = self.rcvd_msgs.get(True, timeout)
-            return msg
+            if user in self.rcvd_msgs:
+                msg = self.rcvd_msgs[user].get(True, timeout)
+                return msg
         except Queue.Empty:
+            # Log error?
             return '' 
+        return ''
 
     def send(self, data, user):
         """
         Sends a message to the maia network, without waiting for response
         """
-
+        print("send: "+user)
         with self.lock:
-            self.user = user
+            self.rcvd_msgs[user] = Queue.Queue()
         self.logger.info('Sending to Maia {"name":"message","data": {"name" : "%s"}}' % data)
         self.ws.send('{"name":"message","data": {"name" : "%s"}}' % data)
         # Bassically, I just add it to the queue.
@@ -95,31 +98,23 @@ class Maia:
         userStart = message[message.rfind("[user"):]
 
         user = userStart[:userStart.find("]")+1]
-        print(user)
+        # Delete the user for the data to send to ChatScript
         mymsg = json.loads(message.replace(user, ""))
+
+        # Replaces the user tags, and keep only the username
+        user = user.replace("[user ", "")
+        user = user.replace("]", "")
+        print("on_message: " + user)
 
         #Accept only messages with an [actuator]
         if (('[' in mymsg['data']['name']) and 
              ('[assert' not in mymsg['data']['name']) and ('[retrieve' not in mymsg['data']['name']) ):
             
-            
-            # TODO:
-            # The way I should probably do this: Have a dict with queues, one for each user
-            # Also, do a clean-up of the  queues periodically, to prevent mem-leaks.
+             msg = mymsg['data']['name']
              
-            msg = mymsg['data']['name']
-
-            with self.lock:
-                user = self.user
-
-            # Ok, for some reason, here I used to check for an user in the message. However, the message from
-            # maia doesn't return an user the way I expect (i.e., the bot client user), so I have remove the
-            # check temporarily. I'll come back to this.
-                
-            # if user in msg:
-            
-            self.rcvd_msgs.put(msg)
-            print(">> Received: %s with user %s" % msg, user)
+             if user in self.rcvd_msgs:
+                self.rcvd_msgs[user].put(msg)
+                print(">> Received: "+msg+" with user "+user)
                 
     def on_error(self, ws, error):
         """
