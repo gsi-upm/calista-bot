@@ -9,6 +9,8 @@ import java.net.URISyntaxException;
 import java.util.logging.Logger;
 
 import maia.client.MaiaTxClient;
+
+
 //import javax.swing.JOptionPane;
 
 
@@ -37,7 +39,7 @@ public class send extends ConcurrentInternalAction {
                     
                     MaiaTxClient client;
 					try {
-						client = new MaiaTxClient (uri);
+						 client = new MaiaTxClient (uri);
 						 client.connect();
 		                 client.waitUntilConnected();    
 		                 client.subscribe("message");
