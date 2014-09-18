@@ -308,8 +308,11 @@ def sendMaia(msg,bot,usr):
     
     maia.send(msg + " [user "+usr+"]", usr)
 
+    response = ""
+
+    # Keeps waiting for new messages until a timeout
     response = maia.wait_for_message(1, usr)
-    
+
     return response
     
 if __name__ == '__main__':

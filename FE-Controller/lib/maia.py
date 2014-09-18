@@ -59,19 +59,26 @@ class Maia:
 
         # I get a message from the queue, with timeout.
         # If the timeout triggers, I return an empty string
+        response = ""
         try:
             if user in self.rcvd_msgs:
-                msg = self.rcvd_msgs[user].get(True, timeout)
-                return msg
+
+                # I wait until no more messages are received
+                while (True):
+                    msg = self.rcvd_msgs[user].get(True, timeout)
+                    response +=msg
         except Queue.Empty:
             # Log error?
-            return '' 
-        return ''
+            print("Maia timeout. continuing...")
+            
+        return response
 
     def send(self, data, user):
         """
         Sends a message to the maia network, without waiting for response
         """
+
+
         print("send: "+user)
         with self.lock:
             self.rcvd_msgs[user] = Queue.Queue()
