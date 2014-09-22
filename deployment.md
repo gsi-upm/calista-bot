@@ -24,6 +24,14 @@ Further details on how to deploy maia can be found in its repository.
 
 ## Chatscript
 
+Before being able to launch chatscript, if you are using a 64 bit system, you need to install several 32-bit libraries:
+
+```bash
+:~/$ sudo dpkg --add-architecture i386
+:~/$ sudo apt-get update
+:~/$ sudo apt-get install lib32gcc1 lib32stdc++6
+```
+
 For the first launch of Chatscript, you need to compile the corpus. Therefore, you have to launch chatscript on localmode first, issue the build commands, and then launch it as a server. So:
 ```bash
 :~/calista-bot/ChatScript$ ./LinuxChatSscript32 local
@@ -41,6 +49,13 @@ Keep in mind it will bind to the 1024 port.
 
 ## Front-end controller
 
+We need the websocket-client library for the controller:
+```bash
+:~/$ pip install websocket-client
+```
+
+
+
 The talkbot controller binds, by default, to the 8090 port. You need to change the host at the last line of the FE-Controller/talkbot.py file. Once is set to the appropriate hostname, just launch it:
 ```bash
 :~/calista-bot/FE-Controller$ python talkbot.py
@@ -54,9 +69,18 @@ The client for the bot is a web application. You just need to place the Chat-cli
 
 ## SirenDB
 
-For the time being, there is no pre-build jar provided, so you need to compile the sources into a .jar. Since we are using maven, it should be fairly simple:
+For the time being, there is no pre-build jar provided, so you need to compile the sources into a .jar. First, we need to download and compile the sirendb libraries from [its repository](https://github.com/rdelbru/SIREn), and then build our package:
 ```bash
-:~/calista-bot/siren-elearning$ maven package
+:~/SIREn/$ mvn package
+:~/SIREn/$ mvn install:install-file -Dfile=siren-core/target/siren-core-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-core -Dversion=1.0 -Dpackaging=jar
+:~/SIREn/$ mvn install:install-file -Dfile=siren-qparser/target/siren-qparser-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-qparser -Dversion=1.0 -Dpackaging=jar
+:~/SIREn/$ mvn install:install-file -Dfile=siren-solr/target/siren-solr-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-solr -Dversion=1.0 -Dpackaging=jar
+```
+
+Now, the rest of the dependencies should be handle by maven, so just run:
+
+```bash
+:~/calista-bot/siren-elearning$ mvn package
 ```
 
 Once you have the jar, edit the siren-elearning.properties and set the maia uri to point to your maia server, and launch siren:
@@ -70,7 +94,7 @@ As with siren, no pre-compiled jar is provided, so you will also need to build t
 
 After setting the server uri, build the sources using maven:
 ```bash
-:~/calista-bot/Agent-system$ maven package
+:~/calista-bot/Agent-system$ mvn package
 ```
 
 Now, in order to launch the jason system, just launch the jason_elearning-jar-with-dependencies.jar. However, this will require an XServer, so, in order to launch it on a server, you need to use a X11 virtual server, like xvfb:
