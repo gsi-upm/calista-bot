@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
 
 public class MaiaService extends MaiaClientAdapter {
 	
-	private static final Logger logger = LoggerFactory.getLogger(WebProjectsDemo.class);
+	private Logger logger;
     private String username;
     
     
@@ -61,8 +61,9 @@ public class MaiaService extends MaiaClientAdapter {
      * @throws URISyntaxException 
      * @throws RevisionFailedException 
      */
-    public MaiaService(String serverURI) throws URISyntaxException {
-        super(new URI(serverURI));     
+    public MaiaService(String serverURI, Logger logger) throws URISyntaxException {
+        super(new URI(serverURI), logger);
+        this.logger = logger;
         logger.info("Starting Maia subscription...");
 		
     }
@@ -137,7 +138,7 @@ public class MaiaService extends MaiaClientAdapter {
     public String search(String query) throws QueryNodeException, IOException {
     	
     	final File indexDir = new File("./target/index/");
-        final DemoSearcher searcher = new DemoSearcher(indexDir);
+        final DemoSearcher searcher = new DemoSearcher(indexDir, logger);
          
         // The searcher interprets the '-', so we remove it from our keywords,
         // in case is present. (I think...)

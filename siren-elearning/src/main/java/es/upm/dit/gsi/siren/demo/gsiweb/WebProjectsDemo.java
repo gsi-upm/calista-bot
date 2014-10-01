@@ -57,7 +57,7 @@ public class WebProjectsDemo {
     private final File indexDir;
     private static final InputStream DATA_PATH = WebProjectsDemo.class
             .getClassLoader().getResourceAsStream("gsiweb/vademecum.json");
-    private static final Logger logger = LoggerFactory.getLogger(WebProjectsDemo.class);
+    private static Logger logger; // = LoggerFactory.getLogger(WebProjectsDemo.class);
     private static final String ROOT_ELEMENT = "items";
     private static final String LABEL_DATA = "label";
     
@@ -116,7 +116,7 @@ public class WebProjectsDemo {
     
     
     public void localSearch() throws QueryNodeException, IOException {
-        final DemoSearcher searcher = new DemoSearcher(indexDir);
+        final DemoSearcher searcher = new DemoSearcher(indexDir, logger);
         final String[] keywordQueries = this.getKeywordQueries();
 
         for (int i = 0; i < keywordQueries.length; i++) {
@@ -194,9 +194,6 @@ public class WebProjectsDemo {
     }
 
     public static void main(final String[] args) throws IOException {
-        logger.info("info");
-        
-        
         // FIXME: add config options:
         // indexDirectory
         // delete index on startup?
@@ -211,10 +208,12 @@ public class WebProjectsDemo {
         cliOptions.addOption("m", "maiaURI", false, "URI for the maia service");
         cliOptions.addOption("i", "indexDir", false, "Index directory for the siren files");
         cliOptions.addOption("d", "deleteIndexDir", false, "Delete the indexDir if present");
+        cliOptions.addOption("l", "logger", false, "Logger to use: ToSTDOUT or ToSysLog");
         
         Properties options = getOptions(cliOptions, args);
         
-        System.out.println(Boolean.valueOf(options.getProperty("deleteIndexDir")));
+        logger = LoggerFactory.getLogger(options.getProperty("logger"));
+        
         final File indexDir = new File(options.getProperty("indexDir"));
         if (Boolean.valueOf(options.getProperty("deleteIndexDir"))
             && indexDir.exists()){
@@ -231,7 +230,7 @@ public class WebProjectsDemo {
         
 
 			try {
-				mservice = new MaiaService (maiauri);
+				mservice = new MaiaService (maiauri, logger);
 				mservice.connect();
 				mservice.waitUntilConnected();    
 	            mservice.subscribe("message");

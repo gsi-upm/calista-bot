@@ -7,8 +7,10 @@
   <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
         <syslogHost>apu.gsi.dit.upm.es</syslogHost>
         <facility>LOCAL0</facility>
-        <suffixPattern>calistabot: %logger %msg</suffixPattern>
+        <suffixPattern>calistabot:  [%thread] %-5level %logger{36} - %msg%n</suffixPattern>
     </appender>
+    
+  <!-- I'm not really sure if I need these... --> 
   <logger name="org.apache.solr" level="INFO" additivity="false">
     <appender-ref ref="STDOUT" />
   </logger>
@@ -18,9 +20,13 @@
   <logger name="es.upm.dit.gsi.siren" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT" />
   </logger>
-  <!--  This shouldn't be necessary, should it? -->
-  <logger name="es.upm.dit.gsi.siren.demo.gsiweb.WebProjectsDemo" level="DEBUG" additivity="false">
-    <appender-ref rel="STDOUT" />
+  
+  <!--  These I definitely need -->
+  <logger name="ToSTDOUT" level="DEBUG" additivity="false">
+    <appender-ref rel="STDOUT"/>
+  </logger>
+  <logger name="ToSysLog" level="DEBUG" additivity="false">
+    <appender-ref rel="SYSLOG"/>
   </logger>
   <root level="DEBUG">
     <appender-ref ref="STDOUT" />

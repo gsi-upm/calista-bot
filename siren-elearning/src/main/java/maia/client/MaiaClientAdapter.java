@@ -160,7 +160,7 @@ import org.slf4j.LoggerFactory;
 public abstract class MaiaClientAdapter {
 
     /** The logger from slf4j library */
-    final Logger logger = LoggerFactory.getLogger(MaiaClientAdapter.class);
+    private Logger logger;
     
     /** Set that contains the events that the client is subscribe to */
     private Set<String> eventsSubscribed;
@@ -226,8 +226,12 @@ public abstract class MaiaClientAdapter {
      * 
      * @param serverURI     The URI of the MAIA server used with the
      *                      <code>{@link WebSocketClient}</code> constructor.
+     * @param logger		The logger to use with the object
      */
-    public MaiaClientAdapter (URI serverURI) {
+    public MaiaClientAdapter (URI serverURI, Logger logger) {
+    	
+    	this.logger = logger;
+    	
         // Instantiate sets
         this.eventsSubscribed = new HashSet<String>();
         this.subscriptionsRequest = new HashSet<String>();

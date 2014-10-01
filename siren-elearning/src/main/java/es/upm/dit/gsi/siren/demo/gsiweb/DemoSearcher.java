@@ -39,7 +39,7 @@ public class DemoSearcher {
     
     private SearcherManager manager;
     
-    private static final Logger logger = LoggerFactory.getLogger(WebProjectsDemo.class);
+    private Logger logger;
 
     
     /**
@@ -48,8 +48,9 @@ public class DemoSearcher {
      * @param path
      * @throws IOException
      */
-    public DemoSearcher(File path) throws IOException{
+    public DemoSearcher(File path, Logger logger) throws IOException{
         
+    	this.logger = logger;
         this.dir = FSDirectory.open(path);
         this.manager = new SearcherManager(this.dir, null);
     }
