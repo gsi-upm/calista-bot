@@ -29,8 +29,15 @@ cs_facts_dir = this_dir+"/../ChatScript/"+facts_dir
 #Logging system
 log_name='gsibot'
 logger = logging.getLogger(log_name)
+
+# Log to file
 hdlr = logging.FileHandler(this_dir+'/'+log_name+'.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+
+# Log to Syslog
+#hdlr = logging.SysLogHandler()
+#formatter = logging.Formatter('calistabot: %(asctime)s %(levelname)s %(message)s')
+
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.INFO)
