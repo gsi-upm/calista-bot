@@ -17,8 +17,9 @@ import maia.client.MaiaTxClient;
 
 public class send extends ConcurrentInternalAction {
 
-    private Logger logger = Logger.getLogger("gui."+send.class.getName());
-
+    // TODO: Add config option instead... (Running out of time!)
+    private Logger logger = Logger.getLogger("STDOUT");
+    //private Logger logger = Logger.getLogger("SYSLOG");
     
     @Override
     public Object execute(final TransitionSystem ts, Unifier un, final Term[] args) throws Exception, URISyntaxException, InterruptedException  {

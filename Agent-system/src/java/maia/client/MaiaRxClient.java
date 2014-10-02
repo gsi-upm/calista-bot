@@ -41,7 +41,9 @@ import maia.utils.JSONUtils;
  */
 public class MaiaRxClient extends MaiaClientAdapter {
 	
-    private Logger logger = Logger.getLogger("gui."+maia.start.class.getName());
+ // TODO: Add config option instead... (Running out of time!)
+    private Logger logger = Logger.getLogger("STDOUT");
+    //private Logger logger = Logger.getLogger("SYSLOG");
     private String username;
     TransitionSystem ts;
 

@@ -9,19 +9,7 @@
         <facility>LOCAL0</facility>
         <suffixPattern>calistabot:  [%thread] %-5level %logger{36} - %msg%n</suffixPattern>
     </appender>
-    
-  <!-- I'm not really sure if I need these... --> 
-  <logger name="org.apache.solr" level="INFO" additivity="false">
-    <appender-ref ref="STDOUT" />
-  </logger>
-  <logger name="org.sindice.siren" level="INFO" additivity="false">
-    <appender-ref ref="STDOUT" />
-  </logger>
-  <logger name="es.upm.dit.gsi.siren" level="DEBUG" additivity="false">
-    <appender-ref ref="STDOUT" />
-  </logger>
-  
-  <!--  These I definitely need -->
+
   <logger name="ToSTDOUT" level="DEBUG" additivity="false">
     <appender-ref rel="STDOUT"/>
   </logger>
