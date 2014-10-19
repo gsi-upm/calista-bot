@@ -5,6 +5,8 @@ import websocket
 import time
 import json
 
+from unidecode import unidecode
+
 import threading, Queue
 
 class Maia:
@@ -66,10 +68,16 @@ class Maia:
                 # I wait until no more messages are received
                 while (True):
                     msg = self.rcvd_msgs[user].get(True, timeout)
-                    response +=msg
+                    self.logger.info("Received from maia>> " + msg)
+                    
+                    #decode it to ascii
+                    msg = unidecode(msg)
+                    # I may receive duplicated messages
+                    if msg not in response:
+                        response +=msg
         except Queue.Empty:
             # Log error?
-            print("Maia timeout. continuing...")
+            self.logger.info("Maia timeout. continuing...")
             
         return response
 

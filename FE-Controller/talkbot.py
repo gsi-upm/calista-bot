@@ -13,6 +13,7 @@ import inspect, unicodedata
 import json
 import re
 import logging
+import logging.handlers
 import pyunitex_emb
 
 this_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))    
@@ -31,12 +32,12 @@ log_name='gsibot'
 logger = logging.getLogger(log_name)
 
 # Log to file
-hdlr = logging.FileHandler(this_dir+'/'+log_name+'.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+#hdlr = logging.FileHandler(this_dir+'/'+log_name+'.log')
+#formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
 # Log to Syslog
-#hdlr = logging.SysLogHandler()
-#formatter = logging.Formatter('calistabot: %(asctime)s %(levelname)s %(message)s')
+hdlr = logging.handlers.SysLogHandler()
+formatter = logging.Formatter('calistabot: %(asctime)s %(levelname)s %(message)s')
 
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
@@ -119,7 +120,6 @@ def saveFeedback():
 
 #Produces an array with the natural language response as first element, and OOB tags the rest
 def splitOOB(s):
-    
     response_array = []
     response_array.append(re.sub('\[[^\]]*\]','',s))
     oob_array = re.findall('\[[^\]]*\]',s)
@@ -131,7 +131,7 @@ def splitOOB(s):
 
 #Executes the out-of-band commands and returns the natural language response produced   
 def executeOOB(content,usr,bot):
-
+    
     nl_response=""
     
     while ("[" in content):
@@ -271,14 +271,15 @@ def updateCsKb(content,bot,usr):
     logger.info("Updating ChatScript knowledge base kb-"+kbase)
     
     cskbfile = cs_facts_dir+"kb-"+kbase
-    print(cskbfile)
-    newcontent="" 
-    content_array = json.loads(content)
     
+    newcontent="" 
+
+    content_array = json.loads(content)
+
     #Remove special characters and lower case label
     content_array["label"]=re.sub("-","",content_array["label"])
     content_array["label"]=content_array["label"].lower()
-
+    
     #Add the new contents to the ChatScript kb file
     for ritem in content_array:
         if ritem != "label" and ritem != "links_to":
@@ -290,12 +291,11 @@ def updateCsKb(content,bot,usr):
                     label=re.sub("-","",sritem["label"])
                     label=label.lower()
                     newcontent+= "\n( "+content_array["label"]+" links_to "+label+" )"
-
+    
     with open(cskbfile, 'a') as f:
         f.write(newcontent) 
     
-
-    return "[sendcs [ import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+" ]]"
+    return "[sendcs [ import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+" ] ]"
     
 #Renders the response in Json
 def renderJson(query, response, bot, user, fresponse):
@@ -308,8 +308,6 @@ def renderJson(query, response, bot, user, fresponse):
 #Sends a message to the Maia network
 def sendMaia(msg,bot,usr):
     
-    print(msg)
-
     if "[sendmaia " in msg:
         msg = re.sub('sendmaia ','',msg)
     
@@ -323,4 +321,4 @@ def sendMaia(msg,bot,usr):
     return response
     
 if __name__ == '__main__':
-    run(host='localhost', port=8090, debug=True)
+    run(host='alpha.gsi.dit.upm.es', port=8090, debug=True)
