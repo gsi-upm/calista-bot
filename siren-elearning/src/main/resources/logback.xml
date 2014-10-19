@@ -23,10 +23,10 @@
   
   <!--  These I definitely need -->
   <logger name="ToSTDOUT" level="DEBUG" additivity="false">
-    <appender-ref rel="STDOUT"/>
+    <appender-ref ref="STDOUT"/>
   </logger>
   <logger name="ToSysLog" level="DEBUG" additivity="false">
-    <appender-ref rel="SYSLOG"/>
+    <appender-ref ref="SYSLOG"/>
   </logger>
   <root level="DEBUG">
     <appender-ref ref="STDOUT" />
