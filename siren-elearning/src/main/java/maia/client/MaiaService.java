@@ -71,8 +71,8 @@ public class MaiaService extends MaiaClientAdapter {
     @OnMessage("subscribed")
     public void onSubscribe(String message) {
     	
-        logger.info("Subscribed >> " + message + "\n");
-        logger.info("Service ready: listening event messages on Maia network");
+        logger.info("[loading] Subscribed >> " + message + "\n");
+        logger.info("[loading] Service ready: listening event messages on Maia network");
     }
     
     
@@ -94,7 +94,7 @@ public class MaiaService extends MaiaClientAdapter {
             return;
         }
 
-        logger.info("Message received >> " + content );
+        logger.debug("Message received >> " + content );
         
         
         //Discard the message if not asking to retrieve
@@ -115,8 +115,7 @@ public class MaiaService extends MaiaClientAdapter {
         // We have something like [user HqeCrvi68Ah7SEyzuJ5m]
         
         
-        logger.info("Searching keyword '"+ kword+"'");
-        logger.info("User: " + userName);
+        logger.info("[{}] Searching keyword '{}", userName, kword);
         
         try {
         	
@@ -128,7 +127,7 @@ public class MaiaService extends MaiaClientAdapter {
 			e.printStackTrace();
 		}
         
-        logger.info("Answering >> "+ response);
+        logger.info("[{}] Answering >> {}", userName, response);
         // TODO: Add the bot user to the reply
         sendMessage("[updatekb]"+response.replace("\"","\\\"")+ " " + userName);
 
@@ -145,14 +144,14 @@ public class MaiaService extends MaiaClientAdapter {
         query = query.replace("-"," ");
         query = "label:\""+query.trim()+"\"";
         Query q = searcher.parseKeywordQuery(query);
-        logger.info("q: {}", q.toString());
-        logger.info("Executing keyword query: '{}'", query);
+        logger.debug("q: {}", q.toString());
+        logger.debug("Executing keyword query: '{}'", query);
         // FIXME: Why 1000?
         String[] results = searcher.search(q, 1000);
         
         if (results != null) {
             // FIXME: results can (and will!) be null.
-            logger.info("Keyword query returned {} results: {}  \n \n \n \n", results.length, Arrays.toString(results));
+            logger.debug("Keyword query returned {} results: {}  \n \n \n \n", results.length, Arrays.toString(results));
             return results[0];
         } else {
             // TODO: Return a proper response, not a hard-coded empty string

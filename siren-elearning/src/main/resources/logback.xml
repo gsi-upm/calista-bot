@@ -25,7 +25,7 @@
   <logger name="ToSTDOUT" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT"/>
   </logger>
-  <logger name="ToSysLog" level="DEBUG" additivity="false">
+  <logger name="SIRENSLog" level="DEBUG" additivity="false">
     <appender-ref ref="SYSLOG"/>
   </logger>
   <root level="DEBUG">

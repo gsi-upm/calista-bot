@@ -68,7 +68,7 @@ public class WebProjectsDemo {
             logger.error("Existing directory {} - aborting", indexDir);
             System.exit(1);
         }
-        logger.info("Creating index directory {}", indexDir);
+        logger.info("[loading] Creating index directory {}", indexDir);
         indexDir.mkdirs();
     }
 
@@ -85,7 +85,7 @@ public class WebProjectsDemo {
         // Extract array of items, they will be the documents
         JSONObject jsonObject = JSONObject.fromObject(json);
         JSONArray objects = jsonObject.getJSONArray(ROOT_ELEMENT);
-        logger.debug("Found {} objects in the file", objects.size());
+        logger.debug("[loading] Found {} objects in the file", objects.size());
 
         // Prepare indexer
         final DemoIndexer indexer = new DemoIndexer(indexDir);
@@ -95,20 +95,20 @@ public class WebProjectsDemo {
             // Add documents
             for(Object obj : objects){
                 if(!(obj instanceof JSONObject)){
-                    logger.warn("JSON format error. Found a not JSONObject when one was expected {}", obj);
+                    logger.warn("[loading] JSON format error. Found a not JSONObject when one was expected {}", obj);
                 }
                 final String id = Integer.toString(counter++);
                 JSONObject app = (JSONObject)obj;
                 final String content = app.toString();
                 String label = app.getString(LABEL_DATA);
-                logger.info("Indexing document #{}: {}", id, label);
+                logger.info("[loading] Indexing document #{}: {}", id, label);
                 indexer.addDocument(id, content);
             }
-            logger.info("Commiting all pending documents");
+            logger.info("[loading] Commiting all pending documents");
             indexer.commit();
         }
         finally {
-            logger.info("Closing index");
+            logger.info("[loading] Closing index");
             indexer.close();
         }
     }
@@ -186,7 +186,7 @@ public class WebProjectsDemo {
             }
             
         } catch(Exception e) {
-            logger.error("Problem reading the options: " + e.getMessage());
+            logger.error("[loading] Problem reading the options: " + e.getMessage());
             e.printStackTrace();
             System.exit(0);
         }
@@ -194,13 +194,7 @@ public class WebProjectsDemo {
     }
 
     public static void main(final String[] args) throws IOException {
-        // FIXME: add config options:
-        // indexDirectory
-        // delete index on startup?
-        // maia uri
-        // Siren fields
-        // ...?
-        
+
         Options cliOptions = new Options();
         
         // TODO: Make this static constants.
