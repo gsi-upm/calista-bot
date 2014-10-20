@@ -160,7 +160,7 @@ def executeOOB(content,usr,bot):
 #Sends an input to Unitex to process it
 def sendUnitex(user, query, bot, lang):
 
-    logger.info("Unitex input: "+query)
+    logger.info("{user} Unitex input: {input}".format(user=user, input=query))
     
     #Remove special characters, lower case letters
     query = sub('["\'¿¡!?@#$]', '', query)
@@ -213,13 +213,13 @@ def sendUnitex(user, query, bot, lang):
         response_string=response_string+f.next()
             
 
-    logger.info("Unitex output: "+response_string)
+    logger.info("{user} Unitex output: {output}".format(user=user, output=response_string))
     return response_string
 
 #Sends an input to ChatScript to process it
 def sendChatScript(query, bot, user):
 
-    logger.info("ChatScript input: "+query)
+    logger.info("{user} ChatScript input: {input}".format(user=user, input=query))
     
     if "[sendcs" in query:
         query = re.sub('sendcs ','',query)
@@ -240,8 +240,6 @@ def sendChatScript(query, bot, user):
     #Message to server is 3 strings-   username, botname, message     
     socketmsg = user+"\0"+bot+"\0"+query 
 
-    print(socketmsg)
-
     s = socket()
     try:
         s.connect((cs_tcp_ip, cs_tcp_port))
@@ -254,7 +252,7 @@ def sendChatScript(query, bot, user):
         logger.error("Conexion a %s on port %s failed: %s" % (cs_tcp_ip, cs_tcp_port, e))
         data = "ChatScript connection error"
 
-    logger.info("ChatScript output: "+data)
+    logger.info("{user} ChatScript output: {output}".format(user=user, output=data)
     return data
 
 #Updates the ChatScript knowledge base
@@ -268,7 +266,7 @@ def updateCsKb(content,bot,usr):
     else:
         kbase="global"
     
-    logger.info("Updating ChatScript knowledge base kb-"+kbase)
+    logger.info("{user} Updating ChatScript knowledge base kb- {kb}".format(user=usr, kb=kbase))
     
     cskbfile = cs_facts_dir+"kb-"+kbase
     
@@ -317,7 +315,17 @@ def sendMaia(msg,bot,usr):
 
     # Keeps waiting for new messages until a timeout
     response = maia.wait_for_message(1, usr)
+    
+    # Logs
+    try:
+        data = json.loads(response)
+        logger.info("[{user}] Received response from maia about {label}".format(user=usr, label=data['label']))
+    except:
+        # If not json, probably a message form the Agent-system
+        logger.info("[{user}] Received not-json message from maia.".format(user=usr))
+    logger.debug("[{user}] Full response: {response}".format(user=usr, response=response))
 
+     
     return response
     
 if __name__ == '__main__':

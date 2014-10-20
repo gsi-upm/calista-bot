@@ -76,7 +76,7 @@ class Maia:
                         response +=msg
         except Queue.Empty:
             # Log error?
-            self.logger.debug("Maia timeout. continuing...")
+            self.logger.debug("{user} Maia timeout. continuing...".format(user=user))
             
         return response
 
@@ -86,7 +86,7 @@ class Maia:
         """
         with self.lock:
             self.rcvd_msgs[user] = Queue.Queue()
-        self.logger.info('Sending to Maia {"name":"message","data": {"name" : "%s"}}' % data)
+        self.logger.info('{user} Sending to Maia {"name":"message","data": {"name" : "{data}"}}'.format(user=user, data=data))
         self.ws.send('{"name":"message","data": {"name" : "%s"}}' % data)
         # Bassically, I just add it to the queue.
         #self.send_msgs.put(message)
