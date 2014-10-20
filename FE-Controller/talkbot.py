@@ -252,7 +252,7 @@ def sendChatScript(query, bot, user):
         logger.error("Conexion a %s on port %s failed: %s" % (cs_tcp_ip, cs_tcp_port, e))
         data = "ChatScript connection error"
 
-    logger.info("{user} ChatScript output: {output}".format(user=user, output=data)
+    logger.info("{user} ChatScript output: {output}".format(user=user, output=data))
     return data
 
 #Updates the ChatScript knowledge base
