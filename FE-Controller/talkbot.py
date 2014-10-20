@@ -37,7 +37,7 @@ logger = logging.getLogger(log_name)
 
 # Log to Syslog
 hdlr = logging.handlers.SysLogHandler()
-formatter = logging.Formatter('calistabot: %(asctime)s %(levelname)s %(message)s')
+formatter = logging.Formatter('calistabot: %(levelname)s %(message)s')
 
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 

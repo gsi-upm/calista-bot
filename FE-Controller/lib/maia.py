@@ -1,4 +1,3 @@
-from __future__ import print_function
 import sys
 
 import websocket
@@ -68,7 +67,7 @@ class Maia:
                 # I wait until no more messages are received
                 while (True):
                     msg = self.rcvd_msgs[user].get(True, timeout)
-                    self.logger.info("Received from maia>> " + msg)
+                    #self.logger.info("Received from maia>> " + msg)
                     
                     #decode it to ascii
                     msg = unidecode(msg)
@@ -77,7 +76,7 @@ class Maia:
                         response +=msg
         except Queue.Empty:
             # Log error?
-            self.logger.info("Maia timeout. continuing...")
+            self.logger.debug("Maia timeout. continuing...")
             
         return response
 
@@ -85,9 +84,6 @@ class Maia:
         """
         Sends a message to the maia network, without waiting for response
         """
-
-
-        print("send: "+user)
         with self.lock:
             self.rcvd_msgs[user] = Queue.Queue()
         self.logger.info('Sending to Maia {"name":"message","data": {"name" : "%s"}}' % data)
@@ -119,7 +115,6 @@ class Maia:
         # Replaces the user tags, and keep only the username
         user = user.replace("[user ", "")
         user = user.replace("]", "")
-        print("on_message: " + user)
 
         #Accept only messages with an [actuator]
         if (('[' in mymsg['data']['name']) and 
@@ -129,21 +124,18 @@ class Maia:
              
              if user in self.rcvd_msgs:
                 self.rcvd_msgs[user].put(msg)
-                print(">> Received: "+msg+" with user "+user)
                 
     def on_error(self, ws, error):
         """
         Just print the error for the time being
         """
         
-        # i should use a proper logger
-        print(error, file=sys.stderr)
+        logger.error(error)
 
     def on_close(self, ws):
         """
         Unsubscribe from maia
         """
-        print('I still need to figure out how to properly do this...')
         
         # Unsubscribe
         # Should I really do this?
