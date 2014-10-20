@@ -69,10 +69,7 @@ public class MaiaRxClient extends MaiaClientAdapter {
     
     @OnMessage("username::accepted")
     public void getUsername(String message) {
-    	
         this.username = JSONUtils.getDataName(message);
-        //ts.getLogger().info("Me han puesto de username: " + this.username);
-        //ts.getLogger().info("Username give:" + this.username);
     }
     
     @OnMessage("message")
@@ -85,37 +82,31 @@ public class MaiaRxClient extends MaiaClientAdapter {
         if (origin != null && origin.equals(this.username)) {
             return;
         }
-      //ts.getAg().addBel(Literal.parseLiteral("sol_internet(si)"));
 
-        //Evitar que se afirmen los mensajes cs_
+        //I don't care for chatscript messages
         int intIndex = content.indexOf("[sendcs]");
         if(intIndex != - 1){
-        	//ts.getLogger().info("era para ChatScript...");
+        	ts.getLogger().info("era para ChatScript...");
         	return;
         }
-        
-
-        
-        
         
         //Discard action if message not asking to assert a fact
         if (!content.contains( "assert")){
             return;
         }
         
-        ts.getLogger().info("Tengo un mensaje!");
-        ts.getLogger().info("Recibido >> " + content );
+        nuser=content.substring(content.indexOf("[user")+6, content.lastIndexOf("]" ));
+        
+        //ts.getLogger().info("Tengo un mensaje!");
+        logger.info("["+nuser+"] Recibido >> "+ content);
       
         //Sample accepted message: [assert explained( concept dowhile ) ] [user Javi]
-      
       
         //Extract new fact to assert from the Maia message
         nfact=content.substring(content.indexOf("[assert")+8, content.indexOf("]" ));
         nfact=nfact.replace("concept ","concept_");
         nfact=nfact.replace(" ","");
         nfact=nfact.replace("-","");
-        
-        nuser=content.substring(content.indexOf("[user")+6, content.lastIndexOf("]" ));
         
         nfact+="[user(\""+nuser+"\")]";
         
@@ -126,7 +117,7 @@ public class MaiaRxClient extends MaiaClientAdapter {
     		ts.getAg().delBel(Literal.parseLiteral(nfact));
 			ts.getAg().addBel(Literal.parseLiteral(nfact));
 		} catch (RevisionFailedException e) {
-			ts.getLogger().info("Error a�adiendo belief "+nfact);
+			logger.warning("Error adding belief" + nfact);
 		}
     	
     	

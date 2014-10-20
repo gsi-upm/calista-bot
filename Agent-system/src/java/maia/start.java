@@ -45,25 +45,14 @@ public class start extends ConcurrentInternalAction {
 		                 client.waitUntilConnected();    
 		                 //logger.info("Suscribiendose...");  
 		                 client.subscribe("message");
-						
-		              //   logger.info("Enviando hola...");  
-		              //   client.sendMessage("hola");
-		                        
-		              //   logger.info("Enviando holo...");
-		              //   client.sendMessage("holo");  
-		                        
-		                        
-		                    
-		                    
-		                    
-		                				
+		
 						
 					} catch (URISyntaxException e) {
 						// TODO Auto-generated catch block
-						logger.info("URISyntaxException");
+						logger.fine("URISyntaxException");
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						logger.info("InterruptedException");
+						logger.fine("InterruptedException");
 						e.printStackTrace();
 					} catch (RevisionFailedException e) {
 						// TODO Auto-generated catch block

@@ -6,6 +6,7 @@ import jason.asSemantics.Unifier;
 import jason.asSyntax.Term;
 
 import java.net.URISyntaxException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import maia.client.MaiaTxClient;
@@ -45,7 +46,7 @@ public class send extends ConcurrentInternalAction {
 		                 client.waitUntilConnected();    
 		                 client.subscribe("message");
 						
-		                 logger.info("Enviando el mensaje "+msg+" a traves de Maia");
+		                 logger.fine("Enviando el mensaje "+msg+" a traves de Maia");
 		                 String msga = msg;
 		                 
 		                 client.sendMessage(msga);
@@ -54,17 +55,17 @@ public class send extends ConcurrentInternalAction {
 						
 					} catch (URISyntaxException e) {
 						// TODO Auto-generated catch block
-						logger.info("URISyntaxException");
+						logger.fine("URISyntaxException");
 						e.printStackTrace();
 					} catch (InterruptedException e) {
-						logger.info("InterruptedException");
+						logger.fine("InterruptedException");
 						e.printStackTrace();
 					} catch (Exception e) {
-						logger.info("Unsubscription fail");
+						logger.fine("Unsubscription fail");
 						e.printStackTrace();
 					}
                    
-					   logger.info("Enviado");
+					   logger.fine("Enviado");
 					  
 
                 		resumeInt(ts, key);

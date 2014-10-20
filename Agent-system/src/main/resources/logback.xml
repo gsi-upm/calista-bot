@@ -7,13 +7,13 @@
   <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
         <syslogHost>localhost</syslogHost>
         <facility>LOCAL0</facility>
-        <suffixPattern>calistabot:  [%thread] %-5level %logger{36} - %msg%n</suffixPattern>
+        <suffixPattern>calistabot: %-5level %logger{36} - %msg%n</suffixPattern>
     </appender>
 
   <logger name="ToSTDOUT" level="DEBUG" additivity="false">
     <appender-ref rel="STDOUT"/>
   </logger>
-  <logger name="ToSysLog" level="DEBUG" additivity="false">
+  <logger name="JASONSlog" level="INFO" additivity="false">
     <appender-ref rel="SYSLOG"/>
   </logger>
   <root level="DEBUG">
