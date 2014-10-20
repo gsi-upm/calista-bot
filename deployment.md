@@ -51,7 +51,7 @@ Keep in mind it will bind to the 1024 port.
 
 We need the websocket-client library for the controller:
 ```bash
-:~/$ pip install websocket-client
+:~/$ pip install websocket-client unidecode
 ```
 
 
