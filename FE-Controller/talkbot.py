@@ -37,12 +37,12 @@ logger = logging.getLogger(log_name)
 
 # Log to Syslog
 hdlr = logging.handlers.SysLogHandler()
-formatter = logging.Formatter('calistabot: %(levelname)s %(name)s %(message)s')
+formatter = logging.Formatter('calistabot: %(levelname)s %(name)s - %(message)s')
 
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.INFO)
-logging.basicConfig(level=logging.DEBUG, format='%(message)s')
+#logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
 
 #Maia server variables
