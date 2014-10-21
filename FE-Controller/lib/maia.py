@@ -67,7 +67,6 @@ class Maia:
                 # I wait until no more messages are received
                 while (True):
                     msg = self.rcvd_msgs[user].get(True, timeout)
-                    #self.logger.info("Received from maia>> " + msg)
                     
                     #decode it to ascii
                     msg = unidecode(msg)
@@ -76,7 +75,7 @@ class Maia:
                         response +=msg
         except Queue.Empty:
             # Log error?
-            self.logger.debug("{user} Maia timeout. continuing...".format(user=user))
+            self.logger.debug("[user: {user}] Maia timeout. continuing...".format(user=user))
             
         return response
 
@@ -86,7 +85,7 @@ class Maia:
         """
         with self.lock:
             self.rcvd_msgs[user] = Queue.Queue()
-        self.logger.info('{user} Sending to Maia {"name":"message","data": {"name" : "{data}"}}'.format(user=user, data=data))
+        self.logger.info('[user: '+user+'] Sending to Maia {"name":"message","data": {"name" : "'+data+'"}}')
         self.ws.send('{"name":"message","data": {"name" : "%s"}}' % data)
         # Bassically, I just add it to the queue.
         #self.send_msgs.put(message)

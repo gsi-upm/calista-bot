@@ -37,7 +37,7 @@ logger = logging.getLogger(log_name)
 
 # Log to Syslog
 hdlr = logging.handlers.SysLogHandler()
-formatter = logging.Formatter('calistabot: %(levelname)s %(message)s')
+formatter = logging.Formatter('calistabot: %(levelname)s %(name)s %(message)s')
 
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
@@ -112,9 +112,9 @@ def saveFeedback():
     log_text="feedback using bot '"+request.query.bot+"' in question '"+request.query.q+"' with answer given '"+request.query.response
     
     if (request.query.feedback=='2'):
-        logger.error("Negative "+log_text)
+        logger.error("[user: "+request.query.user+"] Negative "+log_text)
     else:
-        logger.info("Positive "+log_text)
+        logger.info("[user: "+request.query.user+"] Positive "+log_text)
 
     
 
@@ -160,7 +160,7 @@ def executeOOB(content,usr,bot):
 #Sends an input to Unitex to process it
 def sendUnitex(user, query, bot, lang):
 
-    logger.info("{user} Unitex input: {input}".format(user=user, input=query))
+    logger.info("[user: {user}] Unitex input: {input}".format(user=user, input=query))
     
     #Remove special characters, lower case letters
     query = sub('["\'¿¡!?@#$]', '', query)
@@ -213,13 +213,13 @@ def sendUnitex(user, query, bot, lang):
         response_string=response_string+f.next()
             
 
-    logger.info("{user} Unitex output: {output}".format(user=user, output=response_string))
+    logger.info("[user: {user}] Unitex output: {output}".format(user=user, output=response_string))
     return response_string
 
 #Sends an input to ChatScript to process it
 def sendChatScript(query, bot, user):
 
-    logger.info("{user} ChatScript input: {input}".format(user=user, input=query))
+    logger.info("[user: {user}] ChatScript input: {input}".format(user=user, input=query))
     
     if "[sendcs" in query:
         query = re.sub('sendcs ','',query)
@@ -252,7 +252,7 @@ def sendChatScript(query, bot, user):
         logger.error("Conexion a %s on port %s failed: %s" % (cs_tcp_ip, cs_tcp_port, e))
         data = "ChatScript connection error"
 
-    logger.info("{user} ChatScript output: {output}".format(user=user, output=data))
+    logger.info("[user: {user}] ChatScript output: {output}".format(user=user, output=data))
     return data
 
 #Updates the ChatScript knowledge base
@@ -266,7 +266,7 @@ def updateCsKb(content,bot,usr):
     else:
         kbase="global"
     
-    logger.info("{user} Updating ChatScript knowledge base kb- {kb}".format(user=usr, kb=kbase))
+    logger.info("[user: {user}] Updating ChatScript knowledge base kb- {kb}".format(user=usr, kb=kbase))
     
     cskbfile = cs_facts_dir+"kb-"+kbase
     
@@ -319,11 +319,11 @@ def sendMaia(msg,bot,usr):
     # Logs
     try:
         data = json.loads(response)
-        logger.info("[{user}] Received response from maia about {label}".format(user=usr, label=data['label']))
+        logger.info("[user: {user}] Received response from maia about {label}".format(user=usr, label=data['label']))
     except:
         # If not json, probably a message form the Agent-system
-        logger.info("[{user}] Received not-json message from maia.".format(user=usr))
-    logger.debug("[{user}] Full response: {response}".format(user=usr, response=response))
+        logger.info("[user: {user}] Received not-json message from maia.".format(user=usr))
+    logger.debug("[{user: user}] Full response: {response}".format(user=usr, response=response))
 
      
     return response
