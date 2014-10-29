@@ -229,7 +229,12 @@ u: ($code=main) # main per-sentence processing
 		 No tengo respuesta para eso.
 	}
 
-
+# Unrecognized question
+u: ($bot=duke _*)
+    ^repeat()
+    Lo siento, no he entendido la pregunta, podrias repetirla?
+	
+	
 # BELOW is logically equivalent to the above topic
 
 topic: ~alternate_control system ()
