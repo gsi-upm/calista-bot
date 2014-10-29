@@ -6,6 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'lib/ext'))
 from bottle import route, run, request, response
 from socket import socket
 from re import sub
+from unidecode import unidecode
 
 import maia
 
@@ -67,7 +68,7 @@ def TalkToBot():
     
     
     #Collect URI parameters
-    query_q = request.query.q
+    query_q = unidecode(request.query.q)
     query_user = request.query.user or 'anonymous'
     query_bot = request.query.bot or 'Duke'
     query_lang = request.query.lang or 'es'
@@ -323,10 +324,10 @@ def sendMaia(msg,bot,usr):
     except:
         # If not json, probably a message form the Agent-system
         logger.info("[user: {user}] Received not-json message from maia.".format(user=usr))
-    logger.debug("[{user: user}] Full response: {response}".format(user=usr, response=response))
+    logger.debug("[user: {user}] Full response: {response}".format(user=usr, response=response))
 
      
     return response
     
 if __name__ == '__main__':
-    run(host='alpha.gsi.dit.upm.es', port=8090, debug=True)
+    run(host='localhost', port=8090, debug=True)
