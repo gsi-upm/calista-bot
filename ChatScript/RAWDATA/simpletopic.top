@@ -2,7 +2,9 @@
 concept: ~saludo [Hola Buenas Hi Que_tal]
 concept: ~despedida [Adios Nos_vemos Luego]
 concept: ~teaching [Aprender Ayudar]
-
+concept: ~ser [eres]
+concept: ~hacer [hacer haces dedicas]
+concept: ~id [quien que]
 
 topic: ~saludando (~saludo)
 
@@ -27,6 +29,16 @@ u: (eres el profesor)
 u: ($bot=duke ~teaching)
     ^noerase() ^repeat()
 	Puedo ayudarte con tus preguntas sobre Java.
+
+topic: ~identificacion (~id ~ser)
+
+u: ($bot=duke quien eres)
+   ^noerase() ^repeat()
+        Soy un bot asistente pensado para encontrar respuestas sobre java.
+
+u: ($bot=duke ~hacer)
+    ^noerase() ^repeat()
+        Mi tarea es ayudarte con tus dudas sobre java.
 
 	
 topic: ~despidiendo (~despedida)
