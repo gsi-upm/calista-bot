@@ -13,8 +13,13 @@ import net.sf.json.JSONObject;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
+import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.core.CoreContainer;
+import org.apache.solr.servlet.SolrRequestParsers;
 import org.slf4j.Logger;
 
 /**
@@ -44,8 +49,9 @@ public class ElearningSolr {
 	/**
 	 * Creates the embedded solr server, or connects to a remote one (TODO!)
 	 */
-	public ElearningSolr(Logger logger, CoreContainer coreCont, String coreName) {
+	public ElearningSolr(Logger logger, String indexDir, String coreName) {
 		this.logger = logger;
+		CoreContainer coreCont = new CoreContainer(indexDir);
 		this.server = new EmbeddedSolrServer(coreCont, coreName);
 	}
 
@@ -125,4 +131,25 @@ public class ElearningSolr {
     }
     
 
+    /**
+     * 
+     * Given a String Query, performs a query to the server,
+     * and return the relevant data. 
+     * 
+     * @param q - The query for the data
+     * @param n - The max number of results
+     * @return
+     */
+    public String[] search(String query, int n) throws SolrServerException, IOException{
+    	SolrParams qParams = SolrRequestParsers.parseQueryString(query);
+    	SolrDocumentList qResults = this.server.query(qParams).getResults();
+    	
+    	String[] result = new String[qResults.size()];
+    	for(int i = 0; i< result.length; i++) {
+    		// I'm really, REALLY unsure about this.
+    		// Basically, I want to get the Content field.
+    		result[i] = (String)qResults.get(i).getFieldValue(CONTENT_FIELD);	
+    	}
+    	return result;
+    }
 }
