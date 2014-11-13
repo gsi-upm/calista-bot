@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package es.gsi.dit.upm.es.solr.maia.annotation;
+package es.upm.dit.gsi.solr.maia.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

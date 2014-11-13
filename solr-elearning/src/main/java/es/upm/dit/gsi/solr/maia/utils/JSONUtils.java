@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package es.gsi.dit.upm.es.solr.maia.utils;
+package es.upm.dit.gsi.solr.maia.utils;
 
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;

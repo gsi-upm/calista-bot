@@ -1,21 +1,14 @@
-package es.gsi.dit.upm.es.solr.maia;
+package es.upm.dit.gsi.solr.maia;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Arrays;
 
-
-
-
-import es.gsi.dit.upm.es.solr.ElearningSolr;
-//import maia.client.RevisionFailedException;
-import es.gsi.dit.upm.es.solr.maia.annotation.OnMessage;
-import es.gsi.dit.upm.es.solr.maia.utils.JSONUtils;
+import es.upm.dit.gsi.solr.ElearningSolr;
+import es.upm.dit.gsi.solr.maia.annotation.OnMessage;
+import es.upm.dit.gsi.solr.maia.utils.JSONUtils;
 
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.core.CoreContainer;
 import org.slf4j.Logger;
 
 public class MaiaService extends MaiaClientAdapter{

@@ -14,15 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package es.gsi.dit.upm.es.solr.maia;
+package es.upm.dit.gsi.solr.maia;
 
 import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
-import es.gsi.dit.upm.es.solr.maia.annotation.OnMessage;
-import es.gsi.dit.upm.es.solr.maia.utils.JSONUtils;
+import es.upm.dit.gsi.solr.maia.annotation.OnMessage;
+import es.upm.dit.gsi.solr.maia.utils.JSONUtils;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.exceptions.WebsocketNotConnectedException;

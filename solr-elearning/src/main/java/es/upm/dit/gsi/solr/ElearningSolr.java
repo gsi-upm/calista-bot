@@ -1,4 +1,4 @@
-package es.gsi.dit.upm.es.solr;
+package es.upm.dit.gsi.solr;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,16 +10,17 @@ import java.util.Collection;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrRequest;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
+import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.params.SolrParams;
-import org.apache.solr.core.CoreContainer;
-import org.apache.solr.servlet.SolrRequestParsers;
+import org.apache.solr.common.util.NamedList;
 import org.slf4j.Logger;
 
 /**
@@ -49,10 +50,9 @@ public class ElearningSolr {
 	/**
 	 * Creates the embedded solr server, or connects to a remote one (TODO!)
 	 */
-	public ElearningSolr(Logger logger, String indexDir, String coreName) {
+	public ElearningSolr(Logger logger, String serverURL) {
 		this.logger = logger;
-		CoreContainer coreCont = new CoreContainer(indexDir);
-		this.server = new EmbeddedSolrServer(coreCont, coreName);
+		this.server = new HttpSolrServer(serverURL);
 	}
 
 	/**
@@ -60,9 +60,9 @@ public class ElearningSolr {
 	 * 
 	 * @param jsonInput
 	 */
-	public void index(InputStream jsonInput) {
+	public void index(InputStreamReader jsonInput) {
 		// Read json file (one or more lines)
-		BufferedReader br = new BufferedReader(new InputStreamReader(jsonInput));
+		BufferedReader br = new BufferedReader(jsonInput);
 
 		try {
 			String json = "";
@@ -141,8 +141,9 @@ public class ElearningSolr {
      * @return
      */
     public String[] search(String query, int n) throws SolrServerException, IOException{
-    	SolrParams qParams = SolrRequestParsers.parseQueryString(query);
-    	SolrDocumentList qResults = this.server.query(qParams).getResults();
+    	SolrQuery sQuery = new SolrQuery();
+    	sQuery.set("q", query); 
+    	SolrDocumentList qResults = this.server.query(sQuery).getResults();
     	
     	String[] result = new String[qResults.size()];
     	for(int i = 0; i< result.length; i++) {
