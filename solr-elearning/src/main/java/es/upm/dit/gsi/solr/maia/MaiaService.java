@@ -67,17 +67,15 @@ public class MaiaService extends MaiaClientAdapter{
         
         //Sample accepted message: [retrieve dowhile]
         
+        //TODO: change strings to constants
         
         //Extract keyword to search from the Maia message
-        //TODO: '+9'?? Remove magic numbers!!
-        //kword=content.substring(content.indexOf("retrieve")+9, content.indexOf("]"));
-        
-        // TOTEST
-        kword = content.replace("[retrieve", "").replace("]", "").trim();        
+        String kStart = content.replace("[retrieve", "");
+        kword = kStart.substring(0, kStart.indexOf(']')).trim();
         
         // get the User
         // We have something like [user HqeCrvi68Ah7SEyzuJ5m]
-        String userName = content.replace("[user", "").replace("]","").trim();
+        String userName = content.substring(content.lastIndexOf("[user")).replace("[user","").replace("]","").trim();
         
         logger.info("[{}] Searching keyword '{}", userName, kword);
         

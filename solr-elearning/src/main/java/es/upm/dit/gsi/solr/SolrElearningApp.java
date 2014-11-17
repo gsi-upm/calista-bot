@@ -104,19 +104,13 @@ public class SolrElearningApp {
 		cliOptions.addOption("l", "logger", false,
 				"Logger to use: ToSTDOUT or ToSysLog");
 		cliOptions.addOption("n", "coreName", false, "Solr Core");
-		cliOptions.addOption("s", "serverURL", false, "Solr Server URL");
+		cliOptions.addOption("s", "solrURL", false, "Solr Server URL");
 
 		Properties options = getOptions(cliOptions, args);
 
 		logger = LoggerFactory.getLogger(options.getProperty("logger"));
 
-		final File indexDir = new File(options.getProperty("indexDir"));
-		if (Boolean.valueOf(options.getProperty("deleteIndexDir"))
-				&& indexDir.exists()) {
-			FileUtils.deleteDirectory(indexDir);
-		}
-
-		ElearningSolr solrServer = new ElearningSolr(logger, options.getProperty("serverURL"));
+		ElearningSolr solrServer = new ElearningSolr(logger, options.getProperty("solrURL"));
 
 		String maiauri = options.getProperty("maiaURI");
 

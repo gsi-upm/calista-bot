@@ -88,7 +88,8 @@ public class ElearningSolr {
      */
     public String[] search(String query, int n) throws SolrServerException, IOException{
     	SolrQuery sQuery = new SolrQuery();
-    	sQuery.set("q", query); 
+    	sQuery.set("q", query);
+    	System.out.println("Query: " + query);
     	SolrDocumentList qResults = this.server.query(sQuery).getResults();
     	
     	String[] result = new String[qResults.size()];
