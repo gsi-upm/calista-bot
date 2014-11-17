@@ -121,7 +121,7 @@ public class SolrElearningApp {
 		String maiauri = options.getProperty("maiaURI");
 
 		try {
-
+			// Connect to the maia service.
 			MaiaService mservice = new MaiaService(maiauri, logger, solrServer);
 			mservice.connect();
 			mservice.waitUntilConnected();

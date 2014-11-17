@@ -41,70 +41,16 @@ public class ElearningSolr {
 	private SolrServer server;
 
 	// TODO: Make this a config option
-	private static final String ROOT_ELEMENT = "items";
-	private static final String LABEL_DATA = "label";
+	public static final String LABEL_FIELD = "label";
 	public static final String ID_FIELD = "id";
-	// public static final String SIREN_FIELD = "siren-field";
 	public static final String CONTENT_FIELD = "content";
 
 	/**
-	 * Creates the embedded solr server, or connects to a remote one (TODO!)
+	 * Creates the connector to the HTTP SolrServer
 	 */
 	public ElearningSolr(Logger logger, String serverURL) {
 		this.logger = logger;
 		this.server = new HttpSolrServer(serverURL);
-	}
-
-	/**
-	 * Initializes the server with the given data.
-	 * 
-	 * @param jsonInput
-	 */
-	public void index(InputStreamReader jsonInput) {
-		// Read json file (one or more lines)
-		BufferedReader br = new BufferedReader(jsonInput);
-
-		try {
-			String json = "";
-			while (br.ready()) {
-				json += br.readLine();
-			}
-			br.close();
-
-			// Extract array of items, they will be the documents
-			JSONObject jsonObject = JSONObject.fromObject(json);
-			JSONArray objects = jsonObject.getJSONArray(ROOT_ELEMENT);
-			logger.debug("[loading] Found {} objects in the file",
-					objects.size());
-
-			int counter = 0;
-
-			Collection<SolrInputDocument> docInput = new ArrayList<SolrInputDocument>();
-			// Add documents
-			for (Object obj : objects) {
-				if (!(obj instanceof JSONObject)) {
-					logger.warn(
-							"[loading] JSON format error. Found a not JSONObject when one was expected {}",
-							obj);
-				}
-				final String id = Integer.toString(counter++);
-				JSONObject app = (JSONObject) obj;
-				final String content = app.toString();
-				String label = app.getString(LABEL_DATA);
-
-				SolrInputDocument doc = new SolrInputDocument();
-				doc.addField(ID_FIELD, id);
-				doc.addField(LABEL_DATA, label);
-				doc.addField(CONTENT_FIELD, content);
-				logger.info("[loading] Indexing document #{}: {}", id, label);
-				docInput.add(doc);
-			}
-			this.server.add(docInput);
-			logger.info("[loading] Commiting all pending documents");
-			this.server.commit();
-		} catch (Exception e) {
-			// TODO: Handle the exception
-		}
 	}
 	
 	/**
@@ -120,10 +66,10 @@ public class ElearningSolr {
     	// I asume the json is directly the data we want to add
     	JSONObject jsonObject = JSONObject.fromObject(json);
     	
-    	String label = jsonObject.getString(LABEL_DATA);
+    	String label = jsonObject.getString(LABEL_FIELD);
     	String content = jsonObject.getString(CONTENT_FIELD);
 		newDoc.addField(ID_FIELD, id);
-		newDoc.addField(LABEL_DATA, label);
+		newDoc.addField(LABEL_FIELD, label);
 		newDoc.addField(CONTENT_FIELD, content);
     	
     	this.server.add(newDoc);
@@ -138,7 +84,7 @@ public class ElearningSolr {
      * 
      * @param q - The query for the data
      * @param n - The max number of results
-     * @return
+     * @return - An array with all the results
      */
     public String[] search(String query, int n) throws SolrServerException, IOException{
     	SolrQuery sQuery = new SolrQuery();

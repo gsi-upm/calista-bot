@@ -70,18 +70,20 @@ public class MaiaService extends MaiaClientAdapter{
         
         //Extract keyword to search from the Maia message
         //TODO: '+9'?? Remove magic numbers!!
-        kword=content.substring(content.indexOf("retrieve")+9, content.indexOf("]"));
+        //kword=content.substring(content.indexOf("retrieve")+9, content.indexOf("]"));
+        
+        // TOTEST
+        kword = content.replace("[retrieve", "").replace("]", "").trim();        
         
         // get the User
-        String userData = content.substring(content.indexOf("[user"));
-        String userName = userData.substring(0, userData.indexOf("]")+1);
         // We have something like [user HqeCrvi68Ah7SEyzuJ5m]
-        
+        String userName = content.replace("[user", "").replace("]","").trim();
         
         logger.info("[{}] Searching keyword '{}", userName, kword);
         
         try {
         	String query = "label:" + kword;
+        	// I only want the first result.
 			response = this.solrServer.search(query, 1)[0];
 			
 		} catch (SolrServerException e) {
