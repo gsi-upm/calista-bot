@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -86,17 +89,52 @@ public class ElearningSolr {
      * @param n - The max number of results
      * @return - An array with all the results
      */
-    public String[] search(String query, int n) throws SolrServerException, IOException{
+    public ArrayList<String> search(String query, int n) throws SolrServerException, IOException{
     	SolrQuery sQuery = new SolrQuery();
+    	
+    	// Sets the query
     	sQuery.set("q", query);
+    	
     	System.out.println("Query: " + query);
     	SolrDocumentList qResults = this.server.query(sQuery).getResults();
     	
-    	String[] result = new String[qResults.size()];
-    	for(int i = 0; i< result.length; i++) {
+    	
+    	// Example result:
+    	//Answering >> {"content":"Relación de clases, variables y métodos proporcionados por el suministrador
+    	//                         del sistema de programación y que pueden ser empleados directamente por los 
+    	//                         programadores.Por ejemplo, el paquete Math proporciona métodos para cálculos
+    	//                         trigonométricos.Ver [http://java.sun.com/j2se/1.5.0/docs/api/]-",
+    	//              "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/175.html",
+    	//			    "links_to":[{"label":"otros_conceptos"}],
+    	// 				"label":"Interfaz",
+    	//              "topic":"concepto",
+    	//              "example":"Lo siento, no tengo ningún ejemplo sobre eso"
+    	//              }
+    	
+    	ArrayList<String> result = new ArrayList<String>();
+    	for(Map docResult: qResults) {
     		// I'm really, REALLY unsure about this.
     		// Basically, I want to get the Content field.
-    		result[i] = (String)qResults.get(i).getFieldValue(CONTENT_FIELD);	
+    		
+    		// I don't care for the id:
+    		docResult.remove("id");
+    		
+    		JSONObject jsonResult = new JSONObject();
+    		jsonResult.putAll((docResult));
+    		
+    		result.add(jsonResult.toString());
+    		
+    		// Current response (diferent from the example!)
+    		// Answering >> {"topic":"concepto",
+    		//				 "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/200.html",
+    		//				 "links_to":["otros_conceptos"],
+    		//				 "label":"Metodo",
+    		//				 "content":"Un metodo es un poco de codigo con una mision. [...]",
+    		//				 "id":"200",
+    		//               "example":"  return a + b;} char suma (char c, int n) {",
+    		//               "_version_":1485018480819306497
+    		//				 }
+	
     	}
     	return result;
     }

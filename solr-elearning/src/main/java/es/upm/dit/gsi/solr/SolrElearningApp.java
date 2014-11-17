@@ -110,7 +110,7 @@ public class SolrElearningApp {
 
 		logger = LoggerFactory.getLogger(options.getProperty("logger"));
 
-		ElearningSolr solrServer = new ElearningSolr(logger, options.getProperty("solrURL"));
+		ElearningSolr solrServer = new ElearningSolr(logger, options.getProperty("solrURL")+"/" + options.getProperty("coreName"));
 
 		String maiauri = options.getProperty("maiaURI");
 

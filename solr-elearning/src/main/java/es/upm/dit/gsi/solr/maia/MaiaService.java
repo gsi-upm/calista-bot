@@ -82,7 +82,7 @@ public class MaiaService extends MaiaClientAdapter{
         try {
         	String query = "label:" + kword;
         	// I only want the first result.
-			response = this.solrServer.search(query, 1)[0];
+			response = this.solrServer.search(query, 1).get(0);
 			
 		} catch (SolrServerException e) {
 			e.printStackTrace();
@@ -92,7 +92,7 @@ public class MaiaService extends MaiaClientAdapter{
         
         logger.info("[{}] Answering >> {}", userName, response);
         // TODO: Add the bot user to the reply
-        sendMessage("[updatekb]"+response.replace("\"","\\\"")+ " " + userName);
+        sendMessage("[updatekb] "+response.replace("\"","\\\"")+ " " + userName);
 
     }
 	
