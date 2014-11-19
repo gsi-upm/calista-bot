@@ -1,29 +1,18 @@
 package es.upm.dit.gsi.solr;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrRequest;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
-import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
-import org.apache.solr.common.params.SolrParams;
-import org.apache.solr.common.util.NamedList;
+import org.apache.solr.common.params.CommonParams;
 import org.slf4j.Logger;
 
 /**
@@ -36,25 +25,62 @@ import org.slf4j.Logger;
  */
 public class ElearningSolr {
 
+	/**
+	 * The logger - configured elsewhere
+	 */
 	private Logger logger;
 
 	/**
 	 * The solr server, either embedded or not
 	 */
 	private SolrServer server;
-
-	// TODO: Make this a config option
-	public static final String LABEL_FIELD = "label";
-	public static final String ID_FIELD = "id";
-	public static final String CONTENT_FIELD = "content";
+	
+	/**
+	 * The basic solr document fields
+	 * 
+	 */
+	private String[] docFields;
+	
+	/**
+	 * The Fields Filter for the solr query.
+	 * 
+	 */
+	private String[] fieldsFilter;
+	
+	/**
+	 * The "default" search tag
+	 */
+	private String searchTag;
 
 	/**
-	 * Creates the connector to the HTTP SolrServer
+	 * Creates the connector to the HTTP SolrServer,
+	 * without default values.
+	 * 
+	 * @param logger
+	 * @param serverUrl - The solr server url, including the core.
 	 */
 	public ElearningSolr(Logger logger, String serverURL) {
 		this.logger = logger;
 		this.server = new HttpSolrServer(serverURL);
 	}
+	
+	/**
+	 * Creates the connector to the HTTP SolrServer
+	 * Fully configured
+	 * 
+	 * @param logger
+	 * @param serverUrl - The solr server url, including the core.
+	 * @param docFields - The fields to return in a solr search
+	 * @param searchTag - The expected tag for searching the solr database 
+	 */
+	public ElearningSolr(Logger logger, String serverURL, String[] docFields, String[] fieldsFilter, String searchTag) {
+		this.logger = logger;
+		this.server = new HttpSolrServer(serverURL);
+		this.docFields = docFields;
+		this.fieldsFilter = fieldsFilter;
+		this.searchTag = searchTag;
+	}
+	
 	
 	/**
 	 * Adds a doc to the server.
@@ -64,21 +90,64 @@ public class ElearningSolr {
 	 * @throws IOException
 	 */
     public void addDocument(String id, String json) throws SolrServerException, IOException{
+    	// Empry solr document
     	SolrInputDocument newDoc = new SolrInputDocument();
     	
     	// I asume the json is directly the data we want to add
     	JSONObject jsonObject = JSONObject.fromObject(json);
     	
-    	String label = jsonObject.getString(LABEL_FIELD);
-    	String content = jsonObject.getString(CONTENT_FIELD);
-		newDoc.addField(ID_FIELD, id);
-		newDoc.addField(LABEL_FIELD, label);
-		newDoc.addField(CONTENT_FIELD, content);
+    	// Converts the json to the doc, but only with the required fields.
+    	for(String fieldName : docFields) {
+    		if(jsonObject.has(fieldName)) 
+    			newDoc.addField(fieldName, jsonObject.get(fieldName));
+    	}
+    	
+    	// TODO: We *may* be missing the id here. 
     	
     	this.server.add(newDoc);
     	this.server.commit();
     }
     
+    /**
+     * Returns the "default" search tag
+     * 
+     * @return
+     */
+    public String getSearchTag() {
+    	return this.searchTag;
+    }
+    
+    /**
+     * Sets the tag to use in the filter.
+     */
+    public void setSearchTag(String searchTag) {
+    	this.searchTag = searchTag;
+    }
+    
+    /**
+     * If we want to have a "default" fields filter,
+     * sets them.
+     * 
+     * @param fields - the fieds to show in the result.
+     */
+    public void setFieldsFilter(String[] fields){
+    	this.fieldsFilter = fields;
+    }
+    
+    /**
+     * Given a String Query, performs a query to the server,
+     * and return the relevant data. 
+     * It utilices the field general field filter, set with
+     * the "setFieldsFilter" method.
+     * 
+     * @param q - The query for the data
+     * @param n - The max number of results
+     * @return - An array with all the results
+     */
+    public ArrayList<String> search(String query, int n) throws SolrServerException, IOException{
+    	return search(query, n, this.fieldsFilter);
+    }
+        
 
     /**
      * 
@@ -87,33 +156,20 @@ public class ElearningSolr {
      * 
      * @param q - The query for the data
      * @param n - The max number of results
+     * @param fields - The fields I want to return.
      * @return - An array with all the results
      */
-    public ArrayList<String> search(String query, int n) throws SolrServerException, IOException{
+    public ArrayList<String> search(String query, int n, String[] fields) throws SolrServerException, IOException{
     	SolrQuery sQuery = new SolrQuery();
-    	
     	// Sets the query
-    	sQuery.set("q", query);
+    	sQuery.set(CommonParams.Q, query);
     	
-    	// I only want certain fields.
-    	// TODO: Make this a config option
-    	sQuery.set("fl", "topic,resource,links_to,label,content");
-    	
-    	System.out.println("Query: " + query);
+    	// If I want the search to return all the fields stored,
+    	// the fields variable will be null.
+    	if(fields != null){
+    		sQuery.set(CommonParams.FL, String.join(",",fields));
+    	}
     	SolrDocumentList qResults = this.server.query(sQuery).getResults();
-    	
-    	
-    	// Example result:
-    	//Answering >> {"content":"Relación de clases, variables y métodos proporcionados por el suministrador
-    	//                         del sistema de programación y que pueden ser empleados directamente por los 
-    	//                         programadores.Por ejemplo, el paquete Math proporciona métodos para cálculos
-    	//                         trigonométricos.Ver [http://java.sun.com/j2se/1.5.0/docs/api/]-",
-    	//              "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/175.html",
-    	//			    "links_to":[{"label":"otros_conceptos"}],
-    	// 				"label":"Interfaz",
-    	//              "topic":"concepto",
-    	//              "example":"Lo siento, no tengo ningún ejemplo sobre eso"
-    	//              }
     	
     	ArrayList<String> result = new ArrayList<String>();
     	for(Map docResult: qResults) {
@@ -123,7 +179,7 @@ public class ElearningSolr {
     		
     		result.add(jsonResult.toString());
     		
-    		// Current response (diferent from the example!)
+    		// Current response
     		// Answering >> {"topic":"concepto",
     		//				 "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/200.html",
     		//				 "links_to":["otros_conceptos"],
