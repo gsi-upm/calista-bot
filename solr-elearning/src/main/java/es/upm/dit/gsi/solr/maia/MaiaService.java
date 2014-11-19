@@ -92,7 +92,7 @@ public class MaiaService extends MaiaClientAdapter{
         
         logger.info("[{}] Answering >> {}", userName, response);
         // TODO: Add the bot user to the reply
-        sendMessage("[updatekb] "+response.replace("\"","\\\"")+ " " + userName);
+        sendMessage("[updatekb] "+response.replace("\"","\\\"")+ " [user " + userName + "]");
 
     }
 	

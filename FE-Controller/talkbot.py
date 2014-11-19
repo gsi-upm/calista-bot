@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding=utf-8
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
@@ -6,6 +7,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'lib/ext'))
 from bottle import route, run, request, response
 from socket import socket
 from re import sub
+
 from unidecode import unidecode
 
 import maia
@@ -43,7 +45,6 @@ formatter = logging.Formatter('calistabot: %(levelname)s %(name)s - %(message)s'
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.INFO)
-#logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
 
 #Maia server variables
@@ -52,6 +53,10 @@ maia_port = '1337'
 
 maia = maia.Maia('ws://'+maia_uri+':'+maia_port, logger) 
 maia.connect()
+
+# General config
+host_name = 'localhost'
+host_port = 8090
 
 
 @route('/')
@@ -286,8 +291,7 @@ def updateCsKb(content,bot,usr):
             newcontent+= "\n( "+content_array["label"]+" "+ritem+" "+content+" )"
         
         if ritem == "links_to":
-                for sritem in content_array["links_to"]:
-                    label=re.sub("-","",sritem["label"])
+                for label in content_array["links_to"]:
                     label=label.lower()
                     newcontent+= "\n( "+content_array["label"]+" links_to "+label+" )"
     
@@ -316,7 +320,7 @@ def sendMaia(msg,bot,usr):
 
     # Keeps waiting for new messages until a timeout
     response = maia.wait_for_message(1, usr)
-    
+
     # Logs
     try:
         data = json.loads(response)
@@ -326,8 +330,7 @@ def sendMaia(msg,bot,usr):
         logger.info("[user: {user}] Received not-json message from maia.".format(user=usr))
     logger.debug("[user: {user}] Full response: {response}".format(user=usr, response=response))
 
-     
     return response
     
 if __name__ == '__main__':
-    run(host='localhost', port=8090, debug=True)
+    run(host=host_name, port=host_port, debug=True)

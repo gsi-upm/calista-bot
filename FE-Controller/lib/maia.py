@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 
 import websocket
@@ -67,6 +68,7 @@ class Maia:
                 # I wait until no more messages are received
                 while (True):
                     msg = self.rcvd_msgs[user].get(True, timeout)
+                    self.logger.info("Received from maia>> " + msg)
                     
                     #decode it to ascii
                     msg = unidecode(msg)
@@ -83,6 +85,7 @@ class Maia:
         """
         Sends a message to the maia network, without waiting for response
         """
+
         with self.lock:
             self.rcvd_msgs[user] = Queue.Queue()
         self.logger.info('[user: '+user+'] Sending to Maia {"name":"message","data": {"name" : "'+data+'"}}')
@@ -105,8 +108,9 @@ class Maia:
         """
         Receives a message from the maia network.
         """
+        self.logger.debug("Received from maia: " + message)
         userStart = message[message.rfind("[user"):]
-
+            
         user = userStart[:userStart.find("]")+1]
         # Delete the user for the data to send to ChatScript
         mymsg = json.loads(message.replace(user, ""))
@@ -129,12 +133,13 @@ class Maia:
         Just print the error for the time being
         """
         
-        logger.error(error)
+        self.logger.error(error)
 
     def on_close(self, ws):
         """
         Unsubscribe from maia
         """
+        self.logger.warning('I still need to figure out how to properly close the maia websocket...')
         
         # Unsubscribe
         # Should I really do this?

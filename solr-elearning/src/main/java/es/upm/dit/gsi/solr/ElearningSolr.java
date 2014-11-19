@@ -95,6 +95,10 @@ public class ElearningSolr {
     	// Sets the query
     	sQuery.set("q", query);
     	
+    	// I only want certain fields.
+    	// TODO: Make this a config option
+    	sQuery.set("fl", "topic,resource,links_to,label,content");
+    	
     	System.out.println("Query: " + query);
     	SolrDocumentList qResults = this.server.query(sQuery).getResults();
     	
@@ -113,11 +117,6 @@ public class ElearningSolr {
     	
     	ArrayList<String> result = new ArrayList<String>();
     	for(Map docResult: qResults) {
-    		// I'm really, REALLY unsure about this.
-    		// Basically, I want to get the Content field.
-    		
-    		// I don't care for the id:
-    		docResult.remove("id");
     		
     		JSONObject jsonResult = new JSONObject();
     		jsonResult.putAll((docResult));
