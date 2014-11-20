@@ -18,18 +18,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Main class Obviuos WIP
- *
+ * Main class
+ * Reads the config and launchs the Maia-solr connector
+ * 
+ * @author Alberto Mardomingo
+ * @version 2014-11-20
  */
 public class SolrElearningApp {
-
-	private static final InputStream DATA_PATH = SolrElearningApp.class
-			.getClassLoader().getResourceAsStream("vademecum.json");
+	
+	/**
+	 * The logger
+	 * This logger will be used through all the classes.
+	 */
 	private static Logger logger;
 
 	/**
-	 * Parse the commandLine options and the config options, and return them as
-	 * a hashMap.
+	 * Parse the commandLine options and the config options,
+	 * and return them as a hashMap.
 	 * 
 	 * @param - The cli avaliable options
 	 * @param - String[] with the cli arguments
@@ -57,7 +62,7 @@ public class SolrElearningApp {
 				return prop;
 
 			} else {
-				// LOOK: Check this is done properly.
+				// TODO: Check this is done properly.
 				System.out.println("Specify a config file with -c CONFIGPATH");
 				System.exit(0);
 			}
@@ -74,7 +79,7 @@ public class SolrElearningApp {
 	/**
 	 * Creates the solr server connector, and launches the maia websocket listener
 	 * 
-	 * @param args
+	 * @param args - The cli params.
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
@@ -115,10 +120,10 @@ public class SolrElearningApp {
 			mservice.subscribe("message");
 
 		} catch (InterruptedException e) {
-			logger.info("InterruptedException");
+			logger.error("InterruptedException trying to connect to maia:");
 			e.printStackTrace();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
+			logger.error("URISyntaxException trying to connect to maia:");
 			e.printStackTrace();
 		}
 	}

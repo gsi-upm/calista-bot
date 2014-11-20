@@ -17,11 +17,10 @@ import org.slf4j.Logger;
 
 /**
  * Wrapper for the solr server.
+ * Connects to a "remote" solr server, and interacts with it as demanded. 
  * 
- * For the moment, embedded solr server.
- * 
- * @author amardomingo
- *
+ * @author Alberto Mardomingo
+ * @version 2014-11-20
  */
 public class ElearningSolr {
 
@@ -31,7 +30,7 @@ public class ElearningSolr {
 	private Logger logger;
 
 	/**
-	 * The solr server, either embedded or not
+	 * The solr server
 	 */
 	private SolrServer server;
 	
@@ -49,12 +48,15 @@ public class ElearningSolr {
 	
 	/**
 	 * The "default" search tag
+	 * Usually, we use the "label" tag
 	 */
 	private String searchTag;
 
 	/**
 	 * Creates the connector to the HTTP SolrServer,
 	 * without default values.
+	 * 
+	 * It needs to be further configured!
 	 * 
 	 * @param logger
 	 * @param serverUrl - The solr server url, including the core.
@@ -102,7 +104,8 @@ public class ElearningSolr {
     			newDoc.addField(fieldName, jsonObject.get(fieldName));
     	}
     	
-    	// TODO: We *may* be missing the id here. 
+    	//FIXME: We *may* be missing the id here.
+    	// Our best bet may be to configure solr, so the id field is autoincremented.
     	
     	this.server.add(newDoc);
     	this.server.commit();
@@ -179,7 +182,7 @@ public class ElearningSolr {
     		
     		result.add(jsonResult.toString());
     		
-    		// Current response
+    		// Current response (without field filters)
     		// Answering >> {"topic":"concepto",
     		//				 "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/200.html",
     		//				 "links_to":["otros_conceptos"],
@@ -189,7 +192,6 @@ public class ElearningSolr {
     		//               "example":"  return a + b;} char suma (char c, int n) {",
     		//               "_version_":1485018480819306497
     		//				 }
-	
     	}
     	return result;
     }
