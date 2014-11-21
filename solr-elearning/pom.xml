@@ -61,7 +61,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>es.upm.dit.gsi.siren.demo.gsiweb.WebProjectsDemo</mainClass>
+                            <mainClass>es.upm.dit.gsi.solr.SolrElearningApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
