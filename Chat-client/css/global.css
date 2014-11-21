@@ -12,7 +12,7 @@ body {
 
 /* Iframe with the vademecum */
 
-#vademecum {
+#bot-target{
   position: relative;
   z-index: 1;
   height: 100%;

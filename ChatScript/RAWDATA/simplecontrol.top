@@ -75,6 +75,10 @@ u: ($bot=duke \[ Java question _* \] )
      ^pick(@0object),
      }
     . _@fullresponse \[sendmaia assert explained(concept _0) \]
+   ^query(direct_sv _0 resource ?)
+   . \[resource @0object \]
+   . \[label _0 \]
+   
 	
 
 #Look up concept in knowledge base, if no result found

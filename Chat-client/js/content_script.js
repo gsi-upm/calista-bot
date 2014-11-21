@@ -1,5 +1,11 @@
 jQuery(document).ready(function($){
 
+    /* Store the url shown */
+    var current_url_shown = "" // this is used to avoid continous recharging of the web
+    
+    /* Vademecum base url */
+    var vademecum_base = "http://www.dit.upm.es/~pepe/libros/vademecum/index.html?n="
+    
     // Creates (or loads from cookie) a random user id for the bot
     username = "";
     if(document.cookie && document.cookie.indexOf("botUser") != -1) {
@@ -44,7 +50,7 @@ jQuery(document).ready(function($){
 	$input_field.val('');
         scrollDisplay();
 
-	//jQuery.support.cors = true; // :S
+	jQuery.support.cors = true; // :S
         // send the data
         $.ajax({'url': $form.attr('action'), 'data':data, 'crossDomain':true})
           .success(function (data_resp) {
@@ -59,6 +65,20 @@ jQuery(document).ready(function($){
               if (isFeedbackRequiered (data_resp)) {
                   placeFeedbackForm (data_resp);
               }
+              
+              // Change iframe source
+              //if (data_resp.dialog.url_id != undefined) {
+              //    document.getElementById('vademecum').src = 
+              //      document.getElementById('vademecum').src + "?n=" + data_resp.dialog.url_id
+              //}
+              if(data_resp.dialog.url && data_resp.dialog.url != current_url_shown) {
+                  // I want the filename from that url:
+                  var name_start = data_resp.dialog.url.lastIndexOf('/')+1
+                  var filename = data_resp.dialog.url.substring(name_start)
+                  $('iframe#bot-target').attr('src', vademecum_base + filename);
+                  current_url_shown = vademecum_base + filename;
+              }
+              
               // change avatar
               changeavatar (data_resp.dialog.state);
               // scroll display

@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 import os, sys
+from setuptools.command.sdist import re_finder
+
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib/ext'))
 
@@ -39,12 +41,12 @@ logger = logging.getLogger(log_name)
 #formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
 # Log to Syslog
-hdlr = logging.handlers.SysLogHandler()
-formatter = logging.Formatter('calistabot: %(levelname)s %(name)s - %(message)s')
+#hdlr = logging.handlers.SysLogHandler()
+#formatter = logging.Formatter('calistabot: %(levelname)s %(name)s - %(message)s')
 
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr) 
-logger.setLevel(logging.INFO)
+#hdlr.setFormatter(formatter)
+#logger.addHandler(hdlr)
+#logger.setLevel(logging.INFO)
 
 
 #Maia server variables
@@ -99,11 +101,22 @@ def TalkToBot():
     #Extract the natural language response from the array
     nl_response = cs_output_array[0]
     cs_output_array.pop(0);
+
+    # The resource to direct the bot to, if exists.
+    oob_resource = ""
+    oob_label = ""
     
     #Proceed with further executions if needed, getting the natural language response produced
     for command in cs_output_array:
-        nl_response+=executeOOB(command,query_user,query_bot);  
-    
+        oob_result = executeOOB(command,query_user,query_bot);
+        nl_response += oob_result['nl_response']
+
+        if 'resource' in oob_result:
+            oob_resource = oob_result['resource']
+        if 'label' in oob_result:
+            oob_label = oob_result['label']
+
+
     #Detect the @full_response flag used to ask the user for feedback
     if '@fullresponse' in nl_response:
         full_response= '1'
@@ -111,7 +124,7 @@ def TalkToBot():
 
 
     #Render natural language response in JSON format
-    return renderJson(query_q, nl_response, query_bot, query_user, full_response)
+    return renderJson(query_q, nl_response, query_bot, query_user, full_response, oob_resource, oob_label)
 
 def saveFeedback():
 
@@ -137,31 +150,43 @@ def splitOOB(s):
 
 #Executes the out-of-band commands and returns the natural language response produced   
 def executeOOB(content,usr,bot):
-    
-    nl_response=""
+
+    response = {}
+    response['nl_response']=""
+
     
     while ("[" in content):
         
-        if (("[sendmaia" not in content) and ("[updatekb" not in content) and ("[sendcs" not in content)):
-            logger.error("OOB with execution not found: "+content)
-            content=""
+        #if (("[sendmaia" not in content) and ("[updatekb" not in content) and ("[sendcs" not in content)):
+        #    logger.error("OOB with execution not found: "+content)
+        #    content=""
             
         if "[sendmaia" in content:
             content=sendMaia(content,bot,usr)
            
-        if "[updatekb" in content:
+        elif "[updatekb" in content:
             content=updateCsKb(content,bot,usr)
         
-        if "[sendcs" in content:
+        elif "[sendcs" in content:
             cs_output=sendChatScript(content,bot,usr) 
             cs_output_array=splitOOB(cs_output)
-            nl_response+=cs_output_array[0] 
+            response['nl_response'] =response['nl_response'] + cs_output_array[0]
             cs_output_array.pop(0);
             content=""
             for command in cs_output_array:
-                content+=command;   
+                content+=command;
+        elif "[resource" in content:
+            response['resource'] = content.replace("[resource", "").replace("]", "")
+            content =""
+        elif "[label" in content:
+            response['label'] = content.replace("[label", "").replace("]", "")
+            content = ""
+        else:
+            logger.error("OOB with execution not found: "+content)
+            content=""
 
-    return nl_response
+
+    return response
     
 #Sends an input to Unitex to process it
 def sendUnitex(user, query, bot, lang):
@@ -301,9 +326,31 @@ def updateCsKb(content,bot,usr):
     return "[sendcs [ import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+" ] ]"
     
 #Renders the response in Json
-def renderJson(query, response, bot, user, fresponse):
+def renderJson(query, response, bot, user, fresponse, resource, label):
+    # We shouold really make this a little less hardcoded, and more elegant.
+
     response = response.replace('"', '\\"')
-    return "{\"dialog\": {\"sessionid\": \""+user+"\", \"user\": \""+user+"\", \"bot\": \""+bot+"\", \"q\": \""+query+"\", \"response\": \""+response+"\", \"test\": \"General Saludo\", \"url\": \"null\", \"flashsrc\": \"../flash/"+"happy"+".swf\", \"full_response\": \""+fresponse+"\", \"state\": \""+"happy"+"\", \"mood\": \""+"happy"+"\"}}"
+
+    response_dict = {}
+    response_dict['dialog'] = {}
+    response_dict['dialog']['sessionid'] = user
+    response_dict['dialog']['user'] = user
+    response_dict['dialog']['bot'] = bot
+    response_dict['dialog']['q'] = query
+    response_dict['dialog']['response'] = response
+    response_dict['dialog']['full_response'] = fresponse
+    print("URL: " + resource)
+    if(resource != ""):
+        response_dict['dialog']['url'] = resource
+    response_dict['dialog']['topic'] = label
+
+    # This is a bit... why on earth are these hardcoded???
+    response_dict['dialog']['test'] = "General Saludo"
+    response_dict['dialog']['flashsrc'] = "../flash/happy.swf"
+    response_dict['dialog']['state'] = "happy"
+    response_dict['dialog']['mood'] = "happy"
+
+    return json.dumps(response_dict)
 
     
 #Maia functions

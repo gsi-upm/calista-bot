@@ -9,7 +9,7 @@ The bot is composed of several subsystems, and some (namely, Maia and Chatscript
 2. Chatscript
 3. Front-end controller
 4. Front-end client
-5. SirenDB
+5. Apache Solr
 6. Agent System 
 
 Keep in mind all these need to be running at the same time, so you need to launch them in different terminals. Screen or tmux are a good choice for this.
@@ -80,7 +80,7 @@ Edit the solr-elearning.properties files, and point it to the maia and solr urls
 
 ## Agent system
 
-As with siren, no pre-compiled jar is provided, so you will also need to build the project. However, at this point there is no configuration file for the agent system, so you need to edit two sources to point to the maia server. Specifically, you need to edit Agent-system/src/java/maia/send.java and the Agent-system/src/java/maia/start.java, and change the 'uri' variable to the maia server uri.
+As with solr, no pre-compiled jar is provided, so you will also need to build the project. However, at this point there is no configuration file for the agent system, so you need to edit two sources to point to the maia server. Specifically, you need to edit Agent-system/src/java/maia/send.java and the Agent-system/src/java/maia/start.java, and change the 'uri' variable to the maia server uri.
 
 After setting the server uri, build the sources using maven:
 ```bash
