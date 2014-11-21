@@ -49,7 +49,7 @@ The event network allows the communication between the front-end controller and 
 ### [Agent system (Jason)](https://github.com/gsi-upm/calista-bot/tree/master/Agent-system) 
 An intelligent agent system that receives assertions collected during the conversation and provides them as beliefs to the agent(s) running on it. It provides our personal assistance system an extra interaction with the user, by triggering plans that automatically produce replies that are sent to the user.
 
-### [Linked Open Data Server (SIREn)](https://github.com/gsi-upm/calista-bot/tree/master/SIREn) 
+### [Linked Open Data Server (Apache Solr)](https://github.com/gsi-upm/calista-bot/tree/master/solr-elearning) 
 The Linked Open Data Server contains indexed information, which has been previously added by the system administrator. When the user sends a question and no information is found in the KB, this service is ready to provide the needed information. 
 
 

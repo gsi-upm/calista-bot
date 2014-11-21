@@ -67,25 +67,15 @@ Keep in mind the host and the port, you will need them for the nex step
 
 The client for the bot is a web application. You just need to place the Chat-client on a webserver (like Apache or Nginx) html folder, and edit the popup.html file, so the form action attribute points to the host and port from the previous step.
 
-## SirenDB
+## Apache Solr
 
-For the time being, there is no pre-build jar provided, so you need to compile the sources into a .jar. First, we need to download and compile the sirendb libraries from [its repository](https://github.com/rdelbru/SIREn), and then build our package:
-```bash
-:~/SIREn/$ mvn package
-:~/SIREn/$ mvn install:install-file -Dfile=siren-core/target/siren-core-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-core -Dversion=1.0 -Dpackaging=jar
-:~/SIREn/$ mvn install:install-file -Dfile=siren-qparser/target/siren-qparser-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-qparser -Dversion=1.0 -Dpackaging=jar
-:~/SIREn/$ mvn install:install-file -Dfile=siren-solr/target/siren-solr-1.0.jar -DgroupId=org.sindice.siren -DartifactId=siren-solr -Dversion=1.0 -Dpackaging=jar
-```
+For this module, you need to have a solr server with the data already loaded (examples for the core config, as well as the data we are using are provided in the solr-elearning/src/main/resources folder)
 
-Now, the rest of the dependencies should be handle by maven, so just run:
+Edit the solr-elearning.properties files, and point it to the maia and solr urls. Then, just build the project and launch it:
 
 ```bash
-:~/calista-bot/siren-elearning$ mvn package
-```
-
-Once you have the jar, edit the siren-elearning.properties and set the maia uri to point to your maia server, and launch siren:
-```bash
-:~/calista-bot/siren-elearning$ java -jar target/siren-elearning-jar-with-dependencies.jar -c siren-elearning.properties
+:~/calista-bot/solr-elearning$ mvn package
+:~/calista-bot/solr-elearning$ java -jar target/solr-elearning-jar-with-dependencies.jar -c solr-elearning.properties
 ```
 
 ## Agent system
