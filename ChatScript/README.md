@@ -16,9 +16,11 @@ Once you have Chatscript, launch it in local mode, and build the bot:
     $> ./LinuxChatScript64 local
 
 It will ask for an username, and give you a prompt. Excute ":build Duke"
+    
     username: >:build Duke
 
 This will produce a large output. You can now test the bot, or exit and launch it in server mode:
+    
     username: >:quit
     Exiting ChatScript via Quit
     username@host:~/calista-bot/ChatScript$ /LinuxChatScript64
