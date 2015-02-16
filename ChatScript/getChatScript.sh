@@ -17,5 +17,5 @@ chmod +x LinuxChatScript64 LinuxChatScript32
 echo " done!"
 
 echo  -n "Cleaning up..."
-#rm -rf $TMPFOLDER
+rm -rf $TMPFOLDER
 echo " done!"

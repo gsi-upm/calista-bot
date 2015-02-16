@@ -1,7 +1,7 @@
 # [ChatScript-Bot Calista](https://github.com/gsi-upm/calista-bot/ChatScript)
 
 
-Chatbot module for Calista-Bot project. It makes use of [ChatScript](http://sourceforge.net/projects/chatscript/) 5.1 
+Chatbot module for Calista-Bot project. It makes use of [ChatScript](http://sourceforge.net/projects/chatscript/)  
 The chatbot is able to maintain a conversation in natural language with the user. It applies the patterns specified in 
 its corpus, which usually produce both a natural language response and out of band commands (hidden for the user) that
  are handled by the front-end controller. 
@@ -9,13 +9,13 @@ its corpus, which usually produce both a natural language response and out of ba
 # Install
 
 We no longer provide the ChatScript files with the bot. You can either download [ChatScript 5.1](http://sourceforge.net/projects/chatscript/files/ChatScript-5.1.zip/download)
-from SourceForge, and uncompress the file in this folder, merging the RAWDATA folder, or run the getChatscript.sh script, which should download and extract everything as needed.
+from SourceForge, and uncompress the file in this folder, merging the RAWDATA folder, or run the getChatScript.sh script, which should download and extract everything as needed.
 
 Once you have Chatscript, launch it in local mode, and build the bot:
 
-    username@host:~/calista-bot/ChatScript$> ./LinuxChatScript64 local
+    username@host:~/calista-bot/ChatScript>$ ./LinuxChatScript64 local
 
-It will ask for an username, and give you a prompt. Excute ":build Duke"
+It will ask for an username, and give you a prompt. Execute ":build Duke"
     
     username: >:build Duke
 
@@ -39,5 +39,5 @@ language governing permissions and limitations under the License.
 ```
 ![GSI Logo](http://gsi.dit.upm.es/templates/jgsi/images/logo.png)
 
-This project has been developed from the master thesis of [Javier Herrera](https://github.com/javiherrera), as part of the [Alberto Mardmingo](github.com/amardomingo master thesis under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
+This project has been developed from the master thesis of [Javier Herrera](https://github.com/javiherrera), as part of the [Alberto Mardomingo](https://github.com/amardomingo) master thesis under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
 
