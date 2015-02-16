@@ -13,7 +13,7 @@ from SourceForge, and uncompress the file in this folder, merging the RAWDATA fo
 
 Once you have Chatscript, launch it in local mode, and build the bot:
 
-    $> ./LinuxChatScript64 local
+    username@host:~/calista-bot/ChatScript$> ./LinuxChatScript64 local
 
 It will ask for an username, and give you a prompt. Excute ":build Duke"
     
@@ -23,7 +23,7 @@ This will produce a large output. You can now test the bot, or exit and launch i
     
     username: >:quit
     Exiting ChatScript via Quit
-    username@host:~/calista-bot/ChatScript$ /LinuxChatScript64
+    username@host:~/calista-bot/ChatScript$ ./LinuxChatScript64
 
 ## License
 
