@@ -1,5 +1,0 @@
- 6_June_1944 ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
-  15162523n~n date of the Allied landing in France, World War II
- 60_minutes ( ) 
- 6-membered ( meanings=1 ADJECTIVE ADJECTIVE_BASIC ) 
-  01503179j~a of a chemical compound having a ring with six members

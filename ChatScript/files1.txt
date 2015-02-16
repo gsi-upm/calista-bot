@@ -1,9 +1,0 @@
-# underlying conversation system
-RAWDATA/simplecontrol.top			# conversational control
-RAWDATA/simpletopic.top		# things we can chat about
-
-
-
-
-
-

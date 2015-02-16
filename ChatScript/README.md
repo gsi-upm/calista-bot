@@ -1,43 +1,28 @@
 # [ChatScript-Bot Calista](https://github.com/gsi-upm/calista-bot/ChatScript)
 
 
-Chatbot module for Calista-Bot project. It makes use of [ChatScript](http://sourceforge.net/projects/chatscript/) 2.0. The chatbot is able to maintain a conversation in natural language with the user. It applies the patterns specified in its corpus, which usually produce both a natural language response and out of band commands (hidden for the user) that are handled by the front-end controller. 
+Chatbot module for Calista-Bot project. It makes use of [ChatScript](http://sourceforge.net/projects/chatscript/) 5.1 
+The chatbot is able to maintain a conversation in natural language with the user. It applies the patterns specified in 
+its corpus, which usually produce both a natural language response and out of band commands (hidden for the user) that
+ are handled by the front-end controller. 
 
+# Install
 
+We no longer provide the ChatScript files with the bot. You can either download [ChatScript 5.1](http://sourceforge.net/projects/chatscript/files/ChatScript-5.1.zip/download)
+from SourceForge, and uncompress the file in this folder, merging the RAWDATA folder, or run the getChatscript.sh script, which should download and extract everything as needed.
 
-###Launching the Chatbot module
+Once you have Chatscript, launch it in local mode, and build the bot:
 
-ChatScript 2.0 together with the corpus of the chatbot of our project in this folder of the project repository.
+    $> ./LinuxChatScript64 local
 
-To launch the service ChatScript on Windows, the following command should be run inside the ChatScript folder:
+It will ask for an username, and give you a prompt. Excute ":build Duke"
+    username: >:build Duke
 
-	chatscript
+This will produce a large output. You can now test the bot, or exit and launch it in server mode:
+    username: >:quit
+    Exiting ChatScript via Quit
+    username@host:~/calista-bot/ChatScript$ /LinuxChatScript64
 
-
-On Linux, the following command should be run inside the ChatScript folder:
-
-	./LinuxChatScript32
-	
-Once the service is launched, it will start listening to incoming queries.
-
-	
-	
-###Compiling the chatbot corpus
-
-The chatbot corpus files are usually found in the /RAWDATA/ folder. They can be compiled and loaded by running [ChatScript](http://sourceforge.net/projects/chatscript/) locally:
-To launch ChatScript locally on Windows, the following command should be run inside the ChatScript folder:
-
-	chatscript local
-
-On Linux, the following command should be run inside the ChatScript folder:
-
-	./LinuxChatScript32 local
-
-Once ChatScript is locally launched, we can use the following command to build and load the corpus:
-
-	:build 1 
-	
-	
 ## License
 
 ```
@@ -52,4 +37,5 @@ language governing permissions and limitations under the License.
 ```
 ![GSI Logo](http://gsi.dit.upm.es/templates/jgsi/images/logo.png)
 
-This project has been developed as the master thesis of [Javier Herrera](https://github.com/javiherrera) under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
+This project has been developed from the master thesis of [Javier Herrera](https://github.com/javiherrera), as part of the [Alberto Mardmingo](github.com/amardomingo master thesis under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
+

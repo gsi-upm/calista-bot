@@ -1,3 +1,0 @@
-﻿^testbot O 0 ^addtopic ( ~testtopic ) $control_pre = ~control $control_main = ~control $control_post = ~control $userprompt = ^"$login: >" $botprompt = ^"testbot: " 
-^duke O 0 $token = 32 | 2 | 4 | 64 | 128 ^addtopic ( ~introductions ) ^import ( "facts/kb-java" @0 keep permanent ) ^createfact ( kb loaded facts/kb-java ) $control_pre = ~control $control_main = ~control $control_post = ~control $userprompt = ^"$login: >" $botprompt = ^"DUKE: " 
-^georgia O 0 $token = 32 | 2 | 4 | 64 | 128 ^addtopic ( ~introductions ) $control_pre = ~control $control_main = ~control $control_post = ~control $botprompt = ^"GEORGIA: " 

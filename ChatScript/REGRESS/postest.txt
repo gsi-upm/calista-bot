@@ -1,365 +1,0 @@
-
-I do not know how it works.
-Tagged POS 7 words: I/I (MAINSUBJECT Pronoun_subject)  do/do (Aux_verb_present)  not/not (Adverb_basic)  know/know (MAINVERB Verb_infinitive)  how/how (<Clause Adverb_wh)  it/it (SUBJECT2 Pronoun_subject)  works/work (VERB2 Verb_present_3ps Clause>)
-A tomb was found this year.Tagged POS 6 words: a/a (Determiner)  tomb/tomb (MAINSUBJECT Noun_singular)  was/be (Aux_verb_past)  found/find (MAINVERB Verb_past_participle)  this/a (<Phrase Determiner)  year/year (OBJECT2 Noun_singular Phrase>)It was a tomb built for a king.Tagged POS 8 words: it/it (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  a/a (Determiner)  tomb/tomb (MAINOBJECT Noun_singular)  built/build (<Clause VERB2 Verb_past_participle Clause>)  for/for (<Phrase Preposition)  a/a (Determiner)  king/king (OBJECT2 Noun_singular Phrase>)
-the king lived more than 4,000 years ago. Tagged POS 7 words: the/a (Determiner)  king/king (MAINSUBJECT Noun_singular)  lived/live (MAINVERB Verb_past)  more_than/more_than (Adverb_basic)  4,000/4 (Adjective_cardinal)  years/year (MAINOBJECT Noun_plural)  ago/ago (Adverb_basic)
-His home was in Egypt.Tagged POS 5 words: his/he (Pronoun_possessive)  home/home (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  in/in (<Phrase Preposition)  Egypt/Egypt (OBJECT2 Noun_proper_singular Phrase>)For years, no one saw the tomb.Tagged POS 8 words: for/for (<Phrase Preposition)  years/year (OBJECT2 Noun_plural Phrase>)  ,/, (Comma)  no/no (Determiner)  one/1 (MAINSUBJECT Noun_cardinal)  saw/saw (MAINVERB Verb_past)  the/a (Determiner)  tomb/tomb (MAINOBJECT Noun_singular)
-It was carved deep in rock.Tagged POS 6 words: it/it (MAINSUBJECT Pronoun_subject)  was/be (Aux_verb_past)  carved/carve (MAINVERB Verb_past_participle)  deep/deep (Adverb_basic)  in/in (<Phrase Preposition)  rock/rock (OBJECT2 Noun_singular Phrase>)
-The wind blew sand over the top and hid it.Tagged POS 10 words: the/a (Determiner)  wind/wind (MAINSUBJECT Noun_singular)  blew/blow (MAINVERB Verb_past)  sand/sand (MAINOBJECT Noun_singular)  over/over (<Phrase Preposition)  the/a (Determiner)  top/top (OBJECT2 Noun_singular Phrase>)  and/and (CONJUNCT_WORD Conjunction_coordinate)  hid/hide (MAINVERB Verb_past)  it/it (MAINOBJECT Pronoun_object)
-Then a team of diggers came along.Tagged POS 6 words: a/a (Determiner)  team/team (MAINSUBJECT Noun_singular)  of/of (<Phrase Preposition)  diggers/digger (OBJECT2 Noun_plural Phrase>)  came/come (MAINVERB Verb_past)  along/along (Adverb_basic)
-Their job was to search for hidden treasures.Tagged POS 8 words: their/they (Pronoun_possessive)  job/job (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  search/search (MAINOBJECT Noun_infinitive Verbal>)  for/for (<Phrase Preposition)  hidden/hide (Adjective_participle)  treasures/treasure (OBJECT2 Noun_plural Phrase>)
-What they found thrilled them.what/what (<Clause MAINSUBJECT Pronoun_subject)  they/they (SUBJECT2 Pronoun_subject)  found/find (VERB2 Verb_past Clause>)  thrilled/thrill (MAINVERB Verb_past)  them/they (MAINOBJECT Pronoun_object)
-Jewels and gold were found in the tomb.Tagged POS 8 words: jewels/jewel (MAINSUBJECT Noun_plural)  and/and (CONJUNCT_WORD Conjunction_coordinate)  gold/gold (MAINSUBJECT Noun_singular)  were/be (Aux_verb_past)  found/find (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  the/a (Determiner)  tomb/tomb (OBJECT2 Noun_singular Phrase>)
-
-The king's treasures were buried inside 132 rooms.Tagged POS 9 words: the/a (Determiner)  king/king (Noun_singular)  's/'s (Possessive)  treasures/treasure (MAINSUBJECT Noun_plural)  were/be (Aux_verb_past)  buried/bury (MAINVERB Verb_past_participle)  inside/inside (<Phrase Preposition)  132/132 (Adjective_cardinal)  rooms/room (OBJECT2 Noun_plural Phrase>)
-It was 130 feet below the earth.Tagged POS 7 words: it/it (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  130/130 (Adjective_cardinal)  feet/foot (OBJECT2 Noun_plural)  below/below (<Phrase Preposition)  the/a (Determiner)  earth/earth (OBJECT2 Noun_singular Phrase>)
-Using torches, they saw a case.Tagged POS 7 words: using/use (Adjective_participle)  torches/torch (MAINSUBJECT Noun_plural)  ,/, (Comma)  they/they (OBJECT2 Pronoun_subject)  saw/saw (MAINVERB Verb_past)  a/a (Determiner)  case/case (MAINOBJECT Noun_singular)
-"It must contain the king's mummy!" they said.Tagged POS 3 words: it_must_contain_the_king_'s_mummy_!/unknown-word (MAINSUBJECT Noun_singular)  they/they (OBJECT2 Pronoun_subject)  said/say (MAINVERB Verb_past)
-A mummy is a body wrapped in sheets.Tagged POS 8 words: a/a (Determiner)  mummy/mummy (MAINSUBJECT Noun_singular)  is/be (MAINVERB Verb_present_3ps)  a/a (Determiner)  body/body (MAINOBJECT Noun_singular)  wrapped/wrap (<Verbal Adjective_participle Verbal>)  in/in (<Phrase Preposition)  sheets/sheet (OBJECT2 Noun_plural Phrase>)
-With great care, the case was removed.Tagged POS 7 words: with/with (<Phrase Preposition)  great_care/great_care (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  the/a (Determiner)  case/case (MAINSUBJECT Noun_singular)  was/be (Aux_verb_past)  removed/remove (MAINVERB Verb_past_participle)
-It was taken to a safe place to be opened.Tagged POS 10 words: it/it (MAINSUBJECT Pronoun_subject)  was/be (Aux_verb_past)  taken/take (MAINVERB Verb_past_participle)  to/to (<Phrase Preposition)  a/a (Determiner)  safe/safe (Adjective_basic)  place/place (OBJECT2 Noun_singular Phrase>)  to/to (<Verbal To_infinitive)  be/be (VERB2 Noun_infinitive)  opened/open (OBJECT2 Adjective_participle Verbal>)
-For two hours, workers tried to lift the lid.Tagged POS 10 words: for/for (<Phrase Preposition)  two/2 (Adjective_cardinal)  hours/hour (OBJECT2 Noun_plural Phrase>)  ,/, (Comma)  workers/worker (MAINSUBJECT Noun_plural)  tried/try (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  lift/lift (MAINOBJECT Noun_infinitive)  the/a (Determiner)  lid/lid (OBJECT2 Noun_singular Verbal>)At last, they got it off.Tagged POS 6 words: at_last/at_last (Adverb_basic)  ,/, (Comma)  they/they (MAINSUBJECT Pronoun_subject)  got/get (MAINVERB Verb_past)  it/it (MAINOBJECT Pronoun_object)  off/off (Adverb_basic)The case was empty.Tagged POS 4 words: the/a (Determiner)  case/case (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  empty/empty (ADJECTIVE_AS_OBJECT Adjective_basic)
-  
-No one knows where the body is hidden.Tagged POS 12 words:A new mystery has begun.Tagged POS 5 words: a/a (Determiner)  new/new (Adjective_basic)  mystery/mystery (MAINSUBJECT Noun_singular)  has/have (Aux_verb_past)  begun/begin (MAINVERB Verb_past_participle)
-Who was supposed to be buried in the tomb?Tagged POS 9 words: who/who (MAINSUBJECT Pronoun_subject)  was/be (Aux_verb_past)  supposed/suppose (MAINVERB Verb_past_participle)  to/to (<Verbal To_infinitive)  be/be (Noun_infinitive)  buried/bury (OBJECT2 Adjective_participle Verbal>)  in/in (<Phrase Preposition)  the/a (Determiner)  tomb/tomb (MAINSUBJECT Noun_singular Phrase>)
-What is a mummy?Tagged POS 4 words: what/what (MAINOBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  a/a (Determiner)  mummy/mummy (MAINSUBJECT Noun_singular)
-When did this story happen?Tagged POS 12 words:why was the body gone?Tagged POS 5 words: why/why (Adverb_wh)  was/be (MAINVERB Verb_past)  the/a (Determiner)  body/body (MAINSUBJECT Noun_singular)  gone/go (<Verbal Adjective_participle Verbal>)
- 
-A dead bird infected with the West Nile Virus has been discovered in Maine.Tagged POS 12 words: a/a (Determiner)  dead/dead (Adjective_basic)  bird/bird (MAINSUBJECT Noun_singular)  infected/infect (<Clause VERB2 Verb_past_participle Clause>)  with/with (<Phrase Preposition)  the/a (Determiner)  West_Nile_virus/West_Nile_virus (OBJECT2 Noun_proper_singular Phrase>)  has/have (Aux_verb_past)  been/be (Aux_verb_past)  discovered/discover (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  Maine/Maine (OBJECT2 Noun_proper_singular Phrase>)
-The ringleader was John Freire, an attorney arrested in March 1989.Tagged POS 11 words: the/a (Determiner)  ringleader/ringleader (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  John_Freire/John_Freire (MAINOBJECT Noun_proper_singular)  ,/, (Comma)  an/a (Determiner)  attorney/attorney (APPOSITIVE Noun_singular)  arrested/arrest (<Verbal Adjective_participle Verbal>)  in/in (<Phrase Preposition)  March/March (Noun_proper_singular)  1989/1989 (OBJECT2 Noun_cardinal Phrase>)
-         They considered him a criminal.
-Tagged POS 5 words: they/they (MAINSUBJECT Pronoun_subject)  considered/consider (MAINVERB Verb_past)  him/he (MAINOBJECT Pronoun_object)  a/a (Determiner)  criminal/criminal (APPOSITIVE Noun_singular)
-
-They considered him insane.
-Tagged POS 4 words: they/they (MAINSUBJECT Pronoun_subject)  considered/consider (MAINVERB Verb_past)  him/he (MAINOBJECT Pronoun_object)  insane/insane (OBJECT_COMPLEMENT Adjective_basic)  
-
-They elected him President anyway. 
-Tagged POS 5 words: they/they (MAINSUBJECT Pronoun_subject)  elected/elect (MAINVERB Verb_past)  him/he (MAINOBJECT Pronoun_object)  President/President (APPOSITIVE Noun_proper_singular)  anyway/anyway (Adverb_basic)
-
-The local children consider our elderly neighbor another grandmother.
-Tagged POS 9 words: the/a (Determiner)  local/local (Adjective_basic)  children/child (MAINSUBJECT Noun_plural)  consider/consider (MAINVERB Verb_present)  our/we (Pronoun_possessive)  elderly/elderly (Adjective_basic)  neighbor/neighbor (MAINOBJECT Noun_singular)  another/another (Determiner)  grandmother/grandmother (APPOSITIVE Noun_singular)
-
-My coworkers often call our boss an idiot.
-Tagged POS 8 words: my/I (Pronoun_possessive)  coworkers/unknown-word (MAINSUBJECT Noun_plural)  often/often (Adverb_basic)  call/call (MAINVERB Verb_present)  our/we (Pronoun_possessive)  boss/boss (MAININDIRECTOBJECT Noun_singular)  an/a (Determiner)  idiot/idiot (MAINOBJECT Noun_singular)# but its appositive, not indirect/direct-- how to tell?
-
-
-The book whose author won a Pulitzer has become a bestseller.Tagged POS 11 words: the/a (Determiner)  book/book (MAINSUBJECT Noun_singular)  whose/who (<Clause Determiner)  author/author (SUBJECT2 Noun_singular)  won/win (VERB2 Verb_past)  a/a (Determiner)  Pulitzer/Pulitzer (OBJECT2 Noun_proper_singular Clause>)  has/have (Aux_verb_past)  become/become (MAINVERB Verb_past_participle)  a/a (Determiner)  bestseller/bestseller (MAINOBJECT Noun_singular)  
-I cannot believe that he said it. Tagged POS 8 words: I/I (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  not/not (Adverb_basic)  believe/believe (MAINVERB Verb_infinitive)  that/a (<Clause Conjunction_subordinate)  he/he (SUBJECT2 Pronoun_subject)  said/say (VERB2 Verb_past)  it/it (OBJECT2 Pronoun_object Clause>)
-I cannot believe he said it. Tagged POS 7 words: I/I (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  not/not (Adverb_basic)  believe/believe (MAINVERB Verb_infinitive)  he/he (<Clause SUBJECT2 Pronoun_subject)  said/say (VERB2 Verb_past)  it/it (OBJECT2 Pronoun_object Clause>)The family whose house burnt in the fire was immediately given a complimentary suite in a hotel.Tagged POS 17 words: the/a (Determiner)  family/family (MAINSUBJECT Noun_singular)  whose/who (<Clause Determiner)  house/house (SUBJECT2 Noun_singular)  burnt/burn (VERB2 Verb_past Clause>)  in/in (<Phrase Preposition)  the/a (Determiner)  fire/fire (OBJECT2 Noun_singular Phrase>)  was/be (Aux_verb_past)  immediately/immediately (Adverb_basic)  given/give (MAINVERB Verb_past_participle)  a/a (Determiner)  complimentary/complimentary (Adjective_basic)  suite/suite (MAINOBJECT Noun_singular)  in/in (<Phrase Preposition)  a/a (Determiner)  hotel/hotel (OBJECT2 Noun_singular Phrase>)  
-The visitor for whom you were waiting has arrived.Tagged POS 9 words: the/a (Determiner)  visitor/visitor (MAINSUBJECT Noun_singular)  for/for (<Phrase Preposition)  whom/who (OBJECT2 Pronoun_subject Phrase>)  you/you (OBJECT2 Pronoun_subject)  were/be (Aux_verb_past)  waiting/wait (MAINVERB Verb_present_participle)  has/have (Aux_verb_past)  arrived/arrive (Verb_past_participle)
-The woman who you have just spoken to is my teacher.Tagged POS 11 words: the/a (Determiner)  woman/woman (MAINSUBJECT Noun_singular)  who/who (<Clause SUBJECT2 Pronoun_subject)  you/you (OBJECT2 Pronoun_subject)  have/have (Aux_verb_present)  just/just (Adverb_basic)  spoken/speak (VERB2 Verb_past_participle)  to/to (Particle Clause>)  is/be (MAINVERB Verb_present_3ps)  my/I (Pronoun_possessive)  teacher/teacher (MAINOBJECT Noun_singular)
-This is the man I wanted to speak to and whose name I'd forgotten.Tagged POS 15 words: this/a (MAINSUBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  man/man (MAINOBJECT Noun_singular)  I/I (<Clause SUBJECT2 Pronoun_subject)  wanted/want (VERB2 Verb_past)  to/to (<Verbal To_infinitive)  speak/speak (OBJECT2 Noun_infinitive)  to/to (Particle Clause>)  and/and (CONJUNCT_SENTENCE Conjunction_coordinate)  whose/who (Determiner)  name/name (MAINOBJECT Noun_singular)  I/I (MAINSUBJECT Pronoun_subject)  had/have (Aux_verb_past)  forgotten/forget (MAINVERB Verb_past_participle Verbal>)
-The library didn't have the book I wanted.Tagged POS 9 words: the/a (Determiner)  library/library (MAINSUBJECT Noun_singular)  did/do (Aux_verb_past)  not/not (Adverb_basic)  have/have (MAINVERB Verb_infinitive)  the/a (Determiner)  book/book (MAINOBJECT Noun_singular)  I/I (<Clause SUBJECT2 Pronoun_subject)  wanted/want (VERB2 Verb_past Clause>)
-The science fair, which lasted all day, ended with an awards ceremony.Tagged POS 14 words: the/a (Determiner)  science/science (Noun_singular)  fair/fair (MAINSUBJECT Noun_singular)  ,/, (Comma)  which/which (<Clause SUBJECT2 Pronoun_subject)  lasted/last (VERB2 Verb_past Clause>)  all/all (Determiner)  day/day (OBJECT2 Noun_singular)  ,/, (Comma)  ended/end (MAINVERB Verb_past)  with/with (<Phrase Preposition)  an/a (Determiner)  awards/award (Noun_plural)  ceremony/ceremony (OBJECT2 Noun_singular Phrase>)  
-I am looking for someone that could give me a ride to Chicago.Tagged POS 12 words: I/I (MAINSUBJECT Pronoun_subject)  am/be (Aux_verb_present)  looking_for/look_for (MAINVERB Verb_present_participle)  someone/someone (MAINOBJECT Pronoun_object)  that/a (<Clause SUBJECT2 Pronoun_subject)  could/could (Aux_verb_future)  give/give (VERB2 Verb_infinitive)  me/I (INDIRECTOBJECT2 Pronoun_object)  a/a (Determiner)  ride/ride (OBJECT2 Noun_singular Clause>)  to/to (<Phrase Preposition)  Chicago/Chicago (OBJECT2 Noun_proper_singular Phrase>)
-the windows, installed yesterday, were broken.Tagged POS 8 words: the/a (Determiner)  windows/window (MAINSUBJECT Noun_plural)  ,/, (Comma)  installed/install (<Clause VERB2 Verb_past_participle Clause>)  yesterday/yesterday (Adverb_basic)  ,/, (Comma)  were/be (Aux_verb_past)  broken/break (MAINVERB Verb_past_participle)  
-they were certain they were happy.
-Tagged POS 6 words: they/they (MAINSUBJECT Pronoun_subject)  were/be (MAINVERB Verb_past)  certain/certain (ADJECTIVE_AS_OBJECT Adjective_basic)  they/they (<Clause SUBJECT2 Pronoun_subject)  were/be (VERB2 Verb_past)  happy/happy (OBJECT2 Adjective_basic Clause>)  
-the man walked by the dog ran.Tagged POS 7 words: the/a (Determiner)  man/man (MAINSUBJECT Noun_singular)  walked/walk (<Clause VERB2 Verb_past_participle Clause>)  by/by (<Phrase Preposition)  the/a (Determiner)  dog/dog (OBJECT2 Noun_singular Phrase>)  ran/run (MAINVERB Verb_past)  
-I hope she rapidly goes.Tagged POS 5 words: I/I (MAINSUBJECT Pronoun_subject)  hope/hope (MAINVERB Verb_present)  she/she (<Clause SUBJECT2 Pronoun_subject)  rapidly/rapidly (Adverb_basic)  goes/go (VERB2 Verb_present_3ps Clause>)  
-I disliked his remarks, which almost ruined me.
-Tagged POS 9 words: I/I (MAINSUBJECT Pronoun_subject)  disliked/dislike (MAINVERB Verb_past)  his/he (Pronoun_possessive)  remarks/remark (MAINOBJECT Noun_plural)  ,/, (Comma)  which/which (<Clause SUBJECT2 Pronoun_subject)  almost/almost (Adverb_basic)  ruined/ruin (VERB2 Verb_past)  me/I (OBJECT2 Pronoun_object Clause>)  
-the men dressed in red hit the men dressed in red.Tagged POS 11 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  hit/hit (MAINVERB Verb_past)  the/a (Determiner)  men/man (MAINOBJECT Noun_plural)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  
-the man dressed in red dressed in red.
-Tagged POS 8 words: the/a (Determiner)  man/man (MAINSUBJECT Noun_singular)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  dressed/dress (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  
-# BUT-- the man dressed in red covered in black -- will be wrong  (requires object?)the men ate first those who were dressed in red.
-Tagged POS 10 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)  those/a (Determiner)  who/who (<Clause SUBJECT2 Pronoun_subject)  were/be (Aux_verb_past)  dressed/dress (VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)
-
-the men ate first those dressed in red.
-Tagged POS 8 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)  those/a (MAINOBJECT Pronoun_subject)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)#could be ate <clause> instead of ate those <clause>
-
-those dressed in red, the men ate first.Tagged POS 9 words: those/a (<Clause SUBJECT2 Pronoun_subject)  dressed/dress (VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)  
-was the woman dressed in red the killer dressed in black.Tagged POS 11 words: was/be (MAINVERB Verb_past)  the/a (Determiner)  woman/woman (MAINSUBJECT Noun_singular)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  the/a (Determiner)  killer/killer (MAINOBJECT Noun_singular)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  black/black (OBJECT2 Noun_singular Phrase>)  
-the men dressed in red hit the men dressed in red.
-Tagged POS 11 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  hit/hit (MAINVERB Verb_past)  the/a (Determiner)  men/man (MAINOBJECT Noun_plural)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  
-
-#every Afrikaner farm worth its salt has one - a testament to the white African tribe's almost mythic love for the land - and there's no reason why Babylonstoren, a handsome, 1692-built Cape Dutch homestead turned luxury hotel and working guest farm in the Franschhoek Valley of the Cape Winelands, should be any different
-
-every  Afrikaner  farm  worth  its  salt  has  one.
-Tagged POS 8 words: every/every (Determiner)  Afrikaner/Afrikaner (Adjective_basic)  farm/farm (MAINSUBJECT Noun_singular)  worth/worth (<Phrase Preposition)  its/it (Pronoun_possessive)  salt/salt (OBJECT2 Noun_singular Phrase>)  has/have (MAINVERB Verb_present_3ps)  one/1 (MAINOBJECT Noun_cardinal)  
-Isadora Duncan a great American dancer of the early twentieth century has become almost as famous for her death as her dancing. 
-Tagged POS 20 words: Isadora_Duncan/Isadora_Duncan (MAINSUBJECT Noun_proper_singular)  a/a (Determiner)  great/great (Adjective_basic)  American/American (Adjective_basic)  dancer/dancer (APPOSITIVE Noun_singular)  of/of (<Phrase Preposition)  the/a (Determiner)  early/early (Adjective_basic)  twentieth_century/twentieth_century (OBJECT2 Noun_singular Phrase>)  has/have (Aux_verb_past)  become/become (MAINVERB Verb_past_participle)  almost/almost (Adverb_basic)  as/as (Adverb_basic)  famous/famous (ADJECTIVE_AS_OBJECT Adjective_basic)  for/for (<Phrase Preposition)  her/she (Pronoun_possessive)  death/death (OBJECT2 Noun_singular Phrase>)  as/as (<Phrase Preposition)  her/she (Pronoun_possessive)  dancing/dance (<Verbal OBJECT2 Noun_gerund Phrase> Verbal>)  
-John Styth Pemberton an Atlanta pharmacist created the original Coca-Cola in 1886. 
-Tagged POS 10 words: John_Styth_Pemberton/John_Styth_Pemberton (MAINSUBJECT Noun_proper_singular)  an/a (Determiner)  Atlanta/Atlanta (Noun_proper_singular)  pharmacist/pharmacist (APPOSITIVE Noun_singular)  created/create (MAINVERB Verb_past)  the/a (Determiner)  original/original (Adjective_basic)  Coca-Cola/Coca-Cola (MAINOBJECT Noun_proper_singular)  in/in (<Phrase Preposition)  1886/1886 (OBJECT2 Noun_cardinal Phrase>)  
-Richard Nixon is the only American president who was forced to resign his office.
-Tagged POS 13 words: Richard_Nixon/Richard_Nixon (MAINSUBJECT Noun_proper_singular)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  only/only (Adverb_basic)  American/American (Adjective_basic)  president/president (MAINOBJECT Noun_singular)  who/who (<Clause SUBJECT2 Pronoun_subject)  was/be (Aux_verb_past)  forced/force (VERB2 Verb_past_participle Clause>)  to/to (<Verbal To_infinitive)  resign/resign (VERB2 Noun_infinitive)  his/he (Pronoun_possessive)  office/office (OBJECT2 Noun_singular Verbal>)  
-Nellie Melba a famous Australian soprano of the late nineteenth and early twentieth century gave her name to a snack food called "melba toast". 
-Tagged POS 20 words: Nellie_Melba/Nellie_Melba (MAINSUBJECT Noun_proper_singular)  a/a (Determiner)  famous/famous (Adjective_basic)  Australian/Australian (Adjective_basic)  soprano/soprano (APPOSITIVE Noun_singular)  of/of (<Phrase Preposition)  the/a (Determiner)  late/late (Adjective_basic)  nineteenth/19 (OBJECT2 Noun_ordinal Phrase>)  and/and (CONJUNCT_WORD Conjunction_coordinate)  early/early (Adjective_basic)  twentieth_century/twentieth_century (OBJECT2 Noun_singular)  gave/give (MAINVERB Verb_past)  her/she (Pronoun_possessive)  name/name (MAINOBJECT Noun_singular)  to/to (<Phrase Preposition)  a/a (Determiner)  snack_food/snack_food (OBJECT2 Noun_singular Phrase>)  called/call (<Clause VERB2 Verb_past_participle)  Melba_toast/Melba_toast (OBJECT2 Noun_proper_singular Clause>)  
-Ferrets a domesticated variety of polecats were first tamed in 1500 b.c.e. by the Egyptians. 
-Tagged POS 15 words: ferrets/ferret (MAINSUBJECT Noun_plural)  a/a (Determiner)  domesticated/domesticate (Adjective_participle)  variety/variety (APPOSITIVE Noun_singular)  of/of (<Phrase Preposition)  polecats/polecat (OBJECT2 Noun_plural Phrase>)  were/be (Aux_verb_past)  first/1 (Adverb_basic)  tamed/tame (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  1500/1500 (Adjective_cardinal)  b.c.e./b.c.e. (OBJECT2 Noun_singular Phrase>)  by/by (<Phrase Preposition)  the/a (Determiner)  Egyptians/Egyptian (OBJECT2 Noun_proper_plural Phrase>)
-
-the men who were dressed in red ate first.Tagged POS 9 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  who/who (<Clause SUBJECT2 Pronoun_subject)  were/be (Aux_verb_past)  dressed/dress (VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)  
-the men who dressed in red ate first.Tagged POS 8 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  who/who (<Clause SUBJECT2 Pronoun_subject)  dressed/dress (VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)  
-the men dressed in red ate first.Tagged POS 7 words: the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)
-
-dressed in red, the men ate first.
-Tagged POS 8 words: dressed/dress (<Clause VERB2 Verb_past_participle Clause>)  in/in (<Phrase Preposition)  red/red (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  the/a (Determiner)  men/man (MAINSUBJECT Noun_plural)  ate/eat (MAINVERB Verb_past)  first/1 (Adverb_basic)
-
-eating children tastes good.Tagged POS 4 words: eating/eat (<Verbal MAINSUBJECT Noun_gerund)  children/child (OBJECT2 Noun_plural Verbal>)  tastes/taste (MAINVERB Verb_present_3ps)  good/good (Adverb_basic)
-I would like to come, although I have a prior obligation.Tagged POS 12 words: I/I (MAINSUBJECT Pronoun_subject)  would/would (Aux_verb_future)  like/like (MAINVERB Verb_infinitive)  to/to (<Verbal To_infinitive)  come/come (MAINOBJECT Noun_infinitive Verbal>)  ,/, (Comma)  although/although (<Clause Conjunction_subordinate)  I/I (SUBJECT2 Pronoun_subject)  have/have (VERB2 Verb_present)  a/a (Determiner)  prior/prior (Adjective_basic)  obligation/obligation (OBJECT2 Noun_singular Clause>)  
-
-We also have to send a road crew there as well.
-Tagged POS 9 words: we/we (MAINSUBJECT Pronoun_subject)  have/have (MAINVERB Verb_present)  to/to (<Verbal To_infinitive)  send/send (MAINOBJECT Noun_infinitive)  a/a (Determiner)  road/road (Noun_singular)  crew/crew (OBJECT2 Noun_singular)  there/there (Adverb_basic)  as_well/as_well (Adverb_basic Verbal>)
-So we probably can't actually send the ambulance over the bridge.
-Tagged POS 11 words: we/we (MAINSUBJECT Pronoun_subject)  probably/probably (Adverb_basic)  can/can (Aux_verb_present)  not/not (Adverb_basic)  actually/actually (Adverb_basic)  send/send (MAINVERB Verb_infinitive)  the/a (Determiner)  ambulance/ambulance (MAINOBJECT Noun_singular)  over/over (<Phrase Preposition)  the/a (Determiner)  bridge/bridge (OBJECT2 Noun_singular Phrase>)
-You're probably right.
-Tagged POS 4 words: you/you (MAINSUBJECT Pronoun_subject)  are/be (MAINVERB Verb_present)  probably/probably (Adverb_basic)  right/right (ADJECTIVE_AS_OBJECT Adjective_basic)  
-Because it's going to take another two hours.
-Tagged POS 9 words: because/because (<Clause Conjunction_subordinate)  it/it (SUBJECT2 Pronoun_subject)  is/be (Aux_verb_present)  going/go (VERB2 Verb_present_participle)  to/to (<Verbal To_infinitive)  take/take (OBJECT2 Noun_infinitive)  another/another (Determiner)  two/2 (Adjective_cardinal)  hours/hour (OBJECT2 Noun_plural Clause> Verbal>)
-
-So we'll actually run out of time if we wait for that.
-Tagged POS 11 words: we/we (MAINSUBJECT Pronoun_subject)  will/will (Aux_verb_future)  actually/actually (Adverb_basic)  run/run (MAINVERB Verb_infinitive)  out_of/out_of (<Phrase Preposition)  time/time (OBJECT2 Noun_singular Phrase>)  if/if (<Clause Conjunction_subordinate)  we/we (SUBJECT2 Pronoun_subject)  wait/wait (VERB2 Verb_present Clause>)  for/for (<Phrase Preposition)  that/a (OBJECT2 Pronoun_object Phrase>)
-
-So I guess we'll need to send them.
-Tagged POS 8 words: I/I (MAINSUBJECT Pronoun_subject)  guess/guess (MAINVERB Verb_present)  we/we (<Clause SUBJECT2 Pronoun_subject)  will/will (Aux_verb_future)  need/need (VERB2 Verb_infinitive)  to/to (<Verbal To_infinitive)  send/send (OBJECT2 Noun_infinitive)  them/they (OBJECT2 Pronoun_object Clause> Verbal>)  
-
-Take that way around.
-Tagged POS 4 words: take/take (MAINVERB Verb_infinitive)  that/a (Determiner)  way/way (MAINOBJECT Noun_singular)  around/around (Adverb_basic)  
-
-Wait.
-Tagged POS 1 words: wait/wait (MAINVERB Verb_infinitive)  
-
-The generator's going downtown.
-Tagged POS 5 words: the/a (Determiner)  generator/generator (MAINSUBJECT Noun_singular)  is/be (Aux_verb_present)  going/go (MAINVERB Verb_present_participle)  downtown/downtown (Adverb_basic)
-
-Right.
-Tagged POS 1 words: ~yes/~yes ()
-
-The generator is going to two fifty two.
-Tagged POS 6 words: the/a (Determiner)  generator/generator (MAINSUBJECT Noun_singular)  is/be (Aux_verb_present)  going/go (MAINVERB Verb_present_participle)  to/to (<Phrase Preposition)  252/252 (OBJECT2 Noun_cardinal Phrase>)
-
-And that'll get us all the way over to the person with pneumonia or the person who needs the generator.
-Tagged POS 18 words: that/a (MAINSUBJECT Pronoun_subject)  will/will (Aux_verb_future)  get_over/get_over (MAINVERB Verb_infinitive)  us/we (MAINOBJECT Pronoun_object)  all_the_way/all_the_way (Adverb_basic)  over/over (Particle)  to/to (<Phrase Preposition)  the/a (Determiner)  person/person (OBJECT2 Noun_singular Phrase>)  with/with (<Phrase Preposition)  pneumonia/pneumonia (OBJECT2 Noun_singular Phrase>)  or/or (CONJUNCT_WORD Conjunction_coordinate)  the/a (Determiner)  person/person (OBJECT2 Noun_singular)  who/who (<Clause SUBJECT2 Pronoun_subject)  needs/need (VERB2 Verb_present_3ps)  the/a (Determiner)  generator/generator (OBJECT2 Noun_singular Clause>)
-Say at the most it takes an hour.
-Tagged POS 6 words: say/say (MAINVERB Verb_infinitive)  at_the_most/at_the_most (Adverb_basic)  it/it (<Clause SUBJECT2 Pronoun_subject)  takes/take (VERB2 Verb_present_3ps)  an/a (Determiner)  hour/hour (OBJECT2 Noun_singular Clause>)
-
-It should take no more than an hour to get the generator over to that person.
-Tagged POS 15 words: it/it (MAINSUBJECT Pronoun_subject)  should/should (Aux_verb_future)  take/take (MAINVERB Verb_infinitive)  no_more/no_more (Adverb_basic)  than/than (<Phrase Preposition)  an/a (Determiner)  hour/hour (OBJECT2 Noun_singular Phrase>)  to/to (<Verbal To_infinitive)  get_over/get_over (VERB2 Noun_infinitive)  the/a (Determiner)  generator/generator (OBJECT2 Noun_singular Verbal>)  over/over (Particle)  to/to (<Phrase Preposition)  that/a (Determiner)  person/person (OBJECT2 Noun_singular Phrase>)
-
-So we have the people taken care of.
-Tagged POS 7 words: we/we (MAINSUBJECT Pronoun_subject)  have/have (MAINVERB Verb_present)  the/a (Determiner)  people/person (MAINOBJECT Noun_plural)  taken/take (<Verbal Adjective_participle)  care/care (OBJECT2 Noun_singular Verbal>)  of/of (<Phrase Preposition Phrase>)
-The boats floated over the bridge during the flood.
-Tagged POS 9 words: the/a (Determiner)  boats/boat (MAINSUBJECT Noun_plural)  floated/float (MAINVERB Verb_past)  over/over (<Phrase Preposition)  the/a (Determiner)  bridge/bridge (OBJECT2 Noun_singular Phrase>)  during/during (<Phrase Preposition)  the/a (Determiner)  flood/flood (OBJECT2 Noun_singular Phrase>)
-The mangled boats floated over the underwater bridge during the horrific flood.
-Tagged POS 12 words: the/a (Determiner)  mangled/mangle (Adjective_participle)  boats/boat (MAINSUBJECT Noun_plural)  floated/float (MAINVERB Verb_past)  over/over (<Phrase Preposition)  the/a (Determiner)  underwater/underwater (Adjective_basic)  bridge/bridge (OBJECT2 Noun_singular Phrase>)  during/during (<Phrase Preposition)  the/a (Determiner)  horrific/horrific (Adjective_basic)  flood/flood (OBJECT2 Noun_singular Phrase>)
-Four frogs swam toward the food.
-Tagged POS 6 words: four/4 (Adjective_cardinal)  frogs/frog (MAINSUBJECT Noun_plural)  swam/swim (MAINVERB Verb_past)  toward/toward (<Phrase Preposition)  the/a (Determiner)  food/food (OBJECT2 Noun_singular Phrase>)
-
-Four fat frogs swam toward the buoyant food.
-Tagged POS 8 words: four/4 (Adjective_cardinal)  fat/fat (Adjective_basic)  frogs/frog (MAINSUBJECT Noun_plural)  swam/swim (MAINVERB Verb_past)  toward/toward (<Phrase Preposition)  the/a (Determiner)  buoyant/buoyant (Adjective_basic)  food/food (OBJECT2 Noun_singular Phrase>)
-#An adjective can be modified by an adverb (an “ly” word, in short), a participle, or a phrase or clause that functions as an adverb. 
-
-The prices were severely reduced.
-Tagged POS 5 words: the/a (Determiner)  prices/price (MAINSUBJECT Noun_plural)  were/be (Aux_verb_past)  severely/severely (Adverb_basic)  reduced/reduce (MAINVERB Verb_past_participle)
-
-The mottled brown spots looked nice between the frog's toes. 
-Tagged POS 11 words: the/a (Determiner)  mottled/mottle (Adjective_participle)  brown/brown (Adjective_basic)  spots/spot (MAINSUBJECT Noun_singular)  looked/look (MAINVERB Verb_past)  nice/nice (ADJECTIVE_AS_OBJECT Adjective_basic)  between/between (<Phrase Preposition)  the/a (Determiner)  frog/frog (Noun_singular)  's/'s (Possessive)  toes/toe (OBJECT2 Noun_plural Phrase>)
-         
-
-The aforementioned egregious penalty was reduced in court.
-Tagged POS 8 words: the/a (Determiner)  aforementioned/aforementioned (Adjective_basic)  egregious/egregious (Adjective_basic)  penalty/penalty (MAINSUBJECT Noun_singular)  was/be (Aux_verb_past)  reduced/reduce (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  court/court (OBJECT2 Noun_singular Phrase>)
-
-He couldn't catch his hat in the wind. 
-Tagged POS 9 words: he/he (MAINSUBJECT Pronoun_subject)  could/could (Aux_verb_future)  not/not (Adverb_basic)  catch/catch (MAINVERB Verb_infinitive)  his/he (Pronoun_possessive)  hat/hat (MAINOBJECT Noun_singular)  in/in (<Phrase Preposition)  the/a (Determiner)  wind/wind (OBJECT2 Noun_singular Phrase>)
-
-What is your password?
-Tagged POS 4 words: what/what (MAINOBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  your/you (Pronoun_possessive)  password/password (MAINSUBJECT Noun_singular)
-
-# demonstrative adjectives
-When the Purple People Plotter plotted that page, it crashed. 
-Tagged POS 9 words: when/when (<Clause Conjunction_subordinate)  the/a (Determiner)  Purple_People_Plotter/Purple_People_Plotter (SUBJECT2 Noun_proper_singular)  plotted/plot (VERB2 Verb_past)  that/a (Determiner)  page/page (OBJECT2 Noun_singular Clause>)  ,/, (Comma)  it/it (MAINSUBJECT Pronoun_subject)  crashed/crash (MAINVERB Verb_past)
-
-Those apples look ripe. 
-Tagged POS 4 words: those/a (Determiner)  apples/apple (MAINSUBJECT Noun_plural)  look/look (MAINVERB Verb_present)  ripe/ripe (ADJECTIVE_AS_OBJECT Adjective_basic)    
-
-# interrogative adjectives
-
-Which program do I use to open this file?
-Tagged POS 9 words: which/which (Determiner)  program/program (OBJECT2 Noun_singular)  do/do (Aux_verb_present)  I/I (MAINSUBJECT Pronoun_subject)  use/use (MAINVERB Verb_present)  to/to (<Verbal To_infinitive)  open/open (MAINOBJECT Noun_infinitive)  this/a (Determiner)  file/file (OBJECT2 Noun_singular Verbal>)
-# NOTE -- revisit adjective_particple vs being a verb participle
-What book are you reading?
-Tagged POS 5 words: what/what (Determiner)  book/book (OBJECT2 Noun_singular)  are/be (Aux_verb_present)  you/you (MAINSUBJECT Pronoun_subject)  reading/read (MAINVERB Verb_present_participle)
-
-# indefinite adjective
-Many people came to the party.
-Tagged POS 6 words: many/many (Determiner)  people/person (MAINSUBJECT Noun_plural)  came/come (MAINVERB Verb_past)  to/to (<Phrase Preposition)  the/a (Determiner)  party/party (OBJECT2 Noun_singular Phrase>)
-
-The box contained few cookies. 
-Tagged POS 5 words: the/a (Determiner)  box/box (MAINSUBJECT Noun_singular)  contained/contain (MAINVERB Verb_past)  few/few (Adjective_basic)  cookies/cookie (MAINOBJECT Noun_plural)
-
-There weren't any bugs in his application.
-Tagged POS 8 words: there/there (There_existential)  were/be (MAINVERB Verb_past)  not/not (Adverb_basic)  any/any (Adjective_basic)  bugs/bug (MAINSUBJECT Noun_plural)  in/in (<Phrase Preposition)  his/he (Pronoun_possessive)  application/application (OBJECT2 Noun_singular Phrase>)
-
-#An adjective can function like a noun if you place it after a form of “to be.”
-The movie was good.
-Tagged POS 4 words: the/a (Determiner)  movie/movie (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  good/good (ADJECTIVE_AS_OBJECT Adjective_basic)
-
-
-This cake is excellent with the tea.
-Tagged POS 7 words: this/a (Determiner)  cake/cake (MAINSUBJECT Noun_singular)  is/be (MAINVERB Verb_present_3ps)  excellent/excellent (ADJECTIVE_AS_OBJECT Adjective_basic)  with/with (<Phrase Preposition)  the/a (Determiner)  tea/tea (OBJECT2 Noun_singular Phrase>)
-
-I went in an attempt to retrieve a key.
-Tagged POS 9 words: I/I (MAINSUBJECT Pronoun_subject)  went/go (MAINVERB Verb_past)  in/in (<Phrase Preposition)  an/a (Determiner)  attempt/attempt (OBJECT2 Noun_singular Phrase>)  to/to (<Verbal To_infinitive)  retrieve/retrieve (VERB2 Noun_infinitive)  a/a (Determiner)  key/key (OBJECT2 Noun_singular Verbal>)  
-
-I want to boldly go where no man has gone before.
-Tagged POS 11 words: I/I (MAINSUBJECT Pronoun_subject)  want/want (MAINVERB Verb_present)  to/to (<Verbal To_infinitive)  boldly/boldly (Adverb_basic)  go/go (MAINOBJECT Noun_infinitive Verbal>)  where/where (<Clause Conjunction_subordinate)  no/no (Determiner)  man/man (SUBJECT2 Noun_singular)  has/have (Aux_verb_past)  gone/go (VERB2 Verb_past_participle)  before/before (Adverb_basic Clause>)  
-Steve decided to quickly remove Amy's cats.
-Tagged POS 8 words: Steve/Steve (MAINSUBJECT Noun_proper_singular)  decided/decide (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  quickly/quickly (Adverb_basic)  remove/remove (MAINOBJECT Noun_infinitive)  Amy/Amy (Noun_proper_singular)  's/'s (Possessive)  cats/cat (OBJECT2 Noun_plural Verbal>)  
-
-After eating meat he went home.
-Tagged POS 6 words: after/after (<Phrase Preposition)  eating/eat (<Verbal OBJECT2 Noun_gerund)  meat/meat (OBJECT2 Noun_singular Phrase> Verbal>)  he/he (MAINSUBJECT Pronoun_subject)  went/go (MAINVERB Verb_past)  home/home (Adverb_basic)  
-
-I like to eat green meat.
-Tagged POS 6 words: I/I (MAINSUBJECT Pronoun_subject)  like/like (MAINVERB Verb_present)  to/to (<Verbal To_infinitive)  eat/eat (MAINOBJECT Noun_infinitive)  green/green (Adjective_basic)  meat/meat (OBJECT2 Noun_singular Verbal>)  
-After being happy he left.
-Tagged POS 5 words: after/after (<Phrase Preposition)  being/be (<Verbal OBJECT2 Noun_gerund)  happy/happy (OBJECT2 Adjective_basic Phrase> Verbal>)  he/he (MAINSUBJECT Pronoun_subject)  left/leave (MAINVERB Verb_past)  
-After being reprimanded, he went home.
-Tagged POS 7 words: after/after (<Phrase Preposition)  being/be (<Verbal OBJECT2 Noun_gerund Phrase> Verbal>)  reprimanded/reprimand (<Verbal Adjective_participle Verbal>)  ,/, (Comma)  he/he (OBJECT2 Pronoun_subject)  went/go (VERB2 Verb_past)  home/home (Adverb_basic)# but want the adjective object under the phrase umbrella
-
-Be cool.
-Tagged POS 2 words: be/be (MAINVERB Verb_infinitive)  cool/cool (ADJECTIVE_AS_OBJECT Adjective_basic)  
-Be a man.
-Tagged POS 3 words: be/be (MAINVERB Verb_infinitive)  a/a (Determiner)  man/man (MAINOBJECT Noun_singular)  
-Destiny is your game.
-Tagged POS 4 words: Destiny/Destiny (MAINSUBJECT Noun_proper_singular)  is/be (MAINVERB Verb_present_3ps)  your/you (Pronoun_possessive)  game/game (MAINOBJECT Noun_singular)  
-What is your game?
-Tagged POS 4 words: what/what (MAINOBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  your/you (Pronoun_possessive)  game/game (MAINSUBJECT Noun_singular)  Who are you afraid of?Tagged POS 5 words: who/who (OBJECT2 Pronoun_subject)  are/be (MAINVERB Verb_present)  you/you (MAINSUBJECT Pronoun_subject)  afraid/afraid (ADJECTIVE_AS_OBJECT Adjective_basic)  of/of (<Phrase Preposition Phrase>)  
-
-How often were you absent from work or away from college or school last year? 
-Tagged POS 15 words: how/how (Wh_adverb)  often/often (Adverb_basic)  were/be (MAINVERB Verb_past)  you/you (MAINSUBJECT Pronoun_subject)  absent/absent (ADJECTIVE_AS_OBJECT Adjective_basic)  from/from (<Phrase Preposition)  work/work (OBJECT2 Noun_singular Phrase>)  or/or (CONJUNCT_WORD Conjunction_coordinate)  away/away (ADJECTIVE_AS_OBJECT Adjective_basic)  from/from (<Phrase Preposition)  college/college (OBJECT2 Noun_singular Phrase>)  or/or (CONJUNCT_WORD Conjunction_coordinate)  school/school (OBJECT2 Noun_singular)  last/last (<Phrase Adjective_basic)  year/year (OBJECT2 Noun_singular Phrase>)  
-
-after he left home I walked out.
-Tagged POS 7 words: after/after (<Clause Conjunction_subordinate)  he/he (SUBJECT2 Pronoun_subject)  left/leave (VERB2 Verb_past)  home/home (OBJECT2 Noun_singular Clause>)  I/I (MAINSUBJECT Pronoun_subject)  walked/walk (MAINVERB Verb_past)  out/out (Adverb_basic)  
-I liked the boy that people hated.
-Tagged POS 7 words: I/I (MAINSUBJECT Pronoun_subject)  liked/like (MAINVERB Verb_past)  the/a (Determiner)  boy/boy (MAINOBJECT Noun_singular)  that/a (<Clause Conjunction_subordinate)  people/person (SUBJECT2 Noun_plural)  hated/hate (VERB2 Verb_past Clause>)  
-the team that wore red fled.
-Tagged POS 6 words: the/a (Determiner)  team/team (MAINSUBJECT Noun_singular)  that/a (<Clause SUBJECT2 Pronoun_subject)  wore/wear (VERB2 Verb_past)  red/red (OBJECT2 Noun_singular Clause>)  fled/flee (MAINVERB Verb_past)  
-the team that wore red shirts fled.
-Tagged POS 7 words: the/a (Determiner)  team/team (MAINSUBJECT Noun_singular)  that/a (<Clause SUBJECT2 Pronoun_subject)  wore/wear (VERB2 Verb_past)  red/red (Adjective_basic)  shirts/shirt (OBJECT2 Noun_plural Clause>)  fled/flee (MAINVERB Verb_past)  
-
-I walked to the garden near my home in my underwear on a sunny day on the 4th of July.
-Tagged POS 20 words: I/I (MAINSUBJECT Pronoun_subject)  walked/walk (MAINVERB Verb_past)  to/to (<Phrase Preposition)  the/a (Determiner)  garden/garden (OBJECT2 Noun_singular Phrase>)  near/near (<Phrase Preposition)  my/I (Pronoun_possessive)  home/home (OBJECT2 Noun_singular Phrase>)  in/in (<Phrase Preposition)  my/I (Pronoun_possessive)  underwear/underwear (OBJECT2 Noun_singular Phrase>)  on/on (<Phrase Preposition)  a/a (Determiner)  sunny/sunny (Adjective_basic)  day/day (OBJECT2 Noun_singular Phrase>)  on/on (<Phrase Preposition)  the/a (Determiner)  4th/4 (OBJECT2 Noun_ordinal Phrase>)  of/of (<Phrase Preposition)  July/July (OBJECT2 Noun_proper_singular Phrase>)
-He was afraid she was fat.
-Tagged POS 6 words: he/he (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  afraid/afraid (ADJECTIVE_AS_OBJECT Adjective_basic)  she/she (<Clause SUBJECT2 Pronoun_subject)  was/be (VERB2 Verb_past)  fat/fat (OBJECT2 Adjective_basic Clause>)  
-     
-Ashamed of being fat, she left home.
-Tagged POS 8 words: ashamed/ashamed (Adjective_basic)  of/of (<Phrase Preposition)  being/be (<Verbal OBJECT2 Noun_gerund)  fat/fat (OBJECT2 Adjective_basic Phrase> Verbal>)  ,/, (Comma)  she/she (MAINSUBJECT Pronoun_subject)  left/leave (MAINVERB Verb_past)  home/home (MAINOBJECT Noun_singular)
-The designer window treatments in her house, installed 17 years ago, were outmoded.Tagged POS 15 words: the/a (Determiner)  designer/designer (Noun_singular)  window/window (Noun_singular)  treatments/treatment (MAINSUBJECT Noun_plural)  in/in (<Phrase Preposition)  her/she (Pronoun_possessive)  house/house (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  installed/install (<Clause VERB2 Verb_past_participle Clause>)  17/17 (Adjective_cardinal)  years/year (OBJECT2 Noun_plural)  ago/ago (Adverb_basic)  ,/, (Comma)  were/be (Aux_verb_past)  outmoded/outmode (MAINVERB Verb_past_participle)  
-The spies conducted a covert operation.
-Tagged POS 5 words: the/a (Determiner)  spies/spy (MAINSUBJECT Noun_plural)  conducted/conduct (MAINVERB Verb_past)  a/a (Determiner)  covert_operation/covert_operation (MAINOBJECT Noun_singular)  
-
-The baseball player's malice toward the referee was revealed in his spiteful remarks to the media, which almost ruined the referee's career.
-Tagged POS 24 words: the/a (Determiner)  baseball_player/baseball_player (Noun_singular)  's/'s (Possessive)  malice/malice (MAINSUBJECT Noun_singular)  toward/toward (<Phrase Preposition)  the/a (Determiner)  referee/referee (OBJECT2 Noun_singular Phrase>)  was/be (Aux_verb_past)  revealed/reveal (MAINVERB Verb_past_participle)  in/in (<Phrase Preposition)  his/he (Pronoun_possessive)  spiteful/spiteful (Adjective_basic)  remarks/remark (OBJECT2 Noun_plural Phrase>)  to/to (<Phrase Preposition)  the/a (Determiner)  media/medium (OBJECT2 Noun_plural Phrase>)  ,/, (Comma)  which/which (<Clause SUBJECT2 Pronoun_subject)  almost/almost (Adverb_basic)  ruined/ruin (VERB2 Verb_past)  the/a (Determiner)  referee/referee (Noun_singular)  's/'s (Possessive)  career/career (OBJECT2 Noun_singular Clause>)  
-
-Although Zachary is much too inexperienced for the managerial position, he is a willful young man and obdurately refuses to withdraw his application.
-Tagged POS 23 words: although/although (<Clause Conjunction_subordinate)  Zachary/Zachary (SUBJECT2 Noun_proper_singular)  is/be (VERB2 Verb_present_3ps)  much/much (Adverb_basic)  too/too (Adverb_basic)  inexperienced/inexperienced (OBJECT2 Adjective_basic Clause>)  for/for (<Phrase Preposition)  the/a (Determiner)  managerial/managerial (Adjective_basic)  position/position (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  he/he (MAINSUBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  a/a (Determiner)  willful/willful (Adjective_basic)  young_man/young_man (MAINOBJECT Noun_singular)  and/and (CONJUNCT_WORD Conjunction_coordinate)  obdurately/obdurately (Adverb_basic)  refuses/refuse (MAINVERB Verb_present_3ps)  to/to (<Verbal To_infinitive)  withdraw/withdraw (MAINOBJECT Noun_infinitive)  his/he (Pronoun_possessive)  application/application (OBJECT2 Noun_singular Verbal>)  
-
-She showed a blatant disregard for the rules.
-Tagged POS 8 words: she/she (MAINSUBJECT Pronoun_subject)  showed/show (MAINVERB Verb_past)  a/a (Determiner)  blatant/blatant (Adjective_basic)  disregard/disregard (MAINOBJECT Noun_singular)  for/for (<Phrase Preposition)  the/a (Determiner)  rules/rule (OBJECT2 Noun_plural Phrase>)  
-
-Are you able to drive a car? 
-Tagged POS 7 words: are/be (MAINVERB Verb_present)  you/you (MAINSUBJECT Pronoun_subject)  able/able (ADJECTIVE_AS_OBJECT Adjective_basic)  to/to (<Verbal To_infinitive)  drive/drive (VERB2 Noun_infinitive)  a/a (Determiner)  car/car (OBJECT2 Noun_singular Verbal>)  
-
-Have you a dog?
-Tagged POS 4 words: have/have (MAINVERB Verb_present)  you/you (MAINSUBJECT Pronoun_object)  a/a (Determiner)  dog/dog (MAINOBJECT Noun_singular)  
-
-Are you afraid of any insects or animals? 
-Tagged POS 8 words: are/be (MAINVERB Verb_present)  you/you (MAINSUBJECT Pronoun_subject)  afraid/afraid (ADJECTIVE_AS_OBJECT Adjective_basic)  of/of (<Phrase Preposition)  any/any (Determiner)  insects/insect (OBJECT2 Noun_plural Phrase>)  or/or (CONJUNCT_WORD Conjunction_coordinate)  animals/animal (OBJECT2 Noun_plural)  
-
-Do you feel equal affection for all the members of your family? 
-Tagged POS 11 words: do/do (Aux_verb_present)  you/you (MAINSUBJECT Pronoun_subject)  feel/feel (MAINVERB Verb_present)  equal/equal (Adjective_basic)  affection/affection (MAINOBJECT Noun_singular)  for_all/for_all (<Phrase Preposition)  the/a (Determiner)  members/member (OBJECT2 Noun_plural Phrase>)  of/of (<Phrase Preposition)  your/you (Pronoun_possessive)  family/family (OBJECT2 Noun_singular Phrase>)  
-
-What is the main attraction of visiting another country? 
-Tagged POS 9 words: what/what (MAINOBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  main/main (Adjective_basic)  attraction/attraction (MAINSUBJECT Noun_singular)  of/of (<Phrase Preposition)  visiting/visit (<Verbal OBJECT2 Noun_gerund)  another/another (Determiner)  country/country (OBJECT2 Noun_singular Phrase> Verbal>)  
-
-Which of your possessions are you most closely attached to? 
-Tagged POS 10 words: which/which (OBJECT2 Pronoun_subject)  of/of (<Phrase Preposition)  your/you (Pronoun_possessive)  possessions/possession (OBJECT2 Noun_plural Phrase>)  are/be (Aux_verb_present)  you/you (MAINSUBJECT Pronoun_subject)  most/much (Adverb_most)  closely/closely (Adverb_basic)  attached/attach (MAINVERB Verb_past_participle)  to/to (<Phrase Preposition Phrase>)  
-
-Have you been suffering?
-Tagged POS 4 words: have/have (Aux_verb_present)  you/you (MAINSUBJECT Pronoun_subject)  been/be (Aux_verb_past)  suffering/suffer (MAINVERB Verb_present_participle)  
-to sleep is the only thing Eli wants after his double shift waiting tables at the neighborhood cafe.Tagged POS 18 words: to/to (<Verbal To_infinitive)  sleep/sleep (MAINSUBJECT Noun_infinitive Verbal>)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  only/only (Adjective_basic)  thing/thing (MAINOBJECT Noun_singular)  Eli/Eli (<Clause SUBJECT2 Noun_proper_singular)  wants/want (VERB2 Verb_present_3ps Clause>)  after/after (<Phrase Preposition)  his/he (Pronoun_possessive)  double/double (Adjective_basic)  shift/shift (OBJECT2 Noun_singular Phrase>)  waiting/wait (<Verbal VERB2 Noun_gerund)  tables/table (OBJECT2 Noun_plural Verbal>)  at/at (<Phrase Preposition)  the/a (Determiner)  neighborhood/neighborhood (Noun_singular)  cafe/cafe (OBJECT2 Noun_singular Phrase>)  
-
-He can can a can.
-Tagged POS 5 words: he/he (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  can/can (MAINVERB Verb_infinitive)  a/a (Determiner)  can/can (MAINOBJECT Noun_singular)  
-
-I can light a fire and you can open a can of beans.
-Tagged POS 13 words: I/I (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  light/light (MAINVERB Verb_infinitive)  a/a (Determiner)  fire/fire (MAINOBJECT Noun_singular)  and/and (CONJUNCT_SENTENCE Conjunction_coordinate)  you/you (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  open/open (MAINVERB Verb_infinitive)  a/a (Determiner)  can/can (MAINOBJECT Noun_singular)  of/of (<Phrase Preposition)  beans/bean (OBJECT2 Noun_plural Phrase>)  
-
-Now the can is open and we can eat in the light of the fire.
-Tagged POS 12 words: now/now (Adverb_basic)  the/a (Determiner)  can/can (MAINSUBJECT Noun_singular)  is/be (MAINVERB Verb_present_3ps)  open/open (ADJECTIVE_AS_OBJECT Adjective_basic)  and/and (CONJUNCT_SENTENCE Conjunction_coordinate)  we/we (MAINSUBJECT Pronoun_subject)  can/can (Aux_verb_present)  eat/eat (MAINVERB Verb_infinitive)  in_the_light_of/in_the_light_of (<Phrase Preposition)  the/a (Determiner)  fire/fire (OBJECT2 Noun_singular Phrase>)  
-
-all of the cars there were going to the store.
-Tagged POS 10 words: all/all (MAINSUBJECT Pronoun_subject)  of/of (<Phrase Preposition)  the/a (Determiner)  cars/car (OBJECT2 Noun_plural Phrase>)  there/there (Adverb_basic)  were/be (Aux_verb_past)  going/go (MAINVERB Verb_present_participle)  to/to (<Phrase Preposition)  the/a (Determiner)  store/store (OBJECT2 Noun_singular Phrase>)  
-
-I gave you the ball.
-Tagged POS 5 words: I/I (MAINSUBJECT Pronoun_subject)  gave/give (MAINVERB Verb_past)  you/you (MAININDIRECTOBJECT Pronoun_object)  the/a (Determiner)  ball/ball (MAINOBJECT Noun_singular)  
-
-I  gave  the  ball  to  you.
-Tagged POS 6 words: I/I (MAINSUBJECT Pronoun_subject)  gave/give (MAINVERB Verb_past)  the/a (Determiner)  ball/ball (MAINOBJECT Noun_singular)  to/to (<Phrase Preposition)  you/you (OBJECT2 Pronoun_object Phrase>)  
-
-I gave the ball to her.
-Tagged POS 6 words: I/I (MAINSUBJECT Pronoun_subject)  gave/give (MAINVERB Verb_past)  the/a (Determiner)  ball/ball (MAINOBJECT Noun_singular)  to/to (<Phrase Preposition)  her/she (OBJECT2 Pronoun_object Phrase>)  
-
-I liked to see her.
-Tagged POS 5 words: I/I (MAINSUBJECT Pronoun_subject)  liked/like (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  see/see (MAINOBJECT Noun_infinitive)  her/she (OBJECT2 Pronoun_object Verbal>)  
-
-This is the house that Jack built.
-Tagged POS 7 words: this/a (MAINSUBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  house/house (MAINOBJECT Noun_singular)  that/a (<Clause Conjunction_subordinate)  Jack/Jack (SUBJECT2 Noun_proper_singular)  built/build (VERB2 Verb_past Clause>)  
-
-There were 130 contacts this month.
-Tagged POS 6 words: there/there (There_existential)  were/be (MAINVERB Verb_past)  130/130 (Adjective_cardinal)  contacts/contact (MAINSUBJECT Noun_plural)  this/a (<Phrase Determiner)  month/month (OBJECT2 Noun_singular Phrase>)  
-
-Twenty consumers sent comments on the Space Age Power Suction Cleaner (BNA-233). 
-Tagged POS 10 words: twenty/20 (Adjective_cardinal)  consumers/consumer (MAINSUBJECT Noun_plural)  sent/send (MAINVERB Verb_past)  comments/comment (MAINOBJECT Noun_plural)  on/on (<Phrase Preposition)  the/a (Determiner)  Space_Age_Power_Suction_Cleaner/Space_Age_Power_Suction_Cleaner (OBJECT2 Noun_proper_singular Phrase>)  (/( (Parenthesis)  BNA-233/unknown-word (OBJECT2 Noun_proper_singular)  )/) (Parenthesis)
-
-Of the 20, 17 like the product. 
-Tagged POS 8 words: of/of (<Phrase Preposition)  the/a (Determiner)  20/20 (OBJECT2 Noun_cardinal Phrase>)  ,/, (Comma)  17/17 (MAINSUBJECT Noun_cardinal)  like/like (MAINVERB Verb_present)  the/a (Determiner)  product/product (MAINOBJECT Noun_singular)  
-
-Half a loaf is better than all the bread.
-Tagged POS 9 words: half/half (Predeterminer)  a/a (Determiner)  loaf/loaf (MAINSUBJECT Noun_singular)  is/be (MAINVERB Verb_present_3ps)  better/better (ADJECTIVE_AS_OBJECT Adjective_more)  than/than (<Phrase Preposition)  all/all (Predeterminer)  the/a (Determiner)  bread/bread (OBJECT2 Noun_singular Phrase>)  
-
-The boy stood up and ran down the street.
-Tagged POS 9 words: the/a (Determiner)  boy/boy (MAINSUBJECT Noun_singular)  stood/stand (MAINVERB Verb_past)  up/up (Adverb_basic)  and/and (CONJUNCT_WORD Conjunction_coordinate)  ran/run (MAINVERB Verb_past)  down/down (<Phrase Preposition)  the/a (Determiner)  street/street (OBJECT2 Noun_singular Phrase>)  
-
-The ball was hit by Aaron.
-Tagged POS 6 words: the/a (Determiner)  ball/ball (MAINSUBJECT Noun_singular)  was/be (Aux_verb_past)  hit/hit (MAINVERB Verb_past_participle)  by/by (<Phrase Preposition)  Aaron/Aaron (OBJECT2 Noun_proper_singular Phrase>)  
-
-
-The shawl people wear is green.
-Tagged POS 6 words: the/a (Determiner)  shawl/shawl (MAINSUBJECT Noun_singular)  people/person (<Clause SUBJECT2 Noun_plural)  wear/wear (VERB2 Verb_present Clause>)  is/be (MAINVERB Verb_present_3ps)  green/green (ADJECTIVE_AS_OBJECT Adjective_basic)  
-
-I threw her the ball.
-Tagged POS 5 words: I/I (MAINSUBJECT Pronoun_subject)  threw/throw (MAINVERB Verb_past)  her/she (MAININDIRECTOBJECT Pronoun_object)  the/a (Determiner)  ball/ball (MAINOBJECT Noun_singular)  
-
-After I threw her the ball I went home.
-Tagged POS 9 words: after/after (<Clause Conjunction_subordinate)  I/I (SUBJECT2 Pronoun_subject)  threw/throw (VERB2 Verb_past)  her/she (INDIRECTOBJECT2 Pronoun_object)  the/a (Determiner)  ball/ball (OBJECT2 Noun_singular Clause>)  I/I (MAINSUBJECT Pronoun_subject)  went/go (MAINVERB Verb_past)  home/home (Adverb_basic)  
-
-I remembered to eat the food before I walked home.
-Tagged POS 10 words: I/I (MAINSUBJECT Pronoun_subject)  remembered/remember (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  eat/eat (MAINOBJECT Noun_infinitive)  the/a (Determiner)  food/food (OBJECT2 Noun_singular Verbal>)  before/before (<Clause Conjunction_subordinate)  I/I (SUBJECT2 Pronoun_subject)  walked/walk (VERB2 Verb_past)  home/home (OBJECT2 Noun_singular Clause>)  
-
-I remembered to eat food after walking home.
-Tagged POS 8 words: I/I (MAINSUBJECT Pronoun_subject)  remembered/remember (MAINVERB Verb_past)  to/to (<Verbal To_infinitive)  eat/eat (MAINOBJECT Noun_infinitive)  food/food (OBJECT2 Noun_singular Verbal>)  after/after (<Phrase Preposition)  walking/walk (<Verbal OBJECT2 Noun_gerund)  home/home (Adverb_basic Phrase> Verbal>)  
-
-I remembered being there.
-Tagged POS 4 words: I/I (MAINSUBJECT Pronoun_subject)  remembered/remember (MAINVERB Verb_past)  being/be (<Verbal MAINOBJECT Noun_gerund)  there/there (Adverb_basic Verbal>)  
-
-I remembered that he was blond.
-Tagged POS 6 words: I/I (MAINSUBJECT Pronoun_subject)  remembered/remember (MAINVERB Verb_past)  that/a (<Clause Conjunction_subordinate)  he/he (SUBJECT2 Pronoun_subject)  was/be (VERB2 Verb_past)  blond/blond (OBJECT2 Adjective_basic Clause>)  
-
-Driving a car is fun.
-Tagged POS 5 words: driving/drive (<Verbal MAINSUBJECT Noun_gerund)  a/a (Determiner)  car/car (OBJECT2 Noun_singular Verbal>)  is/be (MAINVERB Verb_present_3ps)  fun/fun (ADJECTIVE_AS_OBJECT Adjective_basic)  
-
-our pet alligator ate Mrs. Olsen's poodle.
-Tagged POS 7 words: our/we (Pronoun_possessive)  pet/pet (Adjective_basic)  alligator/alligator (MAINSUBJECT Noun_singular)  ate/eat (MAINVERB Verb_past)  Mrs._Olsen/Mrs._Olsen (Noun_proper_singular)  's/'s (Possessive)  poodle/poodle (MAINOBJECT Noun_singular)  
-
-with a broom, Mrs. Olsen was beating our alligator over the head in an attempt to retrieve her poodle.
-Tagged POS 19 words: with/with (<Phrase Preposition)  a/a (Determiner)  broom/broom (OBJECT2 Noun_singular Phrase>)  ,/, (Comma)  Mrs._Olsen/Mrs._Olsen (MAINSUBJECT Noun_proper_singular)  was/be (Aux_verb_past)  beating/beat (MAINVERB Verb_present_participle)  our/we (Pronoun_possessive)  alligator/alligator (MAINOBJECT Noun_singular)  over/over (<Phrase Preposition)  the/a (Determiner)  head/head (OBJECT2 Noun_singular Phrase>)  in/in (<Phrase Preposition)  an/a (Determiner)  attempt/attempt (OBJECT2 Noun_singular Phrase>)  to/to (<Verbal To_infinitive)  retrieve/retrieve (VERB2 Noun_infinitive)  her/she (Pronoun_possessive)  poodle/poodle (OBJECT2 Noun_singular Verbal>)  
-
-our pet alligator has been stalking neighborhood pets because my brother Billy forgets to feed the poor reptile.
-Tagged POS 18 words: our/we (Pronoun_possessive)  pet/pet (Adjective_basic)  alligator/alligator (MAINSUBJECT Noun_singular)  has/have (Aux_verb_past)  been/be (Aux_verb_past)  stalking/stalk (MAINVERB Verb_present_participle)  neighborhood/neighborhood (Noun_singular)  pets/pet (MAINOBJECT Noun_plural)  because/because (<Clause Conjunction_subordinate)  my/I (Pronoun_possessive)  brother/brother (SUBJECT2 Noun_singular)  Billy/Billy (APPOSITIVE Noun_proper_singular)  forgets/forget (VERB2 Verb_present_3ps)  to/to (<Verbal To_infinitive)  feed/feed (OBJECT2 Noun_infinitive)  the/a (Determiner)  poor/poor (Adjective_basic)  reptile/reptile (OBJECT2 Noun_singular Clause> Verbal>)  
-
-the product sold in Japan last week.
-Tagged POS 7 words: the/a (Determiner)  product/product (MAINSUBJECT Noun_singular)  sold/sell (MAINVERB Verb_past)  in/in (<Phrase Preposition)  Japan/Japan (OBJECT2 Noun_proper_singular Phrase>)  last/last (<Phrase Adjective_basic)  week/week (OBJECT2 Noun_singular Phrase>)
-
-the product I hated sold in Japan last week.
-Tagged POS 9 words: the/a (Determiner)  product/product (MAINSUBJECT Noun_singular)  I/I (<Clause SUBJECT2 Pronoun_subject)  hated/hate (VERB2 Verb_past Clause>)  sold/sell (MAINVERB Verb_past)  in/in (<Phrase Preposition)  Japan/Japan (OBJECT2 Noun_proper_singular Phrase>)  last/last (<Phrase Adjective_basic)  week/week (OBJECT2 Noun_singular Phrase>)

@@ -1,0 +1,61 @@
+concept: ~saludos [hola buenas que_tal]
+concept: ~que [que]
+concept: ~ser [ser Es sabes_sobre]
+concept: ~articulos [El La los las Un una unos unas]
+concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
+concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
+
+# For some reason two-letter words  must be capitalized
+
+concept: ~dudas [que como hago]
+
+topic: ~entrada keep repeat []
+t: Buenas, ¿puedo ayudarte?
+
+u: (~saludos)
+    Hola, soy Duke y estoy aqui para ayudarte.
+
+# Generic questions
+#! que es un for?
+u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
+    $pregunta='_0
+    \[ sendMaia content $pregunta \]
+    
+    # Process the maia responses
+    a: (maiaResponse content _*)
+        '_0 \[sendMaia $pregunta resource \]
+        
+        # Ask for the link to show in the frame
+        b: (maiaResponse resource _*)
+            \[ resource '_0 \]
+        b: () # There is no link
+            .
+        
+    a: (maiaResponse unknown)
+        Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
+        # Busco lo más aproximado en solr.
+        b:(maiaGambit label _*1)
+            $$pregunta_gambit=_0
+            Puedo explicarte $$pregunta_gambit, te sirve?
+            c: (si)
+                $pregunta=$$pregunta_gambit
+                ^reuse(COMIENZO)
+            c: ()
+                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+        
+
+u: (~ejemplo ~preposiciones _*1)
+    $pregunta=_0
+    \[ sendmaia example _0 \]
+   
+u: EJEMPLO (~ejemplo $pregunta)
+    \[ sendmaia example $pregunta \]
+    
+u: (~ejemplo)
+    Sobre que quieres el ejemplo?
+    a: (~preposiciones _*1 >)
+        $pregunta=_0
+        ^reuse(EJEMPLO)
+
+u: ()
+   Lo siento, no te he entendido. Podrias reformularlo, ¿por favor?
