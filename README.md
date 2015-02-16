@@ -36,10 +36,6 @@ The Front-end controller manages the process followed to generate a reply for th
 
 The knowledge base (KB) contains information ready to be provided by the Chatbot when the user sends a question about a subject. It is dynamically updated when new information is fetched from the Linked Open Data Server.
 
-
-### [Grammar engine (Unitex)](https://github.com/gsi-upm/calista-bot/tree/master/Unitex) 
-The grammar engine is used for detecting specific patterns by applying grammars to the user query. These grammars are usually applied to match phrases containing a set of concepts specified in a list (for example, 'do-while', a concept of the Java programming language). This list of concepts can also be updated dynamically during the conversation. 
-
 ### [Chatbot (ChatScript)](https://github.com/gsi-upm/calista-bot/tree/master/ChatScript) 
 The chatbot is able to maintain a conversation in natural language with the user. It applies the patterns specified in its corpus, which usually produce both a natural language response and out of band commands (hidden for the user) that are handled by the front-end controller. 
 
