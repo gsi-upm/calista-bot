@@ -15,7 +15,7 @@ During the development, we dealt with one of the main limitations that the natur
 
 In this diagram, you can see the Calista Bot arquitecture at a glance
 
-![Calista Bot architecture](http://img849.imageshack.us/img849/9230/w8nl.png)
+![Calista Bot architecture](http://dit.upm.es/~amardomingo/pfc/images/calistabot-diag.png)
 
 For a detailed explanation of each module, you can visit each subproject's repository by clicking in each folder of this repo or by clicking in the headings of the Submodules section.
 
@@ -28,7 +28,7 @@ Calista Bot consists in several modules that can be found under the subtrees of 
 ### [Chat client](https://github.com/gsi-upm/calista-bot/tree/master/Chat-client) 
 An user interface that allows the user to communicate with the system, by chatting with the personal assistant in natural language.
 
-![Chat client](http://img14.imageshack.us/img14/8480/x6ex.png)
+![Chat client](http://dit.upm.es/~amardomingo/pfc/images/bot_example.png)
 
 
 ### [Front-end controller and KB](https://github.com/gsi-upm/calista-bot/tree/master/FE-Controller) 
