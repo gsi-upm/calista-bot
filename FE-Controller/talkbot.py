@@ -19,7 +19,6 @@ import json
 import re
 import logging
 import logging.handlers
-import pyunitex_emb
 
 this_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))    
 response.content_type = 'application/json'
@@ -38,15 +37,20 @@ logger = logging.getLogger(log_name)
 
 # Log to file
 #hdlr = logging.FileHandler(this_dir+'/'+log_name+'.log')
-#formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+##formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+
+# Log to stdout
+hdlr = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+
 
 # Log to Syslog
 #hdlr = logging.handlers.SysLogHandler()
 #formatter = logging.Formatter('calistabot: %(levelname)s %(name)s - %(message)s')
 
-#hdlr.setFormatter(formatter)
-#logger.addHandler(hdlr)
-#logger.setLevel(logging.INFO)
+hdlr.setFormatter(formatter)
+logger.addHandler(hdlr)
+logger.setLevel(logging.INFO)
 
 
 #Maia server variables
@@ -82,18 +86,8 @@ def TalkToBot():
 
     full_response = '0' #Default values
     
-    
-    #Send user input to Unitex, get response    
-    unitex_output = sendUnitex(query_user, query_q, query_bot, query_lang)   
-
-    #Split Unitex out-of-band commands and not identified contents
-    unitex_output_array=splitOOB(unitex_output)
-    cs_input = unitex_output_array[-1]  
-
-    
     #Send user input to ChatScript, get response
-    cs_output = sendChatScript(cs_input, query_bot, query_user) 
-    
+    cs_output = sendChatScript(query_q.lower(), query_bot, query_user) 
     
     #Split conversation response and out-of-band commands (example: Hello again [sendmaia assert returning])
     cs_output_array=splitOOB(cs_output)
@@ -187,65 +181,6 @@ def executeOOB(content,usr,bot):
 
 
     return response
-    
-#Sends an input to Unitex to process it
-def sendUnitex(user, query, bot, lang):
-
-    logger.info("[user: {user}] Unitex input: {input}".format(user=user, input=query))
-    
-    #Remove special characters, lower case letters
-    query = sub('["\'¿¡!?@#$]', '', query)
-    query = query.lower()
-    removeacc = ''.join((c for c in unicodedata.normalize('NFD',unicode(query)) if unicodedata.category(c) != 'Mn'))
-    query=removeacc.decode()
-    
-    
-    #Process the input using Unitex
-    u = pyunitex_emb.Unitex()
-    response_string=""
-
-    bufferDir =this_dir+"/../Unitex/unitex_buffer"
-    commonDir= this_dir +"/../Unitex/common_resources"
-    botDir = this_dir + "/../Unitex/bot_resources/" + bot
-    #delaDir=commonDir+"/lang_dictionary/es/delaf.bin" 
-    #dicoDir=commonDir+"/lang_dictionary"
-    botDir_dics = botDir+"/dictionary"
-
-    txt_name=user
-    txt=bufferDir+"/"+txt_name+".txt"
-    snt=bufferDir+"/"+txt_name+".snt"
-    snt_dir=bufferDir+"/"+txt_name+"_snt"
-    txt_output=bufferDir+"/"+txt_name+"_o.txt"
-    
-    text_file = open(txt, "w")
-    text_file.write(query)
-    text_file.close()
-    
-    if not os.path.exists(snt_dir): os.makedirs(snt_dir)
-    u.Convert("-s","UTF8",txt,"-o",txt+"2")
-    u.Normalize(txt+"2","-r",commonDir+"/Norm.txt","-qutf8-no-bom")
-    u.Convert("-s","UTF8",snt,"-o",snt+"2")
-    u.Tokenize(snt+"2","-a",commonDir+"/alphabet/"+lang+"/Alphabet.txt")
-    bot_dicos = []
-
-    os.chdir(botDir_dics)
-    for files in os.listdir("."):
-        if files.endswith(".bin"):
-            bot_dicos=bot_dicos+[botDir_dics+"/"+files]
-            
-
-    paramsDico= ["-t",snt,"-a",commonDir+"/alphabet/"+lang+"/Alphabet.txt"] + bot_dicos
-    u.Dico(*paramsDico)
-    paramsLocate=["-t",snt,botDir+"/graph/main_graph.fst2","-a",commonDir+"/alphabet/"+lang+"/Alphabet.txt","-L","-R","--all","-b","-Y","-m",";".join(bot_dicos)]
-    u.Locate(*paramsLocate)
-    u.Concord(snt_dir+'/concord.ind','-m',txt_output,"-qutf8-no-bom")
-    
-    with open(txt_output, 'r') as f:
-        response_string=response_string+f.next()
-            
-
-    logger.info("[user: {user}] Unitex output: {output}".format(user=user, output=response_string))
-    return response_string
 
 #Sends an input to ChatScript to process it
 def sendChatScript(query, bot, user):

@@ -1,5 +1,8 @@
 *
+# Ignore everything except my own files
 !*/
 !.gitignore
-!./filesDuke.txt
-!./RAWDATA/DUKE/*
+!filesDuke.txt
+!README.md
+!getChatScript.sh
+!RAWDATA/DUKE/*
