@@ -1,9 +1,14 @@
 concept: ~saludos [hola buenas que_tal]
 concept: ~que [que]
-concept: ~ser [ser Es sabes_sobre]
+concept: ~ser [ser eres Es sabes_sobre]
+concept: ~hacer [hacer haces hace]
+concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
+concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda]
+concept: ~negacion [no nones nanai naranjas quia ca]
+concept: ~profesor [profesor profe professor]
 
 # For some reason two-letter words  must be capitalized
 
@@ -15,6 +20,19 @@ t: Buenas, ¿puedo ayudarte?
 u: (~saludos)
     Hola, soy Duke y estoy aqui para ayudarte.
 
+# Simple, generic questions
+
+u: (~ser {~articulos} ~profesor)
+    No, soy un bot asistente para ayudarte a encontrar respuestas.
+    # TODO: Add rejoinder to offer contact info.
+
+u: (~quien ~ser)
+    Me llamo $bot y soy un bot asistente para ayudarte con tus preguntas.
+
+u: (~que ~hacer)
+    Mi funcion es ayudarte a encontrar respuestas
+    
+topic: ~preguntas keep repeat [~dudas]
 # Generic questions
 #! que es un for?
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
@@ -28,8 +46,11 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
         # Ask for the link to show in the frame
         b: (maiaResponse resource _*)
             \[ resource '_0 \]
-        b: () # There is no link
-            .
+        b: () # No matter if there is a link or not, ask for related
+            \[ sendMaia $pregunta links_to \]
+            c: (maiaResponse links\_to _*)
+                Tambien puedes preguntarme sobre '_0
+            
         
     a: (maiaResponse unknown)
         Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
@@ -43,13 +64,17 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
             c: ()
                 Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
         
-
+        
 u: (~ejemplo ~preposiciones _*1)
     $pregunta=_0
     \[ sendmaia example _0 \]
    
 u: EJEMPLO (~ejemplo $pregunta)
     \[ sendmaia example $pregunta \]
+    a:(maiaResponse example _*)
+        '_0
+    a:(maiaResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
     Sobre que quieres el ejemplo?
@@ -57,5 +82,38 @@ u: (~ejemplo)
         $pregunta=_0
         ^reuse(EJEMPLO)
 
-u: ()
-   Lo siento, no te he entendido. Podrias reformularlo, ¿por favor?
+topic: ~jasonpatterns keep repeat [java]
+# Jason backwards-compatibility patterns
+
+#! [java sample iteracion]
+u: (\[ java sample _* \])
+    Si quieres un ejemplo sobre _0, puedes pedirlo.
+    a: (~afirmacion)
+        ^reuse(EJEMPLO)
+
+#! [java recommend random]
+u: (\[ java recommend random \])
+    [sendMaia pickRandom]
+    a:(maiaResponse label _*)
+        $recom=_0
+        ^reuse(RECOMENDACION)
+
+#! [java recommend iteracion]
+u: RECOMENDACION (\[ java recommend _* \])
+    $recom=_0
+    Hoy te recomiendo repasar $recom.
+
+#! [java test iteracion]
+u: TEST ( \[ java test _* \])
+    \[ sendMaia example _* \]
+    a: ( maiaResponse example _* )
+        Para repasar, seguro que puedes decir a que se refiere este concepto: _0
+        b: (_*)
+            \[sendmaia assert affirm(concept _0)\]
+            c: (\[ java testok _* \] )
+                Exacto, se trataba de _0.
+            c: (\[ java testfail _* \])
+                Incorrecto, se trataba de _0.
+    a: (maiaResponse unknown)
+   
+

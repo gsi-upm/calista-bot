@@ -101,10 +101,10 @@ u: () # main per-sentence processing
 	if (%response == 0) 
 	{
 		 ^repeat() 
-		 I don't know what to say. 
+		 Lo siento, no te he entendido. Podrias reformularlo, ¿por favor?    
 	}
 
-  	
+	
 topic: ~XPOSTPROCESS system () # gambits only - not allowed to write to  output - generates speech on windows -- for Linux you'd want to install Festival (or equivalent) and call that instead.
 
 t: (^query(direct_v ? chatoutput ? -1 ? @9  ))  # get the sentences  (why is the object) -- no longer has quotes around it
