@@ -157,9 +157,6 @@ def executeOOB(content,usr,bot):
             
         if "[sendmaia" in content:
             content=sendMaia(content,bot,usr)
-           
-        elif "[updatekb" in content:
-            content=updateCsKb(content,bot,usr)
         
         elif "[sendcs" in content:
             cs_output=sendChatScript(content,bot,usr) 
@@ -170,8 +167,9 @@ def executeOOB(content,usr,bot):
             for command in cs_output_array:
                 content+=command;
         elif "[resource" in content:
-            response['resource'] = content.replace("[resource", "").replace("]", "")
-            content =""
+            response['resource'] = content.replace("[resource", "")[0:content.index("]")]
+            # Delete the "resource" content, and keep going.
+            content = content[content.index("]")+1:]
         elif "[label" in content:
             response['label'] = content.replace("[label", "").replace("]", "")
             content = ""
@@ -221,51 +219,13 @@ def sendChatScript(query, bot, user):
     logger.info("[user: {user}] ChatScript output: {output}".format(user=user, output=data))
     return data
 
-#Updates the ChatScript knowledge base
-def updateCsKb(content,bot,usr):    
-
-    if "[updatekb]" in content:
-        content=re.sub("\[updatekb\]","",content)
-
-    if bot=="Duke":
-        kbase="java"
-    else:
-        kbase="global"
-    
-    logger.info("[user: {user}] Updating ChatScript knowledge base kb- {kb}".format(user=usr, kb=kbase))
-    
-    cskbfile = cs_facts_dir+"kb-"+kbase
-    
-    newcontent="" 
-
-    content_array = json.loads(content)
-
-    #Remove special characters and lower case label
-    content_array["label"]=re.sub("-","",content_array["label"])
-    content_array["label"]=content_array["label"].lower()
-    
-    #Add the new contents to the ChatScript kb file
-    for ritem in content_array:
-        if ritem != "label" and ritem != "links_to":
-            content=re.sub(" ","_",content_array[ritem])
-            newcontent+= "\n( "+content_array["label"]+" "+ritem+" "+content+" )"
-        
-        if ritem == "links_to":
-                for label in content_array["links_to"]:
-                    label=label.lower()
-                    newcontent+= "\n( "+content_array["label"]+" links_to "+label+" )"
-    
-    with open(cskbfile, 'a') as f:
-        f.write(newcontent) 
-    
-    return "[sendcs [ import "+facts_dir+"kb-"+kbase+" "+content_array["label"]+" ] ]"
-    
 #Renders the response in Json
 def renderJson(query, response, bot, user, fresponse, resource, label):
     # We shouold really make this a little less hardcoded, and more elegant.
 
     response = response.replace('"', '\\"')
-
+    
+    # TODO: I should probably remove this "hard-coded" tags, and place them in a config.
     response_dict = {}
     response_dict['dialog'] = {}
     response_dict['dialog']['sessionid'] = user
