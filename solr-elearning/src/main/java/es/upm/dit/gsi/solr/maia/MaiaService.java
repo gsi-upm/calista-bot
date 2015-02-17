@@ -10,6 +10,7 @@ import es.upm.dit.gsi.solr.maia.annotation.OnMessage;
 import es.upm.dit.gsi.solr.maia.utils.JSONUtils;
 
 import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.common.params.CommonParams;
 import org.slf4j.Logger;
 /**
  * Maia service
@@ -48,6 +49,9 @@ public class MaiaService extends MaiaClientAdapter{
     public static final String GAMBIT = "gambit";
     public static final String UNKNOWN = "unknown";
     public static final String RESPONSE_TAG = "maiaResponse";
+    
+    // TODO: Get this from the config
+    public static final String CONTENT = "content";
     
     // Maybe make them a config option?
     
@@ -109,7 +113,7 @@ public class MaiaService extends MaiaClientAdapter{
         
         //Sample accepted message: [content dowhile] [user dghg]
         
-        // This seems... inapropiate, but, splitting by space, we should be able to get
+        // This seems... inappropriate, but, splitting by space, we should be able to get
         // an array with the labels.
         
         String[] contentArray = content.split(" ");
@@ -130,21 +134,29 @@ public class MaiaService extends MaiaClientAdapter{
         String response = "";
         try {
         	String query;
+        	String[] fieldList = new String[1];
+        	
+        	// There may be a better way of doing this?
         	if (field.equals(GAMBIT)) {
-        		// In this case, we search by the default field
-        		query = this.solrServer.getSearchTag() + ":" + keyword;
+        		// In this case, we search by the text contents fields, and want the label
+        		query = CONTENT + ":" + keyword;
+        		// The label is the search tag we will use if the "gambit"is accepted. 
+        		fieldList[0] = this.solrServer.getSearchTag();
         	} else {
-        		// We search by the provided label.
-        		query = field + ":" + keyword;
+        		// We search by the provided label, and get the asked field:
+        		query = this.solrServer.getSearchTag() + ":" + keyword;
+        		fieldList[0] = field;
         	}
         	// In any case, I only want/ need the first result
         	// I only want/need the first result.
         	
-        	ArrayList<String> searchResult = this.solrServer.search(query, 1); 
+        	ArrayList<String> searchResult = this.solrServer.search(query, fieldList, 1); 
         	
         	if (searchResult.size() !=0) {
         		// We have found data, return the first value
-        		response = searchResult.get(0);
+        		// the expected format is something like:
+        		//  [maiaResponse resource google.com]
+        		response = field + " " + searchResult.get(0);
         	} else {
         		// There is no relevant data in solr, return unknown
         		response = UNKNOWN;
@@ -169,7 +181,7 @@ public class MaiaService extends MaiaClientAdapter{
         // For example:
         //					[maiaResponse resource google.com]
         // 					[maiaResponse gambit for]
-
+        
         String full_response = START_DELIMITER + RESPONSE_TAG + " " + response + END_DELIMITER + 
         		" "+START_DELIMITER + USER + " " + userName + END_DELIMITER;
         logger.info("[{}] Answering >> {}", userName, full_response);

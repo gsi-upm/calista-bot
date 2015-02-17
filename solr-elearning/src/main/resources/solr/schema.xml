@@ -124,7 +124,7 @@
 
     <!-- Fields for elearning -->
 
-   <field name="content" type="text_general" indexed="false" stored="true" multiValued="false"/>
+   <field name="content" type="text_general" indexed="true" stored="true" multiValued="false"/>
    
    
    <field name="label" type="lowercase" indexed="true" stored="true" multiValued="false"/>
@@ -351,9 +351,14 @@
      removes stop words from case-insensitive "stopwords.txt"
      (empty by default), and down cases.  At query time only, it
      also applies synonyms. -->
-    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100"/>
+    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+        <analyzer type="index">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+                <filter class="solr.StandardFilterFactory"/>
+        </analyzer>
     <!-- Just like text_general except it reverses the characters of
      each token, to enable more efficient leading wildcard queries. -->
+    </fieldType>
     <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100"/>
    
     <fieldType name="alphaOnlySort" class="solr.TextField" sortMissingLast="true" omitNorms="true">

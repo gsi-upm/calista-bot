@@ -150,6 +150,19 @@ public class ElearningSolr {
     public ArrayList<String> search(String query, int n) throws SolrServerException, IOException{
     	return search(query, n, this.fieldsFilter);
     }
+    
+    /**
+     * Given a String Query and a fieldFilter list,
+     *  performs a query to the server, and return the relevant data. 
+     * 
+     * @param q - The query for the data
+     * @param fl - The list of fields to return
+     * @param n - The max number of results
+     * @return - An array with all the results
+     */
+    public ArrayList<String> search(String query, String[] fieldsList, int n) throws SolrServerException, IOException{
+    	return search(query, n, fieldsList);
+    }
         
 
     /**
