@@ -55,7 +55,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     a: (maiaResponse unknown)
         Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
         # Busco lo más aproximado en solr.
-        b:(maiaGambit label _*1)
+        b:(maiaResponse gambit _*1)
             $$pregunta_gambit=_0
             Puedo explicarte $$pregunta_gambit, te sirve?
             c: (si)
@@ -114,6 +114,7 @@ u: TEST ( \[ java test _* \])
                 Exacto, se trataba de _0.
             c: (\[ java testfail _* \])
                 Incorrecto, se trataba de _0.
+                
     a: (maiaResponse unknown)
    
 
