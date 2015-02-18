@@ -39,49 +39,62 @@ topic: ~preguntas keep repeat [~dudas]
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
     $pregunta='_0
     \[ sendMaia content $pregunta \]
+
+
+topic: ~ejemplos keep repeat [~ejemplo]
     
-    # Process the maia responses
-    a: (maiaResponse content _*)
-        '_0 \[sendMaia $pregunta resource \]
-        
-        # Ask for the link to show in the frame
-        b: (maiaResponse resource _*)
-            \[ resource '_0 \]
-        b: () # No matter if there is a link or not, ask for related
-            \[ sendMaia $pregunta links_to \]
-            c: (maiaResponse links\_to _*)
-                Tambien puedes preguntarme sobre '_0
-            
-        
-    a: (maiaResponse unknown)
-        Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
-        # Busco lo más aproximado en solr.
-        b:(maiaResponse gambit _*1)
-            $$pregunta_gambit=_0
-            Puedo explicarte $$pregunta_gambit, te sirve?
-            c: (si)
-                $pregunta=$$pregunta_gambit
-                ^reuse(COMIENZO)
-            c: ()
-                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-        
-        
 u: (~ejemplo ~preposiciones _*1)
     $pregunta=_0
     \[ sendmaia example _0 \]
    
 u: EJEMPLO (~ejemplo $pregunta)
     \[ sendmaia example $pregunta \]
-    a:(maiaResponse example _*)
-        '_0
-    a:(maiaResponse unknown)
-        Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
-    Sobre que quieres el ejemplo?
-    a: (~preposiciones _*1 >)
+    $ejemplo=1
+    De que quieres el ejemplo?
+    # si pide ejemplo, pero no dice de qué, pregunto
+
+u: ($ejemplo ~preposiciones _*1 >)
         $pregunta=_0
+        $ejemplo=null
         ^reuse(EJEMPLO)
+
+topic: ~maiaResponses keep repeat [maiaResponse]
+# Process the maia responses
+
+u: (maiaResponse content _*)
+    '_0 \[sendMaia $pregunta resource \]
+    # Ask for the link to show in the frame
+
+u: (maiaResponse resource _*)
+    \[ resource '_0 \] \[ sendMaia $pregunta links\_to \]
+u: (maiaResponse links\_to _*)
+    Tambien puedes preguntarme sobre '_0
+
+u: (maiaResponse gambit _*1)
+    $pregunta_gambit=_0
+    Puedo explicarte $$pregunta_gambit, te sirve?
+u: ($pregunta_gambit ~afirmacion)
+    $pregunta=$pregunta_gambit
+    $pregunta_gambit=null
+    ^reuse(COMIENZO)
+    # Asigno el valor a $pregunta, y utilizo su respuesta.
+
+u: ($pregunta_gambit ~negacion)
+    Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+
+u:(maiaResponse example _*)
+    $ejemplo=null
+    '_0
+
+u:($ejemplo maiaResponse unknown)
+    $ejemplo=null
+    Lo siento, no tengo ningun ejemplo sobre $pregunta
+
+u: (maiaResponse unknown)
+    Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
+    # Busco lo más aproximado en solr.
 
 topic: ~jasonpatterns keep repeat [java]
 # Jason backwards-compatibility patterns
