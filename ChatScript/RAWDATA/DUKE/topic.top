@@ -1,4 +1,4 @@
-concept: ~saludos [hola buenas que_tal]
+concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
 concept: ~que [que]
 concept: ~ser [ser eres Es sabes_sobre]
 concept: ~hacer [hacer haces hace]
@@ -35,6 +35,7 @@ u: (~que ~hacer)
 topic: ~preguntas keep repeat [~dudas]
 # Generic questions
 #! que es un for?
+
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
     $pregunta='_0
     \[ sendMaia content $pregunta \]
