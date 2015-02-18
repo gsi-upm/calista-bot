@@ -156,7 +156,8 @@ public class MaiaService extends MaiaClientAdapter{
         		// We have found data, return the first value
         		// the expected format is something like:
         		//  [maiaResponse resource google.com]
-        		response = field + " " + searchResult.get(0);
+        		// So we take the json response and get only the data
+        		response = field + " " + JSONUtils.find(searchResult.get(0), field);
         	} else {
         		// There is no relevant data in solr, return unknown
         		response = UNKNOWN;
@@ -182,7 +183,7 @@ public class MaiaService extends MaiaClientAdapter{
         //					[maiaResponse resource google.com]
         // 					[maiaResponse gambit for]
         
-        String full_response = START_DELIMITER + RESPONSE_TAG + " " + response + END_DELIMITER + 
+        String full_response = START_DELIMITER + RESPONSE_TAG + " " + response + " " + END_DELIMITER + 
         		" "+START_DELIMITER + USER + " " + userName + END_DELIMITER;
         logger.info("[{}] Answering >> {}", userName, full_response);
         
