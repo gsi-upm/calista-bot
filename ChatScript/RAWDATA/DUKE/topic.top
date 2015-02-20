@@ -14,6 +14,9 @@ concept: ~profesor [profesor profe professor]
 
 concept: ~dudas [que como hago]
 
+# Out-Of-Band commands concepts.
+concept: ~maiareponses [maiaresponse maiaResponse]
+
 topic: ~entrada keep repeat []
 t: Buenas, ¿puedo ayudarte?
 
@@ -32,103 +35,97 @@ u: (~quien ~ser)
 u: (~que ~hacer)
     Mi funcion es ayudarte a encontrar respuestas
     
+u: (¬echo _* )
+    '_0
+    
 topic: ~preguntas keep repeat [~dudas]
 # Generic questions
 #! que es un for?
 
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
     $pregunta='_0
-    \[ sendMaia content $pregunta \]
-
-
-topic: ~ejemplos keep repeat [~ejemplo]
+    ¬sendMaia content $pregunta
     
+    # Process the maia responses
+    a: (¬maiaResponse content _*)
+        '_0 ¬sendMaia resource $pregunta
+        
+        # Ask for the link to show in the frame
+        b: (¬maiaResponse resource _*)
+            ¬resource '_0 _ ¬sendMaia linksTo $pregunta
+            c: (¬maiaResponse linksTo _*)
+                Tambien puedes preguntarme sobre '_0 \@full\_response
+            c:(¬maiaResponse unknown)
+                \@fullResponse
+        b: () # No matter if there is a link or not, ask for related
+            ¬sendMaia linksTo $pregunta
+            c: (¬maiaResponse linksTo _*)
+                Tambien puedes preguntarme sobre '_0 \@full\_response
+            c:(¬maiaResponse unknown)
+                \@fullResponse
+            
+        
+    a: (¬maiaResponse unknown)
+        Lo siento, no se nada sobre $pregunta ¬sendMaia gambit $pregunta
+        # Busco lo más aproximado en solr.
+        b:(¬maiaResponse gambit _*1)
+            $$pregunta_gambit=_0
+            Puedo explicarte $$pregunta_gambit, te sirve?
+            c: (si)
+                $pregunta=$$pregunta_gambit
+                ^reuse(COMIENZO)
+            c: ()
+                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+        
+        
 u: (~ejemplo ~preposiciones _*1)
     $pregunta=_0
-    \[ sendmaia example _0 \]
+    ¬sendmaia example _0
    
 u: EJEMPLO (~ejemplo $pregunta)
-    \[ sendmaia example $pregunta \]
+    ¬sendmaia example $pregunta 
+    a:(¬maiaResponse example _*)
+        '_0
+    a:(¬maiaResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
-    $ejemplo=1
-    De que quieres el ejemplo?
-    # si pide ejemplo, pero no dice de qué, pregunto
-
-u: ($ejemplo ~preposiciones _*1 >)
+    Sobre que quieres el ejemplo?
+    a: (~preposiciones _*1 >)
         $pregunta=_0
-        $ejemplo=null
         ^reuse(EJEMPLO)
-
-topic: ~maiaResponses keep repeat [maiaResponse]
-# Process the maia responses
-
-u: (maiaResponse content _*)
-    '_0 \[sendMaia $pregunta resource \]
-    # Ask for the link to show in the frame
-
-u: (maiaResponse resource _*)
-    \[ resource '_0 \] \[ sendMaia $pregunta links\_to \]
-u: (maiaResponse links\_to _*)
-    Tambien puedes preguntarme sobre '_0
-
-u: (maiaResponse gambit _*1)
-    $pregunta_gambit=_0
-    Puedo explicarte $$pregunta_gambit, te sirve?
-u: ($pregunta_gambit ~afirmacion)
-    $pregunta=$pregunta_gambit
-    $pregunta_gambit=null
-    ^reuse(COMIENZO)
-    # Asigno el valor a $pregunta, y utilizo su respuesta.
-
-u: ($pregunta_gambit ~negacion)
-    Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-
-u:(maiaResponse example _*)
-    $ejemplo=null
-    '_0
-
-u:($ejemplo maiaResponse unknown)
-    $ejemplo=null
-    Lo siento, no tengo ningun ejemplo sobre $pregunta
-
-u: (maiaResponse unknown)
-    Lo siento, no se nada sobre $pregunta \[ sendMaia gambit $pregunta \]
-    # Busco lo más aproximado en solr.
 
 topic: ~jasonpatterns keep repeat [java]
 # Jason backwards-compatibility patterns
 
 #! [java sample iteracion]
-u: (\[ java sample _* \])
+u: (\[java sample _* \])
     Si quieres un ejemplo sobre _0, puedes pedirlo.
     a: (~afirmacion)
         ^reuse(EJEMPLO)
 
 #! [java recommend random]
-u: (\[ java recommend random \])
-    [sendMaia pickRandom]
-    a:(maiaResponse label _*)
+u: (\[java recommend random \])
+    \[sendMaia pickRandom \]
+    a:(\[~maiaresponses label _* \] )
         $recom=_0
         ^reuse(RECOMENDACION)
 
 #! [java recommend iteracion]
-u: RECOMENDACION (\[ java recommend _* \])
+u: RECOMENDACION (\[java recommend _* \])
     $recom=_0
     Hoy te recomiendo repasar $recom.
 
 #! [java test iteracion]
-u: TEST ( \[ java test _* \])
-    \[ sendMaia example _* \]
-    a: ( maiaResponse example _* )
+u: TEST ( \[java test _* \])
+    \[sendMaia example _* \]
+    a: (\[~maiaresponses example _* )
         Para repasar, seguro que puedes decir a que se refiere este concepto: _0
         b: (_*)
             \[sendmaia assert affirm(concept _0)\]
-            c: (\[ java testok _* \] )
+            c: (\[java testok _* \] )
                 Exacto, se trataba de _0.
-            c: (\[ java testfail _* \])
-                Incorrecto, se trataba de _0.
-                
-    a: (maiaResponse unknown)
+            c: (\[java testfail _* \])
+                Incorrecto, se trataba de _0.        
    
 

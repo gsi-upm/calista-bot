@@ -28,8 +28,6 @@ response.content_type = 'application/json'
 cs_buffer_size = 1024
 cs_tcp_ip = '127.0.0.1'
 cs_tcp_port = 1024
-facts_dir="facts/"
-cs_facts_dir = this_dir+"/../ChatScript/"+facts_dir
 
 #Logging system
 log_name='gsibot'
@@ -61,7 +59,7 @@ maia = maia.Maia('ws://'+maia_uri+':'+maia_port, logger)
 maia.connect()
 
 # General config
-host_name = 'localhost'
+host_name = 'alpha.gsi.dit.upm.es'
 host_port = 8090
 
 
@@ -89,7 +87,7 @@ def TalkToBot():
     #Send user input to ChatScript, get response
     cs_output = sendChatScript(query_q.lower(), query_bot, query_user) 
     
-    #Split conversation response and out-of-band commands (example: Hello again [sendmaia assert returning])
+    #Split conversation response and out-of-band commands (example: Hello again [sendMaia assert returning])
     cs_output_array=splitOOB(cs_output)
     
     #Extract the natural language response from the array
@@ -112,9 +110,9 @@ def TalkToBot():
 
 
     #Detect the @full_response flag used to ask the user for feedback
-    if '@fullresponse' in nl_response:
+    if '@fullResponse' in nl_response:
         full_response= '1'
-        nl_response=re.sub("@fullresponse","",nl_response)
+        nl_response=re.sub(u"@fullResponse","",nl_response)
 
 
     #Render natural language response in JSON format
@@ -133,14 +131,14 @@ def saveFeedback():
 
 #Produces an array with the natural language response as first element, and OOB tags the rest
 def splitOOB(s):
-    response_array = []
-    response_array.append(re.sub('\[[^\]]*\]','',s))
-    oob_array = re.findall('\[[^\]]*\]',s)
+    command_token = u"¬"
+    # Find all ocurrences of "¬", which will indicate Out-of-Band commands
+    # If there is no command, return array with just the user input
+    if command_token not in s:
+        return [s]
     
-    for command in oob_array:
-        response_array.append(command)
-        
-    return response_array;
+    return [command_token + command for command in s.split(command_token)]
+    
 
 #Executes the out-of-band commands and returns the natural language response produced   
 def executeOOB(content,usr,bot):
@@ -148,75 +146,81 @@ def executeOOB(content,usr,bot):
     response = {}
     response['nl_response']=""
 
+    # Convert content to utf-8 if not already
+    content = toUTF8(content)
     
-    while ("[" in content):
+    while (u"¬" in content):
         
         #if (("[sendmaia" not in content) and ("[updatekb" not in content) and ("[sendcs" not in content)):
         #    logger.error("OOB with execution not found: "+content)
         #    content=""
             
-        if "[sendmaia" in content:
-            content=sendMaia(content,bot,usr)
+        if u"¬sendMaia" in content:
+            content=sendMaia(content[content.index(u"¬sendMaia"):],bot,usr)
         
-        elif "[sendcs" in content:
+        elif u"¬maiaResponse" in content:
             cs_output=sendChatScript(content,bot,usr) 
             cs_output_array=splitOOB(cs_output)
             response['nl_response'] =response['nl_response'] + cs_output_array[0]
             cs_output_array.pop(0);
-            content=""
+            content=u""
             for command in cs_output_array:
                 content+=command;
-        elif "[resource" in content:
-            response['resource'] = content.replace("[resource", "")[0:content.index("]")]
+        elif u"¬resource" in content:
+            response['resource'] = content.replace(u"¬resource", "")[0:]
             # Delete the "resource" content, and keep going.
             content = content[content.index("]")+1:]
-        elif "[label" in content:
-            response['label'] = content.replace("[label", "").replace("]", "")
-            content = ""
+        elif u"¬label" in content:
+            response['label'] = content.replace(u"¬label", "")
+            content = u""
         else:
             logger.error("OOB with execution not found: "+content)
-            content=""
+            content=u""
 
 
     return response
 
 #Sends an input to ChatScript to process it
 def sendChatScript(query, bot, user):
-
-    logger.info("[user: {user}] ChatScript input: {input}".format(user=user, input=query))
     
-    if "[sendcs" in query:
-        query = re.sub('sendcs ','',query)
-        query = re.sub('\[','',query)
-        query = re.sub('\]','',query)   
-        query = re.sub('\(','[',query)
-        query = re.sub('\)',']',query)  
-
-
+    # Convert the params to utf-8 if not already
+    query = toUTF8(query)
+    bot = toUTF8(bot)
+    user = toUTF8(user)
+    
+    logger.info(u"[user: {user}] ChatScript input: {input}".format(user=user, input=query))
+    
     #Remove special characters and lower case
-    query = sub('["\'¿¡@#$]', '', query)
-    query = query.lower()
-    removeacc = ''.join((c for c in unicodedata.normalize('NFD',unicode(query)) if unicodedata.category(c) != 'Mn'))
-    query=removeacc.decode()
+    #query = sub(u'["\'¿¡@#$]', '', query)
+    #query = query.lower()
+    #removeacc = ''.join((c for c in unicodedata.normalize('NFD',query) if unicodedata.category(c) != 'Mn'))
+    #query=removeacc.decode()
     bot = bot.lower()
-
-
-    #Message to server is 3 strings-   username, botname, message     
-    socketmsg = user+"\0"+bot+"\0"+query 
-
+    
+    # Message to server is 3 strings-   username, botname, message     
+    # Each part must be null-terminated with \0
+    socketmsg = user+"\0"+bot+"\0"+query +"\0"
     s = socket()
     try:
+
         s.connect((cs_tcp_ip, cs_tcp_port))
-        s.send(socketmsg)
-        data = s.recv(cs_buffer_size)
+        s.send(socketmsg.encode("utf-8"))
+        data = ""
+        while 1:
+            rcvd = s.recv(cs_buffer_size)
+            if not rcvd:
+                break
+            data = data + rcvd
+
+        data = toUTF8(data)
         s.close()
         
     #except socket.error, e:
     except Exception, e:
         logger.error("Conexion a %s on port %s failed: %s" % (cs_tcp_ip, cs_tcp_port, e))
-        data = "ChatScript connection error"
+        data = u"ChatScript connection error"
 
-    logger.info("[user: {user}] ChatScript output: {output}".format(user=user, output=data))
+    logger.info(u"[user: {user}] ChatScript output: {output}".format(user=user, output=data))
     return data
 
 #Renders the response in Json
@@ -225,6 +229,8 @@ def renderJson(query, response, bot, user, fresponse, resource, label):
 
     response = response.replace('"', '\\"')
     
+    print response
+
     # TODO: I should probably remove this "hard-coded" tags, and place them in a config.
     response_dict = {}
     response_dict['dialog'] = {}
@@ -253,26 +259,33 @@ def renderJson(query, response, bot, user, fresponse, resource, label):
 #Sends a message to the Maia network
 def sendMaia(msg,bot,usr):
     
-    if "[sendmaia " in msg:
-        msg = re.sub('sendmaia ','',msg)
-    
+    if u"¬sendMaia " in msg:
+        msg = re.sub('¬sendMaia ','',msg)
     maia.send(msg + " [user "+usr+"]", usr)
 
     response = ""
 
     # Keeps waiting for new messages until a timeout
     response = maia.wait_for_message(1, usr)
+    
+    print("respuesta:" + response)
 
     # Logs
     try:
         data = json.loads(response)
-        logger.info("[user: {user}] Received response from maia about {label}".format(user=usr, label=data['label']))
+        logger.info(u"[user: {user}] Received response from maia about {label}".format(user=usr, label=data['label']))
     except:
         # If not json, probably a message form the Agent-system
-        logger.info("[user: {user}] Received not-json message from maia.".format(user=usr))
-    logger.debug("[user: {user}] Full response: {response}".format(user=usr, response=response))
+        logger.info(u"[user: {user}] Received not-json message from maia.".format(user=usr))
+    logger.debug(u"[user: {user}] Full response: {response}".format(user=usr, response=response))
 
     return response
+
+# convert given string to utf-8
+def toUTF8(string):
+    if type(string) == str:
+        string = unicode(string, "utf-8")
+    return string
     
 if __name__ == '__main__':
     run(host=host_name, port=host_port, debug=True)

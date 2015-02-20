@@ -1,3 +1,4 @@
+# coding=utf-8
 from __future__ import print_function
 import sys
 
@@ -70,8 +71,6 @@ class Maia:
                     msg = self.rcvd_msgs[user].get(True, timeout)
                     self.logger.info("Received from maia>> " + msg)
                     
-                    #decode it to ascii
-                    msg = unidecode(msg)
                     # I may receive duplicated messages
                     if msg not in response:
                         response +=msg
@@ -108,6 +107,13 @@ class Maia:
         """
         Receives a message from the maia network.
         """
+        if type(message) == str:
+            message = unicode(message, "utf-8")
+
+        # Only attend messages that are actual responses:
+        if u"¬maiaResponse" not in message:
+            return
+
         self.logger.debug("Received from maia: " + message)
         userStart = message[message.rfind("[user"):]
             
@@ -119,11 +125,13 @@ class Maia:
         user = user.replace("[user ", "")
         user = user.replace("]", "")
 
-        #Accept only messages with an [actuator]
-        if (('[' in mymsg['data']['name']) and 
-             ('[assert' not in mymsg['data']['name']) and ('[retrieve' not in mymsg['data']['name']) ):
+        if u'¬maiaResponse' in mymsg['data']['name']:
             
              msg = mymsg['data']['name']
+             
+             #Convert the message to utf-8
+             if type(msg)==str:
+                    msg = unicode(msg, "utf-8")
              
              if user in self.rcvd_msgs:
                 self.rcvd_msgs[user].put(msg)

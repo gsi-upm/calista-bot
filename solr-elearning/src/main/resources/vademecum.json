@@ -3,9 +3,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/68.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Constructores", 
                 "content": "Son metodos de una clase que sirven para crear objetos. Tiene una notacion especial para diferenciarlos de los metodos normales:Si no se escribe ningun constructor, java se inventa uno que no tiene ningun argumento e inicializa todos los campos a \"cero\". Java solo inventa constructores si el programador no escribe ninguno. En cuanto se escribe uno, java se limita a lo escrito.Ejemplo: Ver \"Metodo / constructores\".Ver Fabricas.", 
                 "id": "68", 
@@ -17,9 +14,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/223.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Operadores", 
                 "content": "", 
                 "id": "223", 
@@ -30,9 +24,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/82.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Desbordamiento", 
                 "content": "En general, se dice de las situaciones en que se intentan meter mas datos en un contenedor de los que caben. Asi es muy frecuente oir hablar de \"buffer overflow\" para indicar que no caben tantos datos en un buffer.En aritmetica se aplica cuando un valor excede el maximo previsto.En numeros enteros el desbordamiento se puede producir por numeros excesivamente grandes, sean positivos o negativos. Java no lo detecta:En numeros en coma flotante el desbordamiento se puede producir en el exponente cuando este es positivo. Java lo interpreta como que nos hemos ido al infinito.Double.MAX_VALUE * 10 =1.79769e+308 * 10 = InfinityVer \"Underflow\".", 
                 "id": "82", 
@@ -43,7 +34,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/272.html", 
-                "links_to": [
+                "linksTo": [
                     "Extension"
                 ], 
                 "label": "Superclases", 
@@ -56,9 +47,6 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/188.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "JVM", 
                 "content": "Java Virtual Machine. Maquina virtual de java.Tambien llamada interprete de java. Ver java (herramienta estandar).Lee codigo interpretable (bytecode) y lo ejecuta.", 
                 "id": "188", 
@@ -69,9 +57,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/138.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "for", 
                 "content": "Los bucles for se ejecutan un numero determinado de veces.", 
                 "id": "138", 
@@ -82,7 +67,7 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/186.html", 
-                "links_to": [
+                "linksTo": [
                     "javac"
                 ], 
                 "label": "JDK", 
@@ -95,7 +80,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/34.html", 
-                "links_to": [
+                "linksTo": [
                     "for", 
                     "for", 
                     "break"
@@ -110,9 +95,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/264.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "static", 
                 "content": "Se utiliza para referirse a los miembros de una clase.", 
                 "id": "264", 
@@ -123,9 +105,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/72.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Debug", 
                 "content": "Perseguir la ejecucion de un programa detectando errores (bugs) y reparandolos.Ver \"Bugs\".", 
                 "id": "72", 
@@ -136,7 +115,7 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/258.html", 
-                "links_to": [
+                "linksTo": [
                     "JDK"
                 ], 
                 "label": "SDK", 
@@ -149,9 +128,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/41.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "byte", 
                 "content": " Ver \"Numeros\".", 
                 "id": "41", 
@@ -162,9 +138,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/239.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Programacion", 
                 "content": "Ver OOP.", 
                 "id": "239", 
@@ -175,9 +148,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/275.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "switch", 
                 "content": "Construccion sintactica muy compacta para representar la ejecucion de una entre varias sentencias dependiendo de un valor:  Solo funcionan sobre enteros, booleanos o caracteres Chequean que no hay duplicados las condiciones tienen que ser excluyentes Mejor legibilidad Sin break, el programa no saltaria al final El default es opcional; si no aparece, no se ejecuta nadaLas sentencias break provocan la terminacion de la sentencia condicional. Si no se aparece, el codigo siguiente se sigue ejecutando. ", 
                 "id": "275", 
@@ -188,9 +158,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/259.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Setters", 
                 "content": "Ver Metodo / setters.", 
                 "id": "259", 
@@ -201,9 +168,6 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/221.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "OO", 
                 "content": "Object Oriented. Orientado a Objetos.Ver OOP.", 
                 "id": "221", 
@@ -214,9 +178,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/114.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Excepciones", 
                 "content": "Constituyen un mecanismo para propagar rapidamente situaciones excepcionales (tipicamente errores que se detectan) saltandose el flujo normal de ejecucion del programa.Materialmente, una excepcion es un objeto que ... debe ser de una subclase de java.lang.Throwable se crea con new (o sea, usando un constructor) entre sus campos suele llevar informacion de por que se crea (o sea, de que circunstancia excepcional es mensajero) lleva informacion acerca de en que punto del codigo se crea y cual es la serie de llamadas a metodos que han llevado a ese punto del codigo (a esta informacion se la llama traza); la traza se puede imprimir en consola: se lanza con throw el lanzamiento interrumpe la ejecucion normal del codigo, es decir que la siguiente instruccion no se ejecuta; por ello el lanzamiento de la excepcion suele estar en un bloque condicional se pueden capturar con bloques catch si1.       se lanzan dentro de un bloque try y2.       existe un bloque catch que captura excepciones de la clase de la excepcion o de alguna superclase si la excepcion se lanza en un metodo que no desea (o no puede, o no conviene) capturarla, el metodo puede propagarla, para lo cual debe indicarlo en su cabeceraSi en la traza (cadena de llamadas a metodos) encontramos un bloque try, la excepcion puede ser capturada por un bloque catch, siempre y cuando el bloque catch tenga previsto capturar excepciones de esta clase o de alguna superclase.Si en la traza no hubiera ningun bloque try con un catch adecuada, la excepcion sale del programa, pasando al soporte de ejecucion que1.       informa en consola del problema (es decir, imprime la traza)2.       detiene la ejecucion", 
                 "id": "114", 
@@ -227,7 +188,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/301.html", 
-                "links_to": [
+                "linksTo": [
                     "Metodo"
                 ], 
                 "label": "void", 
@@ -240,7 +201,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/93.html", 
-                "links_to": [
+                "linksTo": [
                     "switch"
                 ], 
                 "label": "Ejecucion", 
@@ -253,9 +214,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/132.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "final", 
                 "content": "Es un calificativo que se puede aplicar a variables, metodos o clases y quiere decir que es invariable.final classCuando una clase se califica como final, no puede ser extendida. Tobos los miembros de una clase final pasan a ser finales.final metodoCuando un metodo se califica como final, no puede ser redefinido si la clase a la que pertenece fuera extendida por otra clase.La ventaja que aporta el calificativo final es que impide el polimorfismo pues al no poder ser redefinidos los metodos, nunca habra sorpresas en tiempo de ejecucion.final variable de claseLa variable se convierte en constante. Debe ser inicializada o bien junto a la propia definicion, o en la zona static de inicializacion de variables.final variable de objetoLa variable se convierte en constante. Debe ser inicializada o bien junto a la propia definicion, o bien en todos y cada uno de los constructores de la clase.final argumento formal de un metodoEl argumento se convierte en constante, dentro del metodo; es decir, su valor no puede ser modificado.final variable local (o automatica)La variable se convierte en constante; es decir, su valor no puede modificarse.La identificacion de elementos finales puede proporcionar alguna mejora en tiempo de ejecucion pues se evitan los algoritmos de resolucion de polimorfismo y el compilador puede optimizar el codigo. No obstante, hay que advertir que estas mejoras suelen ser muy modestas.NOTA. Un error frecuente consiste en declarar como final una variable que es referencia a un objeto y luego pensar que el objeto no puede ser modificado. Final solo garantiza que la variable siempre referenciara el mismo objeto, independientemente de que el objeto en si evolucione. ", 
                 "id": "132", 
@@ -266,9 +224,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/166.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Implementacion", 
                 "content": "Se dice que una clase implementa una interfaz cuando proporciona codigo para concreto para los metodos definidos en la interfaz. Se dice que los metodos en la clase concreta implementan a sus homonimos en la interface, debiendo cumplir las siguientes condiciones mismos argumentos (numero, clase y orden)Misma clase implica que no vale recurrir a argumentos de tipos que sean superclase o subclase del prometido en la interface. misma clase de resultado (vale que la implementacion devuelva una subclase) igual o mayor visibilidad\"de paquete\" < protected < public igual o menos capacidad de lanzar excepciones; el metodo que implementa puede no lanzar excepcion alguna lanzar excepciones que sean subclases de la del metodo implementado lanzar las mismas excepciones que el metodo implementadoDe una misma interfaz pueden derivarse multiples implementaciones. Y se puede usar el tipo de la interfaz para referenciar a cualquier implementacion", 
                 "id": "166", 
@@ -279,9 +234,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/105.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Errores", 
                 "content": "Son defectos en un programa que impiden alcanzar un resultado correcto.Los errores pueden detectarse bien cuando intentamos compilar, bien durante la ejecucion, bien al intentar verificar si el resultado es correcto.", 
                 "id": "105", 
@@ -292,9 +244,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/262.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Sobrecarga", 
                 "content": "En un mismo Ambito pueden coexistir dos o mas metodos homonimos (mismo nombre o identificador) siempre y cuando difieran en el numero, orden o tipo de sus argumentos.No es suficiente diferenciacion diferir en el tipo del valor devuelto o en las excepciones que pueden lanzar.", 
                 "id": "262", 
@@ -305,7 +254,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/178.html", 
-                "links_to": [
+                "linksTo": [
                     "implements"
                 ], 
                 "label": "Interfases", 
@@ -318,7 +267,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/97.html", 
-                "links_to": [
+                "linksTo": [
                     "Enumerados", 
                     "Enumerados"
                 ], 
@@ -332,9 +281,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/172.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Inicializacion", 
                 "content": "Dicese de la asignacion de un primer valor (valor inicial) a una variable.campos (de clase o de objeto)Pueden inicializarse explicitamente junto a la declaracion o en el constructor. De lo contrario, reciben un valor por defecto que depende de su tipo: enteros: valor 0 reales: valor 0.0 booleanos: valor false caracteres: valor (char)0 objetos: valor nullvariables localesDeben ser inicializadas explicitamente por el programa, bien junto a la declaracion, bien en alguna sentencia de asignacion posterior; pero siempre antes de ser utilizadas. De lo contrario, el compilador emite un mensaje de error.Las variables que recogen los argumentos de llamada a un metodo son inicializadas con los valores de llamada.", 
                 "id": "172", 
@@ -345,9 +291,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/169.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "implements", 
                 "content": "Sirve para indicar que una clase implementa una (o mas) interfaces.En Java se pueden implementar varias interfaces simultaneamente:Tambien se puede extender una clase (y solo una) al tiempo que se implementan varias interfaces: ", 
                 "id": "169", 
@@ -358,9 +301,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/287.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Unicode", 
                 "content": "Convenio internacional para representar caracteres de multiples idiomas en 16 bits. Es el convenio que usa java. Los detalles pueden verse en La siguiente tabla recoge los codigos que nos afectan en el suroeste de Europa: No se ve en la tabla; pero el codigo 32 (20 en hexadecimal) corresponde al caracter espacio en blanco.No se ve en la tabla; pero el codigo hexadecimal 7F corresponde a la tecla DEL (borrado).Java permite expresar los caracteres usando el codigo Unicode hexadecimal. Por ejemplo, el caracter 'A' que tiene el codigo hexadecimal 41 se puede escribir lo que es perfectamente absurdo para caracteres normales; pero puede ser util para los caracteres que no suelen aparecer en nuestros teclados.Se pueden escribir cadenas de caracteres (String) con el mismo convenio. Vea \"codificacion de caracteres\" donde se explica como se utilizan bytes (8 bits) para guardar caracteres (16 bits).", 
                 "id": "287", 
@@ -371,9 +311,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/256.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "return", 
                 "content": "Sirve para terminar un metodo, devolviendo el resultado, si el metodo lo requiere.Las sentencias return provocan la terminacion del metodo en el que aparecen, incluso si estamos dentro de algun bucle. ", 
                 "id": "256", 
@@ -384,7 +321,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/268.html", 
-                "links_to": [
+                "linksTo": [
                     "Extension"
                 ], 
                 "label": "Subclases", 
@@ -397,9 +334,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/171.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Inheritance", 
                 "content": "Ver Herencia.", 
                 "id": "171", 
@@ -410,9 +344,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/96.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Encapsulacion", 
                 "content": "Criterio de diseno de clases que recomienda juntar en una misma clase las variables y los metodos que las gestionan.Una buena encapsulacion debe llevar a que todos los campos de los objetos sean private y solo se puedan acceder o alterar a traves de los metodos de la clase. La ventaja que se obtiene es un absoluto control sobre el acceso a dichos campos.Un caso extremo de encapsulacion es el denominado Tipo Abstracto de Datos (TAD). Se dice que una clase es un TAD cuando se puede cambiar completamente la representacion interna del estado del objeto sin que otras clases que la usan lo perciban; es decir, cuando los metodos ocultan completamente la representacion interna. La ventaja que se obtiene es la posibilidad de cambiar el codigo de la clase sin tocar otras clases del programa; por ejemplo, para optimizar el tiempo de ejecucion.En ingles se dice \"ADT - Abstract Data Types\".", 
                 "id": "96", 
@@ -423,7 +354,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/269.html", 
-                "links_to": [
+                "linksTo": [
                     "Subclases", 
                     "Extension"
                 ], 
@@ -437,9 +368,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/94.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Eleccion", 
                 "content": "En ingles recibe varios nombres:En todo caso se refiere al hecho de que cuando una variable es polimorfica y puede referirse a objetos de varias subclases, el metodo que se ejecuta depende del tipo del objeto en tiempo de ejcucion. Es decir, no depende del tipo de la variable, sino del tipo del objeto.Se ve mas facilmente con un ejemplo. ", 
                 "id": "94", 
@@ -450,9 +378,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/133.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "finally", 
                 "content": "Componente sintactico de sentencias try.El bloque finally se ejecuta siempre al acabar el bloque try, tanto si acaba bien como si acaba mal, sea cual sea el significado de acabar bien o mal.El ejemplo siguiente muestra como el bloque puede acabar bien (calculando la raiz cuadrada de un real positivo) o mal (por diferentes motivos de formato o numeros negativos); pero siempre incrementa el numero de pruebas realizadas: El bloque finally puede emplearse incluso sin bloques catch, aprovechando su caracteristica de que siempre se ejecuta al salir del bloque try.El siguiente ejemplo muestra como medir el tiempo que tarda un algoritmo independientemente de que termine bien o mal:Concretamente, en el ejemplo se busca un cero de una funcion en un intervalo dado. Como algoritmo se usa el consistente en ir dividiendo el intervalo en mitades hasta acotarlo. Hay varias razones por las que puede no funcionar: la funcion no esta definida en algun punto, o presenta una discontinuidad, o simplemente no pasa por cero. Todas estas causas se traducen en el lanzamiento de una excepcion informativa. ", 
                 "id": "133", 
@@ -463,9 +388,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/153.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Getter", 
                 "content": "Ver Metodo / getters.", 
                 "id": "153", 
@@ -476,9 +398,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/137.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "float", 
                 "content": " Ver \"Numeros\".", 
                 "id": "137", 
@@ -489,9 +408,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/179.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Interpretacion", 
                 "content": "Es lo que hace la maquina virtual de java: lee codigo interpretable y ordena que debe hacer la maquina real (por ejemplo, le indica al pentium que debe ir haciendo para que ocurra lo que ha escrito el programador).Ver Ejecucion.", 
                 "id": "179", 
@@ -502,9 +418,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/220.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Ocultacion", 
                 "content": "Si tenemos un ambito de visibilidad A1 y definimos un ambito A2 dentro de A1, las variables definidas en A2 ocultan a las variables homonimas de A1.Ejemplo: Ver \"ocultacion | redefinicion\".", 
                 "id": "220", 
@@ -515,9 +428,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/160.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Identificadores", 
                 "content": "Son los nombres de las cosas de los programas: clases, objetos, metodos, variables, etc.Los identificadores deben empezar con una letra o un simbolo \"_\". A continuacion pueden venir cuantas letras, digitos o simbolos \"_\" se desee, sin dejas espacio entre ellos. Si un identificador esta formado por varias palabras, estas se concatenan poniendo en mayusculas la primera letra de cada palabra.No se pueden usar como identificadores las palabras reservadas de java.Ejemplos i, j, m, alfa, beta, Manuel, coche, Europa JoseAntonio anoBisiesto mil24 ano0, ano1, ano2, ... ano10 manual_de_proteccion_de_datos ", 
                 "id": "160", 
@@ -528,9 +438,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/31.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "boolean", 
                 "content": "Tipo de datos que ya viene definido en el lenguaje. Se dice que es un tipo primitivo.Valores: true falseOJO: Siempre se escriben en minusculas.Operaciones: conjuncion logica (es espanol, Y; en ingles, AND): el resultado es \"true\" si y solo si ambos operandos son \"true\" x & y   siempre se evaluan \"x\" e \"y\"*       x && y      siempre se evalua \"x\"                       si \"x\" es \"true\", tambien se evalua \"y\"                       se denomina \"cortocircuito\" alternativa logica (en espanol, O; en ingles, OR): el resultado es \"true\" si algun operando es \"true\" x | y   siempre se evaluan \"x\" e \"y\" x || y     siempre se evalua \"x\",                       si \"x\" es \"false\", tambien se evalua \"y\"                       se denomina \"cortocircuito\" disyuncion logica (en ingles, XOR): el resultado es \"true\" si los operandos son distintos x ^ y negacion logica (en ingles, NOT: el resultado es lo contrario del operando ! xEjemplo. Un ano es bisiesto si es multiplo de 4, excepto si es multiplo de 100. No obstante, lo multiplos de 400 son tambien bisiestos. ", 
                 "id": "31", 
@@ -541,9 +448,6 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/187.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "JRE", 
                 "content": "Java Runtime Environment. Entorno de ejecucion java.Paquete software que contiene herramientas para ejecutar programas java, previamente compilados. Incluye un interprete (java) y bibliotecas de apoyo.", 
                 "id": "187", 
@@ -554,7 +458,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/51.html", 
-                "links_to": [
+                "linksTo": [
                     "Unicode"
                 ], 
                 "label": "char", 
@@ -567,9 +471,6 @@
             "doc": {
                 "topic": "herramienta estandar", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/182.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "javac", 
                 "content": "Compilador. Lee codigo fuente (Ficheros .java) y genera codigo interpretable (Ficheros .class).Sea la clase Si el fichero Hola.java esta en el directorio X, nos situaremos en dicho directorio y llamaremos al compilador:Si hay que compilar varios ficheros .java, indiquelos uno tras otro separados los nombres por espacio en blanco.El resultado es un fichero Hola.class en el mismo directorio.Si deseamos separar los ficheros .java de los ficheros .classEl resultado es un fichero Hola.class en el directorio Y.", 
                 "id": "182", 
@@ -580,7 +481,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/279.html", 
-                "links_to": [
+                "linksTo": [
                     "Excepciones"
                 ], 
                 "label": "throw", 
@@ -593,7 +494,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/30.html", 
-                "links_to": [
+                "linksTo": [
                     "Clases", 
                     "Enumerados", 
                     "Metodo"
@@ -608,9 +509,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/200.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Metodo", 
                 "content": "Un metodo es un poco de codigo con una mision. Tipicamente utiliza una serie de argumentos de entrada para producir un resultado. En una misma clase no pueden convivir dos metodos que tengan igual nombre e igual lista de argumentos de entrada. Simplemente porque java no sabria distinguir a que metodo nos referimos en cada momento.Cuando dos metodos se llaman igual pero difieren en el numero, orden o tipo de los argumentos de entrada, se dice que el nombre del metodo esta sobrecargado (en ingles, \"overloaded\").  Esto se puede hacer en java.  ", 
                 "id": "200", 
@@ -621,9 +519,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/213.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "new", 
                 "content": "Se usa para construir un objeto de una cierta clase. Lo que se hace es ejecutar el constructor, inicializando los campos del objeto segun se crea.No se puede usar con clases abstractas, ni con interfaces. ", 
                 "id": "213", 
@@ -634,7 +529,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/243.html", 
-                "links_to": [
+                "linksTo": [
                     "subclases"
                 ], 
                 "label": "protected", 
@@ -647,7 +542,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/29.html", 
-                "links_to": [
+                "linksTo": [
                     "Campo"
                 ], 
                 "label": "Atributo", 
@@ -660,7 +555,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/246.html", 
-                "links_to": [
+                "linksTo": [
                     "super"
                 ], 
                 "label": "Redefinicion", 
@@ -673,7 +568,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/52.html", 
-                "links_to": [
+                "linksTo": [
                     "Objetos", 
                     "Campo", 
                     "Metodo", 
@@ -689,9 +584,6 @@
             "doc": {
                 "topic": "acronimo", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/13.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "API", 
                 "content": "Application Programming Interface. Interfaz de programacion.", 
                 "id": "13", 
@@ -702,9 +594,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/56.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Codigo", 
                 "content": "Se llama \"codigo\" a las instrucciones que se le dan a un ordenador para funcionar. El codigo es la representacion del programa. Codigo fuente. Cuando el codigo esta escrito para que lo lean las personas. El codigo fuente se puede editar para crearlo, ampliarlo o corregirlo. El codigo fuente se le pasa al compilador, que genera codigo interpretable.El compilador de java produce codigo interpretable. En otros lenguajes, el compilador genera directamente codigo ejecutable. Codigo interpretable. Cuando el codigo esta pensado para que lo lea el interprete de java. Este interprete, tambien llamado \"maquina virtual de java\" es un ordenador programado. El codigo interpretable se le pasa al interprete, que genera codigo ejecutable.En la jerga de java, al codigo interpretable se le denomina Bytecode. Codigo ejecutable. Cuando el codigo esta pensado para maquinas. Por ejemplo, codigo para ordenadores Pentium.  ", 
                 "id": "56", 
@@ -715,9 +604,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/15.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Arrays", 
                 "content": "Son colecciones de objetos numerados, todos del mismo tipo. Pueden ser unidimensionales (en algebra se suelen llamar vectores), bidimensionales (en algebra se suelen llamar matrices), tridimensionales (a veces se les llaman tensores) de un numero superior de dimensionesPor ser mas precisos, un \"array\" multidimensional se concibe como un \"vector de vectores\" lo que permite que cada vector sea de un tamano diferente.Asi, una matriz puede verse como una serie de filas, cada una con una serie de columnas. Como no todas las filas tienen que tener el mismo numero de columnas, la matriz no necesariamente tiene que ser rectangular.Para poder utilizar un array hay que seguir unos ciertos pasos:1.       declararlo: nombre del array, numero de dimensiones y tipo de datos que contiene2.       crearlo o ubicar memoria (memory allocation): numero de datos que contiene3.       se puede acceder al array: lectura y escritura", 
                 "id": "15", 
@@ -728,9 +614,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/63.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Composicion", 
                 "content": "Se dice que se usa el principio de composicion cuando para construir una nueva clase empleamos otras clases ya definidas.se dice que B usa la clase A.Ver Delegacion.", 
                 "id": "63", 
@@ -741,7 +624,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/113.html", 
-                "links_to": [
+                "linksTo": [
                     "break"
                 ], 
                 "label": "Etiquetas", 
@@ -754,7 +637,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/199.html", 
-                "links_to": [
+                "linksTo": [
                     "JVM"
                 ], 
                 "label": "Maquina", 
@@ -767,9 +650,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/411.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Autoboxing", 
                 "content": "Java dispone de una serie de Tipos primitivos y de objetos Envoltorios para cada uno de ellos. Por ejemplo, los enteros se pueden manejar como el tipo rimitivo int o como el envoltorio Integer.Cuando s necesita convertir entre uno y otro formato, java lo hace automaticamente: ", 
                 "id": "411", 
@@ -780,9 +660,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/11.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Algoritmo", 
                 "content": "Conjunto ordenado y finito de operaciones que permite hallar la solucion de un problema.Para hallar la solucion de un cierto problema, pueden haber multitud de algoritmos que, siendo todos correctos, requieran diferente esfuerzo, tiempo de calculo o datos intermedios.Los algoritmos, cuando se codifican en un lenguaje de programacion, se convierten en programas.Un mismo algoritmo puede programarse de multiples maneras, dependiendo del programador o del problema concreto al que se aplique. Cuando el problema a resolver es pequeno, suele ser indiferente emplear uno u otro de los algoritmos conocidos para resolverlo; pero cuando el problema crece, las diferencias de esfuerzo requerido por diferentes algoritmos puede llevar a programas que, siendo todos correctos, tarden mas o menos tiempo, o requieran mas o menos memoria para ejecutar. Por ello, en aplicaciones reales conviene elegir cuidadosamente el algoritmo que se va a programar.", 
                 "id": "11", 
@@ -793,9 +670,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/260.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "short", 
                 "content": " Ver \"Numeros\".", 
                 "id": "260", 
@@ -806,7 +680,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/232.html", 
-                "links_to": [
+                "linksTo": [
                     "Argumentos"
                 ], 
                 "label": "Parametros", 
@@ -819,7 +693,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/415.html", 
-                "links_to": [
+                "linksTo": [
                     "Extension"
                 ], 
                 "label": "Supertipo", 
@@ -832,9 +706,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/248.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Refactoring", 
                 "content": "Actividad por la que vamos modificando el codigo fuente, sin modificar su funcionamiento, pero buscando una mejor legibilidad o estructuracion.Algunas actividades de refactoring son evidentes: renombrar variables para que su nombre refleje intuitivamente su contenido. renombrar metodos para que su nombre refleje intuitivamente su cometido. renombrar clases para que su nombre refleje intuitivamente su esencia. reordenar las clases en paquetes para que la estructura agrupe funciones de detalle.Ver [http://www.refactoring.com/].", 
                 "id": "248", 
@@ -845,7 +716,7 @@
             "doc": {
                 "topic": "extends", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/300.html", 
-                "links_to": [
+                "linksTo": [
                     "Clases", 
                     "Metodo", 
                     "Campo", 
@@ -863,9 +734,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/214.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "null", 
                 "content": "Es una referencia (a un objeto) especial.Cuando una variable no apunta a ningun objeto, se dice que contiene la referencia null que es la referencia que no apunta a nada.Cuando un campo que referencia a objetos se declara pero aun no se ha inicializado, contiene la referencia null.", 
                 "id": "214", 
@@ -876,7 +744,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/47.html", 
-                "links_to": [
+                "linksTo": [
                     "Objetos"
                 ], 
                 "label": "Casting", 
@@ -889,9 +757,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/84.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Documentacion", 
                 "content": "En general se refiere a todo aquel material que complementa al codigo ayudando a su comprension por las personas. Es basico para poder responsabilizarse de un programa pues permite entenderlo para reparar defectos o mejorarlo.En particular se refiere a una forma especial de comentarios java, entremezclados con el codigo, y que se caracterizan por comenzar con la cadena /** terminar con la cadena */Estos comentarios no pueden anidarse, ni entre si, ni con comentarios de tipo /* ... */. El compilador se limita a detectar la terminacion, sin preocuparse de si hay varios comentarios empezados. incluir algunas claves @etiqueta que se comentan mas abajo. La forma estructurada de estos comentarios permiten un tratamiento especial los entornos de desarrollo resaltan en colores su empleo herramientas como javadoc permiten generar paginas HTML (para navegadores)Estos comentarios se aplican a clases, campos y metodos.  ", 
                 "id": "84", 
@@ -902,9 +767,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/240.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Programacion", 
                 "content": "Una forma de estructurar los programas para que no sean un laberinto, sino algo facil de entender por uno mismo y por los demas.La idea fundamental es que los programas son un conjunto de bloques que encajan entre si sobre la premisa de que cada bloque tiene un solo punto de entrada y un solo punto de salida, y la salida de uno se enchufa a la entrada del siguiente.O sea, un lego.En java todas las estructuras sintacticas tienen un punto de entrada y un punto de salida.", 
                 "id": "240", 
@@ -915,9 +777,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/175.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Interfaz", 
                 "content": "Relacion de clases, variables y metodos proporcionados por el suministrador del sistema de programacion y que pueden ser empleados directamente por los programadores.Por ejemplo, el paquete Math proporciona metodos para calculos trigonometricos.Ver [http://java.sun.com/j2se/1.5.0/docs/api/]-", 
                 "id": "175", 
@@ -928,7 +787,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/14.html", 
-                "links_to": [
+                "linksTo": [
                     "Metodo", 
                     "Metodo"
                 ], 
@@ -942,9 +801,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/128.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Extension", 
                 "content": "Cuandose dice que A es superclase de B y que B es subclase de A.La nueva clase B dispone automaticamente de todos los miembros public, protected y de paquete de la clase A, miembros que puede usar o redefinir.Ver Herencia.En Java, una clase solo puede heredar de otra unica clase. No existe la posibilidad de herencia multiple. Esto es incorrecto:", 
                 "id": "128", 
@@ -955,7 +811,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/98.html", 
-                "links_to": [
+                "linksTo": [
                     "enum"
                 ], 
                 "label": "Enumerados", 
@@ -968,9 +824,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/85.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "double", 
                 "content": " Ademas se definen algunas constantes utilesNot a Number.Se usa para representar errores. Por ejemplo, el resultado de dividir por 0.0.Double.NEGATIVE_INFINITYInfinito positivo y negativo.Ver \"Numeros\".", 
                 "id": "85", 
@@ -981,9 +834,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/270.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "super", 
                 "content": "Cuando una clase B extiende a otra Alos miembros (valores y metodos) no privados de la clase A son accesibles en B usando el prefijo super., incluso si el metodo ha sido redefinido en B. Una clase solo puede referirse a su madre inmediata, no se pueden dar 2 saltos \"hasta la abuela\".", 
                 "id": "270", 
@@ -994,9 +844,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/146.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Genericos", 
                 "content": "Bajo la expresion soporte de genericos java proporciona dos facilidades de programacion bastante diferentes: tipos genericos; que son clases parametrizadas por uno o mas tipos que deben ser facilitados por el programador cuando quiera usar la clase creando objetos metodos genericos, que son metodos en los que los argumentos y/o el resultado incluyen referencias a tipos que no se conoceran hasta que vayamos a usar el metodoProbablemente el principal motivo para el uso de genericos en java sea la necesidad de disponer de colecciones homogeneas de objetos (listas, conjuntos, etc. facilitados en el paquete java.util). Asi el ejemplo mas habitual del uso de genericos es la clase lista generica, definida comodonde E queda a definir. Se dice que E es un tipo formal.En ingles se suele emplear la expresion type parameter para referirse a esos parametros formales que no se refieren a valores, sino a tipos de valores. En la traduccion al espanol, parametros de tipo suena muy extrano, por lo que emplearemos la forma mas tecnica tipo formal indicando que cuando se vaya a utilizar la clase hay que proporcionar un tipo real.Con esta clase generica podemos crear objetos de diferentes tipos new ArrayList<String>   es una lista de String new ArrayList<Integer>  es una lista de Integer new ArrayList<Punto>    es una lista de objetos de clase Puntodonde todos ellos se caracterizan por crear listas homogeneas (todos los elementos son del mismo tipo), resultando programas limpios y, probablemente, con menos errores.El objetivo de los genericos con java es desplazar a tiempo de compilacion los tradicionales errores de ejecucion que ocurrian en programas con fuerte uso de downcasting si el compilador no se queja, se puede asegurar que no habra errores de tipo de datos (casting) en ejecucionQuejarse quiere decir que el compilador protesta como se puede ver en el siguiente ejemplo, al compilar la clase Queue_Array que se usa un poco mas adelante: ", 
                 "id": "146", 
@@ -1007,9 +854,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/276.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "this", 
                 "content": "Todos los objetos disponen de un campo que se llama this y contiene una referencia al propio objeto.", 
                 "id": "276", 
@@ -1020,7 +864,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/274.html", 
-                "links_to": [
+                "linksTo": [
                     "Subclases", 
                     "Superclases"
                 ], 
@@ -1034,7 +878,7 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/33.html", 
-                "links_to": [
+                "linksTo": [
                     "Bucles", 
                     "switch"
                 ], 
@@ -1048,9 +892,6 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/219.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "Objetos", 
                 "content": "Son las diferentes materializaciones de una clase.A partir de una clase se crean objetos usando sentencias new, bien directamente, bien indirectamente por medio de fabricas.Cada objeto debe tener su nombre propio, que no debe repetirse dentro de su ambito para evitar ambiguedades.Por convenio, los nombres de los objetos deben comenzar por una letra minuscula.", 
                 "id": "219", 
@@ -1061,7 +902,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/44.html", 
-                "links_to": [
+                "linksTo": [
                     "Clases", 
                     "Objetos", 
                     "subclases"
@@ -1076,7 +917,7 @@
             "doc": {
                 "topic": "concepto", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/10.html", 
-                "links_to": [
+                "linksTo": [
                     "boolean"
                 ], 
                 "label": "Algebra", 
@@ -1089,9 +930,6 @@
             "doc": {
                 "topic": "palabra reservada", 
                 "resource": "http://www.dit.upm.es/~pepe/libros/vademecum/topics/173.html", 
-                "links_to": [
-                    "otros_conceptos"
-                ], 
                 "label": "instanceof", 
                 "content": "Es un operador boolano que devuelve TRUE si el objeto de la izquierda es de la clase indicada a la derecha o de una subclase de ella. instanceof tambien se puede emplear con arraysdevuelve TRUE si se trata de un array de enteros.siempre devuelve TRUE.", 
                 "id": "173", 
