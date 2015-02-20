@@ -18,7 +18,6 @@ concept: ~dudas [que como hago]
 concept: ~maiareponses [maiaresponse maiaResponse]
 
 topic: ~entrada keep repeat []
-t: Buenas, ¿puedo ayudarte?
 
 u: (~saludos)
     Hola, soy Duke y estoy aqui para ayudarte.
@@ -45,6 +44,7 @@ topic: ~preguntas keep repeat [~dudas]
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
     $pregunta='_0
     ¬sendMaia content $pregunta
+    ¬label $pregunta
     
     # Process the maia responses
     a: (¬maiaResponse content _*)
@@ -77,13 +77,17 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
             c: ()
                 Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
         
+
+u: (~ejemplo ~preposiciones _*)
+    $pregunta='_0
+    ¬sendMaia example $pregunta 
+    a:(¬maiaResponse example _*)
+        '_0
+    a:(¬maiaResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
         
-u: (~ejemplo ~preposiciones _*1)
-    $pregunta=_0
-    ¬sendmaia example _0
-   
 u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendmaia example $pregunta 
+    ¬sendMaia example $pregunta 
     a:(¬maiaResponse example _*)
         '_0
     a:(¬maiaResponse unknown)

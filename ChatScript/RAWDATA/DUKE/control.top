@@ -1,6 +1,7 @@
 # this function is executed once for every new user chatting with Duke
 outputmacro: duke()  # The duke bot for java
-$token = #DO_INTERJECTION_SPLITTING  | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE | #DO_POSTAG  | #DO_PARSE
+$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE | 
+         #DO_DATE_MERGE  | #DO_PROPERNAME_MERGE | #DO_PARSE | #NO_SEMICOLON_END
 ^addtopic(~introductions)
 $control_main = ~control
 $control_post = ~XPOSTPROCESS
@@ -19,8 +20,7 @@ u: ( %input<%userfirstline)
 
 # The concepts are defined in simpletopic
 
-u: () # main per-sentence processing
-
+u: () # main per-sentence processing    
 	$$currenttopic = %topic		# get the current topic at start of volley
 
 	if ( %response == 0 ) {nofail(TOPIC ^rejoinder())}	# try for rejoinders. might generate an answer directly from what we are looking for.

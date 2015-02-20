@@ -29,6 +29,12 @@ cs_buffer_size = 1024
 cs_tcp_ip = '127.0.0.1'
 cs_tcp_port = 1024
 
+# Special Strings to be replaced, in CS, as ";" or "{"
+# to prevent conflicts, since they are considered reserved there.
+cs_tokens = {u"SEMICOLON": u";", u"PARENTESISO": u"(", u"PARENTESISC": u")",
+             u"CURLYO": u"{", u"CURLYC": u"}"}
+                
+
 #Logging system
 log_name='gsibot'
 logger = logging.getLogger(log_name)
@@ -134,10 +140,27 @@ def splitOOB(s):
     command_token = u"¬"
     # Find all ocurrences of "¬", which will indicate Out-of-Band commands
     # If there is no command, return array with just the user input
+    
     if command_token not in s:
         return [s]
     
-    return [command_token + command for command in s.split(command_token)]
+    oob_commands = []
+    # Split by the token
+    oob_commands.append(s[:s.index(command_token)])
+    s = s[s.index(command_token):]
+    while command_token in s:
+        if command_token in s[s.index(command_token)+1:]:
+            # Index of the NEXT oobcommand
+            # Worth mentioning that, at this point, the first char is most likely the token.
+            nindex = s[s.index(command_token)+1:].index(command_token)
+            oob_commands.append(s[s.index(command_token):nindex])
+            s = s[nindex:]
+        else:
+            # This is the last command
+            oob_commands.append(s)
+            s = "" # be done
+
+    return oob_commands
     
 
 #Executes the out-of-band commands and returns the natural language response produced   
@@ -149,34 +172,43 @@ def executeOOB(content,usr,bot):
     # Convert content to utf-8 if not already
     content = toUTF8(content)
     
-    while (u"¬" in content):
+    splitted = splitOOB(content)
+    
+    commands = [c for c in splitted if u"¬" in c]
+    
+    while commands != []:
+        # Get the first command
+        current = commands.pop(0)
+        print(current)
+        if current == "":
+            continue
         
-        #if (("[sendmaia" not in content) and ("[updatekb" not in content) and ("[sendcs" not in content)):
-        #    logger.error("OOB with execution not found: "+content)
-        #    content=""
-            
-        if u"¬sendMaia" in content:
-            content=sendMaia(content[content.index(u"¬sendMaia"):],bot,usr)
-        
-        elif u"¬maiaResponse" in content:
-            cs_output=sendChatScript(content,bot,usr) 
-            cs_output_array=splitOOB(cs_output)
-            response['nl_response'] =response['nl_response'] + cs_output_array[0]
-            cs_output_array.pop(0);
-            content=u""
-            for command in cs_output_array:
-                content+=command;
-        elif u"¬resource" in content:
-            response['resource'] = content.replace(u"¬resource", "")[0:]
-            # Delete the "resource" content, and keep going.
-            content = content[content.index("]")+1:]
-        elif u"¬label" in content:
-            response['label'] = content.replace(u"¬label", "")
-            content = u""
-        else:
-            logger.error("OOB with execution not found: "+content)
-            content=u""
+        print(current)
 
+        if u"¬sendMaia" in current:
+            # Send the response to maia, and re-append the response commands.
+            maia_response = sendMaia(current,bot,usr)
+            commands +=splitOOB(maia_response)
+        
+        elif u"¬maiaResponse" in current:
+            # Send the response to CS, and re-process
+            cs_output=sendChatScript(current,bot,usr) 
+            commands +=splitOOB(cs_output)
+            print commands
+            
+        elif u"¬resource" in current:
+            # The URL to show in the iframe
+            response['resource'] = current.replace(u"¬resource", u"")
+            
+        elif u"¬label" in current:
+            # The label we are using for the data
+            response['label'] =  current.replace(u"¬label", u"")
+            
+        elif u"¬" not in current:
+            #It's natural language, no OOB:
+            response['nl_response']+=current
+        else:
+            logger.error("OOB with execution not found: "+current)
 
     return response
 
@@ -227,7 +259,8 @@ def sendChatScript(query, bot, user):
 def renderJson(query, response, bot, user, fresponse, resource, label):
     # We shouold really make this a little less hardcoded, and more elegant.
 
-    response = response.replace('"', '\\"')
+    for special, replacement in cs_tokens.iteritems():
+        response = response.replace(special, replacement)
     
     print response
 
@@ -278,7 +311,7 @@ def sendMaia(msg,bot,usr):
         # If not json, probably a message form the Agent-system
         logger.info(u"[user: {user}] Received not-json message from maia.".format(user=usr))
     logger.debug(u"[user: {user}] Full response: {response}".format(user=usr, response=response))
-
+    
     return response
 
 # convert given string to utf-8

@@ -128,7 +128,7 @@
    
    
    <field name="label" type="lowercase" indexed="true" stored="true" multiValued="false"/>
-   <field name="links_to" type="text_ws" indexed="true" stored="true" multiValued="true"/>
+   <field name="linksTo" type="text_ws" indexed="true" stored="true" multiValued="true"/>
    <field name="resource" type="string" indexed="true" stored="true" multiValued="false"/>
    <field name="topic" type="lowercase" indexed="true" stored="true" multiValued="false"/>
    <field name="example" type="text_general" indexed="false" stored="true" multiValued="false"/>

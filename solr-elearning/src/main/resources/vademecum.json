@@ -60,7 +60,7 @@
                 "label": "for", 
                 "content": "Los bucles for se ejecutan un numero determinado de veces.", 
                 "id": "138", 
-                "example": "     condicion;     actualizacion)  accion; for (inicializacion;     condicion;     actualizacion) {  accion 1;  accion 2;  ...  accion ...;} "
+                "example": "for PARENTESISO inicializacionSEMICOLON condicionSEMICOLON actualizacionPARENTESISC CURLYOaccion 1SEMICOLON accion 2SEMICOLON ... accion...SEMICOLONCURLYC "
             }
         }, 
         "add": {
