@@ -44,8 +44,10 @@ public class MaiaService extends MaiaClientAdapter{
      */
     public static final String ORIGIN = "origin";
     public static final String USER = "user";
-    public static final String START_DELIMITER = "[";
-    public static final String END_DELIMITER = "]";
+    public static final String COMMAND_DELIMITER = "¬";
+    public static final String USER_DELIMITER_START = "[";
+    public static final String USER_DELIMITER_END = "]";
+    // These three are string instead of chars to simplify deleting them from other strings  
     public static final String GAMBIT = "gambit";
     public static final String UNKNOWN = "unknown";
     public static final String RESPONSE_TAG = "maiaResponse";
@@ -104,14 +106,14 @@ public class MaiaService extends MaiaClientAdapter{
         logger.debug("Message received >> " + content );
         
         // The messages I should accept now:
-        // [sendMaia field field_label]
-        // For example: [content for] [user arhj]
-        //              [example for] [user afhf]
+        // ¬sendMaia field field_label [user userid]
+        // For example: ¬sendMaia content for [user arhj]
+        //              ¬sendMaia example for [user afhf]
         // Additionally, we can get a "gambit" message, where we will look for
         // the closest topic we can get:
-        //								[gambit for] [user afhf]
+        //								¬sendMaia gambit for [user afhf]
         
-        //Sample accepted message: [content dowhile] [user dghg]
+        //Sample accepted message: ¬sendMaia content dowhile [user dghg]
         
         // This seems... inappropriate, but, splitting by space, we should be able to get
         // an array with the labels.
@@ -120,14 +122,14 @@ public class MaiaService extends MaiaClientAdapter{
         
         //Extract keyword to search from the Maia message
         
-        if (contentArray.length != 4) {
+        if (contentArray.length != 5) {
         	throw new IllegalArgumentException("Invalid maia message");
         }
         
         // The tags are separated by an space
-        String field = contentArray[0].replace(START_DELIMITER, "");
-        String keyword = contentArray[1].replace(END_DELIMITER, "");
-        String userName = contentArray[3].replace(END_DELIMITER, "");
+        String field = contentArray[1].replace(COMMAND_DELIMITER, "");
+        String keyword = contentArray[2];
+        String userName = contentArray[4].replace(USER_DELIMITER_END, "");
         
         logger.info("[{}] Searching keyword '{}", userName, keyword);
         
@@ -152,12 +154,20 @@ public class MaiaService extends MaiaClientAdapter{
         	
         	ArrayList<String> searchResult = this.solrServer.search(query, fieldList, 1); 
         	
+        	System.out.println(searchResult.size());
         	if (searchResult.size() !=0) {
         		// We have found data, return the first value
         		// the expected format is something like:
         		//  [maiaResponse resource google.com]
         		// So we take the json response and get only the data
-        		response = field + " " + JSONUtils.find(searchResult.get(0), field);
+        		String searchResponse = searchResult.get(0);
+        		
+        		// If nothing was found, the response would be and empty json ("{}"), so...
+        		if (searchResponse.equals("{}")) {
+        			response = UNKNOWN;
+        		} else {
+        			response = field + " " + JSONUtils.find(searchResponse, fieldList[0]);
+        		}
         	} else {
         		// There is no relevant data in solr, return unknown
         		response = UNKNOWN;
@@ -177,14 +187,14 @@ public class MaiaService extends MaiaClientAdapter{
         response = response.replace("\"","\\\"");
         
         // The response needs to be something like:
-        //					[maiaResponse label data]
-        //					[maiaResponse gambit label]
+        //					¬maiaResponse label data
+        //					¬maiaResponse gambit label
         // For example:
-        //					[maiaResponse resource google.com]
-        // 					[maiaResponse gambit for]
+        //					¬maiaResponse resource google.com
+        // 					¬maiaResponse gambit for
         
-        String full_response = START_DELIMITER + RESPONSE_TAG + " " + response + " " + END_DELIMITER + 
-        		" "+START_DELIMITER + USER + " " + userName + END_DELIMITER;
+        String full_response = COMMAND_DELIMITER + RESPONSE_TAG + " " + response + 
+        		" "+USER_DELIMITER_START + USER + " " + userName + USER_DELIMITER_END;
         logger.info("[{}] Answering >> {}", userName, full_response);
         
         // We return the data we've found, if any.
