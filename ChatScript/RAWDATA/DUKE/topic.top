@@ -14,10 +14,9 @@ concept: ~profesor [profesor profe professor]
 
 concept: ~dudas [que como hago]
 
-# Out-Of-Band commands concepts.
-concept: ~maiareponses [maiaresponse maiaResponse]
-
 topic: ~entrada keep repeat []
+
+t: Hola, en que puedo ayudarte?
 
 u: (~saludos)
     Hola, soy Duke y estoy aqui para ayudarte.
