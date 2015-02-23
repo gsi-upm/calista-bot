@@ -75,6 +75,8 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                 ^reuse(COMIENZO)
             c: (~negacion)
                 Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+        b:(¬maiaResponse unknown)
+            _	
         
 
 u: (~ejemplo ~preposiciones _*)
