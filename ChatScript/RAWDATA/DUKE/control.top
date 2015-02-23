@@ -1,6 +1,6 @@
 # this function is executed once for every new user chatting with Duke
 outputmacro: duke()  # The duke bot for java
-$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #NO_SEMICOLON_END | #NO_COLON_END  | #DO_PROPERNAME_MERGE
+$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE | #DO_DATE_MERGE  | #DO_PROPERNAME_MERGE | #DO_PARSE 
 
 ^addtopic(~introductions)
 $control_main = ~control

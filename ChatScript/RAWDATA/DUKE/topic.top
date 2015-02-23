@@ -16,7 +16,6 @@ concept: ~dudas [que como hago tienes ejemplo]
 
 topic: ~entrada keep repeat []
 
-t: Hola, en que puedo ayudarte?
 
 u: (~saludos)
     Hola, soy Duke y estoy aqui para ayudarte.
@@ -36,7 +35,9 @@ u: (~que ~hacer)
 u: (¬echo _* )
     '_0
     
-topic: ~preguntas keep repeat [~dudas]
+t: Hola, en que puedo ayudarte?
+
+# topic: ~preguntas keep repeat [~dudas]
 # Generic questions
 #! que es un for?
 
@@ -56,13 +57,12 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                 Tambien puedes preguntarme sobre '_0 \@full\_response
             c:(¬maiaResponse unknown)
                 \@fullResponse
-        b: () # No matter if there is a link or not, ask for related
+        b: (¬maiaResponse unknown) # No matter if there is a link or not, ask for related
             ¬sendMaia linksTo $pregunta
             c: (¬maiaResponse linksTo _*)
                 Tambien puedes preguntarme sobre '_0 \@full\_response
             c:(¬maiaResponse unknown)
                 \@fullResponse
-            
         
     a: (¬maiaResponse unknown)
         Lo siento, no se nada sobre $pregunta ¬sendMaia gambit $pregunta
@@ -70,10 +70,10 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
         b:(¬maiaResponse gambit _*1)
             $$pregunta_gambit=_0
             Puedo explicarte $$pregunta_gambit, te sirve?
-            c: (si)
+            c: (~afirmacion)
                 $pregunta=$$pregunta_gambit
                 ^reuse(COMIENZO)
-            c: ()
+            c: (~negacion)
                 Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
         
 
@@ -98,7 +98,7 @@ u: (~ejemplo)
         $pregunta=_0
         ^reuse(EJEMPLO)
 
-topic: ~jasonpatterns keep repeat [java]
+# topic: ~jasonpatterns keep repeat [java]
 # Jason backwards-compatibility patterns
 
 #! [java sample iteracion]
