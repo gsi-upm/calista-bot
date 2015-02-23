@@ -31,8 +31,10 @@ cs_tcp_port = 1024
 
 # Special Strings to be replaced, in CS, as ";" or "{"
 # to prevent conflicts, since they are considered reserved there.
-cs_tokens = {u"SEMICOLON": u";", u"PARENTESISO": u"(", u"PARENTESISC": u")",
-             u"CURLYO": u"{", u"CURLYC": u"}"}
+cs_tokens = {u"SEMICOLON": u";", u"COLN": u":", u"PARENTESISO": u"(", 
+             u"PARENTESISC": u")", u"CURLYO": u"{", u"CURLYC": u"}",
+             u"BRACKETO": u"[", u"BRACKETC": u"]", u"WILDCARD": u"*"}
+# Can't use a tag containing other, or the replace may mess it up
                 
 
 #Logging system

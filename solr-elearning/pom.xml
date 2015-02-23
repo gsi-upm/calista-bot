@@ -4,7 +4,7 @@
 
     <groupId>es.gsi.dit.upm.es.calista-bot</groupId>
     <artifactId>solr-elearning</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>solr-elearning</name>

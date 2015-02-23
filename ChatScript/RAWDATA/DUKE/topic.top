@@ -12,7 +12,7 @@ concept: ~profesor [profesor profe professor]
 
 # For some reason two-letter words  must be capitalized
 
-concept: ~dudas [que como hago]
+concept: ~dudas [que como hago tienes ejemplo]
 
 topic: ~entrada keep repeat []
 
@@ -80,7 +80,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
     ¬sendMaia example $pregunta 
-    a:(¬maiaResponse example _*)
+    a:(maiaResponse example _*)
         '_0
     a:(¬maiaResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
