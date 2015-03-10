@@ -67,7 +67,7 @@ maia = maia.Maia('ws://'+maia_uri+':'+maia_port, logger)
 maia.connect()
 
 # General config
-host_name = 'alpha.gsi.dit.upm.es'
+host_name = 'localhost'
 host_port = 8090
 
 
