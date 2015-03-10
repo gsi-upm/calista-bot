@@ -1,0 +1,8 @@
+Unidecode==0.04.17
+argparse==1.2.1
+backports.ssl-match-hostname==3.4.0.2
+gevent==1.0.1
+greenlet==0.4.5
+six==1.9.0
+websocket-client==0.26.0
+wsgiref==0.1.2
