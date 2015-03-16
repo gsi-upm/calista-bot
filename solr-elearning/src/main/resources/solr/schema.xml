@@ -506,5 +506,5 @@
                              ratesFileLocation: URL or path to rates JSON file (default latest.json on the web)
                              refreshInterval: Number of minutes between each rates fetch (default: 1440, min: 60)
    -->
-  
+
 </schema>
