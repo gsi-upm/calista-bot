@@ -142,7 +142,7 @@
    <field name="examples" type="text_general" indexed="false" stored="true" multiValued="true"/>
    
    <!-- "Cacth all" field to copy the text fields and search -->
-   <field name="search_field" type="text_general" indexed="true" stored="false" multiValued="true"/>
+   <field name="search_field" type="text_search" indexed="true" stored="false" multiValued="true"/>
    <copyField source="title" dest="search_field"/>
    <copyField source="alternative" dest="search_field"/>
    <copyField source="concept" dest="search_field"/>
@@ -349,6 +349,9 @@
       <analyzer>
         <tokenizer class="solr.WhitespaceTokenizerFactory"/>
       </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+      </analyzer>
     </fieldType>
 
     <!-- A text type for English text where stopwords and synonyms are managed using the REST API -->
@@ -506,5 +509,20 @@
                              ratesFileLocation: URL or path to rates JSON file (default latest.json on the web)
                              refreshInterval: Number of minutes between each rates fetch (default: 1440, min: 60)
    -->
-
+    
+    <!-- Text search case-insensitive and accented-chars-insensitive -->
+    <fieldType name="text_search" class="solr.TextField" positionIncrementGap="0">
+        <analyzer type="index">
+            <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
+            <!--<filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="50" side="front"/>-->
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
+        </analyzer>
+    </fieldType>
+  
 </schema>
