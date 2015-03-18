@@ -432,10 +432,14 @@
       <analyzer type="index">
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
       </analyzer>
       <analyzer type="query">
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <!-- Delete non-letters from the query -->
+        <!--<filter class="solr.PatternReplaceFilterFactory" pattern="[^\w\s]" replacement="" replace="all"/>-->
       </analyzer>
     </fieldType>
 
