@@ -140,13 +140,6 @@
    
    <!-- Each topic can have different examples -->
    <field name="examples" type="text_general" indexed="false" stored="true" multiValued="true"/>
-   
-   <!-- "Cacth all" field to copy the text fields and search -->
-   <field name="search_field" type="text_search" indexed="true" stored="false" multiValued="true"/>
-   <copyField source="title" dest="search_field"/>
-   <copyField source="alternative" dest="search_field"/>
-   <copyField source="concept" dest="search_field"/>
-   <copyField source="description" dest="search_field"/>
 
    <!-- Dynamic field definitions allow using convention over configuration
        for fields via the specification of patterns to match field names. 
@@ -515,7 +508,7 @@
    -->
     
     
-        <!-- Spanish -->
+    <!-- Spanish -->
     <fieldType name="text_es" class="solr.TextField" positionIncrementGap="100">
       <analyzer> 
         <tokenizer class="solr.StandardTokenizerFactory"/>
@@ -526,6 +519,7 @@
       </analyzer>
     </fieldType>
     
+    <!-- Based on Solr default spanish fields-->
     <fieldType name="text_search_es" class="solr.TextField" positionIncrementGap="50">
         <analyzer type="index">
             <tokenizer class="solr.StandardTokenizerFactory"/>
@@ -536,12 +530,13 @@
         </analyzer>
         <analyzer type="query">
             <tokenizer class="solr.StandardTokenizerFactory"/>
+            <!-- Lowecase and spanish stemming-->
             <filter class="solr.LowerCaseFilterFactory"/>
             <filter class="solr.StopFilterFactory" ignoreCase="true"
                     words="lang/stopwords_es.txt" format="snowball" />
             <filter class="solr.SpanishLightStemFilterFactory"/>
-            <!--<filter class="solr.PatternReplaceFilterFactory" 
-            pattern="([^\w\s])" replacement="" replace="all" />-->
+            
+            <!-- Replace puntuaction marks -->
             <filter class="solr.WordDelimiterFilterFactory"
                     generateWordParts="1"
                     splitOnCaseChange="0"
@@ -555,6 +550,7 @@
     <fieldType name="text_search" class="solr.TextField" positionIncrementGap="0">
         <analyzer type="index">
             <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            <!-- Lowercase and ignore accented chars -->
             <filter class="solr.LowerCaseFilterFactory"/>
             <filter class="solr.ASCIIFoldingFilterFactory"/>
         </analyzer>
@@ -562,6 +558,8 @@
             <tokenizer class="solr.WhitespaceTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
             <filter class="solr.ASCIIFoldingFilterFactory"/>
+            
+            <!-- Attempt at replacing puntuiation marks, not working -->
             <filter class="solr.PatternReplaceFilterFactory" 
                     pattern="([^\w\s])" replacement="" replace="all" />
             </analyzer>
