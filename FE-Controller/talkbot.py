@@ -6,7 +6,8 @@ from setuptools.command.sdist import re_finder
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib/ext'))
 
-from bottle import route, run, request, response
+#from bottle import route, run, request, response
+import flask
 from socket import socket
 from re import sub
 
@@ -21,7 +22,7 @@ import logging
 import logging.handlers
 
 this_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))    
-response.content_type = 'application/json'
+#flask.response.content_type = 'application/json'
 
 
 #ChatScript variables
@@ -70,25 +71,27 @@ maia.connect()
 host_name = 'localhost'
 host_port = 8090
 
+app = flask.Flask(__name__)
 
-@route('/')
+
+@app.route('/')
 def rootURL():
     return TalkToBot()  
     
-@route('/TalkToBot') 
+@app.route('/TalkToBot') 
 def TalkToBot():
     
-    feedback=request.query.feedback or '0'
+    feedback=flask.request.query.feedback or '0'
     if (feedback != '0'):
         saveFeedback()
         return;
     
     
     #Collect URI parameters
-    query_q = unidecode(request.query.q)
-    query_user = request.query.user or 'anonymous'
-    query_bot = request.query.bot or 'Duke'
-    query_lang = request.query.lang or 'es'
+    query_q = unidecode(flask.request.query.q)
+    query_user = flask.request.query.user or 'anonymous'
+    query_bot = flask.request.query.bot or 'Duke'
+    query_lang = flask.request.query.lang or 'es'
 
     full_response = '0' #Default values
     
@@ -124,16 +127,17 @@ def TalkToBot():
 
 
     #Render natural language response in JSON format
-    return renderJson(query_q, nl_response, query_bot, query_user, full_response, oob_resource, oob_label)
+    json_response = renderJson(query_q, nl_response, query_bot, query_user, full_response, oob_resource, oob_label)
+    return flask.Response(json_response, content_type="application/json")
 
 def saveFeedback():
 
-    log_text="feedback using bot '"+request.query.bot+"' in question '"+request.query.q+"' with answer given '"+request.query.response
+    log_text="feedback using bot '"+flask.request.query.bot+"' in question '"+flask.request.query.q+"' with answer given '"+flask.request.query.response
     
-    if (request.query.feedback=='2'):
-        logger.error("[user: "+request.query.user+"] Negative "+log_text)
+    if (Flask.request.query.feedback=='2'):
+        logger.error("[user: "+flask.request.query.user+"] Negative "+log_text)
     else:
-        logger.info("[user: "+request.query.user+"] Positive "+log_text)
+        logger.info("[user: "+flask.request.query.user+"] Positive "+log_text)
 
     
 
@@ -323,4 +327,5 @@ def toUTF8(string):
     return string
     
 if __name__ == '__main__':
-    run(host=host_name, port=host_port, debug=True)
+    app.debug = True
+    app.run(host=host_name)
