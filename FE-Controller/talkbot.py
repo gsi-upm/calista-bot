@@ -312,7 +312,7 @@ def sendMaia(msg,bot,usr):
     # Logs
     try:
         data = json.loads(response)
-        logger.info(u"[user: {user}] Received response from maia about {label}".format(user=usr, label=data['label']))
+        logger.info(u"[user: {user}] Received response from maia about {label}".format(user=usr, label=data['title']))
     except:
         # If not json, probably a message form the Agent-system
         logger.info(u"[user: {user}] Received not-json message from maia.".format(user=usr))

@@ -53,9 +53,16 @@ public class MaiaService extends MaiaClientAdapter{
     public static final String RESPONSE_TAG = "maiaResponse";
     
     // TODO: Get this from the config
-    public static final String CONTENT = "content";
+    // Field to do a general text search
+    public static final String SEARCH_FIELD = "search_field";
+    /*
+     * In the near future, this will be changed by a eDisMax query.
+     * Soon(TM) 
+     */
     
-    // Maybe make them a config option?
+    
+    
+    // TODO: Maybe make them a config option?
     
     /**
      * 
@@ -139,9 +146,10 @@ public class MaiaService extends MaiaClientAdapter{
         	String[] fieldList = new String[1];
         	
         	// There may be a better way of doing this?
+        	// Yes, use eDisMax, goddammit!
         	if (field.equals(GAMBIT)) {
         		// In this case, we search by the text contents fields, and want the label
-        		query = CONTENT + ":" + keyword;
+        		query = SEARCH_FIELD + ":" + keyword;
         		// The label is the search tag we will use if the "gambit"is accepted. 
         		fieldList[0] = this.solrServer.getSearchTag();
         	} else {

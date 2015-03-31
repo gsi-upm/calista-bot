@@ -24,6 +24,8 @@ This will produce a large output. You can now test the bot, or exit and launch i
     username: >:quit
     Exiting ChatScript via Quit
     username@host:~/calista-bot/ChatScript$ ./LinuxChatScript64
+    
+If you are having trouble building the bot, try deleting the contents of the TMP, USERS and LIVEDATA folders.    
 
 ## License
 
@@ -40,4 +42,5 @@ language governing permissions and limitations under the License.
 ![GSI Logo](http://gsi.dit.upm.es/templates/jgsi/images/logo.png)
 
 This project has been developed from the master thesis of [Javier Herrera](https://github.com/javiherrera), as part of the [Alberto Mardomingo](https://github.com/amardomingo) master thesis under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
+
 

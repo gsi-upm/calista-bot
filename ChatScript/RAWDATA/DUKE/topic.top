@@ -43,23 +43,23 @@ t: Hola, en que puedo ayudarte?
 
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
     $pregunta='_0
-    ¬sendMaia content $pregunta
+    ¬sendMaia definition $pregunta
     ¬label $pregunta
     
     # Process the maia responses
-    a: (¬maiaResponse content _*)
-        '_0 ¬sendMaia resource $pregunta
+    a: (¬maiaResponse definition _*)
+        '_0 ¬sendMaia url $pregunta
         
         # Ask for the link to show in the frame
-        b: (¬maiaResponse resource _*)
-            ¬resource '_0 _ ¬sendMaia linksTo $pregunta
-            c: (¬maiaResponse linksTo _*)
+        b: (¬maiaResponse url _*)
+            ¬resource '_0 _ ¬sendMaia links $pregunta
+            c: (¬maiaResponse links _*)
                 Tambien puedes preguntarme sobre '_0 \@full\_response
             c:(¬maiaResponse unknown)
                 \@fullResponse
         b: (¬maiaResponse unknown) # No matter if there is a link or not, ask for related
-            ¬sendMaia linksTo $pregunta
-            c: (¬maiaResponse linksTo _*)
+            ¬sendMaia links $pregunta
+            c: (¬maiaResponse links _*)
                 Tambien puedes preguntarme sobre '_0 \@full\_response
             c:(¬maiaResponse unknown)
                 \@fullResponse
