@@ -6,7 +6,6 @@ from setuptools.command.sdist import re_finder
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'lib/ext'))
 
-#from bottle import route, run, request, response
 import flask
 from socket import socket
 from re import sub
@@ -23,7 +22,6 @@ import logging.handlers
 
 this_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))    
 #flask.response.content_type = 'application/json'
-
 
 #ChatScript variables
 cs_buffer_size = 1024
@@ -68,11 +66,11 @@ maia = maia.Maia('ws://'+maia_uri+':'+maia_port, logger)
 maia.connect()
 
 # General config
-host_name = 'localhost'
-host_port = 8090
+host_name = 'demos.gsi.dit.upm.es'
+host_port = 5005
 
 app = flask.Flask(__name__)
-
+app.debug = True
 
 @app.route('/')
 def rootURL():
@@ -81,17 +79,18 @@ def rootURL():
 @app.route('/TalkToBot') 
 def TalkToBot():
     
-    feedback=flask.request.query.feedback or '0'
-    if (feedback != '0'):
+    query = flask.request.args
+    if 'feedback' in query:
         saveFeedback()
         return;
     
     
     #Collect URI parameters
-    query_q = unidecode(flask.request.query.q)
-    query_user = flask.request.query.user or 'anonymous'
-    query_bot = flask.request.query.bot or 'Duke'
-    query_lang = flask.request.query.lang or 'es'
+    query_q = unidecode(query['q'])
+    query_user = query['user'] or 'anonymous'
+    query_bot = query['bot'] or 'Duke'
+    #query_lang = query['lang'] or 'es'
+    query_lang = 'es'
 
     full_response = '0' #Default values
     
@@ -128,16 +127,17 @@ def TalkToBot():
 
     #Render natural language response in JSON format
     json_response = renderJson(query_q, nl_response, query_bot, query_user, full_response, oob_resource, oob_label)
+    print(json_response)
     return flask.Response(json_response, content_type="application/json")
 
 def saveFeedback():
 
-    log_text="feedback using bot '"+flask.request.query.bot+"' in question '"+flask.request.query.q+"' with answer given '"+flask.request.query.response
+    log_text="feedback using bot '"+flask.request.args['bot']+"' in question '"+flask.request.args['q']+"' with answer given '"+flask.request.args['response']
     
     if (Flask.request.query.feedback=='2'):
-        logger.error("[user: "+flask.request.query.user+"] Negative "+log_text)
+        logger.error("[user: "+flask.request.args['user']+"] Negative "+log_text)
     else:
-        logger.info("[user: "+flask.request.query.user+"] Positive "+log_text)
+        logger.info("[user: "+flask.request.args['user']+"] Positive "+log_text)
 
     
 
@@ -159,11 +159,11 @@ def splitOOB(s):
             # Index of the NEXT oobcommand
             # Worth mentioning that, at this point, the first char is most likely the token.
             nindex = s[s.index(command_token)+1:].index(command_token)
-            oob_commands.append(s[s.index(command_token):nindex])
+            oob_commands.append(unicode(s[s.index(command_token):nindex]))
             s = s[nindex:]
         else:
             # This is the last command
-            oob_commands.append(s)
+            oob_commands.append(unicode(s))
             s = "" # be done
 
     return oob_commands
@@ -180,16 +180,14 @@ def executeOOB(content,usr,bot):
     
     splitted = splitOOB(content)
     
-    commands = [c for c in splitted if u"¬" in c]
+    commands = [unicode(c) for c in splitted if u"¬" in c]
     
     while commands != []:
         # Get the first command
         current = commands.pop(0)
-        print(current)
+        
         if current == "":
             continue
-        
-        print(current)
 
         if u"¬sendMaia" in current:
             # Send the response to maia, and re-append the response commands.
@@ -237,7 +235,7 @@ def sendChatScript(query, bot, user):
     
     # Message to server is 3 strings-   username, botname, message     
     # Each part must be null-terminated with \0
-    socketmsg = user+"\0"+bot+"\0"+query +"\0"
+    socketmsg = user+u"\0"+bot+u"\0"+query +u"\0"
     s = socket()
     try:
 
@@ -259,7 +257,7 @@ def sendChatScript(query, bot, user):
         data = u"ChatScript connection error"
 
     logger.info(u"[user: {user}] ChatScript output: {output}".format(user=user, output=data))
-    return data
+    return unicode(data)
 
 #Renders the response in Json
 def renderJson(query, response, bot, user, fresponse, resource, label):
@@ -268,8 +266,6 @@ def renderJson(query, response, bot, user, fresponse, resource, label):
     for special, replacement in cs_tokens.iteritems():
         response = response.replace(special, replacement)
     
-    print response
-
     # TODO: I should probably remove this "hard-coded" tags, and place them in a config.
     response_dict = {}
     response_dict['dialog'] = {}
@@ -305,16 +301,15 @@ def sendMaia(msg,bot,usr):
     response = ""
 
     # Keeps waiting for new messages until a timeout
-    response = maia.wait_for_message(1, usr)
+    response = unicode(maia.wait_for_message(2, usr))
     
-    print("respuesta:" + response)
-
     # Logs
     try:
-        data = json.loads(response)
+        data = json.loads(response, ensure_ascii=False)
         logger.info(u"[user: {user}] Received response from maia about {label}".format(user=usr, label=data['title']))
     except:
         # If not json, probably a message form the Agent-system
+	print(response.encode('utf-8'))
         logger.info(u"[user: {user}] Received not-json message from maia.".format(user=usr))
     logger.debug(u"[user: {user}] Full response: {response}".format(user=usr, response=response))
     

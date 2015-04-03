@@ -62,21 +62,21 @@ class Maia:
 
         # I get a message from the queue, with timeout.
         # If the timeout triggers, I return an empty string
-        response = ""
+        response = u""
         try:
             if user in self.rcvd_msgs:
 
                 # I wait until no more messages are received
                 while (True):
-                    msg = self.rcvd_msgs[user].get(True, timeout)
-                    self.logger.info("Received from maia>> " + msg)
+                    msg = unicode(self.rcvd_msgs[user].get(True, timeout))
+                    self.logger.info(u"Received from maia>> " + msg)
                     
                     # I may receive duplicated messages
                     if msg not in response:
                         response +=msg
         except Queue.Empty:
             # Log error?
-            self.logger.debug("[user: {user}] Maia timeout. continuing...".format(user=user))
+            self.logger.debug(u"[user: {user}] Maia timeout. continuing...".format(user=user))
             
         return response
 
