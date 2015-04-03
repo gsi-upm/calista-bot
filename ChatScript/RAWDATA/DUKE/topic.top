@@ -52,7 +52,11 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
         
         # Ask for the link to show in the frame
         b: (¬maiaResponse id _*)
-            ¬id '_0
+            ¬id '_0 _ ¬sendMaia links $pregunta
+            c: (¬maiaResponse links _*)
+                Tambien puedes preguntarme sobre '_0 \@full\_response
+            c:(¬maiaResponse unknown)
+                \@fullResponse
         b: (¬maiaResponse url _* )
             ¬resource '_0 _ ¬sendMaia links $pregunta
             c: (¬maiaResponse links _*)
