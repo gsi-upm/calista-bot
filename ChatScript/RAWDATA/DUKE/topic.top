@@ -48,10 +48,12 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬maiaResponse definition _*)
-        '_0 ¬sendMaia url $pregunta
+        '_0 ¬sendMaia id $pregunta
         
         # Ask for the link to show in the frame
-        b: (¬maiaResponse url _*)
+        b: (¬maiaResponse id _*)
+            ¬id '_0
+        b: (¬maiaResponse url _* )
             ¬resource '_0 _ ¬sendMaia links $pregunta
             c: (¬maiaResponse links _*)
                 Tambien puedes preguntarme sobre '_0 \@full\_response

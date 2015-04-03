@@ -65,9 +65,14 @@ maia_port = '1337'
 maia = maia.Maia('ws://'+maia_uri+':'+maia_port, logger) 
 maia.connect()
 
+# Vadmecum url
+vademecum_url = u'http://www.dit.upm.es/~pepe/libros/vademecum/topics/{url}.html'
+
 # General config
 host_name = 'demos.gsi.dit.upm.es'
 host_port = 5005
+
+
 
 app = flask.Flask(__name__)
 app.debug = True
@@ -207,7 +212,13 @@ def executeOOB(content,usr,bot):
         elif u"¬label" in current:
             # The label we are using for the data
             response['label'] =  current.replace(u"¬label", u"")
-            
+        
+        elif u'¬id' in current:
+            # For some reason, chatscript is not reading properly the urls OoB.
+            # This is a hacky way to work around it
+            url_id = (current.replace(u"¬resource", u"")).strip()
+            response['resource'] = vademecum_url.format(url=url_id)
+        
         elif u"¬" not in current:
             #It's natural language, no OOB:
             response['nl_response']+=current
