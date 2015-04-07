@@ -127,7 +127,7 @@
    <field name="title" type="text_search_es" indexed="true" stored="true" multiValued="false"/>
    <field name="alternative" type="lowercase" indexed="true" stored="true" multiValued="false"/>
    <field name="concept" type="lowercase" indexed="true" stored="true" multiValued="false"/>
-   <field name="url" type="string" indexed="true" stored="true" multiValued="false"/>
+   <field name="resource" type="string" indexed="true" stored="true" multiValued="false"/>
    
    <!-- First sentence of the scrapped text -->
    <field name="definition" type="text_search_es" indexed="true" stored="true" multiValued="false"/>
