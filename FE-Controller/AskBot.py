@@ -3,8 +3,10 @@
 
 import os, sys
 
+from unidecode import unidecode
+
 import flask
-import requests
+import requests, socket
 
 app = flask.Flask(__name__)
 # Flask settings 
@@ -15,13 +17,26 @@ port=4242
 solr = {'host': 'localhost', 'port':8080, 
         'core': 'elearning'}
 
+# ChatScript settings:
+# The agent should be randomly set for each user
+# Also, I should probably make another bot, say "Arthur" to answer the questions
+cs = {'bot': 'Duke', 'host':'localhost',
+      'port': 1024, 'agent':'ErrorAgent'}
 @app.route('/')
 def rootURL():
     return "Hola mundo"
 
 @app.route('/ask')
 def ask():
-    return flask.jsonify(sendSolrEDisMax("que es un for"))
+    """
+    Receives a question and returns an answer
+    """
+    response = {}
+    response['solr'] = sendSolrEDisMax("que es un for")
+    #TODO: Change the agent for one sent from the client
+    response['cs'] = sendChatScript("que es un for", cs['agent'])
+    
+    return flask.jsonify(response)
 
 
 # TODO: Take the solr functionality to a "lib" module
@@ -79,11 +94,24 @@ def sendSolr(payload):
     print(response)
     return {'answer':response['response']['docs'][0], 'response':response}
 
-def sendChatScript(question):
+def sendChatScript(question, agent):
     """
     Using a websocket, send the question to ChatScript
     """
-    return "TODO"
+    query = agent + '\0' + 'Duke\0' + unidecode(question) +'\0'
+    
+    s = socket.socket()
+
+    s.connect((cs['host'],cs['port']))
+    s.send(query)
+    # Read response
+    data = s.recv(1024)
+    response = ""
+    while data:
+        response += data
+        data = s.recv(1024) 
+    
+    return unicode(response, encoding="utf-8")
 
 if __name__ == '__main__':
     app.debug = True
