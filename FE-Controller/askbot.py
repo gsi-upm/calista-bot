@@ -37,9 +37,8 @@ def ask():
     req = flask.request.args
     
     agent = req['username'] or cs['agent']
-    print(req['question'])
     response = {}
-    response['solr'] = sendSolrEDisMax(req['question'])['answer']
+    response['solr'] = sendSolrEDisMax(req['question'].replace('?', ''))['answer']
     #TODO: Change the agent for one sent from the client
     response['cs'] = sendChatScript(req['question'], cs['agent'])
     
