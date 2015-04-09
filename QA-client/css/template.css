@@ -1,0 +1,13 @@
+.form-group {
+    width: 60%;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+#iframe-qa {
+    margin-top: 2%;
+    width: 100%;
+    display: none;
+    border:0px;
+    height: 1000px;
+}

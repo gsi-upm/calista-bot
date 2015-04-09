@@ -9,6 +9,7 @@ import flask
 import requests, socket
 
 app = flask.Flask(__name__)
+app.debug = True
 # Flask settings 
 host='localhost'
 port=4242
@@ -22,19 +23,25 @@ solr = {'host': 'localhost', 'port':8080,
 # Also, I should probably make another bot, say "Arthur" to answer the questions
 cs = {'bot': 'Duke', 'host':'localhost',
       'port': 1024, 'agent':'ErrorAgent'}
+
+
 @app.route('/')
 def rootURL():
-    return "Hola mundo"
+    return ask()
 
 @app.route('/ask')
 def ask():
     """
     Receives a question and returns an answer
     """
+    req = flask.request.args
+    
+    agent = req['username'] or cs['agent']
+    print(req['question'])
     response = {}
-    response['solr'] = sendSolrEDisMax("que es un for")
+    response['solr'] = sendSolrEDisMax(req['question'])['answer']
     #TODO: Change the agent for one sent from the client
-    response['cs'] = sendChatScript("que es un for", cs['agent'])
+    response['cs'] = sendChatScript(req['question'], cs['agent'])
     
     return flask.jsonify(response)
 
@@ -91,7 +98,7 @@ def sendSolr(payload):
     if 'rows' not in payload:
         payload['rows'] = '1'
     response = requests.get(solr_url, params=payload).json()
-    print(response)
+    
     return {'answer':response['response']['docs'][0], 'response':response}
 
 def sendChatScript(question, agent):
