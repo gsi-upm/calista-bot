@@ -1,3 +1,16 @@
+// Autocomplete data
+
+var autocom_questions = [
+    "Que es un for?",
+    "Que es un while?",
+    "Como hago una interfaz?",
+    "Que es javadoc?",
+    "Donde puedo ver un ejemplo de for?",
+    "Que es una excepción?",
+    "Querría un ejemplo de while",
+    "Como hago un bucle"
+];
+
 jQuery(document).ready(function($){
 
     /* Store the url shown */
@@ -23,6 +36,8 @@ jQuery(document).ready(function($){
     // Set the username in the form
     $('#form-username').val(username)
     
+    // Autocomplete
+    $('#question').autocomplete({source: autocom_questions});
     /**/
     $('#qa-form').on('submit', function(){
 
@@ -65,6 +80,7 @@ jQuery(document).ready(function($){
 
         return false;
     });
+    
 
     // Generates a Random string for the user id
     function randomString(length) {
