@@ -15,8 +15,20 @@
     height: 100%;
 }
 
+#iframe-container {
+   height: 80%;
+   float: left;
+   width: 80%
+}
+
+#related-container {
+   margin-left: 85%;
+   display: none;
+}
+
 #qa-response {
-    height: 80%;
+    margin-top: 5%;
+    height: 100%;
 }
 
 html, body {

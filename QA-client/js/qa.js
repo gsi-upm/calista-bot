@@ -64,14 +64,24 @@ jQuery(document).ready(function($){
             dataType: 'json',
             contentType: 'application/json;charset=UTF-8',
             success: function (data_resp) {
+                $('#iframe-qa').fadeOut('slow');
+                $('#related-container').fadeOut('slow');
                 console.log(data_resp);
                 // Set the url as a response
-                if(data_resp.solr.resource != current_url_shown) {
+                if(data_resp.resource != current_url_shown) {
                     // I want the filename from that url:
-                    $('#iframe-qa').attr('src', data_resp.solr.resource);
-                    current_url_shown = data_resp.solr.resource
-                    $('#iframe-qa').show();
+                    $('#iframe-qa').attr('src', data_resp.resource);
+                    current_url_shown = data_resp.resource
+                    $('#iframe-qa').fadeIn('slow');
                 }
+                related_list="<ul>";
+                data_resp.links.forEach(function(entry){
+                    related_list+='<li><a href="'+entry.resource+'">'+entry.title+'</a>';
+                    related_list+=': '+entry.definition + '</li>';
+                });
+                related_list+='</ul>';
+                $('#related-list').html(related_list);
+                $('#related-container').fadeIn('slow');
             },
             error: function(data_resp){
                 console.log("Error connecting to the contoller");

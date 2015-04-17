@@ -166,7 +166,7 @@ public class MaiaService extends MaiaClientAdapter{
         	if (searchResult.size() !=0) {
         		// We have found data, return the first value
         		// the expected format is something like:
-        		//  [maiaResponse resource google.com]
+        		//  ¬maiaResponse resource google.com
         		// So we take the json response and get only the data
         		String searchResponse = searchResult.get(0);
         		

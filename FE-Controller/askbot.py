@@ -38,14 +38,14 @@ def ask():
     
     agent = req['username'] or cs['agent']
     response = {}
-    response['solr'] = sendSolrEDisMax(req['question'].replace('?', ''))['answer']
+    response= sendSolrEDisMax(req['question'].replace('?', ''))['answer']
     #TODO: Change the agent for one sent from the client
-    response['cs'] = sendChatScript(req['question'], cs['agent'])
     
     return flask.jsonify(response)
 
 
 # TODO: Take the solr functionality to a "lib" module
+
 
 def sendSolrDefault(question, fl=None):
     """
@@ -79,7 +79,22 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
     if fl:
         payload['fl'] = fl
     
-    return sendSolr(payload)
+    solr_response = sendSolr(payload)
+    
+    links = solr_response['answer']['links']
+    links_names = []
+    links.pop
+    for link in links:
+        # Ignore the general "vademecum root" link
+        if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
+            query = {'q':'resource: "{url}"'.format(url=link)}
+            q_response = sendSolr(query)
+            links_names.append({'title':q_response['answer']['title'],
+                                'definition':q_response['answer']['definition'],
+                                'resource':link})
+    
+    solr_response['answer']['links'] = links_names
+    return  solr_response
     
 def sendSolr(payload):
     """
@@ -96,28 +111,11 @@ def sendSolr(payload):
         payload['wt'] = 'json'
     if 'rows' not in payload:
         payload['rows'] = '1'
+    print('Query: {payload}'.format(payload=str(payload)))
     response = requests.get(solr_url, params=payload).json()
     
+    
     return {'answer':response['response']['docs'][0], 'response':response}
-
-def sendChatScript(question, agent):
-    """
-    Using a websocket, send the question to ChatScript
-    """
-    query = agent + '\0' + 'Duke\0' + unidecode(question) +'\0'
-    
-    s = socket.socket()
-
-    s.connect((cs['host'],cs['port']))
-    s.send(query)
-    # Read response
-    data = s.recv(1024)
-    response = ""
-    while data:
-        response += data
-        data = s.recv(1024) 
-    
-    return unicode(response, encoding="utf-8")
 
 if __name__ == '__main__':
     app.debug = True

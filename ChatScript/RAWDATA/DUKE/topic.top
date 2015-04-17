@@ -81,15 +81,15 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
 
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
-    ¬sendMaia example $pregunta 
-    a:(maiaResponse example _*)
+    ¬sendMaia examples $pregunta 
+    a:(maiaResponse examples _*)
         '_0
     a:(¬maiaResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
         
 u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendMaia example $pregunta 
-    a:(¬maiaResponse example _*)
+    ¬sendMaia examples $pregunta 
+    a:(¬maiaResponse examples _*)
         '_0
     a:(¬maiaResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta

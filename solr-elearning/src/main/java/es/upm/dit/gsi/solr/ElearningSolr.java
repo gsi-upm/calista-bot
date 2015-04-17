@@ -194,17 +194,7 @@ public class ElearningSolr {
     		jsonResult.putAll((docResult));
     		
     		result.add(jsonResult.toString());
-    		
-    		// Current response (without field filters)
-    		// Answering >> {"topic":"concepto",
-    		//				 "resource":"http://www.dit.upm.es/~pepe/libros/vademecum/topics/200.html",
-    		//				 "links_to":["otros_conceptos"],
-    		//				 "label":"Metodo",
-    		//				 "content":"Un metodo es un poco de codigo con una mision. [...]",
-    		//				 "id":"200",
-    		//               "example":"  return a + b;} char suma (char c, int n) {",
-    		//               "_version_":1485018480819306497
-    		//				 }
+
     	}
     	return result;
     }
