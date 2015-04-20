@@ -1,0 +1,73 @@
+concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
+concept: ~que [que]
+concept: ~ser [ser eres Es sabes_sobre]
+concept: ~hacer [hacer haces hace]
+concept: ~quien [quien quienes]
+concept: ~articulos [El La los las Un una unos unas]
+concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
+concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
+concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda]
+concept: ~negacion [no nones nanai naranjas quia ca]
+concept: ~profesor [profesor profe professor]
+
+topic: ~preguntas keep repeat []
+
+# t: Hola, en que puedo ayudarte?
+
+# Generic questions
+#! que es un for?
+
+u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
+    $pregunta='_0
+    ¬sendSolr definition $pregunta
+    ¬label $pregunta
+    
+    # Process the maia responses
+    a: (¬solrResponse definition _*)
+        '_0 ¬sendSolr resource $pregunta
+        
+        # Ask for the link to show in the frame
+        b: (¬solrResponse resource _*)
+            ¬resource '_0 _ 
+        b: () # No matter if there is a link or not, ask for related
+            ¬sendSolr links $pregunta ¬sendSolr examples $pregunta
+            c: (¬solrResponse links _*)
+                Tambien puedes preguntar sobre '_0 \@full\_response
+            c:(¬maiaResponse unknown)
+                \@fullResponse
+        
+    a: (¬solrResponse unknown)
+        Lo siento, no te he entendido bien. ¬sendSolr gambit $pregunta
+        # Busco lo más aproximado en solr.
+        b:(¬solrResponse gambit _*1)
+            $$pregunta_gambit=_0
+            Te refieres a $$pregunta_gambit ?
+            c: (~afirmacion)
+                $pregunta=$$pregunta_gambit
+                ^reuse(COMIENZO)
+            c: (~negacion)
+                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+        b:(¬maiaResponse unknown)
+            _   
+        
+
+u: (~ejemplo ~preposiciones _*)
+    $pregunta='_0
+    ¬sendMaia examples $pregunta 
+    a:(maiaResponse examples _*)
+        '_0
+    a:(¬maiaResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
+        
+u: EJEMPLO (~ejemplo $pregunta)
+    ¬sendMaia examples $pregunta 
+    a:(¬maiaResponse examples _*)
+        '_0
+    a:(¬maiaResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
+    
+u: (~ejemplo)
+    Sobre que quieres el ejemplo?
+    a: (~preposiciones _*1 >)
+        $pregunta=_0
+        ^reuse(EJEMPLO)

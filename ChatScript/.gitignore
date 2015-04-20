@@ -3,6 +3,8 @@
 !*/
 !.gitignore
 !filesDuke.txt
+!filesDent.txt
 !README.md
 !getChatScript.sh
 !RAWDATA/DUKE/*
+!RAWDATA/DENT/*
