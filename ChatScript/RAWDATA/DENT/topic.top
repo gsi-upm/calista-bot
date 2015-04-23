@@ -24,7 +24,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition _*)
-        '_0 ¬sendSolr resource $pregunta
+        Te enseño la información que tengo sobre $pregunta ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
@@ -55,7 +55,9 @@ u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
     ¬sendMaia examples $pregunta 
     a:(maiaResponse examples _*)
-        '_0
+        Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
+            b:(¬solrResponse resource _*)
+                ¬resource '_0
     a:(¬maiaResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
         

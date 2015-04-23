@@ -5,5 +5,5 @@ import sys, os
 root_folder = os.path.dirname(__file__) 
 sys.path.append(os.path.abspath(root_folder))
 
-from askbot import app as application
+from qabot import app as application
 

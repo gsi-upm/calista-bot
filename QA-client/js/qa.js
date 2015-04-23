@@ -30,11 +30,11 @@ jQuery(document).ready(function($){
        // If I couldn't get the user, I set a random one
        //if (username =="") username = randomString(20);
     } else {
-       username = randomString(20);
+       username = randomString(5);
        document.cookie = "botUser="+username+";";
     };
-    // Set the username in the form
-    $('#form-username').val(username)
+    // Set the username in the span    
+    $('#username').html(username);
     
     // Autocomplete
     $('#question').autocomplete({source: autocom_questions});
@@ -76,8 +76,7 @@ jQuery(document).ready(function($){
                 }
                 related_list="<ul>";
                 data_resp.links.forEach(function(entry){
-                    related_list+='<li><a href="'+entry.resource+'">'+entry.title+'</a>';
-                    related_list+=': '+entry.definition + '</li>';
+                    related_list+='<li>'+entry.title+'</a>';
                 });
                 related_list+='</ul>';
                 $('#related-list').html(related_list);
