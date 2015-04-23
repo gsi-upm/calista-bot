@@ -37,7 +37,7 @@ jQuery(document).ready(function($){
     $('#username').html(username);
     
     // Autocomplete
-    $('#question').autocomplete({source: autocom_questions});
+    //$('#question').autocomplete({source: autocom_questions});
     /**/
     $('#qa-form').on('submit', function(){
 
