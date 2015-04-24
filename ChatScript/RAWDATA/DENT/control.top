@@ -16,7 +16,7 @@ dent
 topic: ~control system ()
 # on startup, do introduction
 # u: ( %input<%userfirstline) 
-# 	gambit(~preguntas)
+#  	gambit(~preguntas)
 
 # The concepts are defined in simpletopic
 

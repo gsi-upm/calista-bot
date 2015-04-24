@@ -32,8 +32,10 @@ def ask():
     agent = req['username'] or "Error"
     response = {}
     response= sendSolrEDisMax(req['question'].replace('?', ''))['answer']
-    #TODO: Change the agent for one sent from the client
-    
+
+    print("[QA-BOT] Answering to user: {user} question: {q}with {resp}".format(user=agent,
+                                                         resp=unicode(response),
+                                                         q=req['question']))    
     return flask.jsonify(response)
 
 

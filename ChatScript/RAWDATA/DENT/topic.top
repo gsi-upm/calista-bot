@@ -12,7 +12,7 @@ concept: ~profesor [profesor profe professor]
 
 topic: ~preguntas keep repeat []
 
-# t: Hola, en que puedo ayudarte?
+t: Hola, en que puedo ayudarte?
 
 # Generic questions
 #! que es un for?
@@ -23,17 +23,21 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     ¬label $pregunta
     
     # Process the maia responses
-    a: (¬solrResponse definition _*)
+    a: (¬solrResponse definition)
         Te enseño la información que tengo sobre $pregunta ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
-            ¬resource '_0 _ 
+            ¬resource '_0 _ ¬sendSolr links $pregunta
+            c: (¬solrResponse links _*)
+                ¬solrLinks '_0 _
+            c:(¬solrResponse unknown)
+                \@fullResponse
         b: () # No matter if there is a link or not, ask for related
-            ¬sendSolr links $pregunta ¬sendSolr examples $pregunta
+            ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
                 Tambien puedes preguntar sobre '_0 \@full\_response
-            c:(¬maiaResponse unknown)
+            c:(¬solrResponse unknown)
                 \@fullResponse
         
     a: (¬solrResponse unknown)

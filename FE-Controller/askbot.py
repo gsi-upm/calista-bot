@@ -1,12 +1,15 @@
 #!/usr/bin/python
 # coding=utf-8
 
+from __future__ import print_function
+
 import os, sys
 
 from unidecode import unidecode
 
 import flask
 import requests, socket
+import ast
 
 app = flask.Flask(__name__)
 app.debug = True
@@ -29,86 +32,147 @@ cs = {'bot': u'Dent', 'host':'localhost',
 def rootURL():
     return qa()
 
-@app.route('/qa')
+@app.route('/ask')
 def qa():
     """
     Receives a question and returns an answer
     """
     req = flask.request.args
     
-    agent = req['username'] or cs['agent']
+    agent = req['username']
+    print(req)
     response = {}
-    response= sendSolrEDisMax(req['question'].replace('?', ''))['answer']
-    #TODO: Change the agent for one sent from the client
+
+    response = runQuestion(req['question'], agent)
+    
+    print("[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
+                                                         resp=unicode(response),
+                                                         q=req['question']))
     
     return flask.jsonify(response)
 
-def runCommands(cs_response, question):
+
+def runQuestion(question, user):
+    """
+    Send the question to CS and process
+    the response to return the actual response
+    """
+
+    cs_response = sendChatScript(question, user)
+
+    bot_response = runCommands(cs_response, question, user)
+    
+    return bot_response
+
+def runCommands(cs_response, question, user):
     """
     Takes the different answers and split the commands
     
     """
-    
-    # There is only the CS response, no commands
-    if "¬" not in cs_response:
-        return cs_response
-    
     # The natural language response
-    nl_response = ""
+    response = {'answer': []}
+
+    # There is only the CS response, no commands
+    if u"¬" not in cs_response:
+        return {'answer' : [cs_response]}
     
-    commands = cs_response
-    if cs_response.index("¬") != 0:
-        first_index = cs_response.index("¬")
-        nl_response = cs_response[:first_index]
-        commands = cs_response[first_index:]
-    
+    commands, nl_response = splitCommands(cs_response)
+    if nl_response != "":
+        response['answer'].append(nl_response)
     while commands != []:
         # Get the first element
         command = commands.pop(0)
         
-        if "¬sendSolr" in command:
-            senSolr(question)
-        elif "¬resource" in command:
-            #TODO REsponse
-        elif "¬gambit" in command:
-            #TODO Solr gambit
-        elif "¬links" in command:
-            #TODO Get the link names
-            
+        if u"¬sendSolr" in command:
+            elements = command.split(' ')
+            requested = elements[1]
+            query = {'q': elements[2]}
+            solr_response = sendSolr(query)
+            if len(solr_response) != 0:
+                if not requested in response:
+                    response[requested] = solr_response[0][requested]
+                r_response = solr_response[0][requested]
+                commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
+                                                                     command=requested))
+            else:
+                response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
+
+        elif u'¬solrLinks' in command:
+            link_list = command.replace(u'¬solrLinks', '')
+            link_list = link_list.replace(" ", "")
+            link_list = ast.literal_eval(link_list.strip())
+            links_names = []
+            for link in link_list:
+                l_q = {'q': 'resource:"{link}"'.format(link=link),
+                       'fl': 'title'}
+                l_response = sendSolr(l_q)
+                if len(l_response) != 0:
+                    title = l_response[0]['title']
+                    links_names.append(title)
+            response['answer'].append(u'\nTambien puedes preguntarme sobre ' + u','.join(links_names))
+        elif u"¬solrResponse" in command:
+            current_response = sendChatScript(command, user)
+            new_commands, new_nl = splitCommands(current_response)
+            if new_nl != "":
+                response['answer'].append(new_nl)
+            commands += new_commands
+        elif u"¬resource" in command:
+            if 'resource' not in response:
+                response['resource'] = command.replace(u'¬resource ', '')
+        elif u"¬gambit" in command:
+            sendSolr(question)
+        elif u"¬label" in command:
+            print(unidecode(command))
+        elif u"¬links" in command:
+            print(unidecode(u"Links {co}".format(co=command)))
         else:
-            # Unknown command
-    return nl_response
+            print(unidecode(u"unkown command {command}".format(command=command)))
+    return response
     
-    
+def splitCommands(cs_response):
+    """
+    Given a string, split it into commands
+    """
+    commands = []
+    nl_response = ""
+    if u"¬" not in cs_response:
+        return ([], cs_response)
+    cs_response = cs_response.strip()
+    if cs_response.index(u"¬") != 0:
+        first_index = cs_response.index(u"¬")
+        nl_response = cs_response[:first_index]
+        commands = [u'¬' +command for command in cs_response[first_index:].split(u'¬')[1:]]
+    else:
+        l_commands = cs_response.split(u"¬")
+        commands = [u'¬' + command for command in l_commands[1:]]
+        
+    return (commands, nl_response)
 
 def sendChatScript(query, agent=cs['agent']):
     """
     Send the question to chatscript
     """
     
-    agent 
     
     # Convert the params to utf-8 if not already
-    query = unicode(query)
-    
-    bot = bot.lower()
+    query = toUTF8(query)
     
     # Message to server is 3 strings-   username, botname, message     
     # Each part must be null-terminated with \0
-    socketmsg = user+u"\0"+bot+u"\0"+query +u"\0"
-    s = socket()
+    socketmsg = agent+u"\0"+cs['bot']+u"\0"+query +u"\0"
+    s = socket.socket()
     try:
 
-        s.connect((cs_tcp_ip, cs_tcp_port))
-        s.send(socketmsg.encode("utf-8"))
+        s.connect((cs['host'], cs['port']))
+        s.send(socketmsg.encode('utf-8'))
         data = ""
-        while 1:
-            rcvd = s.recv(cs_buffer_size)
-            if not rcvd:
-                break
+        
+        rcvd = s.recv(1024)
+        while len(rcvd) != 0:
             data = data + rcvd
-
-        data = unicode(data)
+            rcvd = s.recv(1024)
+    
+        data = toUTF8(data)
         s.close()
         
     #except socket.error, e:
@@ -186,7 +250,16 @@ def sendSolr(payload):
     response = requests.get(solr_url, params=payload).json()
     
     
-    return {'answer':response['response']['docs'][0], 'response':response}
+    return response['response']['docs']
+
+def toUTF8(string):
+    """
+    Convert given string to utf-8
+    """
+    if type(string) == str:
+        string = unicode(string, "utf-8")
+    return string
+    
 
 if __name__ == '__main__':
     app.debug = True

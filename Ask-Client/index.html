@@ -32,22 +32,22 @@
         <div id="chatbox">
             <div id="chat-form">
                 <form class="form-inline" id="ask-form" action="/AskBot/ask" role="form">
-                <div id="form-container">
-                    <!--<label for="question" id="form-label">¿Qué quieres saber?</label>-->
-                    <div  class="form-group">
-                        <input type="text" class="form-control" id="question" name="question" placeholder="¿Que es un bucle?">
-                        <input type="hidden" id="form-username" name="username">
+                    <div id="form-container">
+                        <!--<label for="question" id="form-label">¿Qué quieres saber?</label>-->
+                        <div  class="form-group">
+                            <input type="text" class="form-control" id="question" name="question" placeholder="¿Que es un bucle?">
+                            <input type="hidden" id="form-username" name="username">
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-default">Preguntar</button>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-default">Preguntar</button>
-                </div>
-            <div id="chat-responses">
+                </form>
             </div>
-        </form>
+            <div id="chat-responses">
             </div>
         </div>
         <div id="iframe-container">
             <h1>GSI Answers</h1>
-            <iframe id="iframe-qa" src="http://www.dit.upm.es/~pepe/libros/vademecum/topics/138.html"></iframe>
+            <iframe id="iframe-qa"></iframe>
         </div>
     </div><!-- /.container -->
 
