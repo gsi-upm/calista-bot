@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # coding=utf-8
 
+from __future__ import print_function
+
 import os, sys
 
 from unidecode import unidecode
@@ -29,13 +31,13 @@ def ask():
     """
     req = flask.request.args
     
-    agent = req['username'] or "Error"
+    agent = req['username']
     response = {}
     response= sendSolrEDisMax(req['question'].replace('?', ''))['answer']
 
-    print("[QA-BOT] Answering to user: {user} question: {q}with {resp}".format(user=agent,
+    print(u"[QA-BOT] Answering to user: {user} question: {q}with {resp}".format(user=agent,
                                                          resp=unicode(response),
-                                                         q=req['question']))    
+                                                         q=req['question']))
     return flask.jsonify(response)
 
 
@@ -75,20 +77,24 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
         payload['fl'] = fl
     
     solr_response = sendSolr(payload)
-    
-    links = solr_response['answer']['links']
-    links_names = []
-    links.pop
-    for link in links:
-        # Ignore the general "vademecum root" link
-        if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
-            query = {'q':'resource: "{url}"'.format(url=link)}
-            q_response = sendSolr(query)
-            links_names.append({'title':q_response['answer']['title'],
-                                'definition':q_response['answer']['definition'],
+    if len(solr_response) != 0:
+        solr_response['answer'] = solr_response['answer'][0]
+        print(solr_response)
+        links = solr_response['answer']['links']
+        links_names = []
+        #links.pop(0)
+        for link in links:
+            # Ignore the general "vademecum root" link
+            if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
+                query = {'q':'resource: "{url}"'.format(url=link)}
+                q_response = sendSolr(query)
+                links_names.append({'title':q_response['answer'][0]['title'],
+                                'definition':q_response['answer'][0]['definition'],
                                 'resource':link})
     
-    solr_response['answer']['links'] = links_names
+        solr_response['answer']['links'] = links_names
+    else:
+        solr_response = {'answer': {'error':u'No tengo informacion sobre esa pregunta'}}
     return  solr_response
     
 def sendSolr(payload):
@@ -108,9 +114,10 @@ def sendSolr(payload):
         payload['rows'] = '1'
     print('Query: {payload}'.format(payload=str(payload)))
     response = requests.get(solr_url, params=payload).json()
-    
-    
-    return {'answer':response['response']['docs'][0], 'response':response}
+    if len(response['response']['docs']) != 0:
+        return {'answer':response['response']['docs'], 'response':response}
+    else:
+        return {}
 
 if __name__ == '__main__':
     app.debug = True

@@ -53,7 +53,8 @@ jQuery(document).ready(function($){
         $.map(form_data, function(n, i){
             json_data[n['name']] = n['value'];
         });
-        
+        json_data.username = username;
+
         //var data = JSON.stringify(json_data);
 
         jQuery.support.cors = true; // :S
@@ -68,19 +69,23 @@ jQuery(document).ready(function($){
                 $('#related-container').fadeOut('slow');
                 console.log(data_resp);
                 // Set the url as a response
-                if(data_resp.resource != current_url_shown) {
-                    // I want the filename from that url:
-                    $('#iframe-qa').attr('src', data_resp.resource);
-                    current_url_shown = data_resp.resource
-                    $('#iframe-qa').fadeIn('slow');
+                if (data_resp.resource) {
+                    if(data_resp.resource != current_url_shown) {
+                        // I want the filename from that url:
+                        $('#iframe-qa').attr('src', data_resp.resource);
+                        current_url_shown = data_resp.resource
+                        $('#iframe-qa').fadeIn('slow');
+                    }
+                    related_list="<ul>";
+                    data_resp.links.forEach(function(entry){
+                        related_list+='<li>'+entry.title+'</a>';
+                    });
+                    related_list+='</ul>';
+                    $('#related-list').html(related_list);
+                    $('#related-container').fadeIn('slow');
+                } else {
+                    alert(data_resp.error);
                 }
-                related_list="<ul>";
-                data_resp.links.forEach(function(entry){
-                    related_list+='<li>'+entry.title+'</a>';
-                });
-                related_list+='</ul>';
-                $('#related-list').html(related_list);
-                $('#related-container').fadeIn('slow');
             },
             error: function(data_resp){
                 console.log("Error connecting to the contoller");
