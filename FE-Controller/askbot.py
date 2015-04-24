@@ -44,7 +44,7 @@ def qa():
 
     response = runQuestion(req['question'], agent)
     
-    print("[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
+    print(u"[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
                                                          resp=unicode(response),
                                                          q=req['question']))
     
@@ -85,7 +85,7 @@ def runCommands(cs_response, question, user):
         if u"¬sendSolr" in command:
             elements = command.split(' ')
             requested = elements[1]
-            query = {'q': elements[2]}
+            query = {'q': 'title:{label}'.format(label=elements[2])}
             solr_response = sendSolr(query)
             if len(solr_response) != 0:
                 if not requested in response:
@@ -121,9 +121,9 @@ def runCommands(cs_response, question, user):
         elif u"¬gambit" in command:
             sendSolr(question)
         elif u"¬label" in command:
-            print(unidecode(command))
+            print("label found")
         elif u"¬links" in command:
-            print(unidecode(u"Links {co}".format(co=command)))
+            print(u"Links {co}".format(co=command))
         else:
             print(unidecode(u"unkown command {command}".format(command=command)))
     return response

@@ -20,6 +20,7 @@
     height: 100%;
     width: 300px;
     background: #aaaaaa;
+    overflow: scroll;
 }
 
 #iframe-container {
