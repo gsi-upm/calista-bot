@@ -79,7 +79,6 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
     solr_response = sendSolr(payload)
     if len(solr_response) != 0:
         solr_response['answer'] = solr_response['answer'][0]
-        print(solr_response)
         links = solr_response['answer']['links']
         links_names = []
         #links.pop(0)
@@ -112,7 +111,7 @@ def sendSolr(payload):
         payload['wt'] = 'json'
     if 'rows' not in payload:
         payload['rows'] = '1'
-    print('Query: {payload}'.format(payload=str(payload)))
+    #print('Query: {payload}'.format(payload=str(payload)))
     response = requests.get(solr_url, params=payload).json()
     if len(response['response']['docs']) != 0:
         return {'answer':response['response']['docs'], 'response':response}

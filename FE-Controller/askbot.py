@@ -40,7 +40,6 @@ def qa():
     req = flask.request.args
     
     agent = req['username']
-    print(req)
     response = {}
 
     response = runQuestion(req['question'], agent)
