@@ -56,19 +56,23 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                 \@fullResponse
         
     a: (¬solrResponse unknown)
-        Lo siento, no te he entendido bien. ¬sendSolr gambit $pregunta
-        # Busco lo más aproximado en solr.
-        b:(¬solrResponse gambit _*1)
-            $$pregunta_gambit=_0
-            Te refieres a $$pregunta_gambit ?
-            c: (~afirmacion)
-                $pregunta=$$pregunta_gambit
-                ^reuse(COMIENZO)
-            c: (~negacion)
-                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-        b:(¬solrResponse unknown)
-            _   
-        
+        ^reuse(GAMBIT)
+    
+u: GAMBIT (_~javaconcept)
+    $pregunta = '_0
+    Lo siento, no te he entendido bien. ¬sendSolr gambit $pregunta
+    # Busco lo más aproximado en solr.
+    a: (¬solrResponse gambit _*1)
+        $$pregunta_gambit=_0
+        Te refieres a $$pregunta_gambit ?
+        b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b: (~negacion)
+            Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+    a:(¬solrResponse unknown)
+        ¿ Podrías formularlo de alguna otra manera?
+
 
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
@@ -94,3 +98,4 @@ u: (~ejemplo)
     a: (~preposiciones _*1 >)
         $pregunta='_0
         ^reuse(EJEMPLO)
+
