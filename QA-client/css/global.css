@@ -63,10 +63,10 @@ body {
 
 /*~~~~~~~~~~ @start Avatar styling ~~~~~~~~~~~~*/
 #bot_chat_window img#bot_avatar {
-  width:    40px;
+  width:    100px;
   /*height:   70px;*/
   position: relative;
-  top:      -36px;
+  top:      -102px;
 }
 /*~~~~~~~~~~ @end Avatar styling ~~~~~~~~~~~~*/
 #bot_chat_window #screen_wrapper {
