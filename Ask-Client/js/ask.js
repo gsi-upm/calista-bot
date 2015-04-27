@@ -17,7 +17,6 @@ jQuery(document).ready(function($){
                username = cookie.substr("botUser=".length, cookie.length -1);
             }
        }
-       $('#screen').append(constructDialogEntry('Duke', 'Hola, ¿en que puedo ayudarte?'));
     } else {
        username = randomString(5);
        document.cookie = "botUser="+username+";";
@@ -75,6 +74,7 @@ jQuery(document).ready(function($){
     });
     
     function populateForm (data_resp) {
+        console.log(data_resp);
         if (data_resp.answer) { 
             data_resp.answer.forEach(function(answer) {
                 $('#screen').append(constructDialogEntry('Duke', answer));
@@ -84,6 +84,16 @@ jQuery(document).ready(function($){
                         $('#iframe-qa').attr('src', vademecum_base + filename);
                         current_url_shown = vademecum_base + filename;                }
             });
+            if (data_resp.related) {
+                var related_answer = "También puedes preguntarme sobre "
+                                      + data_resp.related[0];
+                if (data_resp.related.length >=2 ) {
+                    related_answer += ' ó ' + data_resp.related[1];
+                }
+                
+                $('#screen').append(constructDialogEntry('Duke', related_answer));
+                scrollDisplay();
+            }
         } else {
             $('#screen').append(constructDialogEntry('Duke',
                                 'Lo siento, no puedo responder a esa pregunta'));

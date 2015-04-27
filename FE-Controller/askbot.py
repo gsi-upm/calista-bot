@@ -108,7 +108,7 @@ def runCommands(cs_response, question, user):
                 if len(l_response) != 0:
                     title = l_response[0]['title']
                     links_names.append(title)
-            response['answer'].append(u'\nTambien puedes preguntarme sobre ' + u', '.join(links_names))
+            response['related'] = links_names
         elif u"¬solrResponse" in command:
             current_response = sendChatScript(command, user)
             new_commands, new_nl = splitCommands(current_response)
