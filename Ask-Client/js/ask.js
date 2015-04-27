@@ -1,4 +1,10 @@
 jQuery(document).ready(function($){
+    
+    /* Store the url shown */
+    var current_url_shown = "" // this is used to avoid continous recharging of the web
+    
+    /* Vademecum base url */
+    var vademecum_base = "http://www.dit.upm.es/~pepe/libros/vademecum/index.html?n="
    
     // Creates (or loads from cookie) a random user id for the bot
     var username = "";
@@ -9,11 +15,8 @@ jQuery(document).ready(function($){
            //console.log(document.cookie);
            if (cookie.indexOf("botUser") == 0) {
                username = cookie.substr("botUser=".length, cookie.length -1);
+            }
        }
-       }
-              
-        $('#chat-responses').append('<p class="bot-r"><b>Dent:</b><br/>'+
-                                 'Hola! ¿En qué puedo ayudarte?</p>');
        
     } else {
        username = randomString(5);
@@ -36,7 +39,9 @@ jQuery(document).ready(function($){
     
     $('#ask-form').on('submit', function() {
         var form = $(this);
-                var form_data = form.serializeArray();
+        var form_data = form.serializeArray();
+        var input_field = form.children('input[name=question]');
+
         if (form[0].value == '') {
             //TODO: Add an alert to say there needs to be data
             return false;
@@ -50,9 +55,9 @@ jQuery(document).ready(function($){
         json_data.username = username;
         
         // Add the question 
-        $('#chat-responses').append('<p class="user-q"><b>Me:</b><br/>'
-                                +json_data.question+'</p>');
-        $('#question').val('')
+        $('#screen').append(constructDialogEntry('Me', json_data.question));
+        scrollDisplay();
+        input_field.val('')
         $.ajax({ url: form.attr('action'),
                  data: json_data,
                  dataType: 'json',
@@ -61,7 +66,7 @@ jQuery(document).ready(function($){
                  error: function(data_resp) {
                      alert("Esto es un error");
                     console.log("Error connection to the controller");
-
+                    return false;
                  }
         });
         return false;
@@ -70,14 +75,18 @@ jQuery(document).ready(function($){
     function populateForm (data_resp) {
         if (data_resp.answer) { 
             data_resp.answer.forEach(function(answer) {
-                $('#chat-responses').append('<p class="bot-r"><b>Dent:</b><br/>'
-                                            +answer+'</p>');
-                });
-                $('#iframe-qa').attr('src', data_resp.resource);   
-        }else{
-            $('#chat-responses').append('<p class="bot-r"><b>Dent:</b><br/>'+
-                                'Lo siento, no puedo responder a esa pregunta</p>');
-            }
+                $('#screen').append(constructDialogEntry('Duke', answer));
+                if (data_resp.resource) {
+                        var name_start = data_resp.resource.lastIndexOf('/')+1
+                        var filename = data_resp.resource.substring(name_start)
+                        $('#iframe-qa').attr('src', vademecum_base + filename);
+                        current_url_shown = vademecum_base + filename;                }
+            });
+        } else {
+            $('#screen').append(constructDialogEntry('Duke',
+                                'Lo siento, no puedo responder a esa pregunta'));
+        }
+        scrollDisplay();
     }
     // Generates a Random string for the user id
     function randomString(length) {
@@ -86,5 +95,20 @@ jQuery(document).ready(function($){
         for (var i = length; i > 0; --i) result += charSet[Math.round(Math.random() * (charSet.length - 1))];
         return result;
     }
+    
+         /* This scrolls the display to the bottom, just to show all the messages.
+     * It can be overriden to use a different animation */
+    function scrollDisplay () {
+        // Nice scroll to last message
+        $("#screen").scrollTo('100%', 0);  
+    }
+    
+    /* This construct html formatted dialog entry */
+    function constructDialogEntry (nick, entry) {
+        return '<div class="dia_entry">\
+                  <span class="nick">' + nick + ':</span>\
+                  <span class="text">' + entry + '</span>\
+                </div>'
+    };
     
 });

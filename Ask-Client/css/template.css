@@ -2,7 +2,8 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    margin-right: 5%;
+    padding: 5px 5% 5px 1%;
+    background: #FFFFFF;
     z-index: 2;
 }
 

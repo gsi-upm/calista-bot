@@ -12,6 +12,21 @@ concept: ~profesor [profesor profe professor]
 
 topic: ~preguntas keep repeat []
 
+u: (~saludos)
+    Hola, soy Duke y estoy aqui para ayudarte.
+
+# Simple, generic questions
+
+u: (~ser {~articulos} ~profesor)
+    No, soy un bot asistente para ayudarte a encontrar respuestas.
+    # TODO: Add rejoinder to offer contact info.
+
+u: (~quien ~ser)
+    Me llamo $bot y soy un bot asistente para ayudarte con tus preguntas.
+
+u: (~que ~hacer)
+    Mi funcion es ayudarte a encontrar respuestas
+
 t: Hola, en que puedo ayudarte?
 
 # Generic questions
