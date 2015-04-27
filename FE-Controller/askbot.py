@@ -27,6 +27,7 @@ solr = {'host': 'localhost', 'port':8990,
 cs = {'bot': u'Dent', 'host':'localhost',
       'port': 1025, 'agent': u'ErrorAgent'}
 
+default_response='Lo siento, no he podido encontrar nada sobre eso'
 
 @app.route('/')
 def rootURL():
@@ -43,6 +44,10 @@ def qa():
     response = {}
     question = unidecode(req['question'])
     response = runQuestion(question, agent)
+    
+    # If there is no answer after the processing, send a default one.
+    if not 'answer' in response:
+        response['answer'] = default_response
     
     print(u"[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
                                                          resp=unicode(response),
