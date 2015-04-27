@@ -69,7 +69,7 @@ jQuery(document).ready(function($){
 
         $('#screen').append($(constructDialogEntry('me', json_data.question)));
         input_field.val('');
-        //scrollDisplay();
+        scrollDisplay();
         //var data = JSON.stringify(json_data);
 
         jQuery.support.cors = true; // :S
@@ -94,6 +94,7 @@ jQuery(document).ready(function($){
                             $(constructDialogEntry('Dent',
                                                    "Te muestro la información que tengo sobre "
                                                   + data_resp.title)));
+                        scrollDisplay();
                         $('#iframe-qa').show();
                     }
                     /*related_list="<ul>";
@@ -107,6 +108,7 @@ jQuery(document).ready(function($){
                     $('#screen').append(
                     $(constructDialogEntry('Dent',
                                             data_resp.error)));
+                    scrollDisplay();
                     
                 }
             },
