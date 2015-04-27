@@ -22,7 +22,7 @@ u: (~ser {~articulos} ~profesor)
     # TODO: Add rejoinder to offer contact info.
 
 u: (~quien ~ser)
-    Me llamo $bot y soy un bot asistente para ayudarte con tus preguntas.
+    Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.
 
 u: (~que ~hacer)
     Mi funcion es ayudarte a encontrar respuestas
