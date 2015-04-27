@@ -39,7 +39,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition)
-        Te enseño la información que tengo sobre $pregunta  ¬sendSolr resource $pregunta
+        [Te_enseño_la_información_que_tengo_sobre_$pregunta][Esto_es_lo_que_se_sobre_$pregunta] ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
@@ -66,29 +66,31 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                 ^reuse(COMIENZO)
             c: (~negacion)
                 Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-        b:(¬maiaResponse unknown)
+        b:(¬solrResponse unknown)
             _   
         
 
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
-    ¬sendMaia examples $pregunta 
-    a:(maiaResponse examples _*)
+    ¬sendSolr examples $pregunta 
+    a:(solrResponse examples _*)
         Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
             b:(¬solrResponse resource _*)
                 ¬resource '_0
-    a:(¬maiaResponse unknown)
+    a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
         
 u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendMaia examples $pregunta 
-    a:(¬maiaResponse examples _*)
-        '_0
-    a:(¬maiaResponse unknown)
+    ¬sendSolr examples $pregunta 
+    a:(¬solrResponse examples _*)
+        Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
+            b:(¬solrResponse resource _*)
+                ¬resource '_0
+    a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
     Sobre que quieres el ejemplo?
     a: (~preposiciones _*1 >)
-        $pregunta=_0
+        $pregunta='_0
         ^reuse(EJEMPLO)
