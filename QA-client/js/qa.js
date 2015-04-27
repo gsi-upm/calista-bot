@@ -12,6 +12,8 @@ var autocom_questions = [
 ];
 
 jQuery(document).ready(function($){
+    
+    alert('Los datos que introduzcas serán registrados como parte del experimento.\n No envies datos personales o contraseñas');
 
     /* Store the url shown */
     var current_url_shown = "" // this is used to avoid continous recharging of the web

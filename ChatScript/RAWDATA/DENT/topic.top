@@ -1,6 +1,6 @@
 concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
-concept: ~que [que]
-concept: ~ser [ser eres Es sabes_sobre]
+concept: ~que [que Q 'q qe]
+concept: ~ser [ser eres Es sabes_sobre son]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
@@ -39,7 +39,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition)
-        Te enseño la información que tengo sobre $pregunta ¬sendSolr resource $pregunta
+        Te enseño la información que tengo sobre $pregunta  ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)

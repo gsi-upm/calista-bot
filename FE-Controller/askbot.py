@@ -18,14 +18,14 @@ host='localhost'
 port=4242
 
 # Solr settings
-solr = {'host': 'localhost', 'port':8080, 
+solr = {'host': 'localhost', 'port':8990, 
         'core': 'elearning'}
 
 # ChatScript settings:
 # The agent should be randomly set for each user
 # Also, I should probably make another bot, say "Arthur" to answer the questions
 cs = {'bot': u'Dent', 'host':'localhost',
-      'port': 1024, 'agent': u'ErrorAgent'}
+      'port': 1025, 'agent': u'ErrorAgent'}
 
 
 @app.route('/')

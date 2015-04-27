@@ -17,7 +17,7 @@ host='localhost'
 port=4242
 
 # Solr settings
-solr = {'host': 'localhost', 'port':8080, 
+solr = {'host': 'localhost', 'port':8990, 
         'core': 'elearning'}
 
 @app.route('/')

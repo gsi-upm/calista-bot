@@ -1,5 +1,6 @@
 jQuery(document).ready(function($){
     
+    alert('Los datos que introduzcas serán registrados como parte del experimento.\n No envies datos personales o contraseñas');
     /* Store the url shown */
     var current_url_shown = "" // this is used to avoid continous recharging of the web
     
@@ -33,6 +34,13 @@ jQuery(document).ready(function($){
                  alert("Esto es un error");
                  console.log("Error connection to the controller");
              }
+    });
+
+    /** Hide/show effect */
+    $('#bot_chat_window #upper_bar a').click(function(){
+        $('#bot_chat_window').toggleClass('visible');
+        $('#bot_chat_window #screen_wrapper form input[name=question]').val('');
+        $('#bot_chat_window #screen_wrapper form input[name=question]').focus();
     });
     
     // Set the username in the span    
@@ -78,13 +86,14 @@ jQuery(document).ready(function($){
         if (data_resp.answer) { 
             data_resp.answer.forEach(function(answer) {
                 $('#screen').append(constructDialogEntry('Duke', answer));
+		scrollDisplay();
                 if (data_resp.resource) {
                         var name_start = data_resp.resource.lastIndexOf('/')+1
                         var filename = data_resp.resource.substring(name_start)
                         $('#iframe-qa').attr('src', vademecum_base + filename);
                         current_url_shown = vademecum_base + filename;                }
             });
-            if (data_resp.related.length > 0) {
+            if (data_resp.related && data_resp.related.length > 0) {
                 var related_answer = "También puedes preguntarme sobre "
                                       + data_resp.related[0];
                 if (data_resp.related.length >=2 ) {
@@ -97,6 +106,7 @@ jQuery(document).ready(function($){
         } else {
             $('#screen').append(constructDialogEntry('Duke',
                                 'Lo siento, no puedo responder a esa pregunta'));
+	    scrollDisplay();
         }
         scrollDisplay();
     }
