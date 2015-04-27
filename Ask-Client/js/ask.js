@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
                username = cookie.substr("botUser=".length, cookie.length -1);
             }
        }
-       
+       $('#screen').append(constructDialogEntry('Duke', 'Hola, ¿en que puedo ayudarte?'));
     } else {
        username = randomString(5);
        document.cookie = "botUser="+username+";";
