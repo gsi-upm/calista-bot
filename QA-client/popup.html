@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+  <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <link rel=stylesheet href=css/global.css type="text/css">
+    <link rel=stylesheet href=css/animate-custom.css type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="css/template.css" rel="stylesheet">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/qa.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <title>QA Client</title>
+  </head>
+
+  <style>
+  </style>
+
+  <body>
+      <div id="username-container">
+        <span><b>Usuario:</b></span><br/>
+        <span id="username"></span>
+    </div>
+
+      <iframe id="iframe-qa" src="http://www.dit.upm.es/~pepe/libros/vademecum/index.html"></iframe>
+      <div class="visible" id="bot_chat_window">
+          <div id="upper_bar">
+            <h3>
+              <a id="max_icon" href="#"></a>
+              <span style="clear: both;"></span>
+            </h3>
+          </div>
+          <div id="screen_wrapper">
+            <div id="msg_dialog"></div>
+            <div id="screen">
+            </div>
+            <div id="meta_msgs"></div>
+            <div id="userbar">   
+        <form id="qa-form" action="/QABot/ask" role="form" >
+                  <input type="hidden" name="bot" value="Dent" />
+                  <input type="hidden" name="type" value="json" />
+                  <input type="hidden" name="username" id="form-username"/>
+                  <input type="text" name="question" />
+                  <input type="submit" name="submit" value="Enviar" />
+                </form>
+            </div><!-- #userbar -->
+          </div><!-- #screen_wrapper -->
+      </div><!-- #bot_chat_window -->
+  </body>
+</html>

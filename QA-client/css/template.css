@@ -8,9 +8,9 @@
 }
 
 #iframe-qa {
-    margin-top: 2%;
+    /*margin-top: 2%;*/
     width: 100%;
-    display: none;
+    /*display: none;*/
     border:0px;
     height: 100%;
 }
@@ -39,7 +39,8 @@ html, body {
     position: absolute;
     top: 0px;
     right: 0px;
-    margin-right: 5%;
+    padding: 5px 5% 5px 1%;
+    background: #FFFFFF;
 }
 
 #container {
