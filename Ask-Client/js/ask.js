@@ -21,19 +21,21 @@ jQuery(document).ready(function($){
     } else {
        username = randomString(5);
        document.cookie = "botUser="+username+";";
-       // First time answer, send a question to get the gambit response
-       json_data = {'username': username, 'question':'Hola'};
-       $.ajax({ url: $('#ask-form').attr('action'),
-                 data: json_data,
-                 dataType: 'json',
-                 contentType: 'application/json;charset=UTF-8',
-                 success: populateForm,
-                 error: function(data_resp) {
-                     alert("Esto es un error");
-                    console.log("Error connection to the controller");
-                 }
-       });
     };
+    
+    // First time answer, send a question to get the gambit response
+    json_data = {'username': username, 'question':'Hola'};
+    $.ajax({ url: $('#ask-form').attr('action'),
+             data: json_data,
+             dataType: 'json',
+             contentType: 'application/json;charset=UTF-8',
+             success: populateForm,
+             error: function(data_resp) {
+                 alert("Esto es un error");
+                 console.log("Error connection to the controller");
+             }
+    });
+    
     // Set the username in the span    
     $('#username').html(username);
     
