@@ -33,17 +33,17 @@ def ask():
     
     agent = req['username']
     response = {}
-    response= sendSolrEDisMax(req['question'].replace('?', ''))['answer']
+    question = unidecode(req['question'])
 
-    print(u"[QA-BOT] Answering to user: {user} question: {q}with {resp}".format(user=agent,
+    response= sendSolrEDisMax(question.replace('?', ''))['answer']
+
+    print(u"[QA-BOT] Answering to user: {user} question: {q} with {resp}".format(user=agent,
                                                          resp=unicode(response),
-                                                         q=req['question']))
+                                                         q=question))
     return flask.jsonify(response)
 
 
 # TODO: Take the solr functionality to a "lib" module
-
-
 def sendSolrDefault(question, fl=None):
     """
     Send the question to solr, using a default q:question query

@@ -41,12 +41,12 @@ def qa():
     
     agent = req['username']
     response = {}
-
-    response = runQuestion(req['question'], agent)
+    question = unidecode(req['question'])
+    response = runQuestion(question, agent)
     
     print(u"[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
                                                          resp=unicode(response),
-                                                         q=req['question']))
+                                                         q=question))
     
     return flask.jsonify(response)
 
