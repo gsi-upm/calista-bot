@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
                         $('#iframe-qa').attr('src', vademecum_base + filename);
                         current_url_shown = vademecum_base + filename;                }
             });
-            if (data_resp.related) {
+            if (data_resp.related.length > 0) {
                 var related_answer = "También puedes preguntarme sobre "
                                       + data_resp.related[0];
                 if (data_resp.related.length >=2 ) {
