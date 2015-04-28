@@ -39,7 +39,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition)
-        [Te_enseño_la_información_que_tengo_sobre_$pregunta][Esto_es_lo_que_se_sobre_$pregunta] ¬sendSolr resource $pregunta
+        [Te enseño la información que tengo sobre $pregunta][Esto es lo que se sobre $pregunta] ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
@@ -60,17 +60,17 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
 u: GAMBIT (_~javaconcept)
     $pregunta = '_0
-    Lo siento, no te he entendido bien. ¬sendSolr gambit $pregunta
+    Lo siento, no te he entendido bien. ¬gambit $pregunta
     # Busco lo más aproximado en solr.
-    a: (¬solrResponse gambit _*1)
-        $$pregunta_gambit=_0
+    a: (¬gambit response _*1)
+        $$pregunta_gambit='_0
         Te refieres a $$pregunta_gambit ?
         b: (~afirmacion)
             $pregunta=$$pregunta_gambit
             ^reuse(COMIENZO)
         b: (~negacion)
             Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-    a:(¬solrResponse unknown)
+    a:(¬gambitUnknown)
         ¿ Podrías formularlo de alguna otra manera?
 
 
