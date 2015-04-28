@@ -18,8 +18,8 @@ host='localhost'
 port=4242
 
 # Solr settings
-solr = {'host': 'localhost', 'port':8990, 
-        'core': 'elearning'}
+solr = {'host': 'localhost', 'port':8080, 
+        'core': 'elearning', 'score': 0.5}
 
 # ChatScript settings:
 # The agent should be randomly set for each user
@@ -210,19 +210,25 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
     question = question.replace(' ', '+')
     
     qf = ' '.join([key+'^'+value for key,value in weights.iteritems()])
-        
+    
     payload = {'q':question, 'defType':'edismax',
                'lowercaseOperators':'true', 'stopwords':'true',
                'qf':qf}   
     
     if fl:
-        payload['fl'] = fl
+        payload['fl'] = '{fl},score'.format(fl=fl)
+    else:
+        payload['fl'] = '*,score'
     
     solr_response = sendSolr(payload)
     
+    # If the doc has a low score, we don't return it.
+    if solr_response['score'] < solr['score']:
+        return []
+    
     links = solr_response['answer']['links']
     links_names = []
-    links.pop
+    
     for link in links:
         # Ignore the general "vademecum root" link
         if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
@@ -231,6 +237,7 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
             links_names.append({'title':q_response['answer']['title'],
                                 'definition':q_response['answer']['definition'],
                                 'resource':link})
+    
     
     solr_response['answer']['links'] = links_names
     return  solr_response

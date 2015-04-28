@@ -17,8 +17,8 @@ host='localhost'
 port=4242
 
 # Solr settings
-solr = {'host': 'localhost', 'port':8990, 
-        'core': 'elearning'}
+solr = {'host': 'localhost', 'port':8080, 
+        'core': 'elearning', 'score':0.5}
 
 @app.route('/')
 def rootURL():
@@ -74,24 +74,31 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
                'qf':qf}   
     
     if fl:
-        payload['fl'] = fl
+        payload['fl'] = '{fl},score'.format(fl=fl)
+    else:
+        payload['fl'] = '*,score'
     
     solr_response = sendSolr(payload)
-    if len(solr_response) != 0:
-        solr_response['answer'] = solr_response['answer'][0]
-        links = solr_response['answer']['links']
-        links_names = []
-        #links.pop(0)
-        for link in links:
-            # Ignore the general "vademecum root" link
-            if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
-                query = {'q':'resource: "{url}"'.format(url=link)}
-                q_response = sendSolr(query)
-                links_names.append({'title':q_response['answer'][0]['title'],
+    
+       
+    if len(solr_response) != 0 :
+        if solr_response['answer'][0]['score'] >= solr['score']:
+            solr_response['answer'] = solr_response['answer'][0]
+            links = solr_response['answer']['links']
+            links_names = []
+            #links.pop(0)
+            for link in links:
+                # Ignore the general "vademecum root" link
+                if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
+                    query = {'q':'resource: "{url}"'.format(url=link)}
+                    q_response = sendSolr(query)
+                    links_names.append({'title':q_response['answer'][0]['title'],
                                 'definition':q_response['answer'][0]['definition'],
                                 'resource':link})
-    
-        solr_response['answer']['links'] = links_names
+        
+            solr_response['answer']['links'] = links_names
+        else:
+            solr_response = {'answer': {'error':u'No tengo informacion sobre esa pregunta'}}
     else:
         solr_response = {'answer': {'error':u'No tengo informacion sobre esa pregunta'}}
     return  solr_response
