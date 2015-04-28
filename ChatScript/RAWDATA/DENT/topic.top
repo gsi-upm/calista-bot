@@ -13,11 +13,14 @@ concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes 
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
+concept: ~bot [bot chatbot chatterbot asistente bot_asistente asistente_virtual]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
 concept: ~profesor [profesor profe professor]
+concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
+
 
 topic: ~preguntas keep repeat []
 
@@ -40,17 +43,58 @@ u: (tengas * buen_dia)
 u: (muy_bien)
     [Me alegro][Estupendo]
 
-# Simple, generic questions
+# Bad words and and answers to unpolite talk
+u: (~insulto_feo)
+    [Pues mi madre dice que soy muy guapo]
+    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
+    [Prefiero mi interfaz actual a una simple línea de comandos.]
+    [Tan poco estoy tan mal para ser una mascota]
 
+u: (~insulto_tonto)
+    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
+    [Aunque sea un bot me duele que me digan esas cosas...]
+    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
+    [Mi autoestima disminuye con esos calificativos...]
+    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
+
+u: (~insulto_fuerte)
+    [Sin insultar, por favor.]
+    [No hace falta decir tacos...]
+    [No deberías ser tan maleducad@.]
+
+u: (~mala_educacion)
+    [Vaya lenguaje...]
+    [Se pueden decir las cosas de manera educada...]
+    [No me gusta ese lenguaje]    
+
+u: (~insulto_ingenioso) [jeje, que gracia][jeje]
+    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+
+u: (~lol)
+    [Me alegro de que estés contento]
+
+u: (ok) ok
+    a: (ok) ok ¿qué?
+        b: (ok) ...
+
+# Simple, generic questions
 u: (~ser {~articulos} ~profesor)
     No, soy un bot asistente para ayudarte a encontrar respuestas.
     # TODO: Add rejoinder to offer contact info.
 
 u: (~quien ~ser)
     Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.
+    a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
+
+u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
 
 u: (~que < * ~hacer)
-    [Mi funcion es ayudarte a encontrar respuestas][Busco información en mis documentos de Java]
+    [Mi funcion es ayudarte a encontrar respuestas][Busco información en mis documentos de Java][¡Cualquier cosa! ...nah, es broma, soy experto en Java]
 
 
 
