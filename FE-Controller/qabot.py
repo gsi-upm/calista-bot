@@ -72,35 +72,28 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
     payload = {'q':question, 'defType':'edismax',
                'lowercaseOperators':'true', 'stopwords':'true',
                'qf':qf}   
-    
-    if fl:
-        payload['fl'] = '{fl},score'.format(fl=fl)
-    else:
-        payload['fl'] = '*,score'
-    
+
     solr_response = sendSolr(payload)
     
        
     if len(solr_response) != 0 :
-        if solr_response['answer'][0]['score'] >= solr['score']:
-            solr_response['answer'] = solr_response['answer'][0]
-            links = solr_response['answer']['links']
-            links_names = []
-            #links.pop(0)
-            for link in links:
-                # Ignore the general "vademecum root" link
-                if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
-                    query = {'q':'resource: "{url}"'.format(url=link)}
-                    q_response = sendSolr(query)
-                    links_names.append({'title':q_response['answer'][0]['title'],
-                                'definition':q_response['answer'][0]['definition'],
-                                'resource':link})
+        solr_response['answer'] = solr_response['answer'][0]
+        links = solr_response['answer']['links']
+        links_names = []
+        #links.pop(0)
+        for link in links:
+            # Ignore the general "vademecum root" link
+            if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
+                query = {'q':'resource: "{url}"'.format(url=link)}
+                q_response = sendSolr(query)
+                links_names.append({'title':q_response['answer'][0]['title'],
+                                    'definition':q_response['answer'][0]['definition'],
+                                    'resource':link})
         
-            solr_response['answer']['links'] = links_names
-        else:
-            solr_response = {'answer': {'error':u'No tengo informacion sobre esa pregunta'}}
+        solr_response['answer']['links'] = links_names
     else:
         solr_response = {'answer': {'error':u'No tengo informacion sobre esa pregunta'}}
+    
     return  solr_response
     
 def sendSolr(payload):
@@ -118,12 +111,18 @@ def sendSolr(payload):
         payload['wt'] = 'json'
     if 'rows' not in payload:
         payload['rows'] = '1'
+    
+    if 'fl' in payload:
+        payload['fl'] = '{fl},score'.format(fl=payload['fl'])
+    else:
+        payload['fl'] = '*,score'
+        
     #print('Query: {payload}'.format(payload=str(payload)))
     response = requests.get(solr_url, params=payload).json()
     if len(response['response']['docs']) != 0:
-        return {'answer':response['response']['docs'], 'response':response}
-    else:
-        return {}
+        if response['response']['docs'][0]['score'] > solr['score']:
+            return {'answer':response['response']['docs'], 'response':response}
+    return {}
 
 if __name__ == '__main__':
     app.debug = True
