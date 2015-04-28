@@ -88,10 +88,18 @@ jQuery(document).ready(function($){
                 $('#screen').append(constructDialogEntry('Duke', answer));
 		scrollDisplay();
                 if (data_resp.resource) {
+                    if (data_resp.resource.indexOf('vademecum') != -1 ){
+                        // This links to the vademecum
                         var name_start = data_resp.resource.lastIndexOf('/')+1
                         var filename = data_resp.resource.substring(name_start)
                         $('#iframe-qa').attr('src', vademecum_base + filename);
-                        current_url_shown = vademecum_base + filename;                }
+                        current_url_shown = vademecum_base + filename;
+                    } else {
+                        //I have some other link
+                        $('#iframe-qa').attr('src', data_resp.resource);
+                        current_url_shown = data_resp.resource;
+                    }
+                }
             });
             if (data_resp.related && data_resp.related.length > 0) {
                 var related_answer = "También puedes preguntarme sobre "

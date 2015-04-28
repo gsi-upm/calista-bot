@@ -6,28 +6,49 @@ concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
-concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda]
+concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda Si Sí sí]
 concept: ~negacion [no nones nanai naranjas quia ca]
 concept: ~profesor [profesor profe professor]
 
 topic: ~preguntas keep repeat []
 
 u: (~saludos)
-    Hola, soy Duke y estoy aqui para ayudarte.
+    [Hola, soy Duke y estoy aqui para ayudarte.]
+    [Entra, <i>Mellon</i>, y pregunta.]
+    
+    a: ([melon mellon])
+        [Amigo, en élfico. Estoy aquí para ayudarte con tus dudas]
+    a: ([insultar insultando insultado])
+        No, no. <i>Mellon</i> significa <i>Amigo</i> en Sindarin
+        b: (sindarin)
+            La lengua de los elfos de la Tierra Media. ¬resource http://es.wikipedia.org/wiki/Sindarin
+            c: (java)
+                Eso puedo hacerlo. ¿En qué necesitas que te ayude?
 
 # Simple, generic questions
 
 u: (~ser {~articulos} ~profesor)
-    No, soy un bot asistente para ayudarte a encontrar respuestas.
+    [No, soy un bot asistente para ayudarte a encontrar respuestas.]
+    [Ya me gustaría. Solo soy un bot que responde preguntas de java.]
+    [Por supuesto. ¡Estás suspenso! Na, es broma. Soy un bot inteligente.]
     # TODO: Add rejoinder to offer contact info.
 
 u: (~quien ~ser)
-    Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.
+    [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
+    [Duke, encantado de conocerte. Soy un bot especializado en java]
+    [Duke en mi nombre. Responder tus dudas yo debo]
 
 u: (~que ~hacer)
-    Mi funcion es ayudarte a encontrar respuestas
+    [Mi funcion es ayudarte a encontrar respuestas]
+    [Lo mio es buscar información sobre java y ayudarte con tus dudas]
+    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    
+u: (tarde)
+    [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
+    [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
+    
 
-t: Hola, en que puedo ayudarte?
+t: Hola, ¿en que puedo ayudarte?
 
 # Generic questions
 #! que es un for?
@@ -39,7 +60,9 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition)
-        [Te enseño la información que tengo sobre $pregunta][Esto es lo que se sobre $pregunta] ¬sendSolr resource $pregunta
+        [Te enseño la información que tengo sobre $pregunta]
+        [Esto es lo que sé sobre $pregunta]
+        ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
@@ -51,51 +74,60 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
         b: () # No matter if there is a link or not, ask for related
             ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
-                Tambien puedes preguntar sobre '_0 \@full\_response
+                [Tambien puedes preguntar sobre '_0]
+                [Otros asuntos de los que entiendo son '_0]
+                \@full\_response
             c:(¬solrResponse unknown)
                 \@fullResponse
         
     a: (¬solrResponse unknown)
         ^reuse(GAMBIT)
-    
-u: GAMBIT (_~javaconcept)
-    $pregunta = '_0
-    Lo siento, no te he entendido bien. ¬gambit $pregunta
-    # Busco lo más aproximado en solr.
-    a: (¬gambit response _*1)
-        $$pregunta_gambit='_0
-        Te refieres a $$pregunta_gambit ?
-        b: (~afirmacion)
-            $pregunta=$$pregunta_gambit
-            ^reuse(COMIENZO)
-        b: (~negacion)
-            Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-    a:(¬gambitUnknown)
-        ¿ Podrías formularlo de alguna otra manera?
-
 
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
     ¬sendSolr examples $pregunta 
     a:(solrResponse examples _*)
-        Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
+        [Te muestro el documento con ejemplos.]
+        [Esto es lo que sé sobre $pregunta , incluidos sus ejemplos.]
+        ¬sendSolr resource $pregunta
             b:(¬solrResponse resource _*)
                 ¬resource '_0
     a:(¬solrResponse unknown)
-        Lo siento, no tengo ningun ejemplo sobre $pregunta
+        [Lo siento, no tengo ningun ejemplo sobre $pregunta ]
+        [Vaya, pues no he encontrado nada sobre $pregunta . Qué raro...]
         
 u: EJEMPLO (~ejemplo $pregunta)
     ¬sendSolr examples $pregunta 
     a:(¬solrResponse examples _*)
-        Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
+        [Te muestro el documento con ejemplos. ]
+        [Esto son los ejemplos que tengo de $pregunta  ]
+        ¬sendSolr resource $pregunta
             b:(¬solrResponse resource _*)
                 ¬resource '_0
     a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
-    Sobre que quieres el ejemplo?
+    ¿Sobre que quieres el ejemplo?
     a: (~preposiciones _*1 >)
         $pregunta='_0
         ^reuse(EJEMPLO)
 
+u: GAMBIT (_~javaconcept)
+    $pregunta = '_0
+    [Lo siento, no te he entendido bien.]
+    [Espera, me he perdido.]
+    ¬gambit $pregunta
+    # Busco lo más aproximado en solr.
+    a: (¬gambit response _*1)
+        $$pregunta_gambit='_0
+        ¿Te refieres a $$pregunta_gambit ?
+        b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b: (~negacion)
+            [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
+            [Vaya, pues esperaba que fuese eso...]
+            [¿Me he equivocado? Whoops, esto es un poco incómodo...]
+    a:(¬gambitUnknown)
+        ¿ Podrías formularlo de alguna otra manera?
