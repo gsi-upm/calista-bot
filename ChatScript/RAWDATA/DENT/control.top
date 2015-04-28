@@ -101,7 +101,9 @@ u: () # main per-sentence processing
 	if (%response == 0) 
 	{
 		 ^repeat() 
-		 Lo siento, no te he entendido. Podrias reformularlo, ¿por favor?    
+		 [Lo siento, no te he entendido. Podrias reformularlo, ¿por favor?]
+		 [Perdona, no te he entendido bien. ¿Decías?]
+		 [¿Eins? ¿Podrías repetir eso último?]
 	}
 
 	

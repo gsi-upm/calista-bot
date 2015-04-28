@@ -1,19 +1,34 @@
+# reducciones de saludos y despedidas
 concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
+concept: ~adios [adios ciao agur bye bye_bye ]
+concept: ~hasta_otra [hasta_otra hasta_luego]
+# Formulaciones para pedir informacion sobre algo
 concept: ~que [que Q 'q qe]
-concept: ~ser [ser eres Es sabes_sobre son]
+concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo]
+concept: ~ser [ser eres Es son ~saber]
+# Formulaciones para pedir ejemplos
+concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
+# adirmaciones y negaciones para concatenar preguntas
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí]
+concept: ~afirmacion_debil [vale bueno por_que_no gracias]
+concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
+# otras reducciones
+concept: ~bot [bot chatbot chatterbot asistente bot_asistente asistente_virtual]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
-concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
-concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
-concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda Si Sí sí]
-concept: ~negacion [no nones nanai naranjas quia ca]
 concept: ~profesor [profesor profe professor]
+concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
+concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
+
 
 topic: ~preguntas keep repeat []
 
+
 u: (~saludos)
     [Hola, soy Duke y estoy aqui para ayudarte.]
+    [Hola, ¿necesitas ayuda?]
+    [¡Hola!]
     [Entra, <i>Mellon</i>, y pregunta.]
     
     a: ([melon mellon])
@@ -23,10 +38,58 @@ u: (~saludos)
         b: (sindarin)
             La lengua de los elfos de la Tierra Media. ¬resource http://es.wikipedia.org/wiki/Sindarin
             c: (java)
-                Eso puedo hacerlo. ¿En qué necesitas que te ayude?
+                Eso puedo hacerlo. ¿En qué necesitas que te ayude? ¬resource http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html
+
+u: (buenos_dias)
+    [Hola, buenos días][Buenos días]
+
+u: (~adios *)
+    [¡Que tengas buen día!][Adiós ¡Gracias!]
+
+u: (~hasta_otra *)
+    Hasta luego, vuelve cuando quieras
+
+u: (tengas * buen_dia)
+    Tú también, ¡gracias!
+
+u: (muy_bien)
+    [Me alegro][Estupendo]
+
+# Bad words and and answers to unpolite talk
+u: (~insulto_feo)
+    [Pues mi madre dice que soy muy guapo]
+    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
+    [Prefiero mi interfaz actual a una simple línea de comandos.]
+    [Tan poco estoy tan mal para ser una mascota]
+
+u: (~insulto_tonto)
+    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
+    [Aunque sea un bot me duele que me digan esas cosas...]
+    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
+    [Mi autoestima disminuye con esos calificativos...]
+    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
+
+u: (~insulto_fuerte)
+    [Sin insultar, por favor.]
+    [No hace falta decir tacos...]
+    [No deberías ser tan maleducad@.]
+
+u: (~mala_educacion)
+    [Vaya lenguaje...]
+    [Se pueden decir las cosas de manera educada...]
+    [No me gusta ese lenguaje]    
+
+u: (~insulto_ingenioso) [jeje, que gracia][jeje]
+    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+
+u: (~lol)
+    [Me alegro de que estés contento]
+
+u: (ok) ok
+    a: (ok) ok ¿qué?
+        b: (ok) ...
 
 # Simple, generic questions
-
 u: (~ser {~articulos} ~profesor)
     [No, soy un bot asistente para ayudarte a encontrar respuestas.]
     [Ya me gustaría. Solo soy un bot que responde preguntas de java.]
@@ -37,11 +100,22 @@ u: (~quien ~ser)
     [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
     [Duke, encantado de conocerte. Soy un bot especializado en java]
     [Duke en mi nombre. Responder tus dudas yo debo]
+    a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
+u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
+
+    
 u: (~que ~hacer)
     [Mi funcion es ayudarte a encontrar respuestas]
     [Lo mio es buscar información sobre java y ayudarte con tus dudas]
     [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    [Busco información en mis documentos de Java]
+    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
     
 u: (tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
@@ -128,6 +202,10 @@ u: GAMBIT (_~javaconcept)
         b: (~negacion)
             [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
             [Vaya, pues esperaba que fuese eso...]
+            [Pues entonces no caigo ¿alguna otra cosa?]
+            [Vaya, lo siento, no caigo]
             [¿Me he equivocado? Whoops, esto es un poco incómodo...]
     a:(¬gambitUnknown)
-        ¿ Podrías formularlo de alguna otra manera?
+        [¿Podrías formularlo de alguna otra manera?]
+        [¿Prueba a preguntarlo de otra forma?]
+        [Cuando me preguntas Que Es Algo, suelo entonderlo]
