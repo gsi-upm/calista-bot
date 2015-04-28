@@ -96,24 +96,28 @@ def runCommands(cs_response, question, user):
                 if not requested in response:
                     response[requested] = solr_response[0][requested]
                 r_response = solr_response[0][requested]
-                commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
+                r_title = solr_response[0]['title']
+                commands.append(u"¬solrResponse {command} {label}".format(label=r_title,
                                                                      command=requested))
             else:
                 response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
 
         elif u'¬solrLinks' in command:
-            link_list = command.replace(u'¬solrLinks', '')
-            link_list = link_list.replace(" ", "")
-            link_list = ast.literal_eval(link_list.strip())
-            links_names = []
-            for link in link_list:
-                l_q = {'q': 'resource:"{link}"'.format(link=link),
-                       'fl': 'title'}
-                l_response = sendSolr(l_q)
-                if len(l_response) != 0:
-                    title = l_response[0]['title']
-                    links_names.append(title)
-            response['related'] = links_names
+            try:
+                link_list = command.replace(u'¬solrLinks', '')
+                link_list = link_list.replace(" ", "")
+                link_list = ast.literal_eval(link_list.strip())
+                links_names = []
+                for link in link_list:
+                    l_q = {'q': 'resource:"{link}"'.format(link=link),
+                        'fl': 'title'}
+                    l_response = sendSolr(l_q)
+                    if len(l_response) != 0:
+                        title = l_response[0]['title']
+                        links_names.append(title)
+                response['related'] = links_names
+            except:
+                print("Error processing links")
         elif u"¬solrResponse" in command:
             current_response = sendChatScript(command, user)
             new_commands, new_nl = splitCommands(current_response)
