@@ -1,19 +1,44 @@
+# reducciones de saludos y despedidas
 concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
+concept: ~adios [adios ciao agur bye bye_bye ]
+concept: ~hasta_otra [hasta_otra hasta_luego]
+# Formulaciones para pedir informacion sobre algo
 concept: ~que [que Q 'q qe]
-concept: ~ser [ser eres Es sabes_sobre son]
+concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo]
+concept: ~ser [ser eres Es son ~saber]
+# Formulaciones para pedir ejemplos
+concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
+# adirmaciones y negaciones para concatenar preguntas
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga]
+concept: ~afirmacion_debil [vale bueno por_que_no gracias]
+concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
+# otras reducciones
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
-concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
-concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
-concept: ~afirmacion [si por_favor efectivamente evidentemente sin_duda]
-concept: ~negacion [no nones nanai naranjas quia ca]
 concept: ~profesor [profesor profe professor]
+concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
 
 topic: ~preguntas keep repeat []
 
+
 u: (~saludos)
-    Hola, soy Duke y estoy aqui para ayudarte.
+    [Hola, soy Duke y estoy aqui para ayudarte.][Hola, ¿necesitas ayuda?][¡Hola!]
+
+u: (buenos_dias)
+    [Hola, buenos días][Buenos días]
+
+u: (~adios *)
+    [¡Que tengas buen día!][Adiós ¡Gracias!]
+
+u: (~hasta_otra *)
+    Hasta luego, vuelve cuando quieras
+
+u: (tengas * buen_dia)
+    Tú también, ¡gracias!
+
+u: (muy_bien)
+    [Me alegro][Estupendo]
 
 # Simple, generic questions
 
@@ -24,8 +49,10 @@ u: (~ser {~articulos} ~profesor)
 u: (~quien ~ser)
     Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.
 
-u: (~que ~hacer)
-    Mi funcion es ayudarte a encontrar respuestas
+u: (~que < * ~hacer)
+    [Mi funcion es ayudarte a encontrar respuestas][Busco información en mis documentos de Java]
+
+
 
 t: Hola, en que puedo ayudarte?
 
