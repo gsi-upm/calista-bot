@@ -138,11 +138,15 @@ u: GAMBIT (_~javaconcept)
         Te refieres a $$pregunta_gambit ?
         b: (~afirmacion)
             $pregunta=$$pregunta_gambit
-            ^reuse(COMIENZO)
+            ^reuse(COMIENZO)        
         b: (~negacion)
-            Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+            [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
+            [Pues entonces no caigo ¿alguna otra cosa?]
+            [Vaya, lo siento, no caigo]
     a:(¬gambitUnknown)
-        ¿ Podrías formularlo de alguna otra manera?
+        [¿ Podrías formularlo de alguna otra manera?]
+        [¿ Prueba a preguntarlo de otra forma?]
+        [Cuando me preguntas Que Es Algo, suelo entonderlo]
 
 
 u: (~ejemplo ~preposiciones _*)
