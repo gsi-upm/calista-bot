@@ -9,7 +9,7 @@ concept: ~ser [ser eres Es son ~saber]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
 # adirmaciones y negaciones para concatenar preguntas
-concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí]
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí claro sii siii siiii ]
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
@@ -136,6 +136,9 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     a: (¬solrResponse definition)
         [Te enseño la información que tengo sobre $pregunta]
         [Esto es lo que sé sobre $pregunta]
+        [Espero que esto sobre $pregunta te ayude]
+        [Ayudarte puedo. Información sobre $pregunta en la pantalla muestro]
+        [Compartir es vivir. Esto es lo que sé de $pregunta]
         ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
@@ -150,6 +153,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
             c: (¬solrResponse links _*)
                 [Tambien puedes preguntar sobre '_0]
                 [Otros asuntos de los que entiendo son '_0]
+                [Si quieres, creo que '_0 tienen algo que ver con esto]
                 \@full\_response
             c:(¬solrResponse unknown)
                 \@fullResponse
@@ -160,7 +164,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
     ¬sendSolr examples $pregunta 
-    a:(solrResponse examples _*)
+    a:(¬solrResponse examples _*)
         [Te muestro el documento con ejemplos.]
         [Esto es lo que sé sobre $pregunta , incluidos sus ejemplos.]
         ¬sendSolr resource $pregunta
@@ -197,6 +201,11 @@ u: GAMBIT (_~javaconcept)
         $$pregunta_gambit='_0
         ¿Te refieres a $$pregunta_gambit ?
         b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b:(~afirmacion_debil)
+            [Me lo tomaré como un sí]
+            [Pues espero haber acertado]
             $pregunta=$$pregunta_gambit
             ^reuse(COMIENZO)
         b: (~negacion)
