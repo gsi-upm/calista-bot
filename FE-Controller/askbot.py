@@ -18,8 +18,8 @@ host='localhost'
 port=4242
 
 # Solr settings
-solr = {'host': 'localhost', 'port':8990, 
-        'core': 'elearning'}
+solr = {'host': 'localhost', 'port':8080, 
+        'core': 'elearning', 'score': 0.5}
 
 # ChatScript settings:
 # The agent should be randomly set for each user
@@ -27,6 +27,7 @@ solr = {'host': 'localhost', 'port':8990,
 cs = {'bot': u'Dent', 'host':'localhost',
       'port': 1025, 'agent': u'ErrorAgent'}
 
+default_response='Lo siento, no he podido encontrar nada sobre eso'
 
 @app.route('/')
 def rootURL():
@@ -43,6 +44,10 @@ def qa():
     response = {}
     question = unidecode(req['question'])
     response = runQuestion(question, agent)
+    
+    # If there is no answer after the processing, send a default one.
+    if not 'answer' in response:
+        response['answer'] = default_response
     
     print(u"[ASK-BOT]Answering to user: {user} question: {q} with {resp}".format(user=agent,
                                                          resp=unicode(response),
@@ -85,7 +90,7 @@ def runCommands(cs_response, question, user):
         if u"¬sendSolr" in command:
             elements = command.split(' ')
             requested = elements[1]
-            query = {'q': 'title:{label}'.format(label=elements[2])}
+            query = {'q': 'title:{label}'.format(label=unidecode(elements[2]))}
             solr_response = sendSolr(query)
             if len(solr_response) != 0:
                 if not requested in response:
@@ -115,11 +120,14 @@ def runCommands(cs_response, question, user):
             if new_nl != "":
                 response['answer'].append(new_nl)
             commands += new_commands
+        elif u'¬gambit' in command:
+            new_commands, new_nl = processGambit(command, user)
+            commands += new_commands
+            if new_nl != '':
+                response['answer'].append(new_nl)
         elif u"¬resource" in command:
             if 'resource' not in response:
                 response['resource'] = command.replace(u'¬resource ', '')
-        elif u"¬gambit" in command:
-            sendSolr(question)
         elif u"¬label" in command:
             print("label found")
         elif u"¬links" in command:
@@ -146,6 +154,34 @@ def splitCommands(cs_response):
         commands = [u'¬' + command for command in l_commands[1:]]
         
     return (commands, nl_response)
+
+def processGambit(command, user):
+    """
+    Given a gambit, process the question or response
+    
+    """
+    command = command.strip()
+    
+    c_elements = command.split(' ')
+    print(c_elements)
+    
+    if len(c_elements) == 2:
+        # I have a command like '¬gambit for' asking for a search
+        # Send the query to solr
+        solr_response = sendSolrEDisMax(c_elements[1])
+        
+        if len(solr_response) != 0:
+            # Return the propposal'
+            return ([u'¬gambit response {concept}'.format(concept=solr_response[0]['title'])], '')
+        else:
+            return ([u'¬gambitUnknown'], '')
+    else:
+        # I have a command that's a gambit response
+        # Send it to ChatScript
+        cs_response =sendChatScript(command, user)
+        
+        return splitCommands(cs_response)
+        
 
 def sendChatScript(query, agent=cs['agent']):
     """
@@ -205,29 +241,25 @@ def sendSolrEDisMax(question, weights={'title':'10', 'description':'2'}, fl=None
     question = question.replace(' ', '+')
     
     qf = ' '.join([key+'^'+value for key,value in weights.iteritems()])
-        
+    
     payload = {'q':question, 'defType':'edismax',
                'lowercaseOperators':'true', 'stopwords':'true',
                'qf':qf}   
     
-    if fl:
-        payload['fl'] = fl
-    
     solr_response = sendSolr(payload)
     
-    links = solr_response['answer']['links']
-    links_names = []
-    links.pop
-    for link in links:
-        # Ignore the general "vademecum root" link
-        if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
-            query = {'q':'resource: "{url}"'.format(url=link)}
-            q_response = sendSolr(query)
-            links_names.append({'title':q_response['answer']['title'],
-                                'definition':q_response['answer']['definition'],
-                                'resource':link})
-    
-    solr_response['answer']['links'] = links_names
+    #links = solr_response['answer']['links']
+    #links_names = []
+    #
+    #    for link in links:
+    #        # Ignore the general "vademecum root" link
+    #        if "http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html" not in link:
+    #        query = {'q':'resource: "{url}"'.format(url=link)}
+    #        q_response = sendSolr(query)
+    #        links_names.append({'title':q_response['answer']['title'],
+    #                            'definition':q_response['answer']['definition'],
+    #                            'resource':link})
+    #solr_response['answer']['links'] = links_names
     return  solr_response
     
 def sendSolr(payload):
@@ -245,11 +277,20 @@ def sendSolr(payload):
         payload['wt'] = 'json'
     if 'rows' not in payload:
         payload['rows'] = '1'
+    
+    if 'fl' in payload:
+        payload['fl'] = '{fl},score'.format(fl=payload['fl'])
+    else:
+        payload['fl'] = '*,score'
+        
     print('Query: {payload}'.format(payload=str(payload)))
     response = requests.get(solr_url, params=payload).json()
     
-    
-    return response['response']['docs']
+    # Check the score
+    if len(response['response']['docs']) != 0:
+        if response['response']['docs'][0]['score'] > solr['score']:
+            return response['response']['docs']
+    return []
 
 def toUTF8(string):
     """

@@ -66,7 +66,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     
     # Process the maia responses
     a: (¬solrResponse definition)
-        Te enseño la información que tengo sobre $pregunta  ¬sendSolr resource $pregunta
+        [Te enseño la información que tengo sobre $pregunta][Esto es lo que se sobre $pregunta] ¬sendSolr resource $pregunta
         
         # Ask for the link to show in the frame
         b: (¬solrResponse resource _*)
@@ -83,39 +83,46 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                 \@fullResponse
         
     a: (¬solrResponse unknown)
-        Lo siento, no te he entendido bien. ¬sendSolr gambit $pregunta
-        # Busco lo más aproximado en solr.
-        b:(¬solrResponse gambit _*1)
-            $$pregunta_gambit=_0
-            Te refieres a $$pregunta_gambit ?
-            c: (~afirmacion)
-                $pregunta=$$pregunta_gambit
-                ^reuse(COMIENZO)
-            c: (~negacion)
-                Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
-        b:(¬maiaResponse unknown)
-            _   
-        
+        ^reuse(GAMBIT)
+    
+u: GAMBIT (_~javaconcept)
+    $pregunta = '_0
+    Lo siento, no te he entendido bien. ¬gambit $pregunta
+    # Busco lo más aproximado en solr.
+    a: (¬gambit response _*1)
+        $$pregunta_gambit='_0
+        Te refieres a $$pregunta_gambit ?
+        b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b: (~negacion)
+            Me temo que no puedo ayudarte. Por que no me preguntas sobre alguna otra cosa?
+    a:(¬gambitUnknown)
+        ¿ Podrías formularlo de alguna otra manera?
+
 
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
-    ¬sendMaia examples $pregunta 
-    a:(maiaResponse examples _*)
+    ¬sendSolr examples $pregunta 
+    a:(solrResponse examples _*)
         Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
             b:(¬solrResponse resource _*)
                 ¬resource '_0
-    a:(¬maiaResponse unknown)
+    a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
         
 u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendMaia examples $pregunta 
-    a:(¬maiaResponse examples _*)
-        '_0
-    a:(¬maiaResponse unknown)
+    ¬sendSolr examples $pregunta 
+    a:(¬solrResponse examples _*)
+        Te muestro el documento con ejemplos. ¬sendSolr resource $pregunta
+            b:(¬solrResponse resource _*)
+                ¬resource '_0
+    a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
     
 u: (~ejemplo)
     Sobre que quieres el ejemplo?
     a: (~preposiciones _*1 >)
-        $pregunta=_0
+        $pregunta='_0
         ^reuse(EJEMPLO)
+
