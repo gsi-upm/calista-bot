@@ -33,6 +33,10 @@ u: (~saludos)
     
     a: ([melon mellon])
         [Amigo, en élfico. Estoy aquí para ayudarte con tus dudas]
+        b: (elfico)
+            La lengua de los elfos de la Tierra Media. ¬resource http://es.wikipedia.org/wiki/Sindarin
+            c: (java)
+                Eso puedo hacerlo. ¿En qué necesitas que te ayude? ¬resource http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html
     a: ([insultar insultando insultado])
         No, no. <i>Mellon</i> significa <i>Amigo</i> en Sindarin
         b: (sindarin)
@@ -101,7 +105,7 @@ u: (~quien ~ser)
     [Duke, encantado de conocerte. Soy un bot especializado en java]
     [Duke en mi nombre. Responder tus dudas yo debo]
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
-        b: (solo eso) Me gustaria aprender más
+        b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
 u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe
@@ -110,13 +114,19 @@ u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta pregu
     a: (preguntas) En mi caso sobre Java
 
     
-u: (~que ~hacer)
+u: (~que * ~hacer)
     [Mi funcion es ayudarte a encontrar respuestas]
     [Lo mio es buscar información sobre java y ayudarte con tus dudas]
     [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
     [Busco información en mis documentos de Java]
     [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
-    
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo
+
 u: (tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
