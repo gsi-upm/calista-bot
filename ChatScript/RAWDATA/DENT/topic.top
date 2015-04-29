@@ -1,5 +1,5 @@
 # reducciones de saludos y despedidas
-concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
+concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal hi hello]
 concept: ~adios [adios ciao agur bye bye_bye ]
 concept: ~hasta_otra [hasta_otra hasta_luego]
 # Formulaciones para pedir informacion sobre algo
