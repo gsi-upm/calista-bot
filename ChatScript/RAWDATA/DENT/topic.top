@@ -9,7 +9,7 @@ concept: ~ser [ser eres Es son ~saber]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
 # adirmaciones y negaciones para concatenar preguntas
-concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí]
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí ok]
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
@@ -81,16 +81,27 @@ u: (~insulto_fuerte)
 u: (~mala_educacion)
     [Vaya lenguaje...]
     [Se pueden decir las cosas de manera educada...]
-    [No me gusta ese lenguaje]    
+    [No me gusta ese lenguaje]
 
-u: (~insulto_ingenioso) [jeje, que gracia][jeje]
+u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
     a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+        b: (~afirmacion) [Eso es bueno][Me alegro]
+        b: (~negacion) Ok
 
 u: (~lol)
     [Me alegro de que estés contento]
+    [¿He dicho algo gracioso?]
+    [¿Te he hecho reir?]
+    a: (~afirmacion)
+        [Entonces me alegro]
+        [Me alegro]
+        [¡Qué bien!]
+    a: (~negacion)
+        Ok
 
-u: (ok) ok
-    a: (ok) ok ¿qué?
+
+u: (ok) Ok
+    a: (ok) Ok ¿qué?
         b: (ok) ...
 
 # Simple, generic questions
@@ -115,8 +126,8 @@ u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta pregu
 
     
 u: (~que * ~hacer)
-    [Mi funcion es ayudarte a encontrar respuestas]
-    [Lo mio es buscar información sobre java y ayudarte con tus dudas]
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
     [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
     [Busco información en mis documentos de Java]
     [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
@@ -127,10 +138,12 @@ u: (~que * ~hacer)
         b: (~que cosas)
             Pues aún no lo sé ni yo
 
-u: (tarde)
+u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
-    
+
+u: (gracias)
+    [De nada][De nada, ha sido un placer]
 
 t: Hola, ¿en que puedo ayudarte?
 
