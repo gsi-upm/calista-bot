@@ -13,19 +13,111 @@ concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes 
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
-concept: ~bot [bot chatbot chatterbot asistente bot_asistente asistente_virtual]
+concept: ~bot [bot_asistente asistente_virtual bot_conversacional bot chatbot chatterbot asistente]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
 concept: ~articulos [El La los las Un una unos unas]
 concept: ~profesor [profesor profe professor]
 concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
+concept: ~encuesta [encuesta cuestionario evaluación]
+concept: ~estoy [estoy me_siento me_encuentro]
+
+concept: ~estado_animo_negativo_mas [abatido abochornado abucheado aburrido acabado agobiado agotado alarmado alerta alicaído alocado amargado amodorrado angustiado apenado arrepentido asqueado asombrado avergonzado cansado cambiante decaído defraudado desanimado descorazonado desganado desilusionado desinflado desesperado desvalido depresivo deprimido distraído duvitativo enfadado engreído enojado enloquecido fastidiado furioso frustrado impaciente incapaz inquieto irascible hambriento herido mal mareado melancólico molesto nervioso nostálgico pensativo solo soplado temeroso terminante triste vacio vencido]
+concept: ~estado_animo_negativo_fem [abatida abochornada abucheada aburrida acabada agobiada agotada alarmada alerta alicaída alocada amargada amodorrada angustiada apenada arrepentida asqueada asombrada avergonzada cansada cambiante decaída defraudada desanimada descorazonada desganada desilusionada desinflada desesperada desvalida depresiva deprimida distraída duvitativa enfadada engreída enojada enloquecida fastidiada furiosa frustrada impaciente incapaz inquieta irascible hambrienta herida mal mareada melancólica molesta nerviosa nostálgica pensativa sola soplada temerosa terminante triste vacia vencida]
+concept: ~estado_animo_negativo [~estado_animo_negativo_mas ~estado_animo_negativo_fem]
+
+concept: ~estado_animo_positivo_mas [alegre bien calmado contento creativo emocionado empático encantado entusiasmado estupendo estupendamente feliz jubiloso mentido misterioso orgulloso poderoso perfectamente satisfecho sensible seguro]
+concept: ~estado_animo_positivo_fem [alegre bien calmada contenta creativa emocionada empática encantada entusiasmada estupenda estupendamente feliz jubilosa mentida misteriosa orgullosa poderosa perfectamente satisfecha sensible segura]
+concept: ~estado_animo_positivo [~estado_animo_positivo_mas ~estado_animo_positivo_fem]
+
+concept: ~estado_animo_neutro [alabado alabada curioso curiosa soprendido sorprendida]
+concept: ~borracho [borracho borracha pedo ebrio ebria]
 
 
 topic: ~preguntas keep repeat []
 
 
-u: (~saludos)
+
+t: (!$questioned) ¿Cómo estás?
+    a: (_~estado_animo_negativo) ^reuse(ESTOY_NEG)
+    a: (_~estado_animo_positivo) ^reuse(ESTOY_POS)
+    a: (~borracho)               ^reuse(ESTOY_BORRACHO)
+    a: (mal)                     ^reuse(ESTOY_MAL)
+    a: (bien)                    ^reuse(ESTOY_BIEN)
+
+t: ¿En qué puedo ayudarte?
+
+t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
+    a: (~afirmacion) Ok, pues vamos, ¡pregunta!
+    a: (~negacion) Pues ya lo sabes ¡ponme a prueba!
+    t: No controlo todos los temas, pero de algunos sé bastante
+
+t: ($questioned) ¿Se te da bien la programación?
+    t: ¿Te gusta Java?
+        a: (~negacion)
+            ¿Prefieres otro lenguaje?
+            b: (~afirmacion)
+                ¿Cual?
+
+t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minutos
+    a: (~afirmacion)
+        ¡Estupendo, Gracias! Aquí te la pongo ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+    a: (~afirmacion_debil)
+        ¡Gracias! Verás como no se tarda nada ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+    a: (~negacion)
+        Bueno, si cambias de opinión dímelo. Me harías un favor
+
+# Ensennar la encuesta
+u: ([~ensennar ~dar] ~encuesta)
+    ¿Quieres responder a la encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+
+u: (~encuesta)
+    ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+
+#! estoy algo triste
+u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
+    [¿Por qué estás '_0?]
+    [¿Cómo es que estás '_0?]
+    a: (porque)
+        [Entiendo]
+        [Comprendo]
+    a: (~estoy '_~estado_animo_negativo)
+        ^reuse(ESTOY_NEG)
+    a: (*)
+        Oh
+
+#! estoy muy contento
+u: ESTOY_POS (~estoy * _~estado_animo_positivo)
+    [Me alegro de que estés '_0]
+    [¡Estupendo!]
+
+#! creo que estoy borracho
+u: ESTOY_BORRACHO (~estoy ~borracho)
+    ¿En serio?
+    a: (~afirmacion)
+        O_o
+    a: (broma)
+       ¡Ah! ¡Qué susto!
+    a: (~negacion)
+       ¡Ah!
+
+#! estoy mal
+u: ESTOY_MAL ([estoy_mal me_encuentro_mal me_siento_mal])
+    [Vaya ¿qué te pasa?][Vaya ¿qué te ocurre?]
+    a: (*)
+         [Lo siento][Si pudiera hacer algo...]
+
+#! estoy bien
+u: ESTOY_BIEN ([estoy_bien me_encuentro_bien me_siento_bien])
+    [Me alegro][Estupendo]
+
+#! como estas?
+u: (como_estas)
+    Estoy bien, ¡gracias!
+
+#! Hola
+u: SALUDO (~saludos)
     [Hola, soy Duke y estoy aqui para ayudarte.]
     [Hola, ¿necesitas ayuda?]
     [¡Hola!]
@@ -44,50 +136,27 @@ u: (~saludos)
             c: (java)
                 Eso puedo hacerlo. ¿En qué necesitas que te ayude? ¬resource http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html
 
+#! buenos dias
 u: (buenos_dias)
     [Hola, buenos días][Buenos días]
 
+#! adios
 u: (~adios *)
     [¡Que tengas buen día!][Adiós ¡Gracias!]
 
+#! hasta otra
 u: (~hasta_otra *)
     Hasta luego, vuelve cuando quieras
 
+#! que tengas un buen dia
 u: (tengas * buen_dia)
     Tú también, ¡gracias!
 
+#! muy bien
 u: (muy_bien)
     [Me alegro][Estupendo]
 
-# Bad words and and answers to unpolite talk
-u: (~insulto_feo)
-    [Pues mi madre dice que soy muy guapo]
-    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
-    [Prefiero mi interfaz actual a una simple línea de comandos.]
-    [Tan poco estoy tan mal para ser una mascota]
-
-u: (~insulto_tonto)
-    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
-    [Aunque sea un bot me duele que me digan esas cosas...]
-    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
-    [Mi autoestima disminuye con esos calificativos...]
-    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
-
-u: (~insulto_fuerte)
-    [Sin insultar, por favor.]
-    [No hace falta decir tacos...]
-    [No deberías ser tan maleducad@.]
-
-u: (~mala_educacion)
-    [Vaya lenguaje...]
-    [Se pueden decir las cosas de manera educada...]
-    [No me gusta ese lenguaje]
-
-u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
-    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
-        b: (~afirmacion) [Eso es bueno][Me alegro]
-        b: (~negacion) Ok
-
+#! jejeje
 u: (~lol)
     [Me alegro de que estés contento]
     [¿He dicho algo gracioso?]
@@ -99,32 +168,42 @@ u: (~lol)
     a: (~negacion)
         Ok
 
-
+#! ok
 u: (ok) Ok
     a: (ok) Ok ¿qué?
         b: (ok) ...
 
 # Simple, generic questions
+
+#! Eres el profesor?
 u: (~ser {~articulos} ~profesor)
     [No, soy un bot asistente para ayudarte a encontrar respuestas.]
     [Ya me gustaría. Solo soy un bot que responde preguntas de java.]
     [Por supuesto. ¡Estás suspenso! Na, es broma. Soy un bot inteligente.]
     # TODO: Add rejoinder to offer contact info.
 
+#! quien eres?
 u: (~quien ~ser)
     [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
     [Duke, encantado de conocerte. Soy un bot especializado en java]
-    [Duke en mi nombre. Responder tus dudas yo debo]
+    [Duke es mi nombre. Responder tus dudas yo debo]
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
         b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
-u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe
+#! que es un chatbot?
+u: BOT (~que ~ser * _~bot) 
+    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
+    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
     a: ([sobre de] ~que) En mi caso sobre Java
         b: (solo eso) Me gustaria aprender más
     a: (preguntas) En mi caso sobre Java
 
+#! chatbot
+u: (_~bot) 
+    ¿Preguntas lo que es? ^reuse(BOT)
     
+#! que sabes hacer?
 u: (~que * ~hacer)
     [Mi función es ayudarte a encontrar respuestas]
     [Lo mío es buscar información sobre java y ayudarte con tus dudas]
@@ -146,12 +225,49 @@ u: (gracias)
     [De nada]
     [De nada, ha sido un placer]
 
-t: Hola, ¿en que puedo ayudarte?
+# Bad words and and answers to unpolite talk
+
+#! Eres feo
+u: (~insulto_feo)
+    [Pues mi madre dice que soy muy guapo]
+    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
+    [Prefiero mi interfaz actual a una simple línea de comandos.]
+    [Tan poco estoy tan mal para ser una mascota]
+
+#! Eres tonto
+u: (~insulto_tonto)
+    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
+    [Aunque sea un bot me duele que me digan esas cosas...]
+    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
+    [Mi autoestima disminuye con esos calificativos...]
+    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
+
+#! Eres un cabron
+u: (~insulto_fuerte)
+    [Sin insultar, por favor.]
+    [No hace falta decir tacos...]
+    [No deberías ser tan maleducad@.]
+
+#! Me cago en diez
+u: (~mala_educacion)
+    [Vaya lenguaje...]
+    [Se pueden decir las cosas de manera educada...]
+    [No me gusta ese lenguaje]
+
+#! Bocachancla
+u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
+    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+        b: (~afirmacion) [Eso es bueno][Me alegro]
+        b: (~negacion) Ok
+
+u: (cuantas preguntas)
+    Llevas $questioned preguntas
 
 # Generic questions
 #! que es un for?
 
 u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
+    $questioned += 1
     $pregunta='_0
     ¬sendSolr definition $pregunta
     ¬label $pregunta
@@ -172,7 +288,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
         b: () # No matter if there is a link or not, ask for related
             ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
-                [Tambien puedes preguntar sobre '_0]
+                [También puedes preguntar sobre '_0]
                 [Otros asuntos de los que entiendo son '_0]
                 \@full\_response
             c:(¬solrResponse unknown)
