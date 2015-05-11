@@ -93,12 +93,16 @@ def runCommands(cs_response, question, user):
             query = {'q': 'title:{label}'.format(label=unidecode(elements[2]))}
             solr_response = sendSolr(query)
             if len(solr_response) != 0:
-                if not requested in response:
-                    response[requested] = solr_response[0][requested]
-                r_response = solr_response[0][requested]
-                r_title = solr_response[0]['title']
-                commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
+                if 'requested' in solr_response[0]:
+                    if not requested in response:
+                        response[requested] = solr_response[0][requested]
+                    r_response = solr_response[0][requested]
+                    r_title = solr_response[0]['title']
+                    commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
                                                                      command=requested))
+                else:
+                    # I didn't find the relevant info in Solr
+                    commands.append(u'¬solrResponse unknown')
             else:
                 commands.append(u'¬solrResponse unknown')
                 #response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
@@ -135,6 +139,12 @@ def runCommands(cs_response, question, user):
                 print(e)
                 print("Error processing links: {error}".format(error=sys.exc_info()[0]))
         elif u"¬solrResponse" in command:
+            current_response = sendChatScript(command, user)
+            new_commands, new_nl = splitCommands(current_response)
+            if new_nl != "":
+                response['answer'].append(new_nl)
+            commands += new_commands
+        elif u"¬gambitResponse" in command:
             current_response = sendChatScript(command, user)
             new_commands, new_nl = splitCommands(current_response)
             if new_nl != "":
@@ -192,7 +202,7 @@ def processGambit(command, user):
         
         if len(solr_response) != 0:
             # Return the propposal'
-            return ([u'¬gambit response {concept}'.format(concept=solr_response[0]['title'])], '')
+            return ([u'¬gambitResponse {concept}'.format(concept=solr_response[0]['title'])], '')
         else:
             return ([u'¬gambitUnknown'], '')
     else:

@@ -321,6 +321,7 @@ u: (~ejemplo ~preposiciones _*)
     a:(¬solrResponse unknown)
         [Lo siento, no tengo ningun ejemplo sobre $pregunta ]
         [Vaya, pues no he encontrado nada sobre $pregunta . Qué raro...]
+        ^reuse(COMIENZO)
         
 u: EJEMPLO (~ejemplo $pregunta)
     ¬sendSolr examples $pregunta 
@@ -332,6 +333,7 @@ u: EJEMPLO (~ejemplo $pregunta)
                 ¬resource '_0
     a:(¬solrResponse unknown)
         Lo siento, no tengo ningun ejemplo sobre $pregunta
+        ^reuse(COMIENZO)
     
 u: (~ejemplo)
     ¿Sobre que quieres el ejemplo?
@@ -345,7 +347,7 @@ u: GAMBIT (_~javaconcept)
     [Espera, me he perdido.]
     ¬gambit $pregunta
     # Busco lo más aproximado en solr.
-    a: (¬gambit response _*1)
+    a: (¬gambitResponse _*1)
         $$pregunta_gambit='_0
         ¿Te refieres a $$pregunta_gambit ?
         b: (~afirmacion)
