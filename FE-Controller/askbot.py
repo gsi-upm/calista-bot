@@ -115,7 +115,9 @@ def runCommands(cs_response, question, user):
                     if len(l_response) != 0:
                         title = l_response[0]['title']
                         links_names.append(title)
-                response['related'] = links_names
+                links_command = u'¬solrResponse links {links}'.format(links=', '.join(links_names))
+                commands.append(links_command)
+                #response['related'] = links_names
             except:
                 print("Error processing links")
         elif u"¬solrResponse" in command:
