@@ -101,16 +101,6 @@ jQuery(document).ready(function($){
                     }
                 }
             });
-            if (data_resp.related && data_resp.related.length > 0) {
-                var related_answer = "También puedes preguntarme sobre "
-                                      + data_resp.related[0];
-                if (data_resp.related.length >=2 ) {
-                    related_answer += ' ó ' + data_resp.related[1];
-                }
-                
-                $('#screen').append(constructDialogEntry('Duke', related_answer));
-                scrollDisplay();
-            }
         } else {
             $('#screen').append(constructDialogEntry('Duke',
                                 'Lo siento, no puedo responder a esa pregunta'));
