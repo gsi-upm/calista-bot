@@ -1,5 +1,5 @@
 # reducciones de saludos y despedidas
-concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal]
+concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal hi hello]
 concept: ~adios [adios ciao agur bye bye_bye ]
 concept: ~hasta_otra [hasta_otra hasta_luego]
 # Formulaciones para pedir informacion sobre algo
@@ -9,7 +9,7 @@ concept: ~ser [ser eres Es son ~saber]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
 # adirmaciones y negaciones para concatenar preguntas
-concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí claro sii siii siiii ]
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí claro sii siii siiii ok]
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
@@ -33,6 +33,10 @@ u: (~saludos)
     
     a: ([melon mellon])
         [Amigo, en élfico. Estoy aquí para ayudarte con tus dudas]
+        b: (elfico)
+            La lengua de los elfos de la Tierra Media. ¬resource http://es.wikipedia.org/wiki/Sindarin
+            c: (java)
+                Eso puedo hacerlo. ¿En qué necesitas que te ayude? ¬resource http://www.dit.upm.es/~pepe/libros/vademecum/topics/3.html
     a: ([insultar insultando insultado])
         No, no. <i>Mellon</i> significa <i>Amigo</i> en Sindarin
         b: (sindarin)
@@ -77,16 +81,27 @@ u: (~insulto_fuerte)
 u: (~mala_educacion)
     [Vaya lenguaje...]
     [Se pueden decir las cosas de manera educada...]
-    [No me gusta ese lenguaje]    
+    [No me gusta ese lenguaje]
 
-u: (~insulto_ingenioso) [jeje, que gracia][jeje]
+u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
     a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+        b: (~afirmacion) [Eso es bueno][Me alegro]
+        b: (~negacion) Ok
 
 u: (~lol)
     [Me alegro de que estés contento]
+    [¿He dicho algo gracioso?]
+    [¿Te he hecho reir?]
+    a: (~afirmacion)
+        [Entonces me alegro]
+        [Me alegro]
+        [¡Qué bien!]
+    a: (~negacion)
+        Ok
 
-u: (ok) ok
-    a: (ok) ok ¿qué?
+
+u: (ok) Ok
+    a: (ok) Ok ¿qué?
         b: (ok) ...
 
 # Simple, generic questions
@@ -101,7 +116,7 @@ u: (~quien ~ser)
     [Duke, encantado de conocerte. Soy un bot especializado en java]
     [Duke en mi nombre. Responder tus dudas yo debo]
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
-        b: (solo eso) Me gustaria aprender más
+        b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
 u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe
@@ -110,17 +125,25 @@ u: (~que ~ser * _~bot) Un '_0 es como un diccionario parlante, te contesta pregu
     a: (preguntas) En mi caso sobre Java
 
     
-u: (~que ~hacer)
-    [Mi funcion es ayudarte a encontrar respuestas]
-    [Lo mio es buscar información sobre java y ayudarte con tus dudas]
+u: (~que * ~hacer)
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
     [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
     [Busco información en mis documentos de Java]
     [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
-    
-u: (tarde)
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo
+
+u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
-    
+
+u: (gracias)
+    [De nada][De nada, ha sido un placer]
 
 t: Hola, ¿en que puedo ayudarte?
 
