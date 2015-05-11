@@ -97,29 +97,43 @@ def runCommands(cs_response, question, user):
                     response[requested] = solr_response[0][requested]
                 r_response = solr_response[0][requested]
                 r_title = solr_response[0]['title']
-                commands.append(u"¬solrResponse {command} {label}".format(label=r_title,
+                commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
                                                                      command=requested))
             else:
-                response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
-
+                commands.append(u'¬solrResponse unknown')
+                #response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
+        elif u'¬solrLinksResponse' in command:
+            # This needs to go **before** the ¬solrLinks command
+            current_response = sendChatScript(command, user)
+            new_commands, new_nl = splitCommands(current_response)
+            if new_nl != "":
+                response['answer'].append(new_nl)
+            commands += new_commands
         elif u'¬solrLinks' in command:
             try:
                 link_list = command.replace(u'¬solrLinks', '')
-                link_list = link_list.replace(" ", "")
-                link_list = ast.literal_eval(link_list.strip())
-                links_names = []
-                for link in link_list:
-                    l_q = {'q': 'resource:"{link}"'.format(link=link),
-                        'fl': 'title'}
+                link_list = link_list.replace(' ', '')
+                link_list = link_list[1:-1]
+                #print(link_list)
+                #link_list = ast.literal_eval(link_list)
+                print(link_list)
+                links = link_list.split(',')
+                print(links)
+                link_name = u"{}"
+                for link in links:
+                    l_q = {'q': 'resource:"{link}"'.format(link=link[2:-1]),
+                        'fl': 'title', 'rows': '1'}
                     l_response = sendSolr(l_q)
                     if len(l_response) != 0:
                         title = l_response[0]['title']
-                        links_names.append(title)
-                links_command = u'¬solrResponse links {links}'.format(links=', '.join(links_names))
+                        link_name = link_name.format(title.replace('"', ''))
+                links_command = u'¬solrLinksResponse {}'.format(link_name)
                 commands.append(links_command)
                 #response['related'] = links_names
-            except:
-                print("Error processing links")
+            except Exception as e:
+                print(unidecode(command))
+                print(e)
+                print("Error processing links: {error}".format(error=sys.exc_info()[0]))
         elif u"¬solrResponse" in command:
             current_response = sendChatScript(command, user)
             new_commands, new_nl = splitCommands(current_response)

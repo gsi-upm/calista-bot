@@ -16,7 +16,7 @@ concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 concept: ~bot [bot_asistente asistente_virtual bot_conversacional bot chatbot chatterbot asistente]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
-concept: ~articulos [El La los las Un una unos unas]
+concept: ~articulos [El La los las Un un una unos unas]
 concept: ~profesor [profesor profe professor]
 concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
@@ -261,8 +261,10 @@ u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
         b: (~afirmacion) [Eso es bueno][Me alegro]
         b: (~negacion) Ok
 
-u: (cuantas preguntas)
+u: ($questioned cuantas preguntas)
     Llevas $questioned preguntas
+u: (cuantas preguntas)
+    No llevas ninguna pregunta
 
 # Generic questions
 #! que es un for?
@@ -287,17 +289,22 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
             ¬resource '_0 _ ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
                 ¬solrLinks '_0 _
+                d: (¬solrLinksResponse _*)
+                    [También puedes preguntar sobre '_0]
+                    [Otros asuntos de los que entiendo son '_0]
+                    [Si quieres, creo que '_0 tienen algo que ver con esto]
+                d:(¬solrResponse unknown)
+                    Lo siento, no tengo información sobre $pregunta
             c:(¬solrResponse unknown)
-                \@fullResponse
+                _
         b: () # No matter if there is a link or not, ask for related
             ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
                 [También puedes preguntar sobre '_0]
                 [Otros asuntos de los que entiendo son '_0]
                 [Si quieres, creo que '_0 tienen algo que ver con esto]
-                \@full\_response
             c:(¬solrResponse unknown)
-                \@fullResponse
+                Lo siento, no tengo información sobre $pregunta
         
     a: (¬solrResponse unknown)
         ^reuse(GAMBIT)
