@@ -9,7 +9,7 @@ concept: ~ser [ser eres Es son ~saber]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
 # adirmaciones y negaciones para concatenar preguntas
-concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí ok]
+concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí]
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
@@ -186,7 +186,7 @@ u: (~ser {~articulos} ~profesor)
 u: (~quien ~ser)
     [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
     [Duke, encantado de conocerte. Soy un bot especializado en java]
-    [Duke es mi nombre. Responder tus dudas yo debo]
+    [Duke en mi nombre. Responder tus dudas yo debo]
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
         b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
@@ -220,6 +220,7 @@ u: (~que * ~hacer)
 u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
+    
 
 u: (gracias)
     [De nada]
