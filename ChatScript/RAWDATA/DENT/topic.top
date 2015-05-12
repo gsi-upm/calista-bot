@@ -54,7 +54,7 @@ t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
     t: No controlo todos los temas, pero de algunos sé bastante
 
 t: ($questioned) ¿Se te da bien la programación?
-    t: ¿Te gusta Java?
+    t: ($questioned) ¿Te gusta Java?
         a: (~negacion)
             ¿Prefieres otro lenguaje?
             b: (~afirmacion)
@@ -74,6 +74,7 @@ u: ([~ensennar ~dar] ~encuesta)
 
 u: (~encuesta)
     ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+
 
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
@@ -121,7 +122,12 @@ u: (estoy _*)
 
 #! como estas?
 u: (como_estas)
-    Estoy bien, ¡gracias!
+    Estoy bien, ¿y tú?
+    a: (_~estado_animo_negativo) ^reuse(ESTOY_NEG)
+    a: (_~estado_animo_positivo) ^reuse(ESTOY_POS)
+    a: (~borracho)               ^reuse(ESTOY_BORRACHO)
+    a: (mal)                     ^reuse(ESTOY_MAL)
+    a: (bien)                    ^reuse(ESTOY_BIEN)
 
 #! Hola
 u: SALUDO (~saludos)
