@@ -4,7 +4,7 @@ concept: ~adios [adios ciao agur bye bye_bye ]
 concept: ~hasta_otra [hasta_otra hasta_luego]
 # Formulaciones para pedir informacion sobre algo
 concept: ~que [que Q 'q qe]
-concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo]
+concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo sabes saber sabrías sabrias]
 concept: ~ser [ser eres Es son ~saber]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
@@ -104,7 +104,7 @@ u: (~que * ~hacer)
 
 #! que es eclipse
 u: (que ~ser _~ide_list)
-    [No puedo hablarte de las características exactas de '_0', pero puedes consultar esta comparativa]
+    [No sabría hablarte de las características exactas de '_0', pero puedes consultar esta comparativa]
     [Es un IDE de Java, ¿no? En esta página salen más]
     [Para saber de '_0, lo mejor será que mires esta comparativa de IDEs]
     ¬resource http://goo.gl/9gzJI7
@@ -114,7 +114,7 @@ u: (<<~saber [utilizar usar trabajar] ~ide_list>>)
     [No sé utilizar ningún IDE en particular, a mi me gusta más la teoría]
 
 #! como funciona eclipse
-u: (<<como {funciona utilizas} _~ide_list>>)
+u: ([como_funciona como_configuro como_configuras] ~ide_list)
     Para saber como funciona '_0 lo mejor es irse al manual
     ¬resource http://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=manual%20'_0
 
