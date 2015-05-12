@@ -58,7 +58,7 @@ t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
     t: No controlo todos los temas, pero de algunos sé bastante
 
 t: ($questioned) ¿Se te da bien la programación?
-    t: ($questioned) ¿Te gusta Java?
+    t: ¿Te gusta Java?
         a: (~negacion)
             ¿Prefieres otro lenguaje?
             b: (~afirmacion)
@@ -249,7 +249,6 @@ u: ([~ensennar ~dar] ~encuesta)
 u: (~encuesta)
     ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
 
-
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
     [¿Por qué estás '_0?]
@@ -296,12 +295,7 @@ u: (estoy _*)
 
 #! como estas?
 u: (como_estas)
-    Estoy bien, ¿y tú?
-    a: (_~estado_animo_negativo) ^reuse(ESTOY_NEG)
-    a: (_~estado_animo_positivo) ^reuse(ESTOY_POS)
-    a: (~borracho)               ^reuse(ESTOY_BORRACHO)
-    a: (mal)                     ^reuse(ESTOY_MAL)
-    a: (bien)                    ^reuse(ESTOY_BIEN)
+    Estoy bien, ¡gracias!
 
 #! Hola
 u: SALUDO (~saludos)
@@ -377,6 +371,32 @@ u: (~quien ~ser)
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
         b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
+
+#! que es un chatbot?
+u: BOT (~que ~ser * _~bot) 
+    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
+    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
+
+#! chatbot
+u: (_~bot) 
+    ¿Preguntas lo que es? ^reuse(BOT)
+    
+#! que sabes hacer?
+u: (~que * ~hacer)
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
+    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    [Busco información en mis documentos de Java]
+    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo
 
 u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
