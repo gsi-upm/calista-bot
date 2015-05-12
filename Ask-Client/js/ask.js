@@ -73,8 +73,9 @@ jQuery(document).ready(function($){
                  contentType: 'application/json;charset=UTF-8',
                  success: populateForm,
                  error: function(data_resp) {
-                     alert("Esto es un error");
-                    console.log("Error connection to the controller");
+                        $('#screen').append(constructDialogEntry('Duke',
+                                'Vaya, parece que he tenido algún error conectando con el servidor... Whoops'));
+                        console.log("Error connection to the controller");
                     return false;
                  }
         });

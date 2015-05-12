@@ -19,7 +19,7 @@ port=4242
 
 # Solr settings
 solr = {'host': 'localhost', 'port':8080, 
-        'core': 'elearning', 'score': 0.5}
+        'core': 'elearning', 'score': 0.5, 'fuzzy': 3}
 
 # ChatScript settings:
 # The agent should be randomly set for each user
@@ -88,10 +88,7 @@ def runCommands(cs_response, question, user):
         command = commands.pop(0)
         
         if u"¬sendSolr" in command:
-            elements = command.split(' ')
-            requested = elements[1]
-            query = {'q': 'title:{label}'.format(label=unidecode(elements[2]))}
-            solr_response = sendSolr(query)
+            requested, solr_response = processSolr(command)
             if len(solr_response) != 0:
                 if requested in solr_response[0]:
                     if not requested in response:
@@ -99,13 +96,13 @@ def runCommands(cs_response, question, user):
                     r_response = solr_response[0][requested]
                     r_title = solr_response[0]['title']
                     commands.append(u"¬solrResponse {command} {label}".format(label=r_response,
-                                                                     command=requested))
+                                                                          command=requested))
                 else:
                     # I didn't find the relevant info in Solr
                     commands.append(u'¬solrResponse unknown')
             else:
                 commands.append(u'¬solrResponse unknown')
-                #response['answer'] = [u"Lo siento, no tengo información sobre "+ elements[2]]
+        
         elif u'¬solrLinksResponse' in command:
             # This needs to go **before** the ¬solrLinks command
             current_response = sendChatScript(command, user)
@@ -116,21 +113,22 @@ def runCommands(cs_response, question, user):
         elif u'¬solrLinks' in command:
             try:
                 link_list = command.replace(u'¬solrLinks', '')
+                # Remove spaces and square brackets
                 link_list = link_list.replace(' ', '')
                 link_list = link_list[1:-1]
-                #print(link_list)
-                #link_list = ast.literal_eval(link_list)
-                print(link_list)
+                
+                # Split the string into a list
                 links = link_list.split(',')
                 print(links)
-                link_name = u"{}"
+                link_name = u""
                 for link in links:
+                    # The "link" will start with u' and end with '
                     l_q = {'q': 'resource:"{link}"'.format(link=link[2:-1]),
                         'fl': 'title', 'rows': '1'}
                     l_response = sendSolr(l_q)
                     if len(l_response) != 0:
                         title = l_response[0]['title']
-                        link_name = link_name.format(title.replace('"', ''))
+                        link_name = title.replace('"', '')
                 links_command = u'¬solrLinksResponse {}'.format(link_name)
                 commands.append(links_command)
                 #response['related'] = links_names
@@ -165,6 +163,24 @@ def runCommands(cs_response, question, user):
         else:
             print(unidecode(u"unkown command {command}".format(command=command)))
     return response
+
+def processSolr(command):
+    new_nl = ''
+    new_commands = []
+    elements = command.split(' ')
+    requested = elements[1]
+    
+    print(requested)
+    # First, perform a regular search, them keep adding fuzzy levels until the
+    # limit in the config.
+    solr_response = []
+    fuzzy = 0 
+    while fuzzy <= solr['fuzzy'] and len(solr_response) == 0:
+        query = {'q': 'title:{label}~{fuzzy}'.format(label=unidecode(elements[2]),
+                                                     fuzzy=fuzzy)}
+        solr_response = sendSolr(query)
+        fuzzy +=1
+    return requested, solr_response
     
 def splitCommands(cs_response):
     """
