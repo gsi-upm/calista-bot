@@ -34,6 +34,10 @@ concept: ~estado_animo_positivo [~estado_animo_positivo_mas ~estado_animo_positi
 concept: ~estado_animo_neutro [alabado alabada curioso curiosa soprendido sorprendida]
 concept: ~borracho [borracho borracha pedo ebrio ebria]
 
+# IDEs
+concept: ~ide [IDE ide entorno_de_desarrollo herramienta_de_desarrollo entorno herramienta]
+concept: ~ide_list [BlueJ bluej Codenvy codenvy drjava Drjava DrJava Dr_Java Doctor_Java doctor_java Eclipse eclipse Eclipse_IBM eclipse_IBM eclipse_ibm Geany geany Greenfoot greenfoot intellij Intellij intelliJ IntelliJ IntelliJ_IDEA IDEA intellij_idea JBuilder Jbuilder jbuilder JCreator Jcreator jcreator JDeveloper Jdeveloper jdeveloper KDevelop kdevelop Kdevelop MyEclipse myeclipse NetBeans netbeans Rational_Application_Developer rational_application_developer Servoy servoy Xcode xcode]
+
 
 topic: ~preguntas keep repeat []
 
@@ -67,6 +71,176 @@ t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minu
         ¡Gracias! Verás como no se tarda nada ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
+
+
+
+## Generic questions
+#! que es un chatbot?
+u: BOT (~que ~ser * _~bot) 
+    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
+    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
+
+#! chatbot
+u: (_~bot) 
+    ¿Preguntas lo que es? ^reuse(BOT)
+    
+#! que sabes hacer?
+u: (~que * ~hacer)
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
+    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    [Busco información en mis documentos de Java]
+    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo
+
+
+#! que es eclipse
+u: (que ~ser _~ide_list)
+    [No puedo hablarte de las características exactas de '_0', pero puedes consultar esta comparativa]
+    [Es un IDE de Java, ¿no? En esta página salen más]
+    [Para saber de '_0, lo mejor será que mires esta comparativa de IDEs]
+    ¬resource http://goo.gl/9gzJI7
+
+#! sabes utilizar eclipse
+u: (<<~saber [utilizar usar trabajar] ~ide_list>>)
+    [No sé utilizar ningún IDE en particular, a mi me gusta más la teoría]
+
+#! como funciona eclipse
+u: (<<como {funciona utilizas} _~ide_list>>)
+    Para saber como funciona '_0 lo mejor es irse al manual
+    ¬resource http://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=manual%20'_0
+
+#! en que entorno de desarrollo programas
+u: (que _~ide [utilizas programas usas])
+    [No sé utilizar ningún IDE en particular, a mi me gusta más la teoría]
+
+#! que IDE prefieres
+u: (que _~ide {~ser} {[recomiendas prefieres preferido mejor]})
+    [Mis programadores no tienen preferencias, así que te muestro una comparativa para que decidas tú mismo]
+    [Yo no utilizo ningún '_0 en particular, pero échale un ojo a esto para comparar]
+    ¬resource http://goo.gl/9gzJI7
+
+#! te suena DrJava?
+u: (_~ide_list)
+    ¿Te refieres al entorno de desarrollo? Lo mejor será que mires esta comparativa
+    ¬resource http://goo.gl/9gzJI7
+
+
+
+## Questions involving Solr
+
+#! que es un for?
+u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
+    $questioned += 1
+    $pregunta='_0
+    ¬sendSolr definition $pregunta
+    ¬label $pregunta
+    
+    # Process the maia responses
+    a: (¬solrResponse definition)
+        [Te enseño la información que tengo sobre $pregunta]
+        [Esto es lo que sé sobre $pregunta]
+        ¬sendSolr resource $pregunta
+        
+        # Ask for the link to show in the frame
+        b: (¬solrResponse resource _*)
+            ¬resource '_0 _ ¬sendSolr links $pregunta
+            c: (¬solrResponse links _*)
+                ¬solrLinks '_0 _
+                d: (¬solrLinksResponse _*)
+                    [También puedes preguntar sobre '_0]
+                    [Otros asuntos de los que entiendo son '_0]
+                    [Si quieres, creo que '_0 tienen algo que ver con esto]
+                d:(¬solrResponse unknown)
+                    Lo siento, no tengo información sobre $pregunta
+            c:(¬solrResponse unknown)
+                _
+        b: () # No matter if there is a link or not, ask for related
+            ¬sendSolr links $pregunta
+            c: (¬solrResponse links _*)
+                [También puedes preguntar sobre '_0]
+                [Otros asuntos de los que entiendo son '_0]
+                [Si quieres, creo que '_0 tienen algo que ver con esto]
+            c:(¬solrResponse unknown)
+                Lo siento, no tengo información sobre $pregunta
+        
+    a: (¬solrResponse unknown)
+        ^reuse(GAMBIT)
+
+u: (~ejemplo ~preposiciones _*)
+    $pregunta='_0
+    ¬sendSolr examples $pregunta 
+    a:(¬solrResponse examples _*)
+        [Te muestro el documento con ejemplos.]
+        [Esto es lo que sé sobre $pregunta , incluidos sus ejemplos.]
+        ¬sendSolr resource $pregunta
+            b:(¬solrResponse resource _*)
+                ¬resource '_0
+    a:(¬solrResponse unknown)
+        [Lo siento, no tengo ningun ejemplo sobre $pregunta ]
+        [Vaya, pues no he encontrado nada sobre $pregunta . Qué raro...]
+        ^reuse(COMIENZO)
+        
+u: EJEMPLO (~ejemplo $pregunta)
+    ¬sendSolr examples $pregunta 
+    a:(¬solrResponse examples _*)
+        [Te muestro el documento con ejemplos. ]
+        [Esto son los ejemplos que tengo de $pregunta  ]
+        ¬sendSolr resource $pregunta
+            b:(¬solrResponse resource _*)
+                ¬resource '_0
+    a:(¬solrResponse unknown)
+        Lo siento, no tengo ningun ejemplo sobre $pregunta
+        ^reuse(COMIENZO)
+    
+u: (~ejemplo)
+    [¿Sobre qué quieres el ejemplo?]
+    [¿Quieres un ejemplo? ¿Sobre qué?]
+    a: (~preposiciones _*1 >)
+        $pregunta='_0
+        ^reuse(EJEMPLO)
+
+
+# This is lowest priority concept
+
+u: GAMBIT (_~javaconcept)
+    $pregunta = '_0
+    [Lo siento, no te he entendido bien.]
+    [Espera, me he perdido.]
+    ¬gambit $pregunta
+    # Busco lo más aproximado en solr.
+    a: (¬gambitResponse _*1)
+        $$pregunta_gambit='_0
+        ¿Te refieres a $$pregunta_gambit ?
+        b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b:(~afirmacion_debil)
+            [Me lo tomaré como un sí]
+            [Pues espero haber acertado]
+            $pregunta=$$pregunta_gambit
+            ^reuse(COMIENZO)
+        b: (~negacion)
+            [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
+            [Vaya, pues esperaba que fuese eso...]
+            [Pues entonces no caigo ¿alguna otra cosa?]
+            [Vaya, lo siento, no caigo]
+            [¿Me he equivocado? Whoops, esto es un poco incómodo...]
+    a:(¬gambitUnknown)
+        [¿Podrías formularlo de alguna otra manera?]
+        [¿Prueba a preguntarlo de otra forma?]
+        [Cuando me preguntas Que Es Algo, suelo entonderlo]
+
+
+## Conversation without SOLR involved
 
 # Ensennar la encuesta
 u: ([~ensennar ~dar] ~encuesta)
@@ -204,32 +378,6 @@ u: (~quien ~ser)
         b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
-#! que es un chatbot?
-u: BOT (~que ~ser * _~bot) 
-    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
-    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
-    a: ([sobre de] ~que) En mi caso sobre Java
-        b: (solo eso) Me gustaria aprender más
-    a: (preguntas) En mi caso sobre Java
-
-#! chatbot
-u: (_~bot) 
-    ¿Preguntas lo que es? ^reuse(BOT)
-    
-#! que sabes hacer?
-u: (~que * ~hacer)
-    [Mi función es ayudarte a encontrar respuestas]
-    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
-    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
-    [Busco información en mis documentos de Java]
-    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
-    a: ([dudas respuestas])
-        A preguntas sobre Java
-    a: (solo {[eso java]}) 
-        Bueno, estoy aprendiendo más cosas
-        b: (~que cosas)
-            Pues aún no lo sé ni yo
-
 u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
@@ -279,102 +427,3 @@ u: ($questioned cuantas preguntas)
 u: (cuantas preguntas)
     Aún no me has preguntado nada
 
-# Generic questions
-#! que es un for?
-
-u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will return the last word of the sentence
-    $questioned += 1
-    $pregunta='_0
-    ¬sendSolr definition $pregunta
-    ¬label $pregunta
-    
-    # Process the maia responses
-    a: (¬solrResponse definition)
-        [Te enseño la información que tengo sobre $pregunta]
-        [Esto es lo que sé sobre $pregunta]
-        ¬sendSolr resource $pregunta
-        
-        # Ask for the link to show in the frame
-        b: (¬solrResponse resource _*)
-            ¬resource '_0 _ ¬sendSolr links $pregunta
-            c: (¬solrResponse links _*)
-                ¬solrLinks '_0 _
-                d: (¬solrLinksResponse _*)
-                    [También puedes preguntar sobre '_0]
-                    [Otros asuntos de los que entiendo son '_0]
-                    [Si quieres, creo que '_0 tienen algo que ver con esto]
-                d:(¬solrResponse unknown)
-                    Lo siento, no tengo información sobre $pregunta
-            c:(¬solrResponse unknown)
-                _
-        b: () # No matter if there is a link or not, ask for related
-            ¬sendSolr links $pregunta
-            c: (¬solrResponse links _*)
-                [También puedes preguntar sobre '_0]
-                [Otros asuntos de los que entiendo son '_0]
-                [Si quieres, creo que '_0 tienen algo que ver con esto]
-            c:(¬solrResponse unknown)
-                Lo siento, no tengo información sobre $pregunta
-        
-    a: (¬solrResponse unknown)
-        ^reuse(GAMBIT)
-
-u: (~ejemplo ~preposiciones _*)
-    $pregunta='_0
-    ¬sendSolr examples $pregunta 
-    a:(¬solrResponse examples _*)
-        [Te muestro el documento con ejemplos.]
-        [Esto es lo que sé sobre $pregunta , incluidos sus ejemplos.]
-        ¬sendSolr resource $pregunta
-            b:(¬solrResponse resource _*)
-                ¬resource '_0
-    a:(¬solrResponse unknown)
-        [Lo siento, no tengo ningun ejemplo sobre $pregunta ]
-        [Vaya, pues no he encontrado nada sobre $pregunta . Qué raro...]
-        ^reuse(COMIENZO)
-        
-u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendSolr examples $pregunta 
-    a:(¬solrResponse examples _*)
-        [Te muestro el documento con ejemplos. ]
-        [Esto son los ejemplos que tengo de $pregunta  ]
-        ¬sendSolr resource $pregunta
-            b:(¬solrResponse resource _*)
-                ¬resource '_0
-    a:(¬solrResponse unknown)
-        Lo siento, no tengo ningun ejemplo sobre $pregunta
-        ^reuse(COMIENZO)
-    
-u: (~ejemplo)
-    ¿Sobre que quieres el ejemplo?
-    a: (~preposiciones _*1 >)
-        $pregunta='_0
-        ^reuse(EJEMPLO)
-
-u: GAMBIT (_~javaconcept)
-    $pregunta = '_0
-    [Lo siento, no te he entendido bien.]
-    [Espera, me he perdido.]
-    ¬gambit $pregunta
-    # Busco lo más aproximado en solr.
-    a: (¬gambitResponse _*1)
-        $$pregunta_gambit='_0
-        ¿Te refieres a $$pregunta_gambit ?
-        b: (~afirmacion)
-            $pregunta=$$pregunta_gambit
-            ^reuse(COMIENZO)
-        b:(~afirmacion_debil)
-            [Me lo tomaré como un sí]
-            [Pues espero haber acertado]
-            $pregunta=$$pregunta_gambit
-            ^reuse(COMIENZO)
-        b: (~negacion)
-            [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
-            [Vaya, pues esperaba que fuese eso...]
-            [Pues entonces no caigo ¿alguna otra cosa?]
-            [Vaya, lo siento, no caigo]
-            [¿Me he equivocado? Whoops, esto es un poco incómodo...]
-    a:(¬gambitUnknown)
-        [¿Podrías formularlo de alguna otra manera?]
-        [¿Prueba a preguntarlo de otra forma?]
-        [Cuando me preguntas Que Es Algo, suelo entonderlo]
