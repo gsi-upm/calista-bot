@@ -51,7 +51,7 @@ t: ¿En qué puedo ayudarte?
 t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
     a: (~afirmacion) Ok, pues vamos, ¡pregunta!
     a: (~negacion) Pues ya lo sabes ¡ponme a prueba!
-    t: No controlo todos los temas, pero de algunos sé bastante
+    a: () No controlo todos los temas, pero de algunos sé bastante
 
 t: ($questioned) ¿Se te da bien la programación?
     t: ¿Te gusta Java?
@@ -68,6 +68,7 @@ t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minu
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
 
+        
 # Ensennar la encuesta
 u: ([~ensennar ~dar] ~encuesta)
     ¿Quieres responder a la encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
@@ -111,6 +112,13 @@ u: ESTOY_MAL ([estoy_mal me_encuentro_mal me_siento_mal])
 #! estoy bien
 u: ESTOY_BIEN ([estoy_bien me_encuentro_bien me_siento_bien])
     [Me alegro][Estupendo]
+
+#! estoy intentando hacer que respondas algo mal
+u: (estoy _*)
+    ¿Por qué estás '_0'?
+    a: (porque *)
+        [Ok]
+        [Entiendo]
 
 #! como estas?
 u: (como_estas)
@@ -186,7 +194,7 @@ u: (~ser {~articulos} ~profesor)
 u: (~quien ~ser)
     [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
     [Duke, encantado de conocerte. Soy un bot especializado en java]
-    [Duke en mi nombre. Responder tus dudas yo debo]
+    [Duke es mi nombre. Responder tus dudas yo debo]
     a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
         b: (solo [eso java]) Me gustaria aprender más
     a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
@@ -261,8 +269,10 @@ u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
         b: (~afirmacion) [Eso es bueno][Me alegro]
         b: (~negacion) Ok
 
-u: (cuantas preguntas)
+u: ($questioned cuantas preguntas)
     Llevas $questioned preguntas
+u: (cuantas preguntas)
+    Aún no me has preguntado nada
 
 # Generic questions
 #! que es un for?
