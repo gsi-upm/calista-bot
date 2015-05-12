@@ -93,7 +93,7 @@ def runCommands(cs_response, question, user):
             query = {'q': 'title:{label}'.format(label=unidecode(elements[2]))}
             solr_response = sendSolr(query)
             if len(solr_response) != 0:
-                if 'requested' in solr_response[0]:
+                if requested in solr_response[0]:
                     if not requested in response:
                         response[requested] = solr_response[0][requested]
                     r_response = solr_response[0][requested]

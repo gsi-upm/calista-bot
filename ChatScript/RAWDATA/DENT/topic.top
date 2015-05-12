@@ -342,7 +342,7 @@ u: (~ejemplo)
         ^reuse(EJEMPLO)
 
 u: GAMBIT (_~javaconcept)
-    $pregunta = '_0
+    $pregunta='_0
     [Lo siento, no te he entendido bien.]
     [Espera, me he perdido.]
     ¬gambit $pregunta
