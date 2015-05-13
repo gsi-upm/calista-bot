@@ -5,7 +5,8 @@ concept: ~hasta_otra [hasta_otra hasta_luego]
 # Formulaciones para pedir informacion sobre algo
 concept: ~que [que Q 'q qe]
 concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo sabes saber sabrías sabrias]
-concept: ~ser [ser eres Es son ~saber]
+concept: ~significar [significa significar significado]
+concept: ~ser [ser eres Es son ~saber ~significar]
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
 # adirmaciones y negaciones para concatenar preguntas
@@ -60,6 +61,10 @@ t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
 t: No controlo todos los temas, pero de algunos sé bastante
 
 t: ($questioned) ¿Se te da bien la programación?
+    a: ([~afirmacion ~afirmacion_debil])
+        Eso está bien
+    a: (~negacion)
+        Bueno, eso podemos arreglarlo, pregunta lo que quieras
 
 t: ($questioned) ¿Te gusta Java?
     a: ([~afirmacion ~afirmacion_debil])
@@ -70,11 +75,20 @@ t: ($questioned) ¿Te gusta Java?
         b: (~afirmacion)
             ¿Cual?
 
+t: (!$questioned<1) Ahora pregunto yo ¿Qué palabras clave se utilizan para salir de un bucle?
+    a: (break)
+        Casi, te faltó continue
+    a: (continue)
+        Casi, te faltó break
+    a: (<<break continue>>)
+        ¡Correcto!
+    a: (*) La respuesta era break y continue
+
 t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minutos
     a: (~afirmacion)
-        ¡Estupendo, Gracias! Aquí te la pongo ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+        ¡Estupendo, Gracias! Aquí tienes el enlace <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (se abre en otra pestaña)
     a: (~afirmacion_debil)
-        ¡Gracias! Verás como no se tarda nada ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+        ¡Gracias! Verás como no se tarda nada <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (el elnace se abre en otra pestaña)
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
 
@@ -85,7 +99,7 @@ u: COMO_FUNCIONA_JAVA ([como_funcionan como_funciona como_va como_van] _{~articu
     ¬sendSolr definition $pregunta
     ¬label $pregunta
     a: (¬solrResponse definition)
-        ^reuse(DEFINTION)            
+        ^reuse(DEFINTION)          
 
 u: ([funcionan funciona construir construyen construye] _{~articulos} * _~javaconcept)
     ^reuse(COMO_FUNCIONA_JAVA)
@@ -150,7 +164,30 @@ u: (_~ide_list)
     ¿Te refieres al entorno de desarrollo? Lo mejor será que mires esta comparativa
     ¬resource http://goo.gl/9gzJI7
 
+u: (_~javaconcept [vs v frente frente_a] _~javaconcept)
+    No me han enseñado a comparar, pero puedo darte información de '_0 o de '_1    
+    a: ('_0)
+        $pregunta='_0
+        ¬sendSolr definition $pregunta
+        ¬label $pregunta
+        b: (¬solrResponse definition)
+            ^reuse(DEFINTION)
+    a: ('_1)
+        $pregunta='_1
+        ¬sendSolr definition $pregunta
+        ¬label $pregunta
+        b: (¬solrResponse definition)
+            ^reuse(DEFINTION)
 
+
+#! Diferencias de java7 frente a java8
+u: (* [vs v frente frente_a] *)
+    [No sabría decirte cual es la diferencia]
+    [No sabría compararlos]
+
+#! Cual es la diferencia entre java7 y java8
+u: (diferencia {entre} *)
+    No sé cuál es la diferencia. Soy más de dar información teórica
 
 ## Questions involving Solr
 
@@ -264,10 +301,10 @@ u: GAMBIT (_~javaconcept)
 
 # Ensennar la encuesta
 u: ([~ensennar ~dar] ~encuesta)
-    ¿Quieres responder a la encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P\_nV1GBlY9Vxg23nRcPra3N77\_M/viewform
+    ¿Quieres responder a la encuesta? Aquí la tienes <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (se abre en otra pestaña)
 
 u: (~encuesta)
-    ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P\_nV1GBlY9Vxg23nRcPra3N77\_M/viewform
+    ¿Podrías responder a una encuesta? Aquí la tienes <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (se abre en otra pestaña)
 
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
