@@ -77,7 +77,7 @@ body {
   width:    100px;
   /*height:   70px;*/
   position: relative;
-  top:      -102px;
+  top:      -85px;
 }
 /*~~~~~~~~~~ @end Avatar styling ~~~~~~~~~~~~*/
 #bot_chat_window #screen_wrapper {
@@ -100,14 +100,17 @@ body {
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry {
   padding-left: 12px;
+  line-height: 1.35em;
+  margin-bottom: 3px;
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry .nick {
   font-weight: bold;
-  float:       left;
+  /*float:       left;*/
   margin-left: -12px;
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry .text {
-  margin-left: 5px;
+  /*margin-left: 5px;*/
+
 }
 #bot_chat_window #screen_wrapper #meta_msgs {
   margin-left: 10px;

@@ -23,7 +23,7 @@ body {
   position:    fixed;
   bottom:      0;
   left:        5%;
-  font-family: 'Helvetica Neue', Helvetica, 'Open Sans', Arial, Trebuchet, 'Sans Serif';
+  font-family: 'Roboto', Arial, Trebuchet, 'Sans Serif';
   font-size:   13px;
   width:       260px;
   z-index:     20;
@@ -34,8 +34,8 @@ body {
 #bot_chat_window #upper_bar {
   /*width:    230px;*/ /*inherit*/
   background: #043046;
-  padding:    10px;
-  height:     14px;
+  padding:    5px 5px;
+  height:     24px;
   /* round corners */
   -moz-border-radius:    5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
@@ -52,12 +52,46 @@ body {
   color: white;
   text-decoration: none;
 }
-#bot_chat_window #upper_bar a#max_icon {  
-  width:  16px;
-  height: 16px;
+#bot_chat_window #upper_bar a.icon{
+  width:  24px;
+  height: 24px;
   float:  right;
   display: block;
+  margin-left: 2px;
+  text-align: center;
+  text-decoration: none;
+}
+#bot_chat_window #upper_bar a.icon:hover {
+  background-color: #010f16;
+}
+#bot_chat_window #upper_bar a#max_icon span.max-icon {
+  border-top: 2px solid white; 
+  border-bottom: 0px;
+  display: block;
+  margin: 5px;
+  height: 14px;
+}
+#bot_chat_window.visible #upper_bar a#max_icon span.max-icon {
   border-bottom: 2px solid white;
+  border-top: 0px;
+}
+#bot_chat_window #upper_bar a.icon i.fa{
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+}
+#bot_chat_window.visible #upper_bar a.icon i.fa-angle-up{
+  display: none;
+}
+#bot_chat_window #upper_bar a.icon i.fa-angle-up{
+  display: block;
+}
+#bot_chat_window.visible #upper_bar a.icon i.fa-angle-down{
+  display: block; 
+}
+#bot_chat_window #upper_bar a.icon i.fa-angle-down{
+  display: none; 
 }
 /*~~~~~~~~~~ @end upperbar styling ~~~~~~~~~~~~*/
 
@@ -66,7 +100,7 @@ body {
   width:    100px;
   /*height:   70px;*/
   position: relative;
-  top:      -102px;
+  top:      -85px;
 }
 /*~~~~~~~~~~ @end Avatar styling ~~~~~~~~~~~~*/
 #bot_chat_window #screen_wrapper {
@@ -89,14 +123,16 @@ body {
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry {
   padding-left: 12px;
+  line-height: 1.35em;
+  margin-bottom: 3px;
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry .nick {
   font-weight: bold;
-  float:       left;
+  /*float:       left;*/
   margin-left: -12px;
 }
 #bot_chat_window #screen_wrapper #screen .dia_entry .text {
-  margin-left: 5px;
+  margin-left: 3px; 
 }
 #bot_chat_window #screen_wrapper #meta_msgs {
   margin-left: 10px;

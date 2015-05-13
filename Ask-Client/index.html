@@ -3,6 +3,8 @@
   <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel=stylesheet href=css/global.css type="text/css">
     <link rel=stylesheet href=css/animate-custom.css type="text/css">
     <!-- Custom styles for this template -->
@@ -28,7 +30,13 @@
           <div id="upper_bar">
             <h3>
                 <img id="bot_avatar" src="images/duke.png" />
-              <a id="max_icon" href="#"></a>
+              <!--<a class="icon" id="max_icon" href="#">
+                <span class="max-icon"></span>
+              </a>-->
+              <a class="icon" id="a_max_icon" href="#">
+                <i class="fa fa-angle-up"></i>
+                <i class="fa fa-angle-down"></i>
+              </a>
               <span style="clear: both;"></span>
             </h3>
           </div>
@@ -38,7 +46,7 @@
             </div>
             <div id="meta_msgs"></div>
             <div id="userbar">   
-        <form id="ask-form" action="/AskBot/ask" role="form" >
+                <form id="ask-form" action="/AskBot/ask" role="form" >
                   <input type="hidden" name="bot" value="Dent" />
                   <input type="hidden" name="type" value="json" />
                   <input type="hidden" name="username" id="form-username"/>
