@@ -55,14 +55,16 @@ t: ¿En qué puedo ayudarte?
 t: (!$questioned) ¿Sabías que me puedes preguntar por programación en Java?
     a: (~afirmacion) Ok, pues vamos, ¡pregunta!
     a: (~negacion) Pues ya lo sabes ¡ponme a prueba!
-    t: No controlo todos los temas, pero de algunos sé bastante
+
+t: No controlo todos los temas, pero de algunos sé bastante
 
 t: ($questioned) ¿Se te da bien la programación?
-    t: ¿Te gusta Java?
-        a: (~negacion)
-            ¿Prefieres otro lenguaje?
-            b: (~afirmacion)
-                ¿Cual?
+
+t: ($questioned) ¿Te gusta Java?
+    a: (~negacion)
+        ¿Prefieres otro lenguaje?
+        b: (~afirmacion)
+            ¿Cual?
 
 t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minutos
     a: (~afirmacion)
@@ -244,10 +246,10 @@ u: GAMBIT (_~javaconcept)
 
 # Ensennar la encuesta
 u: ([~ensennar ~dar] ~encuesta)
-    ¿Quieres responder a la encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+    ¿Quieres responder a la encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P\_nV1GBlY9Vxg23nRcPra3N77\_M/viewform
 
 u: (~encuesta)
-    ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P_nV1GBlY9Vxg23nRcPra3N77_M/viewform
+    ¿Podrías responder a una encuesta? Aquí la tienes ¬resource https://docs.google.com/forms/d/1UR-6Uka2XlzRNiF0P\_nV1GBlY9Vxg23nRcPra3N77\_M/viewform
 
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
