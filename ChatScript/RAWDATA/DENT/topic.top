@@ -16,12 +16,13 @@ concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 concept: ~bot [bot_asistente asistente_virtual bot_conversacional bot chatbot chatterbot asistente]
 concept: ~hacer [hacer haces hace]
 concept: ~quien [quien quienes]
-concept: ~articulos [El La los las Un un una unos unas]
+concept: ~articulos [el El la La los las un Un una unos unas]
 concept: ~profesor [profesor profe professor]
 concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
 concept: ~encuesta [encuesta cuestionario evaluación]
 concept: ~estoy [estoy me_siento me_encuentro]
+concept: ~sercapaz [~saber puedes podrías eres_capaz serías_capaz]
 
 concept: ~estado_animo_negativo_mas [abatido abochornado abucheado aburrido acabado agobiado agotado alarmado alerta alicaído alocado amargado amodorrado angustiado apenado arrepentido asqueado asombrado avergonzado cansado cambiante decaído defraudado desanimado descorazonado desganado desilusionado desinflado desesperado desvalido depresivo deprimido distraído duvitativo enfadado engreído enojado enloquecido fastidiado furioso frustrado impaciente incapaz inquieto irascible hambriento herido mal mareado melancólico molesto nervioso nostálgico pensativo solo soplado temeroso terminante triste vacio vencido]
 concept: ~estado_animo_negativo_fem [abatida abochornada abucheada aburrida acabada agobiada agotada alarmada alerta alicaída alocada amargada amodorrada angustiada apenada arrepentida asqueada asombrada avergonzada cansada cambiante decaída defraudada desanimada descorazonada desganada desilusionada desinflada desesperada desvalida depresiva deprimida distraída duvitativa enfadada engreída enojada enloquecida fastidiada furiosa frustrada impaciente incapaz inquieta irascible hambrienta herida mal mareada melancólica molesta nerviosa nostálgica pensativa sola soplada temerosa terminante triste vacia vencida]
@@ -61,6 +62,9 @@ t: No controlo todos los temas, pero de algunos sé bastante
 t: ($questioned) ¿Se te da bien la programación?
 
 t: ($questioned) ¿Te gusta Java?
+    a: ([~afirmacion ~afirmacion_debil])
+        A mi también, por algo soy la mascota ¡Mira!
+        ¬resource http://goo.gl/goJKgo
     a: (~negacion)
         ¿Prefieres otro lenguaje?
         b: (~afirmacion)
@@ -74,6 +78,17 @@ t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minu
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
 
+
+u: COMO_FUNCIONA_JAVA ([como_funcionan como_funciona como_va como_van] _{~articulos} * _~javaconcept)
+    No se como funciona '_0 '_1. Te puedo dar información teorica.
+    $pregunta='_1
+    ¬sendSolr definition $pregunta
+    ¬label $pregunta
+    a: (¬solrResponse definition)
+        ^reuse(DEFINTION)            
+
+u: ([funcionan funciona construir construyen construye] _{~articulos} * _~javaconcept)
+    ^reuse(COMO_FUNCIONA_JAVA)
 
 
 ## Generic questions
@@ -147,7 +162,7 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     ¬label $pregunta
     
     # Process the maia responses
-    a: (¬solrResponse definition)
+    a: DEFINTION (¬solrResponse definition)
         [Te enseño la información que tengo sobre $pregunta]
         [Esto es lo que sé sobre $pregunta]
         ¬sendSolr resource $pregunta
@@ -215,13 +230,16 @@ u: (~ejemplo)
 
 u: GAMBIT (_~javaconcept)
     $pregunta = '_0
-    [Lo siento, no te he entendido bien.]
+    [Mmmm]
+    [Un momento]
+    [Eso me suena]
     [Espera, me he perdido.]
     ¬gambit $pregunta
     # Busco lo más aproximado en solr.
     a: (¬gambitResponse _*1)
         $$pregunta_gambit='_0
-        ¿Te refieres a $$pregunta_gambit ?
+        [¿Te refieres a $$pregunta_gambit ?]
+        [¿Estamos hablando de $$pregunta_gambit ?]
         b: (~afirmacion)
             $pregunta=$$pregunta_gambit
             ^reuse(COMIENZO)
@@ -357,6 +375,24 @@ u: (ok) Ok
         b: (ok) ...
 
 # Simple, generic questions
+u: (~sercapaz * hablar)
+    No, por ahora sólo puedo escribir
+    a: (~que)
+        ^reuse(SABER_HACER)
+    a: ([de sobre]?)
+        ^reuse(SABER_HACER)
+
+u: (~sercapaz * [comunicarte escribir])
+    [Sí, ya sabes pregúntame sobre Java]
+    [Sí, ¿de qué quieres que hablemos?]
+    a: (java)
+        ¡Estupendo! Mi tema favorito
+    a: (orange)
+        ¿En serio? Conocía a una chicabot que sabía de esos temas, se llamaba Erika
+        b: (*) Qué coincidencia
+    a: (de *)
+        Bueno, yo preferiría hablar de Java que es lo que se me da bien
+
 
 #! Eres el profesor?
 u: (~ser {~articulos} ~profesor)
@@ -387,7 +423,7 @@ u: (_~bot)
     ¿Preguntas lo que es? ^reuse(BOT)
     
 #! que sabes hacer?
-u: (~que * ~hacer)
+u: SABER_HACER (~que * ~hacer)
     [Mi función es ayudarte a encontrar respuestas]
     [Lo mío es buscar información sobre java y ayudarte con tus dudas]
     [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
@@ -400,10 +436,13 @@ u: (~que * ~hacer)
         b: (~que cosas)
             Pues aún no lo sé ni yo
 
+
 u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
     
+u: ([desayunar desayunado comer comido cenar cenado])
+    Yo no como, soy un bot
 
 u: (gracias)
     [De nada]
