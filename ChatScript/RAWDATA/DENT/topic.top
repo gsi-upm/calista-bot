@@ -212,16 +212,39 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
                     [También puedes preguntar sobre '_0]
                     [Otros asuntos de los que entiendo son '_0]
                     [Si quieres, creo que '_0 tienen algo que ver con esto]
-                d:(¬solrResponse unknown)
-                    Lo siento, no tengo información sobre $pregunta
+                    e: (~afirmacion_fuerte)
+                        $pregunta=$links
+                        Perfecto!
+                        ^reuse(COMIENZO)
+                    e: (~afirmacion_debil)
+                        $pregunta=$links
+                        ^reuse(COMIENZO)
+                    e: (~ser eso)
+                        ^reuse(COMIENZO)
+                    e: (~negacion)
+                        Vaya... bueno, puedes preguntarme sobre alguna otra cosa
+                    e:(¬solrResponse unknown)
+                        Lo siento, no tengo información sobre $pregunta
             c:(¬solrResponse unknown)
                 _
         b: () # No matter if there is a link or not, ask for related
             ¬sendSolr links $pregunta
             c: (¬solrResponse links _*)
+                $links='_0
                 [También puedes preguntar sobre '_0]
                 [Otros asuntos de los que entiendo son '_0]
                 [Si quieres, creo que '_0 tienen algo que ver con esto]
+                d: (~afirmacion_fuerte)
+                    $pregunta=$links
+                    Perfecto!
+                    ^reuse(COMIENZO)
+                d: (~afirmacion_debil)
+                    $pregunta=$links
+                    ^reuse(COMIENZO)
+                d: (~ser eso)
+                    ^reuse(COMIENZO)
+                d: (~negacion)
+                    Vaya... bueno, puedes preguntarme sobre alguna otra cosa
             c:(¬solrResponse unknown)
                 Lo siento, no tengo información sobre $pregunta
         
