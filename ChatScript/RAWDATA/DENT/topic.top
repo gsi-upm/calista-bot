@@ -21,7 +21,7 @@ concept: ~articulos [el El la La los las un Un una unos unas]
 concept: ~profesor [profesor profe professor]
 concept: ~lol [xD jeje jejeje je lol que_gracia que_divertido]
 concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia hasta para por segun sin So sobre tras]
-concept: ~encuesta [encuesta cuestionario evaluación]
+concept: ~encuesta [encuesta cuestionario evaluación formulario]
 concept: ~estoy [estoy me_siento me_encuentro]
 concept: ~sercapaz [~saber puedes podrías eres_capaz serías_capaz]
 
@@ -132,6 +132,12 @@ u: (~que * ~hacer)
         b: (~que cosas)
             Pues aún no lo sé ni yo
 
+
+u: (cuando es el examen)
+    Eso no lo sé, te recomiendo que te pongas en contacto con un profesor
+    
+u: (sabes resolver examenes)
+    no
 
 #! que es eclipse
 u: (que ~ser _~ide_list)
@@ -300,11 +306,26 @@ u: GAMBIT (_~javaconcept)
 ## Conversation without SOLR involved
 
 # Ensennar la encuesta
-u: ([~ensennar ~dar] ~encuesta)
-    ¿Quieres responder a la encuesta? Aquí la tienes <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (se abre en otra pestaña)
 
+#! quiero rellenar la encuesta
+u: (quiero rellenar la encuesta)
+    ¡Por supuesto! Aquí la tienes \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
+
+#! como respondo a la encuesta?
+u: ([respondo relleno] ~encuesta)
+    Puedes rellenarla en el siguiente enlace \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
+
+#! quiero responder a la encuesta
+u: ([responder rellenar] ~encuesta)
+    ¿Quieres responder a la encuesta? Aquí la tienes \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
+
+#! me enseñas la encuesta?
+u: ([~ensennar ~dar] ~encuesta)
+    ¡Por supuesto! Aquí la tienes \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
+
+#! que era lo de la encuesta?
 u: (~encuesta)
-    ¿Podrías responder a una encuesta? Aquí la tienes <a href="http://goo.gl/PMCzNy" target="blank">http://goo.gl/PMCzNy</a> (se abre en otra pestaña)
+    ¿Podrías responder a una encuesta? Esta aquí \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
 
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
