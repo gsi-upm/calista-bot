@@ -132,13 +132,6 @@ u: (~que * ~hacer)
         b: (~que cosas)
             Pues aún no lo sé ni yo
 
-
-u: (cuando es el examen)
-    Eso no lo sé, te recomiendo que te pongas en contacto con un profesor
-    
-u: (sabes resolver examenes)
-    no
-
 #! que es eclipse
 u: (que ~ser _~ide_list)
     [No sabría hablarte de las características exactas de '_0', pero puedes consultar esta comparativa]
@@ -306,7 +299,6 @@ u: GAMBIT (_~javaconcept)
 ## Conversation without SOLR involved
 
 # Ensennar la encuesta
-
 #! quiero rellenar la encuesta
 u: (quiero rellenar la encuesta)
     ¡Por supuesto! Aquí la tienes \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
@@ -338,6 +330,18 @@ u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
         ^reuse(ESTOY_NEG)
     a: (*)
         Oh
+
+#! cuando es el proximo examen?
+u: (cuando ~ser * examen)
+    Eso no lo sé, te recomiendo que te pongas en contacto con un profesor
+
+#! Tienes algún examen de programación
+u: ([tienes tener dar dejar prestar] * examen)
+    Sí tengo uno corto, esta aquí \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> . Pero si necesitas examenes de la asignatura te recomiendo que hables con el profesor
+    
+#! sabes resolver examenes?
+u: ({~sabes} [resolver hacer] * [examen examenes test])
+    No se resolver exámenes, pero sí puedo hacerte uno corto. Esta aquí \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
 
 #! estoy muy contento
 u: ESTOY_POS (~estoy * _~estado_animo_positivo)
