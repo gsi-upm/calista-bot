@@ -63,6 +63,7 @@ body {
 }
 #bot_chat_window #upper_bar a.icon:hover {
   background-color: #010f16;
+  cursor: pointer;
 }
 #bot_chat_window #upper_bar a#max_icon span.max-icon {
   border-top: 2px solid white; 
@@ -75,11 +76,19 @@ body {
   border-bottom: 2px solid white;
   border-top: 0px;
 }
+#bot_chat_window #upper_bar a.icon#quiz{
+  display: none;
+}
+#bot_chat_window.visible #upper_bar a.icon#quiz{
+  display: block;
+}
 #bot_chat_window #upper_bar a.icon i.fa{
   color: white;
   font-size: 24px;
-  font-weight: bold;
   line-height: 24px;
+}
+#bot_chat_window #upper_bar a.icon#quiz i.fa{
+  font-size: 14px;  
 }
 #bot_chat_window.visible #upper_bar a.icon i.fa-angle-up{
   display: none;

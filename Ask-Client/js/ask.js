@@ -37,12 +37,19 @@ jQuery(document).ready(function($){
     });
 
     /** Hide/show effect */
-    $('#bot_chat_window #upper_bar a').click(function(){
+    $('#bot_chat_window #upper_bar a#max_icon').click(function(){
         $('#bot_chat_window').toggleClass('visible');
         $('#bot_chat_window #screen_wrapper form input[name=question]').val('');
         $('#bot_chat_window #screen_wrapper form input[name=question]').focus();
+        return false;
     });
     
+    /** Request questionnaire */
+    $('#bot_chat_window #upper_bar a#quiz').click(function(){
+        $('#bot_chat_window #screen_wrapper form input[name=question]').val('Quiero rellenar la encuesta de satisfacción');
+        return false;
+    });
+
     // Set the username in the span    
     $('#username').html(username);
     
