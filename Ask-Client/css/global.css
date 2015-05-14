@@ -150,7 +150,9 @@ body {
   padding:     3px 0 1px 0;
 }
 
-
+#username-container{
+  font-family: Ubuntu, Helvetica, 'Open Sans', SansSerif, Arial;  
+}
 /*~~~~~~~~~~ @begin bottom userbar form  styling ~~~~~~~~~~~~*/
 #bot_chat_window #screen_wrapper #userbar {
 
