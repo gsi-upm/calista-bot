@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILENAME=ChatScript-5.1.zip
+FILENAME=ChatScript-5.31.zip
 TMPFOLDER=INSTALL
 BASEFOLDER=`pwd`
 
@@ -10,7 +10,7 @@ mkdir -p $TMPFOLDER
 cd $TMPFOLDER
 
 echo -n "Getting ChatScript..."
-wget -O ChatScript-5.1.zip http://downloads.sourceforge.net/project/chatscript/ChatScript-5.1.zip >wget.log 2>&1
+wget -O $FILENAME http://downloads.sourceforge.net/project/chatscript/ChatScript-5.31.zip >wget.log 2>&1
 cd $BASEFOLDER
 unzip $TMPFOLDER/$FILENAME
 chmod +x LinuxChatScript64 LinuxChatScript32
