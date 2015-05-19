@@ -7,15 +7,18 @@ concept: ~que [que Q 'q qe]
 concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo sabes saber sabrías sabrias]
 concept: ~significar [significa significar significado]
 concept: ~ser [ser eres Es son ~saber ~significar]
+concept: ~como [como Como]
+
 # Formulaciones para pedir ejemplos
 concept: ~ejemplo [ejemplo ejemplar modelo prototipo patron]
-# adirmaciones y negaciones para concatenar preguntas
+# afirmaciones y negaciones para concatenar preguntas
 concept: ~afirmacion [si sip por_favor efectivamente evidentemente sin_duda yes yup aye venga Si Sí sí claro sii siii siiii ok]
 concept: ~afirmacion_debil [vale bueno por_que_no gracias]
 concept: ~negacion [no nones nanai naranjas quia ca que_va nop nope]
 # otras reducciones
 concept: ~bot [bot_asistente asistente_virtual bot_conversacional bot chatbot chatterbot asistente]
-concept: ~hacer [hacer haces hace]
+concept: ~hacer [hacer haces hace hago]
+concept: ~funcionar [funcionar funciona funcionamiento]
 concept: ~quien [quien quienes]
 concept: ~articulos [el El la La los las un Un una unos unas]
 concept: ~profesor [profesor profe professor]
@@ -251,6 +254,11 @@ u: COMIENZO (~que ~ser {~articulos} * > _*-1 >) # This semi-weird pattern will r
     a: (¬solrResponse unknown)
         ^reuse(GAMBIT)
 
+#! como hago un bucle
+u: (~como [~hacer ~funcionar] {~articulos} * > _*-1 >)
+    $pregunta='_0
+    ^reuse(COMIENZO)
+        
 u: (~ejemplo ~preposiciones _*)
     $pregunta='_0
     ¬sendSolr examples $pregunta 
