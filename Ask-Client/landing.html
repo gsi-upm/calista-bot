@@ -2,12 +2,12 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-	      <meta name="description" content="">
-	      <link rel="stylesheet" href="./css/reset.css">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-          <link rel="stylesheet" href="./css/landing.css">
-          <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	    <meta name="description" content="">
+	    <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/landing.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <script src="js/jquery.js"></script>
         <script src="js/landing.js"></script>
@@ -52,10 +52,15 @@
                 </div>
             </div>
 
-            <div class="credits">
-                <span>Desarrollado por:</span>
-                <a href="http://gsi.dit.upm.es"><img src="images/landing/logo_extended2.png" /></a>
-                <a href="http://www.upm.es"><img src="http://www.upm.es/estaticos/imagenes/comunes/universidad_politecnica_logoI.png" /></a>
+            <div class="credits row">
+                <div class="col-xs-12">
+                    <span>Desarrollado por:</span>
+                    <a href="http://gsi.dit.upm.es"><img src="images/landing/logo_extended2.png" /></a>
+                    <a href="http://www.upm.es"><img src="http://www.upm.es/estaticos/imagenes/comunes/universidad_politecnica_logoI.png" /></a>
+                </div>
+                <div class="col-xs-12">
+                    <span>Agradecimiento a José A. Mañas, autor del Vademecum de Java</span>
+                </div>
             </div>
 
 
@@ -87,7 +92,22 @@
                 <br class="clear" />
             </div>--><!-- end bottom description -->
         </div><!-- end content -->
-        <div id="floating-cta" class="visible-lg visible-lg-block"></div>
+        <!--<div id="floating-cta" class="visible-lg visible-lg-block"></div>-->
+
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-39416162-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
     </body>
 </html>
 
