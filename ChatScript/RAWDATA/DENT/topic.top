@@ -106,10 +106,10 @@ u: (~llamas)
         [¡Encantado! ¿Puedo ayudarte en algo?]
         [¡Un placer conocerte! ¿qué quieres saber?]
         [Muy bien, '_0, ¿En qué puedo ayudarte?]
-    a: ([placer igualmente honor ~conocer]
+    a: ([placer igualmente honor ~conocer])
         [Y ahora... ¿En qué puedo ayudarte?]
         [Bien, ¿Con qué puedo ayudarte?]
-        [¿Puedo ayudarte de alguna forma?]
+        [¿Puedo ayudarte?]
         
         
 u: COMO_FUNCIONA_JAVA ([como_funcionan como_funciona como_va como_van] _{~articulos} * _~javaconcept)
