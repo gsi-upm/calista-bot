@@ -2,6 +2,7 @@
 concept: ~saludos [Hola hola Buenas buenas Que_tal que_tal hi hello]
 concept: ~adios [adios ciao agur bye bye_bye ]
 concept: ~hasta_otra [hasta_otra hasta_luego]
+
 # Formulaciones para pedir informacion sobre algo
 concept: ~que [que Q 'q qe]
 concept: ~saber [sabes_sobre sepas_sobre sabes_de sepas_de sabes_del sepas_del sabes_acerca sepas_acerca sabes_algo sabes saber sabrías sabrias]
@@ -27,6 +28,7 @@ concept: ~preposiciones [A ante bajo cabe con contra De desde En entre hacia has
 concept: ~encuesta [encuesta cuestionario evaluación formulario]
 concept: ~estoy [estoy me_siento me_encuentro]
 concept: ~sercapaz [~saber puedes podrías eres_capaz serías_capaz]
+concept: ~llamas [llamar llamas nombre quien_eres]
 
 concept: ~estado_animo_negativo_mas [abatido abochornado abucheado aburrido acabado agobiado agotado alarmado alerta alicaído alocado amargado amodorrado angustiado apenado arrepentido asqueado asombrado avergonzado cansado cambiante decaído defraudado desanimado descorazonado desganado desilusionado desinflado desesperado desvalido depresivo deprimido distraído duvitativo enfadado engreído enojado enloquecido fastidiado furioso frustrado impaciente incapaz inquieto irascible hambriento herido mal mareado melancólico molesto nervioso nostálgico pensativo solo soplado temeroso terminante triste vacio vencido]
 concept: ~estado_animo_negativo_fem [abatida abochornada abucheada aburrida acabada agobiada agotada alarmada alerta alicaída alocada amargada amodorrada angustiada apenada arrepentida asqueada asombrada avergonzada cansada cambiante decaída defraudada desanimada descorazonada desganada desilusionada desinflada desesperada desvalida depresiva deprimida distraída duvitativa enfadada engreída enojada enloquecida fastidiada furiosa frustrada impaciente incapaz inquieta irascible hambrienta herida mal mareada melancólica molesta nerviosa nostálgica pensativa sola soplada temerosa terminante triste vacia vencida]
@@ -95,7 +97,21 @@ t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minu
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
 
-
+u: (~llamas)
+    [Me llamo Duke, soy un bot que sabe un poquito sobre java]
+    [Soy Duke, el experto en Java! Bueno, más o menos]
+    [Duke. ¡Encantado de conocerte!]
+    [Yo soy Duke. ¿Tú como te llamas?]
+    a: ([yo me] * > _*-1 >)
+        [¡Encantado! ¿Puedo ayudarte en algo?]
+        [¡Un placer conocerte! ¿qué quieres saber?]
+        [Muy bien, '_0, ¿En qué puedo ayudarte?]
+    a: ([placer igualmente honor ~conocer]
+        [Y ahora... ¿En qué puedo ayudarte?]
+        [Bien, ¿Con qué puedo ayudarte?]
+        [¿Puedo ayudarte de alguna forma?]
+        
+        
 u: COMO_FUNCIONA_JAVA ([como_funcionan como_funciona como_va como_van] _{~articulos} * _~javaconcept)
     No se como funciona '_0 '_1. Te puedo dar información teorica.
     $pregunta='_1
