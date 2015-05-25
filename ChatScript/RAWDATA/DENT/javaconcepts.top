@@ -1,4 +1,4 @@
-concept: ~javaconcept [excepciones final case envoltorios double inputstream char print exception
+concept: ~javaconcept (excepciones final case envoltorios double inputstream char print exception
                        javac inheritance operadores sustitucion campo metodo upcasting jar 
                        bufferedreader superclases javadoc constructores character promocion
                        formatter parametros calendar delegacion enumeration iteracion listas
@@ -25,4 +25,4 @@ concept: ~javaconcept [excepciones final case envoltorios double inputstream cha
                        object underflow colas asignacion diccionario arraycopy keywords import 
                        stringbuffer variables creacion if conjuntos miembro argumentos equals jvm
                        extension interpretacion compilacion void overloading catch codigo acceso
-                       downcasting switch declaracion writer scanner this arrays ]
+                       downcasting switch declaracion writer scanner this arrays )
