@@ -148,6 +148,12 @@ def runCommands(cs_response, question, user):
             if new_nl != "":
                 response['answer'].append(new_nl)
             commands += new_commands
+        elif u'¬gambitUnknown' in command:
+            current_response = sendChatScript(command, user)
+            new_commands, new_nl = splitCommands(current_response)
+            if new_nl != "":
+                response['answer'].append(new_nl)
+            commands += new_commands
         elif u'¬gambit' in command:
             new_commands, new_nl = processGambit(command, user)
             commands += new_commands
