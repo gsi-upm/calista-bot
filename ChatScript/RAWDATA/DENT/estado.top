@@ -1,0 +1,82 @@
+
+topic: ~ESTADO keep repeat [estoy me_siento me_encuentro]
+
+#! estoy algo triste
+u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
+    [¿Por qué estás '_0?]
+    [¿Cómo es que estás '_0?]
+    a: (porque)
+        [Entiendo]
+        [Comprendo]
+    a: (~estoy '_~estado_animo_negativo)
+        ^reuse(ESTOY_NEG)
+    a: (*)
+        Oh
+
+#! estoy muy contento
+u: ESTOY_POS (~estoy * _~estado_animo_positivo)
+    [Me alegro de que estés '_0]
+    [¡Estupendo!]
+
+#! creo que estoy borracho
+u: ESTOY_BORRACHO (~estoy ~borracho)
+    ¿En serio?
+    a: (~afirmacion)
+        O_o
+    a: (broma)
+       ¡Ah! ¡Qué susto!
+    a: (~negacion)
+       ¡Ah!
+
+#! estoy mal
+u: ESTOY_MAL ([estoy_mal me_encuentro_mal me_siento_mal])
+    [Vaya ¿qué te pasa?][Vaya ¿qué te ocurre?]
+    a: (*)
+         [Lo siento][Si pudiera hacer algo...]
+
+#! estoy bien
+u: ESTOY_BIEN ([estoy_bien me_encuentro_bien me_siento_bien])
+    [Me alegro][Estupendo]
+
+#! estoy intentando hacer que respondas algo mal
+u: (estoy _*)
+    ¿Por qué estás '_0'?
+    a: (porque *)
+        [Ok]
+        [Entiendo]
+
+#! como estas?
+u: (como_estas)
+    Estoy bien, ¡gracias!
+
+#! muy bien
+u: (muy_bien)
+    [Me alegro][Estupendo]
+
+#! jejeje
+u: (~lol)
+    [Me alegro de que estés contento]
+    [¿He dicho algo gracioso?]
+    [¿Te he hecho reir?]
+    a: (~afirmacion)
+        [Entonces me alegro]
+        [Me alegro]
+        [¡Qué bien!]
+    a: (~negacion)
+        Ok
+
+#! ok
+u: (ok) Ok
+    a: (ok) Ok ¿qué?
+        b: (ok) ...
+
+u: (llegas tarde)
+    [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
+    [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
+    
+u: ([desayunar desayunado comer comido cenar cenado])
+    Yo no como, soy un bot
+
+u: (gracias)
+    [De nada]
+    [De nada, ha sido un placer]

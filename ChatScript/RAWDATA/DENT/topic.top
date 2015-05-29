@@ -46,43 +46,8 @@ concept: ~borracho ( borracho borracha pedo ebrio ebria )
 # IDEs
 concept: ~ide ( IDE ide entorno_de_desarrollo herramienta_de_desarrollo entorno herramienta )
 concept: ~ide_list ( BlueJ bluej Codenvy codenvy drjava Drjava DrJava Dr_Java Doctor_Java doctor_java Eclipse eclipse Eclipse_IBM eclipse_IBM eclipse_ibm Geany geany Greenfoot greenfoot intellij Intellij intelliJ IntelliJ IntelliJ_IDEA IDEA intellij_idea JBuilder Jbuilder jbuilder JCreator Jcreator jcreator JDeveloper Jdeveloper jdeveloper KDevelop kdevelop Kdevelop MyEclipse myeclipse NetBeans netbeans Rational_Application_Developer rational_application_developer Servoy servoy Xcode xcode )
-   
-topic: ~ejemplos keep repeat [ejemplo ejemplar modelo prototipo patron]
-    
-u: (~ejemplo ~preposiciones _*)
-    $pregunta='_0
-    ¬sendSolr examples $pregunta 
-    a:(¬solrResponse examples _*)
-        [Te muestro el documento con ejemplos.]
-        [Esto es lo que sé sobre $pregunta , incluidos sus ejemplos.]
-        ¬sendSolr resource $pregunta
-            b:(¬solrResponse resource _*)
-                ¬resource '_0
-    a:(¬solrResponse unknown)
-        [Lo siento, no tengo ningun ejemplo sobre $pregunta ]
-        [Vaya, pues no he encontrado nada sobre $pregunta . Qué raro...]
-        ^reuse(JAVA.COMIENZO)
-        
-u: EJEMPLO (~ejemplo $pregunta)
-    ¬sendSolr examples $pregunta 
-    a:(¬solrResponse examples _*)
-        [Te muestro el documento con ejemplos. ]
-        [Esto son los ejemplos que tengo de $pregunta  ]
-        ¬sendSolr resource $pregunta
-            b:(¬solrResponse resource _*)
-                ¬resource '_0
-    a:(¬solrResponse unknown)
-        Lo siento, no tengo ningun ejemplo sobre $pregunta
-        ^reuse(JAVA.COMIENZO)
-    
-u: (~ejemplo)
-    [¿Sobre qué quieres el ejemplo?]
-    [¿Quieres un ejemplo? ¿Sobre qué?]
-    a: (~preposiciones _*1 >)
-        $pregunta='_0
-        ^reuse(EJEMPLO)
 
-topic: ~tencuesta keep repeat [encuesta cuestionario evaluación formulario]
+topic: ~TENCUESTA keep repeat [encuesta cuestionario evaluación formulario]
 
 ## Conversation without SOLR involved
 
@@ -107,7 +72,7 @@ u: ([~ensennar ~dar] ~encuesta)
 u: (~encuesta)
     ¿Podrías responder a una encuesta? Esta aquí \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
 
-topic: ~examenes keep repeat [examen examenes]
+topic: ~EXAMENES keep repeat [examen examenes]
         
 #! cuando es el proximo examen?
 u: (cuando ~ser * examen)
@@ -121,131 +86,108 @@ u: ([tienes tener dar dejar prestar] * examen)
 u: ({~saber} [resolver hacer] * [examen examenes test])
     No se resolver exámenes, pero sí puedo hacerte uno corto. Esta aquí \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a> (se abre en otra pestaña)
 
-t: ¡Acuerdate de rellenar la encuesta si puedes! Está en \<a href="http://goo.gl/PMCzNy" target="blank"> http://goo.gl/PMCzNy \</a>
+
+topic: ~INTRO keep repeat [~llamas ~ser ~bot ~hacer ~sercapaz ~profesor ~quien]
+
+u: (~llamas)
+    [Me llamo Duke, soy un bot que sabe un poquito sobre java]
+    [Soy Duke, el experto en Java! Bueno, más o menos]
+    [Duke. ¡Encantado de conocerte!]
+    [Yo soy Duke. ¿Tú como te llamas?]
+    a: ([soy yo me] * > _*-1 >)
+        [¡Encantado! ¿Puedo ayudarte en algo?]
+        [¡Un placer conocerte! ¿qué quieres saber?]
+        [Muy bien, '_0, ¿En qué puedo ayudarte?]
+    a: ([placer igualmente honor ~conocer])
+        [Y ahora... ¿En qué puedo ayudarte?]
+        [Bien, ¿Con qué puedo ayudarte?]
+        [¿Puedo ayudarte?]
+
+## Generic questions
+#! que es un chatbot?
+u: BOT (~que ~ser * _~bot) 
+    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
+    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
+
+#! chatbot
+u: (_~bot) 
+    ¿Preguntas lo que es? ^reuse(BOT)
     
-topic: ~estado keep repeat [estoy me_siento me_encuentro]
+#! que sabes hacer?
+u: (~que * ~hacer)
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
+    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    [Busco información en mis documentos de Java]
+    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo
 
-#! estoy algo triste
-u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
-    [¿Por qué estás '_0?]
-    [¿Cómo es que estás '_0?]
-    a: (porque)
-        [Entiendo]
-        [Comprendo]
-    a: (~estoy '_~estado_animo_negativo)
-        ^reuse(ESTOY_NEG)
-    a: (*)
-        Oh
+# Simple, generic questions
+u: (~sercapaz * hablar)
+    No, por ahora sólo puedo escribir
+    a: (~que)
+        ^reuse(SABER_HACER)
+    a: ([de sobre]?)
+        ^reuse(SABER_HACER)
 
-#! estoy muy contento
-u: ESTOY_POS (~estoy * _~estado_animo_positivo)
-    [Me alegro de que estés '_0]
-    [¡Estupendo!]
+u: (~sercapaz * [comunicarte escribir])
+    [Sí, ya sabes pregúntame sobre Java]
+    [Sí, ¿de qué quieres que hablemos?]
+    a: (java)
+        ¡Estupendo! Mi tema favorito
+    a: (orange)
+        ¿En serio? Conocía a una chicabot que sabía de esos temas, se llamaba Erika
+        b: (*) Qué coincidencia
+    a: (de *)
+        Bueno, yo preferiría hablar de Java que es lo que se me da bien
 
-#! creo que estoy borracho
-u: ESTOY_BORRACHO (~estoy ~borracho)
-    ¿En serio?
-    a: (~afirmacion)
-        O_o
-    a: (broma)
-       ¡Ah! ¡Qué susto!
-    a: (~negacion)
-       ¡Ah!
 
-#! estoy mal
-u: ESTOY_MAL ([estoy_mal me_encuentro_mal me_siento_mal])
-    [Vaya ¿qué te pasa?][Vaya ¿qué te ocurre?]
-    a: (*)
-         [Lo siento][Si pudiera hacer algo...]
+#! Eres el profesor?
+u: (~ser {~articulos} ~profesor)
+    [No, soy un bot asistente para ayudarte a encontrar respuestas.]
+    [Ya me gustaría. Solo soy un bot que responde preguntas de java.]
+    [Por supuesto. ¡Estás suspenso! Na, es broma. Soy un bot inteligente.]
+    # TODO: Add rejoinder to offer contact info.
 
-#! estoy bien
-u: ESTOY_BIEN ([estoy_bien me_encuentro_bien me_siento_bien])
-    [Me alegro][Estupendo]
+#! quien eres?
+u: (~quien ~ser)
+    [Me llamo Duke y soy un bot asistente para ayudarte con tus preguntas.]
+    [Duke, encantado de conocerte. Soy un bot especializado en java]
+    [Duke es mi nombre. Responder tus dudas yo debo]
+    a: ([sobre de] ~que) [Sobre Java][En general sobre Java, pero quizá algún día aprenda más cosas]
+        b: (solo [eso java]) Me gustaria aprender más
+    a: (preguntas) Respondo a tus preguntas sobre Java, ¡venga! ponme a prueba
 
-#! estoy intentando hacer que respondas algo mal
-u: (estoy _*)
-    ¿Por qué estás '_0'?
-    a: (porque *)
-        [Ok]
-        [Entiendo]
+#! que es un chatbot?
+u: BOT (~que ~ser * _~bot) 
+    [Un '_0 es como un diccionario parlante, te contesta preguntas si las sabe]
+    [Un '_0 es un programa que simula a un humano teniendo una conversación. Además te contesta a preguntas si las sabe]
+    a: ([sobre de] ~que) En mi caso sobre Java
+        b: (solo eso) Me gustaria aprender más
+    a: (preguntas) En mi caso sobre Java
 
-#! como estas?
-u: (como_estas)
-    Estoy bien, ¡gracias!
-
-#! muy bien
-u: (muy_bien)
-    [Me alegro][Estupendo]
-
-#! jejeje
-u: (~lol)
-    [Me alegro de que estés contento]
-    [¿He dicho algo gracioso?]
-    [¿Te he hecho reir?]
-    a: (~afirmacion)
-        [Entonces me alegro]
-        [Me alegro]
-        [¡Qué bien!]
-    a: (~negacion)
-        Ok
-
-#! ok
-u: (ok) Ok
-    a: (ok) Ok ¿qué?
-        b: (ok) ...
-
-u: (llegas tarde)
-    [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
-    [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
+#! chatbot
+u: (_~bot) 
+    ¿Preguntas lo que es? ^reuse(BOT)
     
-u: ([desayunar desayunado comer comido cenar cenado])
-    Yo no como, soy un bot
-
-u: (gracias)
-    [De nada]
-    [De nada, ha sido un placer]
-
-t: ¿Como te encuentras?
-    
-# Bad words and and answers to unpolite talk
-
-topic: ~generalidades keep repeat []
-
-#! Eres feo
-u: (~insulto_feo)
-    [Pues mi madre dice que soy muy guapo]
-    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
-    [Prefiero mi interfaz actual a una simple línea de comandos.]
-    [Tan poco estoy tan mal para ser una mascota]
-
-#! Eres tonto
-u: (~insulto_tonto)
-    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
-    [Aunque sea un bot me duele que me digan esas cosas...]
-    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
-    [Mi autoestima disminuye con esos calificativos...]
-    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
-
-#! Eres un cabron
-u: (~insulto_fuerte)
-    [Sin insultar, por favor.]
-    [No hace falta decir tacos...]
-    [No deberías ser tan maleducad@.]
-
-#! Me cago en diez
-u: (~mala_educacion)
-    [Vaya lenguaje...]
-    [Se pueden decir las cosas de manera educada...]
-    [No me gusta ese lenguaje]
-
-#! Bocachancla
-u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
-    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
-        b: (~afirmacion) [Eso es bueno][Me alegro]
-        b: (~negacion) Ok
-
-u: ($questioned cuantas preguntas)
-    Llevas $questioned preguntas
-u: (cuantas preguntas)
-    Aún no me has preguntado nada
-t: Volviendo al tema... ¿Como puedo ayudarte?
+#! que sabes hacer?
+u: SABER_HACER (~que * ~hacer)
+    [Mi función es ayudarte a encontrar respuestas]
+    [Lo mío es buscar información sobre java y ayudarte con tus dudas]
+    [Un bot Duke es. ¡Cosas sobre java que explicarte tengo!]
+    [Busco información en mis documentos de Java]
+    [¡Cualquier cosa! ...nah, es broma, soy experto en Java]
+    a: ([dudas respuestas])
+        A preguntas sobre Java
+    a: (solo {[eso java]}) 
+        Bueno, estoy aprendiendo más cosas
+        b: (~que cosas)
+            Pues aún no lo sé ni yo

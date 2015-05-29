@@ -5,3 +5,41 @@ concept: ~mala_educacion ( cago cago_en cojon cojones follen hostia joder jodan 
 
 concept: ~insulto_ingenioso ( Abanto Abrazafarolas Adufe Alcornoque Alfeñique Andurriasmo Arrastracueros Artabán Atarre Baboso Barrabás Barriobajero Bebecharcos Bellaco Belloto Berzotas Besugo Bobalicón Bocabuzón Bocachancla Bocallanta Boquimuelle Borrico Botarate Brasas Cabestro Cabezaalberca Cabezabuque Cachibache Cafre Cagalindes Cagarruta Calambuco Calamidad Caldúo Calientahielos Calzamonas Cansalmas Cantamañanas Capullo Caracaballo Caracartón Caraculo Caraflema Carajaula Carajote Carapapa Carapijo Cazurro Cebollino Cenizo Cenutrio Ceporro Cernícalo Charrán Chiquilicuatre Chirimbaina Chupacables Chupasangre Chupóptero Cierrabares Cipote Comebolsas Comechapas Comeflores Comestacas Cretino Cuerpoescombro Culopollo Descerebrado Desgarracalzas Dondiego Donnadie Echacantos Ejarramantas Energúmeno Esbaratabailes Escolimoso Escornacabras Estulto Fanfosquero Fantoche Fariseo Filimincias Foligoso Fulastre Ganapán Ganapio Gandúl Gañán Gaznápiro Gilipuertas Giraesquinas Gorrino Gorrumino Guitarro Gurriato Habahelá Huelegateras Huevón Lamecharcos Lameculos Lameplatos Lechuguino Lerdo Letrín Lloramigas Longanizas Lumbreras Maganto Majadero Malasangre Malasombra Malparido Mameluco Mamporrero Manegueta Mangarrán Mangurrián Mastuerzo Matacandiles Meapilas Melón Mendrugo Mentecato Mequetrefe Merluzo Metemuertos Metijaco Mindundi Morlaco Morroestufa Muerdesartenes Orate Ovejo Pagafantas Palurdo Pamplinas Panarra Panoli Papafrita Papanatas Papirote Paquete Pardillo Parguela Pasmarote Pasmasuegras Pataliebre Patán Pavitonto Pazguato Pecholata Pedorro Peinabombillas Peinaovejas Pelagallos Pelagambas Pelagatos Pelatigres Pelazarzas Pelele Pelma Percebe Perrocostra Perroflauta Peterete Petimetre Picapleitos Pichabrava Pillavispas Piltrafa Pinchauvas Pintamonas Piojoso Pitañoso Pitofloro Plomo Pocasluces Pollopera Quitahipos Rastrapajo Rebañasandías Revientabaules Ríeleches Robaperas Sabandija Sacamuelas Sanguijuela Sinentraero Sinsustancia Sonajas Sonso Soplagaitas Soplaguindas Sosco Tagarote Tarado Tarugo Tiralevitas Tocapelotas Tocho Tolai Tontaco Tontucio Tordo Tragaldabas Tuercebotas Tunante Zamacuco Zambombo Zampabollos Zamugo Zángano Zarrapastroso Zascandil Zopenco Zoquete Zote Zullenco
 Zurcefrenillos friki freak nerd geek )
+
+
+topic: ~INSULTOS keep repeat [~insulto_feo ~insulto_tonto ~insulto_fuerte ~mala_educacion]
+
+# Bad words and and answers to unpolite talk
+
+#! Eres feo
+u: (~insulto_feo)
+    [Pues mi madre dice que soy muy guapo]
+    [8 de cada 10 usuarios consideran que tengo una interfaz muy agradable]
+    [Prefiero mi interfaz actual a una simple línea de comandos.]
+    [Tan poco estoy tan mal para ser una mascota]
+
+#! Eres tonto
+u: (~insulto_tonto)
+    [Lo siento, a veces me cuesta entender las cosas, pero intento hacerlo lo mejor que puedo.]
+    [Aunque sea un bot me duele que me digan esas cosas...]
+    [Para ser sólo unos y ceros creo que no me desenvuelvo mal...]
+    [Mi autoestima disminuye con esos calificativos...]
+    [Aunque a veces no entienda lo que me dice me esfuerzo mucho por ayudarte...]
+
+#! Eres un cabron
+u: (~insulto_fuerte)
+    [Sin insultar, por favor.]
+    [No hace falta decir tacos...]
+    [No deberías ser tan maleducad@.]
+
+#! Me cago en diez
+u: (~mala_educacion)
+    [Vaya lenguaje...]
+    [Se pueden decir las cosas de manera educada...]
+    [No me gusta ese lenguaje]
+
+#! Bocachancla
+u: (~insulto_ingenioso) [Jeje, que gracia][Jeje]
+    a: (~insulto_ingenioso) [Estamos graciosos, ¿no?][Estamos de buen humor, ¿no?]
+        b: (~afirmacion) [Eso es bueno][Me alegro]
+        b: (~negacion) Ok
