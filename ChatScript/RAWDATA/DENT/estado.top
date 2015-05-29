@@ -1,5 +1,6 @@
+concept: ~habercomido ( desayunar desayunado comer comido cenar cenado )
 
-topic: ~ESTADO keep repeat [estoy me_siento me_encuentro]
+topic: ~ESTADO keep repeat [ ~estoy ~habercomido ~lol como muy_bien ok llegas_tarde gracias ]
 
 #! estoy algo triste
 u: ESTOY_NEG ({~estoy} * _~estado_animo_negativo)
@@ -74,7 +75,7 @@ u: (llegas tarde)
     [Un bot nunca llega tarde, está siempre dispuesto a ayudar con sus respuestas]
     [Ya, bueno. No soy un mago de barba gris, que le voy a hacer.]
     
-u: ([desayunar desayunado comer comido cenar cenado])
+u: (~habercomido)
     Yo no como, soy un bot
 
 u: (gracias)

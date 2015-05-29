@@ -36,6 +36,16 @@ u: (~ejemplo)
     
 topic: ~JAVA keep repeat [~javaconcepts ~ide_list]
 
+# Place this here to have priority vs que es x questions
+#! que es un chatbot?
+u: (~que ~ser * _~bot)
+    ^reuse(INTRO.BOT)
+
+u: (~que * ~hacer)
+    ^reuse(INTRO.SABER_HACER)
+
+    
+
 u: COMO_FUNCIONA_JAVA ([como_funcionan como_funciona como_va como_van] _{~articulos} * _~javaconcept)
     No se como funciona '_0 '_1. Te puedo dar información teorica.
     $pregunta='_1
