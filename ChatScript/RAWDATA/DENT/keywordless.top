@@ -74,5 +74,35 @@ t: (!$questioned<3) ¿Quieres responder a una encuesta? No te llevará ni 5 minu
     a: (~negacion)
         Bueno, si cambias de opinión dímelo. Me harías un favor
 
+u: GAMBIT (_~javaconcept)
+    $pregunta = '_0
+    [Mmmm]
+    [Un momento]
+    [Eso me suena]
+    [Espera, me he perdido.]
+    ¬gambit $pregunta
+    # Busco lo más aproximado en solr.
+    a: (¬gambitResponse _*1)
+        $$pregunta_gambit='_0
+        [¿Te refieres a $$pregunta_gambit ?]
+        [¿Estamos hablando de $$pregunta_gambit ?]
+        b: (~afirmacion)
+            $pregunta=$$pregunta_gambit
+            ^reuse(JAVA.COMIENZO)
+        b:(~afirmacion_debil)
+            [Me lo tomaré como un sí]
+            [Pues espero haber acertado]
+            $pregunta=$$pregunta_gambit
+            ^reuse(JAVA.COMIENZO)
+        b: (~negacion)
+            [Me temo que no puedo ayudarte. ¿Por qué no me preguntas sobre alguna otra cosa?]
+            [Vaya, pues esperaba que fuese eso...]
+            [Pues entonces no caigo ¿alguna otra cosa?]
+            [Vaya, lo siento, no caigo]
+            [¿Me he equivocado? Whoops, esto es un poco incómodo...]
+    a:(¬gambitUnknown)
+        [¿Podrías formularlo de alguna otra manera?]
+        [¿Prueba a preguntarlo de otra forma?]
+        [Cuando me preguntas Que Es Algo, suelo entonderlo]
         
         

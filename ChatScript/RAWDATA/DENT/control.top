@@ -62,26 +62,26 @@ u: () # main per-sentence processing
 
     if (%response == 0 AND ^marked($$currenttopic)) { nofail(TOPIC ^gambit($$currenttopic)) } # gambit current topic since keywords match current topic
 
-    if (%response == 0) # gambit from ANY matching topic
-    {
-        @8 = ^keywordtopics()   # get topics referred in input
-        loop()
-        {
-            $$topic = first(@8subject)
-            nofail(TOPIC ^Gambit($$topic))  # gambit in best matching topic
-            if (%response != 0) # stop when we find something
-            {
-                ^end(RULE)
-            }
-        }
-    }
-    if (%response == 0){ nofail(TOPIC ^gambit($$currenttopic)) } # gambit from current topic even though no keywords matched
+    # if (%response == 0) # gambit from ANY matching topic
+    # {
+    #    @8 = ^keywordtopics()   # get topics referred in input
+    #    loop()
+    #    {
+    #        $$topic = first(@8subject)
+    #        nofail(TOPIC ^Gambit($$topic))  # gambit in best matching topic
+    #        if (%response != 0) # stop when we find something
+    #        {
+    #            ^end(RULE)
+    #        }
+    #    }
+    # }
+    # if (%response == 0){ nofail(TOPIC ^gambit($$currenttopic)) } # gambit from current topic even though no  keywords matched
     
         
-    # if no topic reacts, go to the java keyworldless topic
+    # if no topic reacts, go to the TSALUDOS keyworldless topic
     if (%response == 0) 
     {
-        nofail(TOPIC ^respond(~java))
+        nofail(TOPIC ^respond(~TSALUDOS))
     }
     
     if (%response == 0) 
