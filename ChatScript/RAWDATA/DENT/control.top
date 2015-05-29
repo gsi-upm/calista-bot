@@ -26,6 +26,11 @@ u: () # main per-sentence processing
     $$currenttopic = %topic     # get the current topic at start of volley
 
     if ( %response == 0 ) {nofail(TOPIC ^rejoinder())}  # try for rejoinders. might generate an answer directly from what we are looking for.
+    
+    # Check if it is a java question
+    if ( %response == 0) {nofail(TOPIC ^respond(~JAVA))}
+    if ( %response == 0) {nofail(TOPIC ^respond(~EJEMPLOS))}
+    
 
     if (%length == 0 AND %response == 0 )
     {
