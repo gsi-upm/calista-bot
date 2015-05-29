@@ -2,7 +2,7 @@
 outputmacro: dent()  # The dent bot for java
 $cs_token = #DO_INTERJECTION_SPLITTING | #DO_NUMBER_MERGE | #DO_DATE_MERGE  | #DO_PROPERNAME_MERGE | #DO_PARSE 
 
-^addtopic(~salludos)
+^addtopic(~tsaludos)
 $cs_control_main = ~control
 $cs_control_post = ~XPOSTPROCESS
 $userprompt = ^"%user: >"
@@ -16,7 +16,7 @@ dent
 topic: ~control system ()
 # on startup, do introduction
 u: ( %input<%userfirstline) 
-    gambit(~salludos)
+    gambit(~tsaludos)
 
 u: (< shut up >) $shutup = 1
 u: (< talk  >) $shutup = null
@@ -47,27 +47,13 @@ u: () # main per-sentence processing
             }
         }
     }   
-
-    # if no topic reacts, go to the last ditch keywordless topic
-    if (%response == 0) 
-    {
-        nofail(TOPIC ^respond(~keywordless))
-    }
-
-    # having no good response we know, now generate quibbles
-
-    # now we need to find fake responses 
-    if (%response == 0 AND %rand > 50)
-    {
-        nofail(TOPIC respond(~QUIBBLE_ALL))
-    }
-
+    
     # if we have rejoinders for what we said OR we asked a question, stop here
-    if (%outputrejoinder OR %lastquestion) 
+    # if (%outputrejoinder OR %lastquestion) 
+    if (%outputrejoinder)
     {
         end(TOPIC)
     }
-
 
     if (%response == 0 AND ^marked($$currenttopic)) { nofail(TOPIC ^gambit($$currenttopic)) } # gambit current topic since keywords match current topic
 
@@ -86,18 +72,11 @@ u: () # main per-sentence processing
     }
     if (%response == 0){ nofail(TOPIC ^gambit($$currenttopic)) } # gambit from current topic even though no keywords matched
     
+        
+    # if no topic reacts, go to the java keyworldless topic
     if (%response == 0) 
-    { 
-        @8 = ^GambitTopics()        # all topics with gambits (excluding system topics)
-        loop()
-        {
-            $$topic = pick(@8subject)
-            nofail(TOPIC ^Gambit($$topic))  # try a topic at random
-            if (%response != 0)
-            {
-                ^end(RULE)
-            }
-        }
+    {
+        nofail(TOPIC ^respond(~java))
     }
     
     if (%response == 0) 
