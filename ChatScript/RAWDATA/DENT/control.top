@@ -75,7 +75,6 @@ u: () # main per-sentence processing
     #        }
     #    }
     # }
-    # if (%response == 0){ nofail(TOPIC ^gambit($$currenttopic)) } # gambit from current topic even though no  keywords matched
     
         
     # if no topic reacts, go to the TSALUDOS keyworldless topic
@@ -83,6 +82,9 @@ u: () # main per-sentence processing
     {
         nofail(TOPIC ^respond(~TSALUDOS))
     }
+    
+    if (%response == 0){ nofail(TOPIC ^gambit($$currenttopic)) } # gambit from current topic even though no  keywords matched
+
     
     if (%response == 0) 
     {
