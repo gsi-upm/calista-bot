@@ -1,0 +1,17 @@
+concept: ~positions [professor research student fellow_grade postgraduate]
+
+topic: ~PEOPLE keep repeat (member professor research)
+
+u: (how many _~position)
+    ¬solrPeople position '_0
+    a: (¬solrResponsePeople position _1) # ¬solrResponsePeople URL topic
+        We have _0 people in that role. 
+
+u: (how many)
+    ¬solrCount people
+    a: (¬solrcounted _*)
+        [We have '_0 members][There are '_0 people working with the GSI.]
+        b: (active)
+            ¬solrCount people active
+            c:(¬solrcounted _*)
+                [We have '_0 active projects][_0 of them are active projects]

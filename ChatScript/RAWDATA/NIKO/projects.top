@@ -1,0 +1,22 @@
+
+topic: ~PROJECTS keep repeat (project)
+
+u: (about _*)
+    ¬solrProject topic '_0
+    a: (¬solrResponseProject _1 _1) # ¬solrResponseProject URL topic
+        We have this project about _1 ¬url _0 ¬solrCount projects _1
+        b:(¬solrcounted _*)
+            We have another _0 in topics related to this one.
+           
+
+u: (how many projects)
+    ¬solrCount projects
+    a: (¬solrcounted _*)
+        [We have '_0 projects.][The GSI has a total of _0 projects]
+        b: (active)
+            ¬solrCount projects active
+            c:(¬solrcounted _*)
+                [We have '_0 active projects][_0 of them are active projects]
+        b: (public)
+            ¬solrCount projects public
+            
