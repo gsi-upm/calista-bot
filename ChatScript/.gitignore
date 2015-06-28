@@ -4,7 +4,9 @@
 !.gitignore
 !filesDuke.txt
 !filesDent.txt
+!filesNiko.txt
 !README.md
 !getChatScript.sh
 !RAWDATA/DUKE/*
 !RAWDATA/DENT/*
+!RAWDATA/NIKO/*

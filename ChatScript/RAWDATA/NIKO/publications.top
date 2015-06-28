@@ -1,0 +1,22 @@
+
+topic: ~PUBLICATIONS keep repeat (publication)
+
+u: (about _*)
+    ¬solrPublication topic '_0
+    a: (¬solrResponsePublication _1 _1) # ¬solrResponsePublication URL topic
+        We have this publication about _1 ¬url _0 ¬solrCount publication _1
+        b:(¬solrcounted _*)
+            We have another _0 in topics related to this one.
+           
+
+u: (how many)
+    ¬solrCount publication
+    a: (¬solrcounted _*)
+        [We have '_0 publications in total.][The GSI has published a total of _0 paperss]
+        b: (active)
+            ¬solrCount projects active
+            c:(¬solrcounted _*)
+                [We have '_0 active projects][_0 of them are active projects]
+        b: (public)
+            ¬solrCount projects public
+            
