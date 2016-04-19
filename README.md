@@ -63,6 +63,6 @@ applicable law or agreed to in writing, software distributed under the License i
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific 
 language governing permissions and limitations under the License.
 ```
-![GSI Logo](http://gsi.dit.upm.es/templates/jgsi/images/logo.png)
+![GSI Logo](http://www.gsi.dit.upm.es/images/stories/logos/gsi.png)
 
 This project has been developed as the master thesis of [Javier Herrera](https://github.com/javiherrera) under the tutelage of [Miguel Coronado](https://github.com/miguelcb84) and the supervision of [Carlos A. Iglesias](https://github.com/cif2cif) at [gsi-upm](https://github.com/gsi-upm)
